@@ -3,7 +3,7 @@
 import numpy as np
 
 # Specificeren van object in Python dat het nieuwe bestand aanwijst
-# 'w' staat voor 'write' en geeft aan dat in het bestand geschreven mag worden 
+# 'w' staat voor 'write' en geeft aan dat het bestand geschreven mag worden 
 file = open('vb1.txt', 'w')
 
 # Aanmaken van numpy arrays om weg te schrijven naar bestand

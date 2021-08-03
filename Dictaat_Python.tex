@@ -1,5 +1,7 @@
+% Auteur: Steven Boonstoppel, 2021-2022
+% Met dank aan Nadine van der Heijden en Peter van Capel van de UU
+
 \documentclass[a4paper,11pt, fleqn]{article}
-% Docent: Steven Boonstoppel, 2021-2022
 \usepackage[dutch]{babel}
 \usepackage[linkcolor=blue,colorlinks=true,urlcolor=blue]{hyperref}
 %\usepackage[bookmarks=true,linkcolor=blue,colorlinks=true,urlcolor=blue,pdfborder={0 0 0}]{hyperref}
@@ -237,16 +239,16 @@ Python heeft best veel standaard \textit{functies}, waarvan we er al \'e\'en heb
 We gebruiken de formule $y(x) = a x^2+b x + c$ om de werking van \textit{functies} uit te leggen. In het script hieronder zie je een voorbeeld van een functie die de waarde van de formule berekent en de uitkomst weergeeft op het scherm met behulp van de functie \pythoninline{print()}.
 
 \begin{python}
-	def formule(a, b, c, x):
-	    y = a*x**2 + b*x + c	# bereken de formule
-	    return y				# geef de waarde terug
-	    
-	i = 1
-	j = 2
-	k = 3
-	z = 1
-	waarde = formule(i, j, k, z)    # we geven de variabelen mee op volgorde
-	print(waarde)
+def formule(a, b, c, x):
+    y = a*x**2 + b*x + c	 # bereken de formule
+    return y				 # geef de waarde terug
+
+i = 1
+j = 2
+k = 3
+z = 1
+waarde = formule(i, j, k, z) # geef de variabelen mee op volgorde
+print(waarde)
 \end{python} 
 
 De manier om in Python aan te geven dat er een \textit{functie} moet worden gedefinieerd is door gebruik te maken van het woord \pythoninline{def} (afkorting van 'define' of 'definition'), gevolgd door de naam van de \textit{functie}. Daarna volgen tussen ronde(!) haakjes de variabelen die door de functie moeten worden gebruikt als input. De regel wordt afgesloten met een dubbele punt om aan te geven dat wat er op de volgende regels staat de echte definitie is. 
@@ -262,7 +264,8 @@ Na het overtypen (!) van en het uitvoeren van bovenstaand script is het een goed
 Een andere manier om waarden toe te kennen aan de variabelen binnen een functie is door duidelijk te maken welke variabele welke waarde krijgt. Dan maakt het niet meer uit in welke volgorde de variabelen een waarde krijgen toegekend. Bijv.
 
 \begin{python}
-waarde = polynoom(x=1, a=3, b=2, c=5) # we geven de variabelen mee op een andere volgorde
+# we geven de variabelen mee op een andere volgorde
+waarde = formule(x=1, a=3, b=2, c=5) 
 print('waarde = ', waarde)
 \end{python}
 
@@ -283,7 +286,7 @@ Meer hierover later in de cursus. Vanaf hoofdstuk 2 zul je min of meer ongemerkt
 
 \subsubsection{Lokale vs. globale variabelen}
 Het bovenstaande voorbeeld toont \'e\'en waarde op het scherm. Kijk je in het scherm van de \textbf{Variable explorer}, dan zie je dat alleen de variabelen \verb.i., \verb.j., \verb.k., \verb.z. en \verb.waarde. een waarde hebben, maar de \verb.a., \verb.b., \verb.c., \verb.x. en \verb.y. komen daarin niet voor.
-De eerste variabelen zijn globaal (in het hele script) bekend en hebben de getoonde waarde. De andere variabelen zijn alleen bekend binnen de functie \verb.polynoom. en heten lokale variabelen. 
+De eerste variabelen zijn globaal (in het hele script) bekend en hebben de getoonde waarde. De andere variabelen zijn alleen bekend binnen de functie \verb.formule. en heten lokale variabelen. 
 
 Waarden van lokale variabelen kun je hooguit weergeven door ze te printen binnen een functie, maar dat wordt al snel irritant als zo'n functie duizend keer wordt aangeroepen. 
 
@@ -457,7 +460,8 @@ Het importeren van een module gebeurt (gewoonlijk op de eerste regel(s) van je s
 \begin{python}
 import numpy as np
 \end{python}
-Op deze manier wordt \pythoninline{numpy} ge\"importeerd onder de gebruikelijke afkorting \pythoninline{np}. Vanaf dit punt wordt naar \pythoninline{numpy} verwezen als \pythoninline{np}. Om functies uit een module te gebruiken wordt de afkorting van de module als prefix (voorvoegsel) gebruikt, gevolgd door een punt, en dan het commando(= de naam van de functie) uit de module. Bijvoorbeeld: \pythoninline{np.mean(X) # berekent het gemiddelde van X}.%\bigbreak
+Op deze manier wordt \pythoninline{numpy} ge\"importeerd onder de gebruikelijke afkorting \pythoninline{np}. Vanaf dit punt wordt naar \pythoninline{numpy} verwezen als \pythoninline{np}. Om functies uit een module te gebruiken wordt de afkorting van de module als prefix (voorvoegsel) gebruikt, gevolgd door een punt, en dan het commando(= de naam van de functie) uit de module. \\
+Bijvoorbeeld: \pythoninline{np.mean(X) # berekent het gemiddelde van X}.
 
 \subsection{Arrays maken}
 Een {\it array} (Nederlands: reeks) is een verzameling van getallen. In Python kun je die maken als een lijst (zie hoofdstuk 1.3.3), maar een lijst is in de praktijk heel erg onhandig. In plaats van een lijst gebruiken we veel liever een numpy array. Hier kan maar \'e\'en datatype tegelijkertijd in voorkomen: \pythoninline{ints} of \pythoninline{floats}\footnote{Het is mogelijk om verschillende datatypes in \'e\'en numpy-array te zetten, maar dat is in de praktijk nog vervelender dan een Python list.}.
@@ -1032,7 +1036,7 @@ w=2
 e=3
 r=4
 
-q,w,e,r = 1,2,3,4 # dit werkt ook, maar is erg onoverzichtelijk en foutgevoelig
+q,w,e,r = 1,2,3,4 # kan ook, maar is erg onoverzichtelijk en foutgevoelig
 \end{python}
 
 

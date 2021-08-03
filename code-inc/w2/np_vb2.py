@@ -6,14 +6,14 @@ element1 = test_array[0]         # Het eerste element heeft index '0'.
 element7 = test_array[6]         # Dit heeft dus als resultaat '7'
 
 # Wanneer we een deelverzameling willen selecteren
-deel_array1  = test_array[2:5]    # Selecteert element 2 TOT 5 (t/m 4)
-deel_array2  = test_array[2:-2]   # Selecteert van 2e t/m 2 na laatste
+deel_array1  = test_array[2:5]    # Selecteer element 2 TOT 5 (t/m 4)
+deel_array2  = test_array[2:-2]   # Selecteer van 2e t/m 2 na laatste
 deel_array3  = test_array[:-2]    # Vanaf begin t/m twee na laatste
 deel_array4  = test_array[2:]     # Vanaf tweede
 
 # Het is mogelijk om elk tweede of derde element te selecteren
-oneven_arr  = test_array[::2]     # Selecteert elk tweede element, vanaf begin
-even_arr    = test_array[1::2]    # Selecteert elk tweede element, vanaf 2e
+oneven_arr  = test_array[::2]     # Selecteer elk 2e element, vanaf begin
+even_arr    = test_array[1::2]    # Selecteer elk 2e element, vanaf 2e
 # Let op de naamgeving: de getallen in even_arr zijn even
 
 # Een kopie maken is speciaal:

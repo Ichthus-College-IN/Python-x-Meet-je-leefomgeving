@@ -9,7 +9,7 @@
 # o:  grote punten                   # : : stippellijn
 # -:  lijn                           # --: gestreepte lijn
 
-## Alle opties kunnen op eenvoudige manier aan plt.plot() worden toegevoegd.
+## Alle opties kunnen aan plt.plot() worden toegevoegd.
 ## Het voorbeeld hieronder produceert een plaatje met lijn en punten.
 x = np.linspace(0,2*np.pi)
 
