@@ -358,11 +358,11 @@ Een tweede soort constructie is de zogenaamde \textit{if - else} constructie. Aa
 De vertaling van deze functie in Python kan goed worden gedaan door gebruik te maken van de \textit{if - else if} constructie. Merk op dat er hier ook gebruik moet worden gemaakt van \textit{indents}. In onderstaand voorbeeld staat deze constructie binnen de definitie van een \textit{functie} en heeft daarom al een \textit{indent}. Daarnaast moet de code die wordt uitgevoerd wanneer aan een conditie wordt voldaan ook een \textit{indent} hebben, net als bij de \pythoninline{while}. In dit geval is er dus een dubbele \textit{indent} nodig. In Python wordt \textit{else if} afgekort tot \pythoninline{elif}. 
 
 \begin{python}
-if rain:
+if regen:
     # paraplu meenemen
-elif snow:
+elif sneeuw:
     # sneeuwballengevect
-elif hail:
+elif hagel:
     # binnen blijven
 else:
     # zonnen op het strand
@@ -377,8 +377,8 @@ Uiteraard zul je deze constructie vaker gebruiken voor getallen: bijvoorbeeld bi
 \begin{python}
 input("Geef een positief getal: ")
 \end{python}
-Als het opgegeven getal inderdaad positief is wordt de wortel\footnote{Weet je niet hoe je de wortel van een getal moet uitrekenen in Python? Zoek het dan op! Niet in deze reader, maar op internet.} van dat getal afgedrukt en wordt er om nog een getal gevraagd. 
-Is het opgegeven getal negatief, dan wordt de wortel niet uitgerekend. Er wordt daarentegen de tekst \verb."Dombo: Positief svp!". afgedrukt en vervolgens vraagt het script (heel beleefd) weer om een positief getal. Pas als je de waarde 0 opgeeft stopt het script.
+Als het opgegeven getal inderdaad positief is wordt de wortel\footnote{Weet je niet hoe je de wortel van een getal moet uitrekenen in Python? Zoek het dan op! Niet in deze reader, maar op internet.} van dat getal geprint en wordt er om nog een getal gevraagd. Maak dus gebruik van een loop!
+Is het opgegeven getal negatief, dan wordt de wortel niet uitgerekend. Je print dan de tekst \verb."Dombo: Positief svp!". en vervolgens vraagt het script (heel beleefd) weer om een positief getal. Pas als je de waarde 0 opgeeft stopt de loop en dus het script.
 \end{itemize}
 
 \subsubsection{Boolean expressions}
