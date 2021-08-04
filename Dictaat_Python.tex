@@ -1204,7 +1204,23 @@ Niet altijd is duidelijk waar precies je sensorkastje zich bevindt, of soms wil 
 Lees eerst de volgende paragraaf over de eindopdracht, en kom vervolgens hier terug voor hints over het opzetten van je script.
 
 \subsection{De eindopdracht}
-Na het harde(?) werken om 5 (of 6) hoofdstukken onder de knie te krijgen, ben je eindelijk klaar om de eindopdracht te maken. Deze opdracht luidt als volgt: 
+Na het harde(?) werken om 5 (of 6) hoofdstukken onder de knie te krijgen, ben je eindelijk klaar om de eindopdracht te maken. Deze opdracht luidt in de kern als volgt: 
 
-{\bf Verwerk de data van jouw meetkastje tot drie figuren met subplots gesorteerd per categorie: \'e\'en figuur met alle data van de afgelopen maand, \'e\'en figuur met alle data van de afgelopen week, en \'e\'en figuur met de data van een dag naar keuze uit de afgelopen maand.}
+{\bf Verwerk de data van jouw meetkastje tot drie figuren, elk met subplots gesorteerd per categorie: \'e\'en figuur met alle data van de afgelopen maand, \'e\'en figuur met alle data van de afgelopen week, en \'e\'en figuur met de data van een dag naar keuze uit de afgelopen maand.}
+
+Voltooi je deze opdracht, dan scoor je daarmee een 7. Verwerk je de volgende punten ook, dan scoor je daarmee 2 extra punten. Steek je extra veel moeite in effici\"entie, commentaar en/of opmaak, kun je daar 1 punt extra voor scoren.
+
+Extra opgaven:
+\begin{itemize}
+	\item De UV-index wordt vermeld als {\it maat}, zonder eenheid. Je kunt er in de praktijk dus eigenlijk weinig mee. De fabrikant heeft echter wel de matchende UV-levels bij vermeld. De plot van de UV-waarden is veel nuttiger als je deze levels of zones dus ook aangeeft. Maak daarbij gebruik van de volgende verdeling:
+	\begin{itemize}
+		\item[1)] "LOW": [0, 560],
+		\item[2)] "MODERATE": [561, 1120],
+		\item[3)] "HIGH": [1121, 1494],
+		\item[4)] "VERY HIGH": [1495, 2054],
+		\item[5)] "EXTREME": [2055, 9999] 
+	\end{itemize}
+	Maak zelf een bewuste keuze: welke regio's geef je aan? Ga je door tot 9999? En geef je ook de namen weer, of alleen met kleuren de zones? En als lijnen, of als gekleurde vlakken? Maak hierbij gebruik van internet om het mooi te maken!
+	\item De CJMCU-811-sensor is eigenlijk een beetje nep. Hij meet inderdaad correct het VOC-gehalte in de lucht, maar eigenlijk helemaal geen CO$_2$. De sensor neemt aan dat alle VOC's van mensen afkomstig zijn, en berekent dus hoeveel mensen er aanwezig zouden zijn volgens de VOC-waarde. Vervolgens neemt hij de gemiddelde CO$_2$-productie van een mens, om te berekenen hoeveel CO$_2$ er misschien dan in de lucht zit. Maak het inzichtelijk dat de sensor je hier voor de nep houdt door beide lijnen in dezelfde plot (in een nieuw figuur) te zetten. Helemaal mooi is het als je een tweede y-as (aan de rechterkant) weet toe te voegen waardoor je de lijnen kunt schalen.
+\end{itemize}
 \end{document}
