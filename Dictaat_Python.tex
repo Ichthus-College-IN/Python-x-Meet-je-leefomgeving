@@ -424,7 +424,7 @@ for k in range(5):
     print(k)
 \end{python}
 
-\subsubsection*{Oefenopdracht: for k in range()}
+\subsubsection*{Oefenopdracht: for i in range()}
 Voer het voorgaande stukje code uit. 
 
 \textbf{Vraag:} welke getallen zitten er verborgen in \pythoninline{range(5)}? En wat als je er \pythoninline{range(10)} van maakt?
@@ -432,18 +432,16 @@ Voer het voorgaande stukje code uit.
 In hoofdstuk \ref{Ch_forloop} komen \pythoninline{for}-loops en hun toepassingen nog uitgebreider aan bod, dus wees niet bang als dit je nu een klein beetje te moeilijk lijkt.
 
 \subsection{Slotopdrachten}
-
-\subsubsection{Inleiding}
 Voor alle opdrachten geldt dat je wordt aangemoedigd om op het internet te zoeken in de enorme hoeveelheid voorbeelden, tutorials, vragen en antwoorden over het gebruik van Python. Maak daar vooral gebruik van en leer zo je weg te vinden in het Python doolhof. 
 Voor alle opdrachten geldt ook: maak je eigen script, sla dat op met het nodige commentaar zodat je het later misschien kunt hergebruiken of je medestudenten er blij mee kunt maken.
 
-\subsubsection{Opdracht 1: Omrekenen van Fahrenheit naar Celsius}
-Schrijf een script waarin een reeks van verschillende temperaturen in Fahrenheit gebruikt wordt als invoer om te bepalen of het vriest of niet. Laat voor elke stap de temperatuur in Fahrenheit zien samen met de conclusie of het wel of niet vriest. Test waarden van -10 t/m 100 Fahrenheit in stappen van 5 Fahrenheit. De conversie tussen Celsius en Fahrenheit is
+\subsubsection{Omrekenen van Fahrenheit naar Celsius}
+Schrijf een script waarin een reeks van verschillende temperaturen in Fahrenheit gebruikt wordt als invoer om te bepalen of het vriest of niet. Laat voor elke stap de temperatuur in Celsius zien samen met de conclusie of het wel of niet vriest. Test waarden van -10 t/m 100 Fahrenheit in stappen van 5 Fahrenheit. De conversie tussen Celsius en Fahrenheit is
 \begin{equation}
-F = \frac{9}{5} C + 32.
+C = \frac{5}{9}F - 32
 \end{equation}
 
-\subsubsection{Opdracht 2: Priemgetallen}
+\subsubsection{Priemgetallen}
 Schrijf een script dat de priemgetallen binnen een bepaald interval (bijv. alle gehele getallen van 1 tot en met 100) berekent en toont op het beeldscherm. Let op: het getal 1 is alleen deelbaar door 1 en zichzelf, maar is toch geen priemgetal. Dus 2 is het eerste priemgetal. \textit{Tip:} Gebruik de modulus (\pythoninline{\%})!
 
 Doe dit in eerste instantie echt helemaal zelf! Pas als het niet lukt, maar ook als het wel lukt, zoek je daarna op internet naar Python scripts die bruikbaar zijn in deze opdracht. 
@@ -1114,12 +1112,12 @@ if not variable:      #19.8ns
 
 \begin{python}
 # 1000 operaties en 1 functie
-def square(number):
+def kwadraat(number):
     return number**2
-squares = [square(i) for i in range(1000)]
+kwadraten = [kwadraat(i) for i in range(1000)]
 # 1000x gemeten met time: 0.40 sec
 
-def compute_squares():
+def compute_kwadraten():
     return [i**2 for i in range(1000)]
 # 1000x gemeten met time: 0.31 sec
 \end{python}
@@ -1132,7 +1130,8 @@ def compute_squares():
 %\subsection{Debuggen en testen}
 %Handige manieren om te debuggen en testen.
 
-\subsection{Slotopdracht: ??? }
+\subsection{Slotopdracht: Priemgetallen (reprise)}
+Zoek je script van de tweede slotopdracht van hoofdstuk 1. Hier berekende je priemgetallen. Zoek een bepaald bereik (van 1 tot ...) waar je script ongeveer 5 seconden duurt om alle priemgetallen te berekenen. Probeer nu om dit script sneller te maken. Denk hierbij niet alleen aan verbeteringen in programmeren, maar ook aan het {\it algoritme}. Bijvoorbeeld: een even getal is altijd deelbaar door 2 en dus geen priemgetal. Hoeveel keer sneller kun je je script maken dan het was?
 
 \clearpage
 \renewcommand{\ditwc}{Meet je leefomgeving}
@@ -1197,22 +1196,35 @@ De grote metalen sensor onderin heeft ook een opening aan de voorkant, en een ve
 \subsubsection{Ublox NEO-6M GPS6MU2: GPS}
 Niet altijd is duidelijk waar precies je sensorkastje zich bevindt, of soms wil je een leuk overzichtje hebben van alle locaties. Daarom is ook de grote blauwe module met het metaal-roze blok bijgevoegd. Deze meet:
 \begin{itemize}
-	\item[11)] GPS-locatie, in NB-OL co\"ordinaten. Veenendaal en daarboven ligt in noorderbreedte 52, onder Veenendaal 51; van Utrecht tot voorbij Arnhem zitten we in oosterlengte 5. Binnenshuis of onder een dikker dak is er soms weinig bereik, en deze sensor moet vaak ook `opstarten' voordat hij de locatie goed kan bepalen.
+	\item[11)] GPS-locatie, in NB-OL co\"ordinaten. Co\"ordinaten kun je echter niet zo makkelijk in een grafiekje weergeven, dus laten we dat hier achterwege. Mocht je de uitdaging aan willen gaan om GPS op een kaartje weer te geven is dat mogelijk, maar het valt wel buiten het doel van deze reader.
 \end{itemize}
 
 \subsection{Handige informatie}
 Lees eerst de volgende paragraaf over de eindopdracht, en kom vervolgens hier terug voor hints over het opzetten van je script.
 
+\subsubsection*{np.argsort()}
+De data van het sensorkastje is ongesorteerd. De meetwaarden worden allemaal in \'e\'en keer verzonden en afhankelijk van het bereik, de kracht van de antenne en andere factoren komen de data allemaal net niet tegelijkertijd aan, en telkens in een andere volgorde. Om te sorteren kun je handig gebruik maken van \pythoninline{np.argsort()}; zie het voorbeeld:
+
+\begin{python}
+data = np.array([0,20,30,40,10,60,50])
+volgorde = np.argsort(data)		# [0 4 1 2 3 6 5] is de volgorde
+sortering = data[volgorde]		# [0 10 20 30 40 50 60] gesorteerd
+\end{python}
+
+\pythoninline{volgorde} is hier het array dat aangeeft welke index op welke plek moet staan: \pythoninline{data[0]} hoort op plek 0, \pythoninline{data[1]} hoort op plek 4, \pythoninline{data[2]} op plek 1 enzovoorts. Aangezien elke meetwaarde bij een bepaald {\it channel}nummer hoort, kun je deze nummers gebruiken om de data te sorteren. Er zijn elf channels: 0 tot en met 10. Elke elf waarden kun je sorteren met behulp van deze nummers. {\it Hint: je kunt ook een deel van de data sorteren door bijvoorbeeld het volgende in te vullen: \pythoninline{np.argsort(data[1:4])}.}
+
 \subsection{De eindopdracht}
-Na het harde(?) werken om 5 (of 6) hoofdstukken onder de knie te krijgen, ben je eindelijk klaar om de eindopdracht te maken. Deze opdracht luidt in de kern als volgt: 
+Na het harde(?) werken om 5 (of 6) hoofdstukken onder de knie te krijgen, ben je eindelijk klaar om de eindopdracht te maken. Deze opdracht luidt als volgt: 
 
-{\bf Verwerk de data van jouw meetkastje tot drie figuren, elk met subplots gesorteerd per categorie: \'e\'en figuur met alle data van de afgelopen maand, \'e\'en figuur met alle data van de afgelopen week, en \'e\'en figuur met de data van een dag naar keuze uit de afgelopen maand.}
+{\bf Verwerk de data van jouw meetkastje tot drie figuren: \'e\'en figuur met alle data van de afgelopen maand, \'e\'en figuur met alle data van de afgelopen week, en \'e\'en figuur met de data van een dag naar keuze uit de afgelopen maand.}
 
-Voltooi je deze opdracht, dan scoor je daarmee een 7. Verwerk je de volgende punten ook, dan scoor je daarmee 2 extra punten. Steek je extra veel moeite in effici\"entie, commentaar en/of opmaak, kun je daar 1 punt extra voor scoren.
+Voltooi je deze opdracht, dan scoor je daarmee een 8. Verwerk je de volgende punten ook, dan scoor je daarmee 1 extra punt. Steek je extra veel moeite in effici\"entie, commentaar en/of opmaak, kun je daar 1 punt extra voor scoren.
 
-Extra opgaven:
+De exacte puntenverdeling en de onderdelen die aanwezig moeten zijn staan vermeld in de rubric op ItsLearning: kijk deze nog eens door voor je begint en af en toe terwijl je bezig bent.
+\bigbreak
+{\bf Extra opgaven:}
 \begin{itemize}
-	\item De UV-index wordt vermeld als {\it maat}, zonder eenheid. Je kunt er in de praktijk dus eigenlijk weinig mee. De fabrikant heeft echter wel de matchende UV-levels bij vermeld. De plot van de UV-waarden is veel nuttiger als je deze levels of zones dus ook aangeeft. Maak daarbij gebruik van de volgende verdeling:
+	\item De UV-index wordt vermeld als {\it maat}, zonder eenheid. Je kunt er in de praktijk dus eigenlijk weinig mee. De fabrikant heeft echter wel de matchende UV-{\it levels} bij vermeld. De plot van de UV-waarden is veel nuttiger als je deze levels of zones dus ook aangeeft. Maak daarbij gebruik van de volgende verdeling:
 	\begin{itemize}
 		\item[1)] "LOW": [0, 560],
 		\item[2)] "MODERATE": [561, 1120],
