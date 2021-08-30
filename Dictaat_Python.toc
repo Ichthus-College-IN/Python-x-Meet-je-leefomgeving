@@ -1,63 +1,55 @@
 \babel@toc {dutch}{}
 \contentsline {section}{\numberline {1}Basisvaardigheden Python}{3}{section.1}% 
 \contentsline {subsection}{\numberline {1.1}Python scripts schrijven en uitvoeren in Spyder}{4}{subsection.1.1}% 
-\contentsline {subsection}{\numberline {1.2}Eenvoudige rekenkundige operaties}{6}{subsection.1.2}% 
-\contentsline {subsection}{\numberline {1.3}Variabelen}{7}{subsection.1.3}% 
-\contentsline {subsubsection}{\numberline {1.3.1}Implementatie}{7}{subsubsection.1.3.1}% 
+\contentsline {subsection}{\numberline {1.2}Eenvoudige rekenkundige operaties}{5}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}Variabelen}{6}{subsection.1.3}% 
+\contentsline {subsubsection}{\numberline {1.3.1}Implementatie}{6}{subsubsection.1.3.1}% 
 \contentsline {subsubsection}{\numberline {1.3.2}Naamgeving en commentaar}{7}{subsubsection.1.3.2}% 
-\contentsline {subsubsection}{\numberline {1.3.3}Datatypen}{8}{subsubsection.1.3.3}% 
-\contentsline {subsection}{\numberline {1.4}Functies}{9}{subsection.1.4}% 
-\contentsline {subsubsection}{\numberline {1.4.1}Eigengemaakte functies}{9}{subsubsection.1.4.1}% 
-\contentsline {subsubsection}{\numberline {1.4.2}Lokale vs. globale variabelen}{11}{subsubsection.1.4.2}% 
-\contentsline {subsection}{\numberline {1.5}Loops}{12}{subsection.1.5}% 
-\contentsline {subsubsection}{\numberline {1.5.1}While}{12}{subsubsection.1.5.1}% 
-\contentsline {subsubsection}{\numberline {1.5.2}If}{13}{subsubsection.1.5.2}% 
-\contentsline {subsubsection}{\numberline {1.5.3}Boolean expressions}{14}{subsubsection.1.5.3}% 
-\contentsline {subsubsection}{\numberline {1.5.4}For}{14}{subsubsection.1.5.4}% 
-\contentsline {subsection}{\numberline {1.6}Slotopdrachten}{15}{subsection.1.6}% 
-\contentsline {subsubsection}{\numberline {1.6.1}Omrekenen van Fahrenheit naar Celsius}{15}{subsubsection.1.6.1}% 
-\contentsline {subsubsection}{\numberline {1.6.2}Priemgetallen}{15}{subsubsection.1.6.2}% 
-\contentsline {section}{\numberline {2}Modules (1): NumPy}{16}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Arrays maken}{16}{subsection.2.1}% 
-\contentsline {subsection}{\numberline {2.2}Rekenen met arrays}{17}{subsection.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Indexing en slicing}{18}{subsection.2.3}% 
-\contentsline {subsection}{\numberline {2.4}Allerlei functies}{19}{subsection.2.4}% 
-\contentsline {subsection}{\numberline {2.5}For-loops}{20}{subsection.2.5}% 
-\contentsline {subsection}{\numberline {2.6}Slotopdracht: Voortschrijdend gemiddelde}{21}{subsection.2.6}% 
-\contentsline {section}{\numberline {3}Modules (2): MATPlotLib}{23}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Grafiek maken}{23}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Lijnen opmaken}{23}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Assen opmaken}{24}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Meer grafieken in \'e\'en figuur}{25}{subsection.3.4}% 
-\contentsline {subsection}{\numberline {3.5}Slotopdracht: Heel veel plotjes}{26}{subsection.3.5}% 
-\contentsline {section}{\numberline {4}Importeren en exporteren}{27}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Afbeeldingen}{27}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}For-loops}{28}{subsection.4.2}% 
-\contentsline {subsection}{\numberline {4.3}Formatteren van tekst}{29}{subsection.4.3}% 
-\contentsline {subsection}{\numberline {4.4}Exporteren}{30}{subsection.4.4}% 
-\contentsline {subsection}{\numberline {4.5}Importeren}{32}{subsection.4.5}% 
-\contentsline {subsection}{\numberline {4.6}Slotopdracht: De Europese bananeninspectie}{33}{subsection.4.6}% 
-\contentsline {section}{\numberline {5}Functies}{35}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Constructie van functies}{35}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Extra argumenten}{36}{subsection.5.2}% 
-\contentsline {subsection}{\numberline {5.3}Defaultwaarde}{37}{subsection.5.3}% 
-\contentsline {subsection}{\numberline {5.4}Slotopdracht: Eigen plotfunctie}{38}{subsection.5.4}% 
-\contentsline {section}{\numberline {6}PLUS: Gebruiksvriendelijke code}{39}{section.6}% 
-\contentsline {subsection}{\numberline {6.1}Commentaar schrijven}{39}{subsection.6.1}% 
-\contentsline {subsection}{\numberline {6.2}Effici\"entie verbeteren}{41}{subsection.6.2}% 
-\contentsline {subsubsection}{\numberline {6.2.1}Effici\"entie meten}{41}{subsubsection.6.2.1}% 
-\contentsline {subsubsection}{\numberline {6.2.2}Wanneer optimaliseren?}{42}{subsubsection.6.2.2}% 
-\contentsline {subsubsection}{\numberline {6.2.3}Standaard snelle oplossingen}{43}{subsubsection.6.2.3}% 
-\contentsline {subsection}{\numberline {6.3}Slotopdracht: Priemgetallen (reprise)}{44}{subsection.6.3}% 
-\contentsline {section}{\numberline {7}Meet je leefomgeving}{45}{section.7}% 
-\contentsline {subsection}{\numberline {7.1}De sensoren}{45}{subsection.7.1}% 
-\contentsline {subsubsection}{\numberline {7.1.1}ADC: accuspanning}{45}{subsubsection.7.1.1}% 
-\contentsline {subsubsection}{\numberline {7.1.2}BME280: temperatuur, luchtdruk en relatieve luchtvochtigheid}{45}{subsubsection.7.1.2}% 
-\contentsline {subsubsection}{\numberline {7.1.3}MAX4466: geluidssterkte}{46}{subsubsection.7.1.3}% 
-\contentsline {subsubsection}{\numberline {7.1.4}TSL2591: lichtintensiteit}{46}{subsubsection.7.1.4}% 
-\contentsline {subsubsection}{\numberline {7.1.5}VEML6070: UV-intensiteit}{46}{subsubsection.7.1.5}% 
-\contentsline {subsubsection}{\numberline {7.1.6}CJMCU-811: VOC en CO$_2$-gehalte}{46}{subsubsection.7.1.6}% 
-\contentsline {subsubsection}{\numberline {7.1.7}SDS011: fijnstof}{47}{subsubsection.7.1.7}% 
-\contentsline {subsubsection}{\numberline {7.1.8}Ublox NEO-6M GPS6MU2: GPS}{47}{subsubsection.7.1.8}% 
-\contentsline {subsection}{\numberline {7.2}Handige informatie}{47}{subsection.7.2}% 
-\contentsline {subsection}{\numberline {7.3}De eindopdracht}{48}{subsection.7.3}% 
+\contentsline {subsubsection}{\numberline {1.3.3}Datatypen}{7}{subsubsection.1.3.3}% 
+\contentsline {subsection}{\numberline {1.4}Functies}{8}{subsection.1.4}% 
+\contentsline {subsubsection}{\numberline {1.4.1}Eigengemaakte functies}{8}{subsubsection.1.4.1}% 
+\contentsline {subsubsection}{\numberline {1.4.2}Lokale vs. globale variabelen}{10}{subsubsection.1.4.2}% 
+\contentsline {subsection}{\numberline {1.5}Loops}{11}{subsection.1.5}% 
+\contentsline {subsubsection}{\numberline {1.5.1}While}{11}{subsubsection.1.5.1}% 
+\contentsline {subsubsection}{\numberline {1.5.2}If}{11}{subsubsection.1.5.2}% 
+\contentsline {subsubsection}{\numberline {1.5.3}Boolean expressions}{12}{subsubsection.1.5.3}% 
+\contentsline {subsubsection}{\numberline {1.5.4}For}{13}{subsubsection.1.5.4}% 
+\contentsline {subsection}{\numberline {1.6}Slotopdrachten}{14}{subsection.1.6}% 
+\contentsline {subsubsection}{\numberline {1.6.1}Omrekenen van Fahrenheit naar Celsius}{14}{subsubsection.1.6.1}% 
+\contentsline {subsubsection}{\numberline {1.6.2}Priemgetallen}{14}{subsubsection.1.6.2}% 
+\contentsline {section}{\numberline {2}Modules (1): NumPy}{15}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Arrays maken}{15}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Rekenen met arrays}{16}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Indexing en slicing}{17}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Allerlei functies}{18}{subsection.2.4}% 
+\contentsline {subsection}{\numberline {2.5}For-loops}{19}{subsection.2.5}% 
+\contentsline {subsection}{\numberline {2.6}Slotopdracht: Voortschrijdend gemiddelde}{20}{subsection.2.6}% 
+\contentsline {section}{\numberline {3}Modules (2): MATPlotLib}{21}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Grafiek maken}{21}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Lijnen opmaken}{21}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Assen opmaken}{22}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Meer grafieken in \'e\'en figuur}{23}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}Slotopdracht: Heel veel plotjes}{24}{subsection.3.5}% 
+\contentsline {section}{\numberline {4}Importeren en exporteren}{25}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Afbeeldingen exporteren}{25}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}For-loops}{26}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Formatteren van tekst}{27}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}Bestanden importeren}{28}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}Slotopdracht: De Europese bananeninspectie}{29}{subsection.4.5}% 
+\contentsline {section}{\numberline {5}Functies}{31}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Constructie van functies}{31}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Extra argumenten}{32}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}Defaultwaarde}{33}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}Slotopdracht: Eigen plotfunctie}{34}{subsection.5.4}% 
+\contentsline {section}{\numberline {6}Meet je leefomgeving}{35}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}De sensoren}{35}{subsection.6.1}% 
+\contentsline {subsubsection}{\numberline {6.1.1}ADC: accuspanning}{35}{subsubsection.6.1.1}% 
+\contentsline {subsubsection}{\numberline {6.1.2}BME280: temperatuur, luchtdruk en relatieve luchtvochtigheid}{35}{subsubsection.6.1.2}% 
+\contentsline {subsubsection}{\numberline {6.1.3}MAX4466: geluidssterkte}{36}{subsubsection.6.1.3}% 
+\contentsline {subsubsection}{\numberline {6.1.4}TSL2591: lichtintensiteit}{36}{subsubsection.6.1.4}% 
+\contentsline {subsubsection}{\numberline {6.1.5}VEML6070: UV-intensiteit}{36}{subsubsection.6.1.5}% 
+\contentsline {subsubsection}{\numberline {6.1.6}CJMCU-811: VOC en CO$_2$-gehalte}{36}{subsubsection.6.1.6}% 
+\contentsline {subsubsection}{\numberline {6.1.7}SDS011: fijnstof}{37}{subsubsection.6.1.7}% 
+\contentsline {subsubsection}{\numberline {6.1.8}Ublox NEO-6M GPS6MU2: GPS}{37}{subsubsection.6.1.8}% 
+\contentsline {subsection}{\numberline {6.2}Handige informatie}{37}{subsection.6.2}% 
+\contentsline {subsection}{\numberline {6.3}De eindopdracht}{38}{subsection.6.3}% 
