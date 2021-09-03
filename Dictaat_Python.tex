@@ -69,62 +69,58 @@ Ons leven bestaat bij de gratie van programmeertalen. Het versimpelt de systemen
  
 Een programmeertaal die binnen \'en buiten de exacte vakken steeds meer gebruikt wordt is Python (\url{www.python.org}). Hiervoor zijn een aantal goede redenen:
 \begin{itemize}
-\item[-] Het is gratis en open source. Dit betekent dat iedereen Python kan gebruiken, delen en ontwikkelen.
-\item[-] Het is eenvoudig om de basis onder de knie te krijgen, zeker in vergelijking met andere populaire talen.
-\item[-] Het heeft een grote actieve gebruikersgroep. Dit betekent dat er via internet veel hulp, voorbeeldcode, modules en bibliotheken beschikbaar zijn.
-\item[-] Het is enorm veelzijdig (kan omgaan met code uit 'klassieke' talen als Fortran en C, kan gebruikt worden om apparatuur aan te sturen, ...)
+\item[-] Het is gratis en zelf aan te passen.
+\item[-] Het is eenvoudig om de basis onder de knie te krijgen.
+\item[-] Er zijn heel veel tutorials en voorbeelden op internet.
+\item[-] Je kunt er heel veel verschillende dingen mee doen.
 \end{itemize}
 
 \begin{figure*}[h]
 	\includegraphics[width=16cm]{fig/github_languages.png}
-	\caption{De meest populaire programmeertalen in de periode 2014-2021. Python is de tweede meest populaire taal, goed voor een zesde van alle (openbare) scripts ter wereld. \textit{Bron: GitHub}}
+	\caption{\it De meest populaire programmeertalen in de periode 2014-2021. Python is de tweede meest populaire taal, goed voor een zesde van alle (openbare) scripts ter wereld. \textit{Bron: GitHub}}
 	\label{github-languages}
 \end{figure*}
 
-In deze periode komen de meest essenti\"ele eigenschappen van Python aan de orde. Je leert scripts, oftewel korte programma's, te schrijven, eerst met \'e\'envoudige opdrachten (bijvoorbeeld rekenen, data bewerken, plots maken) en later met combinaties van deze opdrachten tot meervoudige opdrachten. Je kunt je kennis van Python dan zelfs inzetten bij wis-, schei- en natuurkundeverslagen, als de opdracht niet vereist dat je het in Excel o.i.d. moet uitvoeren.
+In deze periode komen de meest nuttige eigenschappen van Python aan de orde. Als je het begint te begrijpen, ga je de lol van programmeren vanzelf inzien. Maar zoals je eerst letters moet leren voordat je kunt lezen, moeten we beginnen met de wat taaiere kost waarvan het nut later duidelijk wordt: hoe maak en bewerk je een script, wat zijn datatypes, functies, variabelen, etc.
 
-Als je het eenmaal in de vingers hebt, ga je de lol van programmeren vanzelf inzien. Maar zoals je eerst letters moet leren voordat je kunt lezen, moeten we beginnen met de wat taaiere kost waarvan het nut later duidelijk wordt: hoe maak en bewerk je een script, wat zijn datatypes, functies, variabelen, etc.
-
-Een goede programmeur programmeert gestructureerd, modulair (in stukjes) en begrijpelijk. Wat moet hiervoor concreet gebeuren?
+Een goede programmeur programmeert gestructureerd en begrijpelijk. Wat moet je hiervoor concreet doen?
 \begin{itemize}
 \item[-] Volg conventies: gebruik variabelen namen die aansluiten bij de inhoud van je programma: een lijst met temperatuurwaarden noem je niet \pythoninline{meuk}.
-\item[-] Structureer je script: voeg scheidingen toe, definieer \textit{secties} met lege regels en kopjes (zoals je ook in normale tekst doet om hem leesbaar te houden). Breek complexe opdrachten op in meer eenvoudige statements.
-\item[-] Voeg uitleg toe, vooral wanneer een stuk code zo complex is dat de functie ervan niet direct duidelijk is. Hoe dit kan worden gedaan wordt later in deze reader behandeld.
+\item[-] Structureer je script: voeg scheidingen toe, definieer \textit{secties} met lege regels en kopjes (zoals je ook in normale tekst doet om hem leesbaar te houden).
+\item[-] Voeg uitleg toe, vooral wanneer een stuk code moeilijk is. Hoe dit kan worden gedaan wordt later in deze reader behandeld.
 \end{itemize}
 
-Een goede stelregel is: \textit{Hoe moet ik een script schrijven zodat ik het zelf snel weer begrijp als ik het over een jaar open om te gebruiken}? \\
-In de beoordeling van deze periode is een deel van de punten gereserveerd voor de kwaliteit van de scripts om zo goed programmeren aan te moedigen.
+Een goede stelregel is: \textit{Hoe moet ik een script schrijven zodat ik het zelf snel weer begrijp als ik het over een jaar open om te gebruiken}? In de beoordeling van deze periode is een deel van de punten gereserveerd voor de kwaliteit van de scripts om zo goed programmeren aan te moedigen.
 
 \subsection{Python scripts schrijven en uitvoeren in Spyder}
-Je kunt verschillende programma's gebruiken om Python in te programmeren. Wij hebben gekozen voor Spyder: meestal werkt deze het fijnst. De interface van Spyder wordt weergegeven in Figuur \ref{fig-spyder}. Deze bestaat standaard uit \'e\'en window met drie schermen, namelijk de Editor, Variable explorer en IPython console. Elk van deze heeft zijn eigen functie:
+We gebruiken op het Ichthus het programma Spyder om in te programmeren. De interface van Spyder wordt weergegeven in Figuur \ref{fig-spyder}. Deze bestaat standaard uit \'e\'en window met drie schermen: de Editor, Variable explorer en Console. Elk van deze heeft zijn eigen functie:
 \begin{itemize}
-\item[-] Het scherm links is de Editor. Hierin schrijf je de Python code, ook wel script genoemd, die een berekening of taak uitvoert. De editor helpt je om een script te schrijven. Met name de juiste manier van inspringen bij nieuwe regels (deze \textit{indents} zijn in Python cruciaal) wordt door de editor vrijwel automatisch goed gedaan.
-\item[-] De Explorer rechtsboven heeft vier tabbladen. Tab `Files' biedt een makkelijke manier om eerder geschreven scripts op te zoeken en te openen. In de Tab `Variable Explorer' wordt de waarde van de bestaande variabelen weergegeven nadat je een script hebt uitgevoerd. Alle figuren verschijnen in de Explorer onder de lab `Plots'. Tot slot geeft de `Help' tab je een mogelijkheid om snel de eigenschappen van een functie of keyword op te zoeken.
-\item[-]Het Console rechtsonder is het gedeelte waarin informatie over het runnen (of \textit{draaien} of \textit{evalueren}) van je script verschijnt. Ook de uitvoer (\textit{output})komt standaard hier terecht.
+\item[-] Het scherm links is de Editor. Hierin schrijf je de Python code, ook wel script genoemd, die een berekening of taak uitvoert. 
+\item[-] De Explorer rechtsboven heeft vier tabbladen. Tab `Files' laat je scripts zien. In de Tab `Variable Explorer' wordt de waarde van de bestaande variabelen weergegeven nadat je een script hebt uitgevoerd. Alle figuren verschijnen in de Explorer onder de lab `Plots'. Tot slot geeft de `Help' tab je een mogelijkheid om snel de eigenschappen van een functie op te zoeken.
+\item[-] De Console rechtsonder is het gedeelte waarin informatie over het runnen (of \textit{draaien}) van je script verschijnt. Ook de uitvoer (\textit{output}) komt hier terecht.
 \end{itemize}
 
 \begin{figure*}[h]
 \includegraphics[width=16cm]{fig/spyder_screenshot.png}
-\caption{De interface van Spyder direct na het opstarten van het programma.}
+\caption{\it De interface van Spyder direct na het opstarten van het programma.}
 \label{fig-spyder}
 \end{figure*}
 
-Om een geschreven script te runnen moet het worden opgeslagen in een bestand met de extensie `.py'. Wen jezelf vanaf het begin aan om je verzameling bestanden gestructureerd (in OneDrive!) te houden. Dit betekent dat de naam van de opgeslagen bestanden duidelijk maakt wat het script doet, of waar het onderdeel van uitmaakt. Je doet er goed aan alleen letters, cijfers en eventueel normale (-) of liggende (\_) streepjes (en dus geen spaties) te gebruiken. Een voorbeeld is de naam \verb,h1_1-helloworld.py,.
+Sla je bestanden met een duidelijke naam op in jouw GitHub map. Dit betekent dat de naam van de opgeslagen bestanden duidelijk maakt wat het script doet, of waar het onderdeel van is. Je kunt het beste alleen letters, cijfers en eventueel normale (-) of liggende (\_) streepjes (geen spaties!) te gebruiken. Een voorbeeld is de naam \verb,h1_1-helloworld.py,.
 
 \subsubsection*{Oefenopdracht: Hello World} 
 Typ de volgende regel tekst in de Editor: 
 \begin{python}
 print('Hello, world!')
 \end{python}
-Sla je bestand vervolgens op met de naam \verb,h1_1-helloworld.py, en laat Spyder dit script uitvoeren. 
-Scripts worden in Spyder uitgevoerd door op de groene play-knop (Run file, of de F5-toets) in de balk bovenin te klikken.
+Sla je bestand op met de naam \verb,h1_1-helloworld.py, en run het script.  Dat doe je door op de groene play-knop (of de F5-toets) in de balk bovenin te klikken.
 Wat is de functie van het commando print? Kijk hiervoor in de console rechtsonderin.
 
 Tijdens de periode zul je regelmatig (voorbeeld)scripts zien in deze bundel. Die kun je het beste openen via de hyperlink erboven. 
 Sla deze als je ze nodig hebt op in je eigen map met bestanden en open deze vanuit Spyder op dezelfde manier waarop je dat in \textit{Word} zou doen\footnote{Kopie\"{e}r \textbf{niet} stukjes tekst uit de .pdf file die je nu leest naar het Editor window van Spyder, want dan krijg je vaak verminkte bestanden waaraan je onnodig veel tijd moet besteden om ze te repareren. Typ het over als het kort is, of klik op de hyperlink of ga naar ItsLearning om het hele bestand te vinden.}.
 
 \subsection{Eenvoudige rekenkundige operaties}
-Veel scripts bevatten simpele rekendingetjes. Hiervoor gebruikt Python de normale tekens: optellen (\pythoninline{+}), aftrekken (\pythoninline{-}), vermenigvuldigen (\pythoninline{*}), delen (\pythoninline{/}) en (let op!) machtsverheffen (\pythoninline{**}). Een andere rekentruc die vaak voorkomt bij programmeren is de \textit{modulus} (\pythoninline{\%}). Dit is eigenlijk de 'rest'-berekening. Bijvoorbeeld bij een digitale klok: als het \verb,19:00, is op de klok dan zeg je: ``Het is zeven uur ('s avonds)", want \pythoninline{19 \% 12 = 7}. De modulus werkt alleen voor hele getallen.
+Met Python kun je makkelijk rekenen. Hiervoor gebruik je normale tekens: optellen (\pythoninline{+}), aftrekken (\pythoninline{-}), vermenigvuldigen (\pythoninline{*}), delen (\pythoninline{/}) en (let op!) machtsverheffen (\pythoninline{**}). Een andere rekentruc die vaak voorkomt bij programmeren is de \textit{modulus} (\pythoninline{\%}). Dit is eigenlijk de 'rest'-berekening.
 
 \begin{python}
 1 + 1 # = 2
@@ -132,6 +128,7 @@ Veel scripts bevatten simpele rekendingetjes. Hiervoor gebruikt Python de normal
 3*3   # = 9
 4/4   # = 1
 5**5  # = 3125
+5 % 2 # = 1
 \end{python}
 
 Tip: Het is onder Python programmeurs gebruikelijk om een spatie te typen voor en na een plus of min-teken, maar niet bij vermenigvuldigen, delen of machtsverheffen. Dit legt nadruk op de rekenregels. Bijvoorbeeld: 
@@ -147,15 +144,15 @@ print(1 + 2 - 3*4**5) # wat komt hieruit?
 y = v_0 t - \frac{1}{2}g t^2
 \label{eq-ball}
 \end{equation}
-Kies voor de valversnelling $g$ de waarde $9.81 \, {\rm m/s}^2$. Maak gebruik van het voorbeeld hiervoor.
+De zwaartekracht $g = 9.81 \, {\rm m/s}^2$. Maak gebruik van het voorbeeld hiervoor.
 
 \subsection{Variabelen}
 \label{sec-vars}
 
 \subsubsection{Implementatie}
-Net als wiskunde `op papier' is het handig om van variabelen als letters gebruik te maken in plaats van de getallen gelijk in te vullen. Dit ook zo programmeren en zorgt voor overzicht als je scripts langer en ingewikkelder worden.
+Net als wiskunde `op papier' is het handig om van variabelen als letters gebruik te maken in plaats van de getallen gelijk in te vullen. Dit is ook zo bij programmeren en zorgt voor overzicht als je scripts langer en moeilijker worden.
 
-\textit{\textbf{Voorbeeld}} Wanneer je de uitkomst van een formule als $y(x) = ax^2+bx+c$ voor een willekeurige $a, b, c, x$ wilt berekenen, kunnen je elke keer de waarden van $a, b, c, x$ in de formule aanpassen en het Python script telkens opnieuw uitvoeren. Maar veel handiger en sneller is de volgende manier, waarbij we zowel de parameters $a,b,c$, variabele $x$ als de uitkomst $y(x)$ defini\"eren als variabelen in Python. Let op de volgorde waarin je de variabelen en de formule in je code opschrijft. Een script wordt (best logisch) van boven naar beneden uitgevoerd. Om berekeningen te kunnen doen met variabelen, moeten deze eerst gedefini\"eerd worden. Anders krijg je errors.
+Bij de vorige oefenopdracht moet je meerdere getallen aanpassen als je het tijdstip verandert. Maar veel handiger en sneller is het gebruik van {\it variabelen} in Python. Let op de volgorde waarin je de variabelen en de formule in je code opschrijft. Een script wordt (best logisch) van boven naar beneden uitgevoerd. Om berekeningen te kunnen doen met variabelen, moeten deze eerst gedefini\"eerd worden. Anders krijg je errors.
 
 \begin{python}
 a = 1
@@ -166,33 +163,28 @@ y = a*x**2 + b*x + c
 print(y)
 \end{python}
 
-Tip: Namen voor variabelen kun je zelf kiezen. De enige voorwaarden zijn dat de namen moeten beginnen met een letter, geen spatie of wiskundig teken (\pythoninline{+ * /} etc.) mogen bevatten, en niet gelijk mogen zijn aan woorden die in  Python al een betekenis hebben, zoals: \pythoninline{print}, \pythoninline{and}, \pythoninline{def}, \pythoninline{from}, \pythoninline{try}, etc.\footnote{Dus namen van  variabelen (en later ook van functies) beginnen met een letter, bevatten alleen A-Z, a-z, 0-9 en \_ en zijn hoofdlettergevoelig.} Kies voor een variabele altijd een naam die past bij de betekenis ervan in jouw script. Een naam met een ingebouwde betekenis in Python, zoals \pythoninline{print}, krijgt altijd automatisch een kleurtje, en dan weet je direct dat je dat maar beter niet kunt gebruiken.
+Tip: Namen voor variabelen kun je zelf kiezen. De enige voorwaarden zijn dat de namen moeten beginnen met een letter, en geen spatie of wiskundig teken mogen bevatten.\footnote{Dus namen van variabelen (en later ook van functies) beginnen met een letter, bevatten alleen A-Z, a-z, 0-9 en \_ en zijn hoofdlettergevoelig.} Kies voor een variabele altijd een naam die past bij de betekenis ervan in jouw script. Noem een lijst van temperaturen bijvoorbeeld \pythoninline{temp} of \pythoninline{temperatuur}.
 
 \subsubsection*{Oefenopdracht: Gebruik van variabelen} Bereken opnieuw de hoogte van de bal uit de vorige opdracht. Doe dit nu voor $t = 0,1,2,3, ... $ en geef een grove schatting hoe lang het duurt voordat de bal weer op de grond is. Nu maak je uiteraard gebruik van variabelen zoals hiervoor beschreven.
 
-\subsubsection{Naamgeving en commentaar}
-Gebruikelijk is om namen voor variabelen te kiezen volgens conventies, maar in ieder geval zodanig dat de betekenis ervan duidelijk is.
-Voor formules overgenomen uit de theorie is het handig om zoveel mogelijk dezelfde symbolen als in de formules te gebruiken. 
-Toch is het vaak voor een ander moeilijk te achterhalen waar symbolen voor staan als een script zonder kennis gelezen wordt. 
-Dit is \'e\'en van de rednene om in een script \textit{commentaar} toe te voegen. 
-Het meest eenvoudig is het om hiervoor de hashtag ($\#$) te gebruiken, want alle tekst op een regel na het hashtag ($\#$) wordt genegeerd bij het uitvoeren van een script. 
+\subsubsection{Commentaar}
+Vaak is het voor een buitenstaander een raadsel wat een variabele betekent als hij het script niet kent. 
+Dit is \'e\'en van de redenen om in een script \textit{commentaar} toe te voegen. 
+Het meest eenvoudig is het om hiervoor de hashtag te gebruiken, want alle tekst op een regel na \pythoninline{#} wordt genegeerd bij het runnen van een script. 
 
-Het script uit de vorige opdracht kan bijvoorbeeld op de volgende manier verduidelijkt worden:
+De oefenopdracht kan bijvoorbeeld op de volgende manier verduidelijkt worden:
 \begin{python}
-# abc-formule voor een parabool
-a = 1 # parameter 1, zie beschrijving in reader
-b = 2 # parameter 2
-c = 3 # parameter 3
-x = 1 # variabele
-y = a*x**2 + b*x + c # resultaat bij gegeven waarde van x 
+# hoogte softbal
+v0 = 25	   # beginsnelheid in m/s
+g  = 9.81  # zwaartekracht in m/s^2
+t  = 2	   # tijdstip berekening
+y = v0*t - g*t**2 # formule voor de hoogte
 print(y)
 \end{python}
 Als je in Spyder een nieuw Python script aanmaakt zie je direct nog een andere manier om commentaar te schrijven. Alle tekst tussen \verb,""", en de volgende \verb,""", is commentaar; deze manier van commentaar aangeven is handig voor grotere stukken tekst. 
 
 \subsubsection{Datatypen}
-In alle bovenstaande opdrachten zijn de variabelen getallen. Soms wordt een variabele ook wel een parameter genoemd. In Python zijn variabelen echter veel breder inzetbaar en eigenlijk \textit{objecten} die allerlei soorten informatie kunnen bevatten. Objecten kunnen verwijzen naar enkele getallen, naar lijsten van getallen, naar woorden, naar figuren, naar algoritmes, etc. 
-
-Vaak vereisen handelingen dat objecten van een bepaald type zijn om een Python script uit te voeren. De meest gebruikte types komen gedurende deze periode aan bod. 
+In alle bovenstaande opdrachten zijn de variabelen hele getallen. Daarnaast kun je gebruik maken van stukken tekst, kommagetallen of \pythoninline{True/False}. Dat zijn allemaal {\it datatypen}. Hieronder de meest gebruikte, met hun offici\"ele naam:
 
 \begin{description}
 \item[\textbf{int}] Gehele getallen: \pythoninline{3  300  20}
@@ -201,15 +193,15 @@ In Python (en andere programmeertalen) is {\bf int} het datatype dat gebruikt wo
 
 \item[\textbf{float}] Getallen met decimalen: \pythoninline{2.3  4.62  100.00}
 
-Het datatype voor decimale getallen is {\bf float}. Floats kunnen worden gedefinieerd door een getal toe te kennen met een decimale punt, zoals: \pythoninline{a = 1.5}.
+Het datatype voor decimale getallen is {\bf float}. Floats maak je door een getal met een decimale punt te maken, zoals: \pythoninline{a = 1.5}.
 
 \item[\textbf{bool}] Logische waarde: \pythoninline{True} of \pythoninline{False}
 
-Een {\bf boolean} type, dat we later in het hoofdstuk zullen tegenkomen, is een binair object dat twee waarden kan hebben, namelijk \pythoninline{True} of \pythoninline{False}. \pythoninline{True} is gelijk aan 1, en \pythoninline{False} is gelijk aan 0. \pythoninline{bool(1)} is dus gelijk aan \pythoninline{True}.
+Een {\bf boolean} type, dat we later in het hoofdstuk zullen tegenkomen, is een binair datatype dat twee waarden kan hebben: \pythoninline{True} of \pythoninline{False}. \pythoninline{True} is gelijk aan 1, en \pythoninline{False} is gelijk aan 0. \pythoninline{bool(1)} is dus gelijk aan \pythoninline{True}.
 
 \item[\textbf{str}] Geordende reeks karakters (tekst): \pythoninline{'hello'  'Sam'  "2019"}
 
-Een {\bf string} is het datatype voor tekst. Deze heb je ongemerkt gebruikt in de \pythoninline{'Hello world!'}, met \pythoninline{print()}. Om in Python een \pythoninline{string} \textit{object} te maken gebruik je namelijk aanhalingstekens, zowel enkele als dubbele apostrofs mogen gebruikt worden. \pythoninline{a = 'tekst'} als \pythoninline{a = "tekst"} zijn dus allebei toegestaan.
+Een {\bf string} is het datatype voor tekst. Deze heb je ongemerkt gebruikt in de \pythoninline{'Hello world!'}, met \pythoninline{print()}. Om in Python een \pythoninline{string} te maken gebruik je aanhalingstekens. \pythoninline{a = 'tekst'} en \pythoninline{a = "tekst"} zijn allebei toegestaan.
 
 \item[\textbf{list}] Geordende reeks objecten: \pythoninline{[10, "hello",200.3]}
 
@@ -217,24 +209,24 @@ Een \pythoninline{list} kan alle soorten datatypen bevatten, en die kun je ook l
 
 \end{description}
 
-Je zult sommige object typen vaker gebruiken dan andere, maar het is goed om te weten dat ze bestaan. Let op de verschillende soorten haakjes en tekens. Met \pythoninline{type(naam_variabele)} kun je achterhalen met welk type je te maken hebt. Dit staat ook in de variable explorer.
+Je kunt het datatype van een variabele altijd bekijken in de Variable Explorer, als dat nodig is.
 
 \subsection{Functies}
 Je script kun je automatiseren door variabelen en de handelingen die je vaak herhaalt, in een \textit{functie} te zetten (een functie te defini\"eren).
 
 \subsubsection{Eigengemaakte functies}
-Een functie is een Python \textit{object} dat aan de hand van input \'e\'en of meerdere handelingen kan doen.
+Een functie is een stukje tekst dat aan de hand van input \'e\'en of meerdere handelingen kan doen.
 
 Functies worden vaak gebruikt om te voorkomen dat blokken code meerdere keren in een script herhaald worden. 
 Hiermee zorg je ervoor dat, wanneer er een aanpassing gedaan moet worden, dit maar op \'e\'en plek hoeft te gebeuren. 
 Ook blijft je script overzichtelijk, ook al maak je hem steeds langer of complexer. 
 
-We gebruiken de formule $y(x) = a x^2+b x + c$ om de werking van \textit{functies} uit te leggen. In het script hieronder zie je een voorbeeld van een functie die de waarde van de formule berekent en de uitkomst print op het scherm met behulp van de functie \pythoninline{print()}.
+We gebruiken de formule $y = a x^2+b x + c$ om de werking van \textit{functies} uit te leggen. In het script hieronder zie je een voorbeeld van een functie die de waarde van de formule berekent en de uitkomst print op het scherm met behulp van de functie \pythoninline{print()}.
 
 \begin{python}
 def formule(a, b, c, x):
-    y = a*x**2 + b*x + c	 # bereken de formule
-    return y				 # geef de waarde terug
+    y = a*x**2 + b*x + c   # bereken de formule
+    return y               # geef de waarde terug
 
 i = 1
 j = 2
@@ -246,14 +238,14 @@ print(waarde)
 
 Een Python functie begin je met het woord \pythoninline{def} ('definition'), gevolgd door de naam van de \textit{functie}. Daarna volgen tussen ronde haakjes de variabelen die door de functie moeten worden gebruikt als input. De regel wordt afgesloten met een dubbele punt om aan te geven dat wat er op de volgende regels staat de echte inhoud is. 
 
-Daarna komt de code van de \textit{functie} zelf. Let op dat de regels code na het begin van de \pythoninline{def} niet helemaal links beginnen. Dit is belangrijk! De inspringing of \textit{indent} is onderdeel van de syntax van Python. Dit laat Python weten dat de tekst op die regel onderdeel is van de \textit{functie}. Zorg er dus voor dat alle code van de functie dezelfde indent heeft. Dit doe je door steeds een zelfde aantal tabs in te voeren aan het begin van de regel. De Spyder editor helpt je hierbij, want als je op Enter drukt komt deze indent er automatisch. Al moet je altijd even opletten. Wanneer de functie klaar is en je verder wilt gaan met de rest van een script, laat je de indent weg. Zo weet Python dat die regel niet bij de functie hoort.
+Daarna komt de code van de \textit{functie} zelf. Let op dat de regels code na het begin van de \pythoninline{def} niet helemaal links beginnen. Dit is belangrijk! De inspringing of \textit{indent} is onderdeel van de syntax van Python. Dit laat Python weten dat de tekst op die regel onderdeel is van de \textit{functie}. Spyder helpt je hierbij, want als je op Enter drukt komt deze indent er automatisch. Al moet je altijd even opletten. Wanneer de functie klaar is en je verder wilt gaan met de rest van een script, laat je de indent weg. Zo weet Python dat die regel niet bij de functie hoort.
 
-Om een functie te gebruiken typ je de naam van de functie met de waarden die je als input wilt gebruiken. Hierbij hoeven die variabelen niet dezelfde naam te hebben als de variabelen die je gebruikt hebt in de definitie van de functie. Het is de \textit{volgorde} van de variabelen die Python vertelt welke waarde waar moet worden gebruikt. 
+Om een functie te gebruiken typ je de naam van de functie, met de waarden die je als input wilt gebruiken. De \textit{volgorde} van de variabelen vertelt welke waarde waar moet worden gebruikt. 
 In bovenstaand voorbeeld krijgt parameter $a$ de waarde 1, want \pythoninline{i = 1}. Parameter $b$ krijgt de waarde 2, want \pythoninline{j = 2}.
 
-Na het overtypen (!) van en het uitvoeren van bovenstaand script is het een goed idee om eens te kijken in de \textbf{Variable explorer} in Spyder. Hier kun je zien welke variabelen er bestaan, wat het type is en welke waarde ze hebben. De variabele \verb, waarde, heeft als het goed is de waarde 6. Dit getal moet ook afgedrukt zijn in de console door \verb,print,.
+Kijk na het overtypen (!) en runnen van bovenstaand script in de \textbf{Variable explorer} in Spyder. Hier kun je zien welke variabelen er bestaan, wat het type is en welke waarde ze hebben. De variabele \verb, waarde, heeft als het goed is de waarde 6. Dit getal moet ook afgedrukt zijn in de console door \verb,print,.
 
-Een andere manier om waarden toe te kennen aan de variabelen binnen een functie is door duidelijk te maken welke variabele welke waarde krijgt. Dan maakt het niet meer uit in welke volgorde de variabelen een waarde krijgen toegekend. Bijv.
+Een andere manier om waarden toe te kennen aan de variabelen binnen een functie is door de goede namen mee te geven. Dan maakt het niet meer uit in welke volgorde de variabelen een waarde krijgen toegekend. Bijvoorbeeld:
 
 \begin{python}
 # we geven de variabelen mee op een andere volgorde
@@ -264,9 +256,7 @@ print('waarde = ', waarde)
 Je moet in dit geval niet alleen weten dat de functie \verb,formule, vier argumenten verwacht, maar ook wat de naam van die argumenten binnen de functiedefinitie is. Samenvattend:
 \begin{itemize}
 \item Je geeft de argumenten op als een getal: de waarde van $a$ als eerste, etc.
-Bij deze methode van aanroep maak je gebruik van \textit{positie of volgorde}.
-
-\item Ofwel, je specificeert de waarden die $a$, $b$, $c$ en $x$ binnen de functie krijgen en dan mag je elke volgorde aanhouden. Bij deze methode maak je gebruik van \textit{namen}.
+\item Of: je geeft specifiek de waarden van $a$, $b$, $c$ en $x$ aan en dan mag je elke volgorde aanhouden.
 \end{itemize}
 
 \subsubsection*{Oefenopdracht: Controleren van bovenstaande functie}
@@ -278,38 +268,22 @@ De eerste variabelen zijn globaal (in het hele script) bekend en hebben de getoo
 
 Waarden van lokale variabelen kun je hooguit weergeven door ze te printen binnen een functie, maar dat wordt al snel irritant als zo'n functie duizend keer wordt aangeroepen. 
 
-De manier om lokale variabelen binnen een functie daarbuiten bekend te maken is het gebruik van \pythoninline{return}. Hiermee geef je aan dat de waarde van een variabele moet worden `teruggegeven' aan de omgeving die de functie aanroept. In het voorbeeld hieronder geeft de functie \pythoninline{formule} de waarde van \pythoninline{y} terug. In het script stoppen we deze waarde in de variabele \pythoninline{waarde}, die daarna afgedrukt wordt.
-
-\begin{python}
-def formule(a,b,c,x):
-    y = a*x**2 + b*x + c
-    return y
-
-i = 1
-j = 2
-k = 3
-z = 1
-
-waarde = formule(i,j,k,z)
-print(waarde)
-\end{python}
-
-Wat er binnen een functie gebeurt heeft normaal gesproken dus geen invloed op de rest van je script. Dit is een reden om onderdelen van een groter project op te bouwen met gebruik van functies.
+Wat er binnen een functie gebeurt heeft normaal gesproken dus geen invloed op de rest van je script. Dit is een reden om onderdelen van een groter project op te bouwen uit functies.
 
 Waarden van globale variabelen kun je wel gebruiken binnen een functie. Maar je kunt niet binnen een functie de waarde van een globale variabele veranderen.
 
-Bij het gebruik van veel functies binnen een uitgebreid script is het al snel lastig om unieke korte namen voor variabelen binnen een functie te bedenken en kun je per ongeluk (of expres) meerdere keren dezelfde naam gebruiken. Dit zou er voor kunnen zorgen dat je script verkeerde resultaten oplevert. Noem je variabelen dus niet altijd zomaar \textit{a, b} en \textit{c}, maar geef ze een nuttigere naam waar mogelijk.
+Bij het gebruik van veel functies binnen een uitgebreid script is het al snel lastig om unieke korte namen voor variabelen binnen een functie te bedenken en kun je per ongeluk (of expres) meerdere keren dezelfde naam gebruiken. Dit zou er voor kunnen zorgen dat je script verkeerde resultaten oplevert. {\bf Noem je variabelen dus niet altijd zomaar \textit{a, b} en \textit{c}, maar geef ze een nuttigere naam waar mogelijk.}
 
 \subsection{Loops}
 %% While, if
 Binnen Python bestaan manieren om functies of handelingen automatisch en/of heel vaak uit te voeren. We behandelen hier de constructies \pythoninline{while} en \pythoninline{if}.
 
 \subsubsection{While}
-Een zogenaamde \pythoninline{while} loop kan gebruikt worden om een bepaald stuk code te herhalen zolang er aan een voorwaarde voldaan wordt. Voor het voorbeeld van de omhoog geslagen bal dat we eerder gebruikt hebben kunnen we de hoogte van de bal berekenen voor de eerste $T$ seconden. Hoe zo'n loop kan worden ge\"implementeerd is te zien in onderstaand voorbeeld.
+Een zogenaamde \pythoninline{while} loop gebruik je om een bepaald stuk code te herhalen zolang er aan een voorwaarde voldaan wordt. Voor het voorbeeld van de omhoog geslagen bal dat we eerder gebruikt hebben kunnen we de hoogte van de bal berekenen voor de eerste $T$ seconden. Hoe zo'n loop kan worden ge\"implementeerd is te zien in onderstaand voorbeeld.
 
 \begin{python}
 v0 = 25   # beginsnelheid
-g = 9.81  # gravitatieconstante
+g = 9.81  # zwaartekracht
 t = 0.    # begintijd
 dt = 0.25 # tijdstap
 
@@ -320,50 +294,38 @@ while t <= 5:
     t = t + dt
 \end{python}
 
-Net als eerder defini\"eren we de benodigde variabelen $v_0$ en $g$. Daarnaast maken we een variabele aan voor de tijd $t$ en kiezen we de grootte van de tijdstappen $dt$ die we willen maken voor $t$. Zolang (\textit{while}) $t \leq 5$ (we nemen aan dat dit secondes zijn)  wordt de hoogte $y$ berekend en worden zowel $t$ als $y$ geprint.
+Net als eerder defini\"eren we de benodigde variabelen $v_0$ en $g$. Daarnaast maken we een variabele aan voor de tijd $t$ en kiezen we de grootte van de tijdstappen $dt$ die we willen maken voor $t$. Zolang (\textit{while}) $t \leq 5$ wordt de hoogte $y$ berekend en worden $t$ en $y$ geprint.
 
-Zolang $t\le5$ wordt aan de conditie voldaan en is het resultaat van de conditie \pythoninline{True} en de code in de functie van de \pythoninline{while} wordt dan uitgevoerd.
+Zolang $t\le5$ wordt aan de conditie voldaan en wordt de code in de functie van de \pythoninline{while} uitgevoerd. Om door te gaan naar de volgende tijdstap tellen we een stukje tijd $dt$ op bij $t$. 
 
-Om door te gaan naar de volgende tijdstap tellen we een stukje tijd $dt$ op bij $t$. Hiermee wordt doorgegaan totdat de voorwaarde \pythoninline{t <= 5} niet meer klopt. 
-Net als bij het gebruik van \pythoninline{def} moeten de regels code binnen de \pythoninline{while} \textit{loop} beginnen met een \textit{indent} om aan te geven dat die regels onderdeel zijn van \'e\'en en dezelfde \textit{loop}.
+Net als bij het gebruik van \pythoninline{def} moeten de regels code binnen de \pythoninline{while} \textit{loop} beginnen met een \textit{indent} om aan te geven dat die regels onderdeel zijn van deze \textit{loop}.
 
-Een veelvoorkomende fout bij een \pythoninline{while} is dat de voorwaarde altijd \pythoninline{True} blijft, waardoor het script oneindig doorgaat. Dit gebeurt bijv. als je de regel \pythoninline{t = t + dt} vergeet, of verkeerd invoert (bijv. \pythoninline{t = t - dt}), of als je de regel wel goed overtypt maar de indent vergeet! Je kunt een script stoppen in Spyder door op de rode stop rechts boven in de Console te drukken. Als je een script schrijft wat mogelijk lang duurt en je weet niet zeker of het vastgelopen is of dat de computer lang aan het rekenen is kun je zorgen dat je script af en toe iets in de Console print. Als je dan af en toe een nieuwe output ziet verschijnen weet je dat het script nog bezig is. 
+Een veelvoorkomende fout bij een \pythoninline{while} is dat de voorwaarde altijd \pythoninline{True} blijft, waardoor het script oneindig doorgaat. Dit gebeurt bijv. als je de regel \pythoninline{t = t + dt} vergeet of verkeerd invoert, of als je de regel wel goed overtypt maar de indent vergeet! Je kunt een script stoppen in Spyder door op de rode knop rechts boven in de Console te drukken.
 
 \subsubsection{If}
-Een tweede soort constructie is de zogenaamde \textit{if - else} constructie. Aan de hand van een voorwaarde (\textit{conditie}) wordt een bepaald deel code wel of niet uitgevoerd. Een variant hierop is de \textit{if - else if - else} constructie, waarbij er meer dan 2 mogelijkheden voorkomen. In woorden ziet dat er zo uit:
+Een tweede soort constructie is de zogenaamde \textit{if - else} constructie. Aan de hand van een voorwaarde (\textit{conditie}) wordt een bepaald deel code wel of niet uitgevoerd. Een variant hierop is de \textit{if - else if - else} constructie, waarbij er meer dan 2 mogelijkheden voorkomen. 
 
-\begin{equation}
-\text{Je bekijkt het weer :} \left\{ \begin{matrix}\text{als het regent,} & \text{dan paraplu opsteken} \\ 
-											\text{als het sneeuwt,} & \text{dan sneeuwballengevecht} \\ 
-											\text{als het hagelt,} & \text{dan binnen blijven} \\
-											\text{anders,} & \text{dan zonnen op het strand}
-							  \end{matrix}\right.
-\end{equation}
-
-De vertaling van deze functie in Python kan goed worden gedaan door gebruik te maken van de \textit{if - else if} constructie. Merk op dat er hier ook gebruik moet worden gemaakt van \textit{indents}. In onderstaand voorbeeld staat deze constructie binnen de definitie van een \textit{functie} en heeft daarom al een \textit{indent}. Daarnaast moet de code die wordt uitgevoerd wanneer aan een conditie wordt voldaan ook een \textit{indent} hebben, net als bij de \pythoninline{while}. In dit geval is er dus een dubbele \textit{indent} nodig. In Python wordt \textit{else if} afgekort tot \pythoninline{elif}. 
+Let op: ook hier gebruik je \textit{indents}. In Python wordt \textit{else if} afgekort tot \pythoninline{elif}. 
 
 \begin{python}
-if regen:
-    # paraplu meenemen
-elif sneeuw:
-    # sneeuwballengevect
-elif hagel:
-    # binnen blijven
-else:
-    # zonnen op het strand
+if gewicht < 40:            # 0 - 39.99999999 kg
+    print("Ondergewicht!")
+elif gewicht < 80:          # 40 - 79.99999999 kg
+    print("Goed gewicht")
+else:                       # 80 kg en meer
+    print("Overgewicht!")
 \end{python}
 
-Uiteraard zul je deze constructie vaker gebruiken voor getallen: bijvoorbeeld bij een BMI-berekening. Als iemand minder dan \textit{X} aantal kilo weegt, print je `ondergewicht`, tussen \textit{X} en \textit{Y} print je `prima gewicht` en boven \textit{Y} kilo print je `overgewicht`. 
 
 \subsubsection*{Oefenopdracht: Gebruik van \pythoninline{if} en/of \pythoninline{while}} 
 
 \begin{itemize}
-\item Schrijf een eenvoudig Python-script dat om input vraagt. Gebruik hiertoe: \footnote{De functie \pythoninline{input()} geeft als resultaat een \pythoninline{str} (datatype string). Je kunt met \pythoninline{float()} of \pythoninline{int} een \pythoninline{float} of \pythoninline{int} van de input maken.}
+\item Schrijf een eenvoudig Python-script dat om input vraagt. Gebruik hiertoe: \footnote{De functie \pythoninline{input()} geeft als resultaat een \pythoninline{str} (datatype string). Je kunt met \pythoninline{float()} of \pythoninline{int()} een \pythoninline{float} of \pythoninline{int} van de input maken.}
 \begin{python}
-input("Geef een positief getal: ")
+invoer = input("Geef een positief getal: ")
 \end{python}
-Als het opgegeven getal inderdaad positief is wordt de wortel\footnote{Weet je niet hoe je de wortel van een getal moet uitrekenen in Python? Zoek het dan op! Niet in deze reader, maar op internet.} van dat getal geprint en wordt er om nog een getal gevraagd. Maak dus gebruik van een loop!
-Is het opgegeven getal negatief, dan wordt de wortel niet uitgerekend. Je print dan de tekst \verb."Dombo: Positief svp!". en vervolgens vraagt het script (heel beleefd) weer om een positief getal. Pas als je de waarde 0 opgeeft stopt de loop en dus het script.
+Input moet je invoeren in de console. Als het opgegeven getal inderdaad positief is wordt de wortel\footnote{Weet je niet hoe je de wortel van een getal moet uitrekenen in Python? Zoek het dan op! Niet in deze reader, maar op internet.} van dat getal geprint en wordt er om nog een getal gevraagd. 
+Is het opgegeven getal negatief, dan wordt de wortel niet uitgerekend. Je print dan de tekst \verb."Dombo: Positief svp!". en vervolgens vraagt het script (heel beleefd) weer om een positief getal. Maak dus gebruik van een loop! Pas als je de waarde 0 invoert stopt de loop en dus het script.
 \end{itemize}
 
 \subsubsection{Boolean expressions}
@@ -390,20 +352,19 @@ a > b or c < d
 \begin{itemize}
 \item Laat zien dat de tekst `abc' kleiner is dan de tekst `defg'.
 Met andere woorden: teksten kun je op een alfabetische manier ordenen.
-\item Maak vervolgens je eigen `exclusive or' functie `xor' die twee argumenten verwacht en die als resultaat \pythoninline{True} geeft als \'e\'en van de argumenten True is, en de ander False. In alle andere gevallen is de functiewaarde False. Test je functie door alle mogelijke combinaties uit te proberen. (Dat zijn er maar 4.)
+\item Neem het voorbeeld van de BMI over, een stukje terug. Voeg naast gewicht nog een voorwaarde toe: lengte. Je hebt alleen ondergewicht bij 40 kilo als je langer bent dan een bepaald aantal centimeter. Bedenk er zelf maar wat van, maar test je functie ook!
 \end{itemize}
 
 \subsubsection{For}
-Als je een operatie een exact aantal keer wilt uitvoeren kun je dit met een \pythoninline{while}- of \pythoninline{if}-loop doen waarin je een teller zet. Bijvoorbeeld:
+Als je een functie een exact aantal keer wilt uitvoeren kun je dit met een \pythoninline{while}- of \pythoninline{if}-loop doen waarin je een teller zet. Bijvoorbeeld:
 \begin{python}
 i=0
 while i < 5:
     print(i)
     i=i+1
 \end{python}
-Een andere manier om dit te doen is met een \pythoninline{for}-loop. Hierbij zit de `teller' automatisch ingebouwd: de loop wordt herhaald voor elk element in de voorwaarde. Elke \pythoninline{while}-loop is om te schrijven in een \pythoninline{for}-loop, maar soms \textit{voelt} de \'e\'en logischer, en is die ook makkelijker. Maar gebruik waar mogelijk een \pythoninline{for}-loop.
+Een handigere manier om dit te doen is met een \pythoninline{for}-loop. Hierbij zit de `teller' automatisch ingebouwd: de loop wordt herhaald voor elk element in de voorwaarde. Elke \pythoninline{while}-loop is om te schrijven in een \pythoninline{for}-loop, maar soms \textit{voelt} de \'e\'en logischer, en is die ook makkelijker. Maar gebruik waar mogelijk een \pythoninline{for}-loop. Dit voorbeeld is toch best wat korter en simpeler:
 
-Bovenstaande \pythoninline{while}-loop is om te schrijven in de volgende \pythoninline{for}-loop:
 \begin{python}
 for k in range(5):
     print(k)
@@ -413,8 +374,6 @@ for k in range(5):
 Voer het voorgaande stukje code uit. 
 
 \textbf{Vraag:} welke getallen zitten er verborgen in \pythoninline{range(5)}? En wat als je er \pythoninline{range(10)} van maakt?
-
-In hoofdstuk \ref{Ch_forloop} komen \pythoninline{for}-loops en hun toepassingen nog uitgebreider aan bod, dus wees niet bang als dit je nu een klein beetje te moeilijk lijkt.
 
 \subsection{Slotopdrachten}
 Voor alle opdrachten geldt dat je wordt aangemoedigd om op het internet te zoeken in de enorme hoeveelheid voorbeelden, tutorials, vragen en antwoorden over het gebruik van Python. Maak daar vooral gebruik van! Voor alle opdrachten geldt ook: maak je eigen script, sla dat op met het nodige commentaar zodat je het later misschien kunt hergebruiken of je medestudenten er blij mee kunt maken.

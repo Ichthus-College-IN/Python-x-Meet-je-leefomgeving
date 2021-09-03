@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  30 AUG 2021 16:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  3 SEP 2021 20:11
 entering extended mode
 **./Dictaat_Python.tex
 (Dictaat_Python.tex
@@ -644,7 +644,7 @@ ython.tocpdfTeX warning (ext4): destination with the same identifier (name{page
 .1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37 ...}Bestanden importeren}{28}{subsection.4.4}
+l.37 ...}Bestanden importeren}{26}{subsection.4.4}
                                                   % [1])
 \tf@toc=\write4
 \openout4 = `Dictaat_Python.toc'.
@@ -655,48 +655,48 @@ File: fig/github_languages.png Graphic file (type png)
 <use fig/github_languages.png>
 Package pdftex.def Info: fig/github_languages.png  used on input line 79.
 (pdftex.def)             Requested size: 455.24408pt x 295.24194pt.
- [3
 
- <./fig/github_languages.png>]
 (C:\Users\Steven\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.
 sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
+) [3
+
+ <./fig/github_languages.png>]
 <fig/spyder_screenshot.png, id=306, 1445.4pt x 785.18344pt>
 File: fig/spyder_screenshot.png Graphic file (type png)
 <use fig/spyder_screenshot.png>
-Package pdftex.def Info: fig/spyder_screenshot.png  used on input line 107.
+Package pdftex.def Info: fig/spyder_screenshot.png  used on input line 104.
 (pdftex.def)             Requested size: 455.24408pt x 247.29816pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] [5 <./fig/spyder_screenshot.png (PNG copy)>] [6] [7]
-Overfull \hbox (2.57858pt too wide) in paragraph at lines 212--213
+[4] [5 <./fig/spyder_screenshot.png (PNG copy)>] [6]
+Overfull \hbox (2.57858pt too wide) in paragraph at lines 204--205
 []\OT1/cmr/m/n/10.95 Een \OT1/cmr/bx/n/10.95 string \OT1/cmr/m/n/10.95 is het d
 a-ta-type voor tekst. Deze heb je on-ge-merkt ge-bruikt in de [][][][][][][][][
 ][][][][][]'!,
  []
 
-[8] [9] [10]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 316.
+[7] [8] [9]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 290.
 
 
 (C:\Users\Steven\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 316.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 290.
 
-[11] [12] [13] [14] [15
+[10] [11] [12] [13
 
 ]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 466.
- (code-inc/w2/np_vb1.py) [16] (code-inc/w2/np_vb2.py
-[17]) (code-inc/w2/np_vb3.py) [18] (code-inc/w2/np_vb4.py)
-(code-inc/w2/for_vb1.py [19]) [20] (code-inc/w3/plt_vb1.py)
-(code-inc/w3/plt_vb2.py [21
+nput line 425.
+ (code-inc/w2/np_vb1.py) [14] (code-inc/w2/np_vb2.py
+[15]) (code-inc/w2/np_vb3.py) [16] (code-inc/w2/np_vb4.py)
+(code-inc/w2/for_vb1.py [17]) [18] (code-inc/w3/plt_vb1.py)
+(code-inc/w3/plt_vb2.py [19
 
 ]) (code-inc/w3/plt_vb5.py
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
@@ -707,46 +707,46 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
 
-[22]) (code-inc/w3/plt_vb3.py [23]) (code-inc/w3/plt_vb4.py) [24]
-(code-inc/w4/export_vb1.py) [25
+[20]) (code-inc/w3/plt_vb3.py [21]) (code-inc/w3/plt_vb4.py) [22]
+(code-inc/w4/export_vb1.py) [23
 
 ] (code-inc/w4/export_vb2.py)
-(code-inc/w4/forloop_vb1.py) [26] [27] [28] (code-inc/w4/genfromtxt_vb1.py)
-[29] [30] [31
+(code-inc/w4/forloop_vb1.py) [24] [25] [26] (code-inc/w4/genfromtxt_vb1.py)
+[27] [28] [29
 
-] (code-inc/w5/voorbeeld5_2.py [32]) (code-inc/w5/voorbeeld5_3.py) [33] [34] [3
-5
+] (code-inc/w5/voorbeeld5_2.py [30]) (code-inc/w5/voorbeeld5_3.py) [31] [32] [3
+3
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1169.
+(hyperref)                removing `math shift' on input line 1128.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1169.
+(hyperref)                removing `subscript' on input line 1128.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1169.
+(hyperref)                removing `math shift' on input line 1128.
 
-[36] [37]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1225.
- [38]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1225.
+[34] [35]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1184.
+ [36]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1184.
  (Dictaat_Python.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1225.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1184.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1184.
 
 Package rerunfilecheck Info: File `Dictaat_Python.out' has not changed.
-(rerunfilecheck)             Checksum: A359D82F6394B40A4F22048FD5428A51;3893.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1225.
+(rerunfilecheck)             Checksum: E4AF1F5D310E304E1CAD6129ECEAF83C;3879.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1184.
  ) 
 Here is how much of TeX's memory you used:
- 10410 strings out of 492975
- 154362 string characters out of 3125199
- 450730 words of memory out of 3000000
- 13412 multiletter control sequences out of 15000+600000
+ 10387 strings out of 492975
+ 154067 string characters out of 3125199
+ 452032 words of memory out of 3000000
+ 13406 multiletter control sequences out of 15000+600000
  14789 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,16n,43p,1240b,2047s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -758,28 +758,27 @@ s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Steven/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users
 /Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc1
 0.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmex10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Steven/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Steven/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Us
-ers/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-6.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr8.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Steven/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Steven/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/User
+fonts/cm/cmmi10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Steven/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Steven/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/User
+s/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsl10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Steven/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Steven/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/User
 s/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmti12.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Steven/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/Steven/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dictaat_Python.pdf (39 pages, 742679 bytes).
+2.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmtt10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/Steven/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on Dictaat_Python.pdf (37 pages, 724711 bytes).
 PDF statistics:
- 1195 PDF objects out of 1200 (max. 8388607)
- 592 named destinations out of 1000 (max. 500000)
+ 1163 PDF objects out of 1200 (max. 8388607)
+ 575 named destinations out of 1000 (max. 500000)
  443 words of extra memory for PDF output out of 10000 (max. 10000000)
 
