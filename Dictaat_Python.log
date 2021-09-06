@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  3 SEP 2021 20:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  6 SEP 2021 20:19
 entering extended mode
 **./Dictaat_Python.tex
 (Dictaat_Python.tex
@@ -644,7 +644,7 @@ ython.tocpdfTeX warning (ext4): destination with the same identifier (name{page
 .1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37 ...}Bestanden importeren}{26}{subsection.4.4}
+l.37 ...}Bestanden importeren}{25}{subsection.4.3}
                                                   % [1])
 \tf@toc=\write4
 \openout4 = `Dictaat_Python.toc'.
@@ -688,14 +688,14 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 290.
 
-[10] [11] [12] [13
-
-]
+[10] [11] [12]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 425.
- (code-inc/w2/np_vb1.py) [14] (code-inc/w2/np_vb2.py
-[15]) (code-inc/w2/np_vb3.py) [16] (code-inc/w2/np_vb4.py)
-(code-inc/w2/for_vb1.py [17]) [18] (code-inc/w3/plt_vb1.py)
+nput line 416.
+ (code-inc/w2/np_vb1.py [13
+
+]) (code-inc/w2/np_vb2.py [14])
+(code-inc/w2/np_vb3.py [15]) (code-inc/w2/np_vb4.py) [16]
+(code-inc/w2/for_vb1.py) [17] [18] (code-inc/w3/plt_vb1.py)
 (code-inc/w3/plt_vb2.py [19
 
 ]) (code-inc/w3/plt_vb5.py
@@ -707,46 +707,45 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
 
-[20]) (code-inc/w3/plt_vb3.py [21]) (code-inc/w3/plt_vb4.py) [22]
+[20]) (code-inc/w3/plt_vb3.py) (code-inc/w3/plt_vb4.py [21]) [22]
 (code-inc/w4/export_vb1.py) [23
 
-] (code-inc/w4/export_vb2.py)
-(code-inc/w4/forloop_vb1.py) [24] [25] [26] (code-inc/w4/genfromtxt_vb1.py)
-[27] [28] [29
+] (code-inc/w4/export_vb2.py) [24] [25]
+(code-inc/w4/genfromtxt_vb1.py) [26] [27] [28
 
-] (code-inc/w5/voorbeeld5_2.py [30]) (code-inc/w5/voorbeeld5_3.py) [31] [32] [3
-3
+] (code-inc/w5/voorbeeld5_2.py
+[29]) (code-inc/w5/voorbeeld5_3.py) [30] [31] [32
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1128.
+(hyperref)                removing `math shift' on input line 1119.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1128.
+(hyperref)                removing `subscript' on input line 1119.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1128.
+(hyperref)                removing `math shift' on input line 1119.
 
-[34] [35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1184.
- [36]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1184.
+[33] [34]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1175.
+ [35]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1175.
  (Dictaat_Python.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1184.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1184.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1175.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1175.
 
 Package rerunfilecheck Info: File `Dictaat_Python.out' has not changed.
-(rerunfilecheck)             Checksum: E4AF1F5D310E304E1CAD6129ECEAF83C;3879.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1184.
+(rerunfilecheck)             Checksum: 518BB0770370D499FFB81B64DD2EC59D;3877.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1175.
  ) 
 Here is how much of TeX's memory you used:
- 10387 strings out of 492975
- 154067 string characters out of 3125199
- 452032 words of memory out of 3000000
- 13406 multiletter control sequences out of 15000+600000
+ 10345 strings out of 492975
+ 153435 string characters out of 3125199
+ 456992 words of memory out of 3000000
+ 13387 multiletter control sequences out of 15000+600000
  14789 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,16n,43p,1240b,2047s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -776,9 +775,9 @@ fonts/cm/cmtt10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/Steven/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dictaat_Python.pdf (37 pages, 724711 bytes).
+Output written on Dictaat_Python.pdf (36 pages, 713508 bytes).
 PDF statistics:
- 1163 PDF objects out of 1200 (max. 8388607)
- 575 named destinations out of 1000 (max. 500000)
+ 1132 PDF objects out of 1200 (max. 8388607)
+ 555 named destinations out of 1000 (max. 500000)
  443 words of extra memory for PDF output out of 10000 (max. 10000000)
 

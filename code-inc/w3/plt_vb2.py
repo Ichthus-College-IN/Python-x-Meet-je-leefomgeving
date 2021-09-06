@@ -1,13 +1,11 @@
 ## Hieronder een verzameling van kleuren
-# b: blauw                           # m: magenta
-# g: groen                           # y: geel
-# r: rood                            # k: zwart
-# c: cyaan                           # w: wit
+# b: blauw         # m: magenta      # c: cyaan
+# g: groen         # y: geel         # w: wit
+# r: rood          # k: zwart
 
 ## Het is ook mogelijk om de stijl te varieren. Enkele voorbeelden zijn:
-# .:  punten                         # -.: stip-punt lijn
-# o:  grote punten                   # : : stippellijn
-# -:  lijn                           # --: gestreepte lijn
+#--: gestreepte lijn                 # .: punten
+# o:  grote punten                   # -:  lijn
 
 ## Alle opties kunnen aan plt.plot() worden toegevoegd.
 ## Het voorbeeld hieronder produceert een plaatje met lijn en punten.

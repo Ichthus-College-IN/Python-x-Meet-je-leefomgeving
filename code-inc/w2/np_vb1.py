@@ -10,11 +10,6 @@ enen     = np.ones(6)              # Array gevuld met 6 enen   (float)
 random   = np.random.rand(6)       # Array gevuld met 6 random getallen
                                    # tussen de 0 en 1
 
-# Om arrays met hele getallen te maken ...
-# moet je dat specifiek aangeven met 'dtype=int'
-nullen_i = np.zeros(6,dtype=int)   # Array gevuld met 6 nullen (int)
-enen_i   = np.ones(6,dtype=int)    # Array gevuld met 6 enen   (int)
-
 # Om een array te maken met allemaal stapjes tussen twee waarden (grid)
 # kunnen deze functies gebruikt worden:
 grid1 = np.arange(0.,5.,0.25)      # 0 TOT 5 met stapjes van 0.25

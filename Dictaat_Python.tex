@@ -393,32 +393,23 @@ Doe dit in eerste instantie echt helemaal zelf! Pas als het niet lukt, maar ook 
 \renewcommand{\ditwc}{Modules (1): NumPy}
 \section[Modules (1): NumPy]{\ditwc}
 % Week 2
-In dit hoofdstuk kijken we naar een essentieel onderdeel van het programmeren in Python: het gebruik van {\it modules}. Modules bevatten functionaliteit die niet in Python zelf zit maar apart toegevoegd moet worden. Oorspronkelijk kon je met Python niet veel meer dan strings (stukken tekst) bewerken. De twee modules \pythoninline{numpy} en \pythoninline{matplotlib} zijn cruciaal voor het doen van databewerking in de meer algemene zin. In dit hoofdstuk behandelen we \pythoninline{numpy}, in het volgende \pythoninline{matplotlib}.
+In dit hoofdstuk kijken we naar een essentieel onderdeel van het programmeren in Python: het gebruik van {\it modules}. Modules bevatten functionaliteit die niet in Python zelf zit maar apart toegevoegd moet worden. Oorspronkelijk kon je met Python niet veel meer dan stukken tekst bewerken. In dit hoofdstuk behandelen we \pythoninline{numpy}, dat het makkelijk maakt om met getallen en data te werken.
 
-Numpy, een afkorting voor {\it numeric python}, is zoals de naam een beetje verraadt, erg goed in numerieke berekeningen, oftewel alles wat met alleen getallen te maken heeft. Het is snel, heeft handige functies en vooral h\'e\'el v\'e\'el functies. Teveel om allemaal in dit hoofdstuk te behandelen; we kijken hier vooral naar de dingen die relevant zijn voor deze periode. Maar als je meer wilt, kun je altijd terecht op Google. Het gebruik van andere functies dan in het dictaat staan is zeker toegestaan en zelfs wenselijk: als je zelf iets wil maken later in Python is er geen dictaat om jou te helpen, maar Google is er wel.
-
-Het importeren van een module gebeurt (gewoonlijk op de eerste regel(s) van je script) met het commando \pythoninline{import}. Het is gebruikelijk om \pythoninline{numpy} af te korten tot \pythoninline{np}; dat typt sneller. Dat ziet er in de praktijk zo uit: 
+Het importeren van een module gebeurt (gewoonlijk op de eerste regel(s) van je script) met het commando \pythoninline{import}. Het is gebruikelijk om \pythoninline{numpy} af te korten tot \pythoninline{np}. Dat ziet er in de praktijk zo uit: 
 \begin{python}
 import numpy as np
 \end{python}
-Op deze manier wordt \pythoninline{numpy} ge\"importeerd onder de gebruikelijke afkorting \pythoninline{np}. Vanaf dit punt wordt naar \pythoninline{numpy} verwezen als \pythoninline{np}. Om functies uit een module te gebruiken wordt de afkorting van de module als prefix (voorvoegsel) gebruikt, gevolgd door een punt, en dan het commando(= de naam van de functie) uit de module. \\
-Bijvoorbeeld: \pythoninline{np.mean(X) # berekent het gemiddelde van X}.
+Vanaf dit punt wordt naar \pythoninline{numpy} verwezen als \pythoninline{np}. Om functies uit een module te gebruiken wordt de afkorting van de module als voorvoegsel gebruikt, gevolgd door een punt, en dan het commando(= de naam van de functie) uit de module.\\
+Bijvoorbeeld: \pythoninline{np.sin(X) # berekent de sinus van X}.
 
 \subsection{Arrays maken}
-Een {\it array} (Nederlands: reeks) is een verzameling van getallen. In Python kun je die maken als een lijst (zie hoofdstuk 1.3.3), maar een lijst is in de praktijk heel erg onhandig. In plaats van een lijst gebruiken we veel liever een numpy array. Hier kan maar \'e\'en datatype tegelijkertijd in voorkomen: \pythoninline{ints} of \pythoninline{floats}\footnote{Het is mogelijk om verschillende datatypes in \'e\'en numpy-array te zetten, maar dat is in de praktijk nog vervelender dan een Python list.}.
+Een {\it array} (Nederlands: reeks) is een verzameling van getallen. In Python kun je die maken als een lijst (zie hoofdstuk 1.3.3), maar een lijst is in de praktijk heel erg onhandig. In plaats van een lijst gebruiken we veel liever een numpy array. Hier kan maar \'e\'en datatype tegelijkertijd in voorkomen: \pythoninline{ints} of \pythoninline{floats}.
 
 De duidelijkste manier om een array te maken is met de functie \pythoninline{np.array()}. Als je de getallen van de dobbelsteen in een array wilt zetten, doe je dat bijvoorbeeld zo:
 \begin{python}
 getallen_array = np.array([1,2,3,4,5,6]) 
 # let op de extra blokhaken [] tussen de ronde haken ()
 \end{python}
-
-Je kunt ook een Python list omzetten in een Numpy array:
-\begin{python}
-getallen_lijst = [1,2,3,4,5,6]
-getallen_array = np.array(getallen_lijst) 
-\end{python}
-Kijk eens goed: als je de lijst van getallen invult in \pythoninline{np.array()}, zie je ook direct dat de blokhaken uit het eerste voorbeeld 'nodig' zijn. Stiekem vul je dus een Python list in in de functie \pythoninline{np.array()}.
 
 Handmatig alle getallen invullen is iets waar je als programmeur niet op zit te wachten. Als het ook maar een klein beetje kan, doen we dat het liefst automatisch. In het codeblok hieronder staan een aantal manieren om automatisch arrays aan te maken.
 
@@ -449,7 +440,7 @@ print("d: ", d)
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
-	\item[b)] Schrijf een script dat een array maakt met de gehele getallen tot en met 10, beginnend bij 1. Natuurlijk geef je dat array een naam. Bereken met behulp van dit array $k^k$ voor $1\leq k \leq 10$ en laat het resultaat op het scherm laat zien met het \pythoninline{print()} commando. Bekijk en controleer de resultaten. Valt je iets op?\footnote{Als je dit met \pythoninline{np.arange()} gedaan hebt worden de elementen in je array opgeslagen als 32-bit integers. Dat betekent dat er 32 \'e\'enen of nullen worden gebruikt om het getal binair op te slaan. Het hoogste getal wat in 32 bits past is $2^{32}-1$, en dat is kleiner dan $10^{10}$. Om ook het laatste element in deze reeks goed te krijgen moet je dus meer bits gebruiken; je kunt dit doen door \pythoninline{dtype=np.int64} toe te voegen bij het maken van je numpy array.}
+	\item[b)] Schrijf een script dat een array maakt met de gehele getallen tot en met 10, beginnend bij 1. Natuurlijk geef je dat array een naam. Bereken met behulp van dit array $k^k$ voor $1\leq k \leq 10$ en laat het resultaat op het scherm laat zien met het \pythoninline{print()} commando. Bekijk en controleer de resultaten. Valt je iets op?\footnote{Als er iets niet klopt, geef het aan bij de docent! Die legt het wel uit :)}
 \end{itemize}
 
 \subsection{Indexing en slicing}
@@ -463,7 +454,7 @@ Let dus goed op het verschil tussen de laatste twee handelingen: \pythoninline{k
 \begin{itemize}
 	\item[c)] Vraag: wat is de waarde van \pythoninline{test_array[1]}? Let goed op!
 	
-	Een computer begint bij nul te tellen. Dat betekent dat het eerste getal, wat bij ons altijd plek 1 krijgt (bijvoorbeeld vers 1 van een hoofdstuk in de Bijbel of een psalm), voor de computer op plek 0 staat. En het vijfde getal in een reeks, staat voor de computer op plek 4.
+	Een computer begint bij nul te tellen. Dat betekent dat het eerste getal, wat bij ons altijd plek 1 krijgt (bijvoorbeeld vers 1 van een hoofdstuk in de Bijbel), voor de computer op plek 0 staat. En het vijfde getal in een reeks staat voor de computer op plek 4.
 	
 	\item[d)] Neem de laatste regel (en het bijbehorende \pythoninline{test_array}) over van bovenstaand voorbeeld. Print eerst de laatste getallen van beide arrays (\pythoninline{test_array} en \pythoninline{same_arr}). Voeg vervolgens daaronder deze regel toe: \pythoninline{test_array *= 10}. Daarmee vermenigvuldig je het \pythoninline{test_array} met 10. Print weer beide getallen. Zet daaronder deze regel: \pythoninline{test_array = test_array / 5}, en print weer beide getallen. Wat is het verschil? Vraag het als je het niet snapt!
 \end{itemize}
@@ -475,13 +466,17 @@ Numpy arrays hebben een aantal ingebouwde functies, om bijvoorbeeld het gemiddel
 
 Let op de laatste regel: dit is eigenlijk iets meer werk, maar over het algemeen veel veiliger! Als je bijvoorbeeld de mediaan van een array uit wilt rekenen, kun je {\it niet} gebruik maken van \pythoninline{test_array.median()}, maar moet je de andere methode gebruiken: \pythoninline{np.median(test_array)}.
 
-In sommige gevallen wil je een lijst getallen ook filteren. Je bent bijvoorbeeld geïnteresseerd in alle leeftijden boven de 18 jaar, of alle mensen in de bovenbouw (leerjaar 4, 5 of 6). Het is hiervoor mogelijk om bij het ophalen van elementen een voorwaarde op te geven, aan de hand van een {\it masker}. Vervolgens kun je met zo'n {\it masker} specifieke elementen bijvoorbeeld wijzigen of weggooien. De werking van zo'n masker wordt uitgelegd aan de hand van het onderstaande voorbeeld\footnote{In de .pdf zie je dat diverse Python woorden blauw gekleurd zijn; ook als er in een stukje tekst toevallig een Python woord staat, zoals in masker. Een klein foutje waar ik helaas niet veel aan kan doen.}. Alle plekken in de array die voldoen aan die voorwaarde, geven de waarde \pythoninline{True}, alle anderen geven \pythoninline{False}. Een masker pas je vervolgens toe met de blokhaken \pythoninline{[ ]}.
+\subsection{Maskers}
+In sommige gevallen wil je een lijst getallen ook filteren. Je bent bijvoorbeeld geïnteresseerd in alle leeftijden boven de 18 jaar, of alle leerlingen in de bovenbouw. Dit kan aan de hand van een {\it masker}. De werking van zo'n masker wordt uitgelegd aan de hand van het onderstaande voorbeeld
+\footnote{In de .pdf zie je dat diverse Python woorden blauw gekleurd zijn; ook als er in een stukje tekst toevallig een Python woord staat, zoals in masker. Een klein foutje waar ik helaas niet veel aan kan doen.}.
+Een masker maak je door een voorwaarde op te geven bij een variabele. Alle plekken in de array die voldoen aan die voorwaarde, geven de waarde \pythoninline{True}, alle anderen geven \pythoninline{False}. Een masker pas je vervolgens toe met de blokhaken \pythoninline{[ ]}.
 
 \pythonexternal{code-inc/w2/np_vb4.py}
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
 	\item[e)] Bereken het gemiddelde van het $k^k$-array van oefenopgave b).
+	\item[f)] Selecteer met behulp van een masker alle oneven getallen uit \pythoninline{test_array} van bovenstaand voorbeeld.
 \end{itemize}
 
 \iffalse
@@ -514,7 +509,6 @@ Neem dit script over en kijk goed naar de dimensies. Print de arrays, of bekijk 
 \fi
 
 \subsection{For-loops}
-
 De structuur van een \pythoninline{for}-loop is altijd:
 \begin{python}
 for element in data:
@@ -530,7 +524,7 @@ Tijdens de corona pandemie hebben we eindeloos veel grafiekjes gezien van het aa
 In deze slotopdracht maak je zelf een voortschrijdend gemiddelde.
 
 \begin{itemize}
-	\item Maak een array van 50 random getallen tussen de 0 en 1 (zoek hiervoor in het begin van het hoofdstuk).
+	\item Maak een array van 50 random getallen tussen de 0 en 1 (zoek hiervoor in het hoofdstuk).
 	\item Maak een variabele genaamd \pythoninline{periode}, met de waarde 7. Dit is het aantal dagen waarover we het gemiddelde gaan berekenen.
 	\item Start vervolgens een \pythoninline{for}-loop toe. Deze gaat lopen van de dag n\'a de periode, tot en met de laatste waarde van je array.
 	\item Bereken per element in de \pythoninline{for}-loop het gemiddelde van de afgelopen 'periode' dagen. Voeg dit gemiddelde toe aan een array met de voortschrijdende gemiddeldes.
@@ -552,7 +546,7 @@ Hieronder een voorbeeld om een sinus in beeld te brengen.
 
 \subsubsection*{Oefenopdracht}
 \begin{itemize}
-	\item[a)] Imiteer het bovenstaande voorbeeld. Verander het aantal elementen in \pythoninline{x}. Wat gebeurt er als het aantal elementen in de lijst klein is? 
+	\item[a)] Imiteer het bovenstaande voorbeeld. Verander het aantal elementen in \pythoninline{x}. Wat gebeurt er als het aantal elementen in de lijst klein is? (bijvoorbeeld 10)
 
 	\item[b)] Voeg een cosinus toe door een \pythoninline{y2} te defini\"eren en een extra \pythoninline{plt.plot()} toe te voegen. 
 
@@ -560,7 +554,7 @@ Hieronder een voorbeeld om een sinus in beeld te brengen.
 \end{itemize}
 
 \subsection{Lijnen opmaken}
-Wanneer twee grafieken in \'e\'en figuur getekend worden, zoals hiervoor het geval was, geeft \pythoninline{pyplot} automatisch de tweede plot een andere kleur. Om zelf kleur en stijl in te stellen is het mogelijk om een aantal commando's toe te voegen aan \pythoninline{plt.plot()}.
+Wanneer twee grafieken in \'e\'en figuur getekend worden, zoals hiervoor, geeft \pythoninline{plt} automatisch de tweede lijn een andere kleur. Om zelf kleur en stijl in te stellen is het mogelijk om een aantal commando's toe te voegen aan \pythoninline{plt.plot()}.
 
 \pythonexternal{code-inc/w3/plt_vb2.py}
 
@@ -582,15 +576,13 @@ Een grafiek zonder tekst is (bijna) helemaal nutteloos. Zien we de windsnelheid,
 \begin{itemize}
 	\item[g)] De lijn in het plaatje van het voorbeeld toont gaten aan de linker- en rechterkant. Pas met \pythoninline{plt.xlim(x_min,x_max)}  het bereik van de $x$-as aan. Maak het bereik van de $x$-as $1981$ tot $2021$. Je kunt het bereik op de $y$-as ook op dezelfde manier aanpassen. Zet het bereik van de $y$-as van $30$ tot en met $50$.
 	
-	\item[h)] Probeer ook eens een titel toe te voegen met \pythoninline{plt.title()}. Wat is het verschil met \pythoninline{plt.suptitle()}?
+	\item[h)] In het plaatje van c) (wat een cirkel zou moeten tonen) is de verhouding van $x$- en $y$-as niet ingesteld. Zet de aspectratio (verhouding) op 1 met \pythoninline{plt.axes().set_aspect('equal')}. In plaats van \pythoninline{'equal'} kun je ook \pythoninline{1} invullen (verhouding 1:1).
 	
-	\item[i)] In het plaatje van c) (wat een cirkel zou moeten tonen) is de verhouding van $x$- en $y$-as niet ingesteld. Zet de aspectratio (verhouding) op 1 met \pythoninline{plt.axes().set_aspect('equal')}. In plaats van \pythoninline{'equal'} kun je ook \pythoninline{1} invullen (verhouding 1:1).
-	
-	\item[j)] Maak de volgende plot: kies $t$ van $0$ tot $2\pi$. Laat $x = 16 \sin^3(t)$ en $y = 13 \cos(t) - 5 \cos(2t) - 2 \cos(3t) - \cos(4t)$. Zorg voor een goede verhouding tussen de assen.
+	\item[i)] Maak de volgende plot: kies $t$ van $0$ tot $2\pi$. Laat $x = 16 \sin^3(t)$ en $y = 13 \cos(t) - 5 \cos(2t) - 2 \cos(3t) - \cos(4t)$. Zorg voor een goede verhouding tussen de assen.
 \end{itemize}
 
 \subsection{Meer grafieken in \'e\'en figuur}
-Soms is het fijn om twee plots boven elkaar of naast elkaar te laten zien, eventueel zodat ze de x- of y-as delen voor het overzicht (ze hebben dan hetzelfde bereik). Om meerdere plots tegelijk te laten zien kan de functie \pythoninline{plt.subplots()} gebruikt worden. \pythoninline{plt.subplots()} maakt een object dat de hele figuur beschrijft en voor elke grafiek in de figuur (subplot) een apart object, waarop met \pythoninline{axN.plot()} en gelijke functies figuren getekend kunnen worden. Hier is de naam \pythoninline{ax} niet verplicht, maar heel veel voorbeelden op internet werken met deze naam, dus doen we dat hier ook.
+Soms is het fijn om twee plots boven elkaar of naast elkaar te laten zien, eventueel zodat ze de x- of y-as delen voor het overzicht (ze hebben dan hetzelfde bereik). Om meerdere plots tegelijk te laten zien kan de functie \pythoninline{plt.subplots()} gebruikt worden. \pythoninline{plt.subplots()} maakt van elk figuur (subplot) een apart object, waarop je met \pythoninline{axN.plot()} en gelijke functies figuren kunt plotten. Hier is de naam \pythoninline{ax} niet verplicht, maar heel veel voorbeelden op internet werken met deze naam, dus doen we dat hier ook.
 
 \pythonexternal{code-inc/w3/plt_vb3.py}
 
@@ -602,7 +594,7 @@ Merk op dat gebruik wordt gemaakt van een 2-bij-2 array om de informatie voor de
 
 \subsubsection*{Oefenopdracht (vervolg)}
 \begin{itemize}
-	\item[k)] Maak een figuur met twee subplots: plot in de ene een sinus, en in de andere een cosinus. Kies de x-as tussen 0 en $2\pi$ met behulp van \pythoninline{axN.xlim(x_min, x_max)}. Voeg in allebei de plots de legenda toe. HINT: vervang \pythoninline{plt} nu door \pythoninline{ax1} en \pythoninline{ax2}.
+	\item[j)] Maak een figuur met twee subplots: plot in de ene een sinus, en in de andere een cosinus. Kies de x-as tussen 0 en $2\pi$ met behulp van \pythoninline{axN.xlim(x_min, x_max)}. Voeg in allebei de plots de legenda toe. HINT: vervang \pythoninline{plt} nu door \pythoninline{ax1} en \pythoninline{ax2}.
 \end{itemize}
 
 \subsection{Slotopdracht: Heel veel plotjes}
@@ -617,16 +609,16 @@ De plots moeten er als volgt uit zien: voor elke plot is het bereik voor $x$ gel
 Voor het verwerken van data ben je eigenlijk altijd afhankelijk van losse bestanden die alle gegevens bevatten. Niemand gaat voor de lol duizenden getalletjes met de hand invoeren: dan kun je net zo goed Excel gebruiken. Ook wil je graag je gemaakte figuren en resultaten opslaan om ergens in te voegen: anders kun je net zo goed maar wat met de hand tekenen of berekenen. Maar daar doen we het niet voor: we gaan handelingen automatiseren door bestanden te \textit{importeren}, en vervolgens resultaten te \textit{exporteren}. Dat gaan we dit hoofdstuk behandelen.
 
 \subsection{Afbeeldingen exporteren}
-In het vorige hoofdstuk heb je al geleerd om plaatjes te maken. Figuren worden standaard alleen getoond binnen Spyder, en kunnen niet direct gebruikt worden in een verslag, artikel of rapport. Daarvoor moet je de afbeelding eerst opslaan. Hiervoor kan je gebruik maken van \pythoninline{plt.savefig()}.
+In het vorige hoofdstuk heb je al geleerd om plaatjes te maken. Figuren staan normaal gesproken alleen in Spyder, en kunnen niet direct gebruikt worden in een verslag, artikel of rapport. Daarvoor moet je de afbeelding eerst opslaan. Hiervoor kan je gebruik maken van \pythoninline{plt.savefig()}.
 
-De belangrijkste opties die aan deze functie moeten worden meegegeven zijn de naam van de afbeelding en de resolutie. De standaard locatie waar de afbeelding wordt opgeslagen is de map waar het script is opgeslagen. 
+De belangrijkste opties die je aan deze functie kunt meegegeven zijn de naam van de afbeelding en de resolutie. De standaard locatie waar de afbeelding wordt opgeslagen is de map waar het script is opgeslagen. 
 
 Als bestandstype kan er worden gekozen voor \verb.jpg., \verb.png. en  \verb.pdf.. 
 De resolutie van deze afbeeldingen wordt gespecificeerd in \textit{dots-per-inch}  (\verb,dpi,).
 Afbeeldingen van het type .jpg en .png kun je niet zo ver inzoomen, omdat op een gegeven moment de pixels zichtbaar worden. 
-Afbeeldingen van het type .pdf zijn opgebouwd uit formules zoals punten, lijnen en/of krommen. Ook gewone letters hebben zo'n structuur. Daardoor kun je deze zogenaamde \textit{vectorafbeeldingen} zo ver inzoomen als je zou willen zonder dat het onscherp wordt.
+Afbeeldingen van het type .pdf zijn opgebouwd uit formules zoals punten, lijnen en/of krommen. Ook gewone letters hebben zo'n structuur. Daardoor kun je zo ver inzoomen als je zou willen zonder dat het onscherp wordt.
 
-Met behulp van \pythoninline{plt.figure(figsize=[breedte, lengte])} kun je instellen hoe groot je plaatje is, en welke verhoudingen hij heeft. Dit heeft ook effect op de bestandsgrootte van je afbeelding: hoe groter de breedte en lengte, hoe groter het bestand.
+Met behulp van \pythoninline{plt.figure(figsize=[breedte, lengte])} kun je instellen hoe groot je plaatje is, en welke verhoudingen hij heeft. Hoe groter de breedte en lengte, hoe groter het bestand.
 
 \pythonexternal{code-inc/w4/export_vb1.py}
 
@@ -635,18 +627,20 @@ Met behulp van \pythoninline{plt.figure(figsize=[breedte, lengte])} kun je inste
 \item Open het onderstaande voorbeeld-script \verb,export_vb2.py,. Je kunt met dit voorbeeld ook makkelijk meerdere figuren in \'e\'en script aanmaken.
 \item Verander het script zodat het een aantal plaatjes van alleen de sinus-functie maakt. 
 Om niet steeds hetzelfde plaatje te krijgen varieer je met de volgende instellingen:
+
 \begin{enumerate}
 \item De extensie van het weggeschreven bestand. Kies: \verb,png, of \verb,pdf,. Hierin is al voorzien in het voorbeeld door tweemaal een \verb,plt.savefig, te doen.
 \item De grootte van het plaatje. Kies bijv. \verb=[2,1]= of \verb=[20,10]=.
 \item Het aantal dots-per-inch. Kies bijv. 300 of 1200. (Zie het vorige voorbeeld!)
 \end{enumerate}
 
-\item Kijk naar de kwaliteit van de aangemaakte plaatjes, door ze te openen met de standaard app voor .png of .pdf plaatjes. Gebruik de zoom-functie! Kijk ook naar de bestandsgrootte (in kilobytes) van de aangemaakte bestanden. Trek je conclusie!
+\item Open de plaatjes en kijk naar de kwaliteit. Gebruik de zoom-functie! Kijk ook naar de bestandsgrootte (in kilobytes) van de aangemaakte bestanden. Trek je conclusie!
 
 \pythonexternal{code-inc/w4/export_vb2.py}
 
 \end{itemize}
 
+\iffalse
 \subsection{For-loops}
 \label{Ch_forloop}
 
@@ -673,6 +667,7 @@ Sorteer de elementen in $l_3$.
  \end{itemize}
  Noteer de verschillen in de afgedrukte output. 
 \end{itemize}
+\fi
 
 \subsection{Formatteren van tekst}
 \label{sec:format}
@@ -753,33 +748,29 @@ Maak 4 arrays van 100 elementen. Het eerste array is van het datatype \pythoninl
 
 \subsection{Bestanden importeren}
 \label{Ch_Importeren}
-Net als bij het exporteren van gegevens voor later gebruik, moet er bij importeren een vertaalslag worden gemaakt om de gegevens uit een bestand om te zetten zodat deze bruikbaar zijn binnen Python. Dit kan bijvoorbeeld met standaard Python functies zoals \pythoninline{read()} of \pythoninline{readlines()}. 
-
-In deze periode focussen we echter op bestanden die we zelf aan de hand van een meting hebben aangemaakt. Als je zo'n bestand correct wilt kunnen inlezen dan moet je van tevoren daarover duidelijke afspraken maken. Afspraken die bij het natuurkundepracticum zijn gemaakt:
+Net als bij het exporteren van gegevens voor later gebruik, moet er bij importeren een vertaalslag worden gemaakt om de gegevens uit een bestand om te zetten zodat deze bruikbaar zijn binnen Python. Daarvoor zijn allerlei instellingen, maar deze periode zien de bestanden er allemaal hetzelfde uit:
 
 \begin{enumerate}
-\item Het bestand bestaat uit regels (lines). Elke regel bevat of numerieke data of het is een commentaarregel. Zoals in elk tekst bestand zijn regels van elkaar gescheiden door het newline-karakter: `\verb,\n,'.
-\item Elke regel bestaat uit \'e\'en of meerdere elementen die van elkaar gescheiden door komma's. Het scheidingsteken heet de \textit{delimiter}. We spreken af dat dit het \verb,',',-karakter is. Met \pythoninline{np.genfromtxt} kun je de delimiter specificeren. Andere veelvoorkomende delimiters zijn: \pythoninline{';'} en \pythoninline{'\t'}. Het standaardteken van de delimiter (als die niet gespecificeerd wordt) is om de kolommen te splitsen bij elke aangesloten witte ruimte; dit kan dus een (serie) spatie(s) of een tab zijn.
-\item Op elke regel met numerieke data staan evenveel getallen; lege posities zijn dus niet wenselijk.
+\item Het bestand bestaat uit regels (lines). Elke regel bevat of numerieke data of het is een commentaarregel. Zoals in elk tekst bestand zijn regels van elkaar gescheiden door een enter, of in programmeertaal: `\verb,\n,'.
+\item Elke regel bestaat uit \'e\'en of meerdere getallen die van elkaar gescheiden door komma's. Het scheidingsteken heet de \textit{delimiter}. Met \pythoninline{np.genfromtxt} (de functie die we willen gebruiken) kun je de delimiter specificeren. 
 \item Een commentaarregel is herkenbaar aan het \verb,#, teken op de eerste positie. Precies zoals in een Python script. Commentaarregels aan het begin van een bestand heten ook wel de {\it header}.
 \end{enumerate}
 
-Het doel is om bestanden die aan deze eisen voldoen te kunnen importeren en vooral correct te kunnen verwerken in Python. Concreet betekent dit dat na het inlezen van het bestand een \pythoninline{np.array} wordt aangemaakt van de data. Daarnaast is het mogelijk dat een aantal variabelen (de parameters), zoals \verb.par0. en \verb.par1., de waardes krijgen uit de \textit{header} moeten krijgen, maar dat doen we wel voorlopig wel handmatig.
+Het doel is om bestanden die aan deze eisen voldoen te kunnen importeren en vooral correct te kunnen verwerken in Python. Concreet betekent dit dat na het inlezen van het bestand een \pythoninline{np.array} wordt aangemaakt van de data. 
 
-Je kunt een bestand natuurlijk regel voor regel, woord voor woord, letter na letter inlezen, maar het is natuurlijk een stuk handiger als er functies beschikbaar zijn die een heleboel van dat puzzelwerk voor je uit handen nemen. En gelukkig bestaan die ook. 
 Het inlezen van bestanden die numerieke data bevatten in de vorm van een array (rijen en kolommen) kan heel makkelijk gebeuren met de \pythoninline{numpy} functie \pythoninline{genfromtxt()}. Deze functie negeert regels die beginnen met een \verb,#, en dat komt goed uit, want dat is meestal toch vooral commentaar. Het weergeven van bijvoorbeeld twee kolommen uit de ingelezen data in een $xy$-plot stelt dan echt weinig meer voor. Zie volgend voorbeeld.
  
 \pythonexternal{code-inc/w4/genfromtxt_vb1.py}
 
 \subsection{Slotopdracht: De Europese bananeninspectie}
-In de eindopdracht van deze week passen we het geleerde toe op de strenge Europese regelgeving voor bananen. Eerst genereren we een dataset, deze bevat parameters zoals de diameter, lengte en kromming van bananen. Vervolgens passen we verschillende criteria op de data toe en toetsen we de bananen aan Europese regelgeving. Ook toetsen we het mythische `kromte-criterium' voor bananen en bekijken hoe dit invloed zou hebben op de verdeling van de bananen over verschillende klassen.
+We slaan dit keer de oefenopdracht over en gaan direct door naar de eindopdracht. We passen de stof van de afgelopen weken toe op de strenge Europese regelgeving voor bananen.
 
 \subsubsection*{1: Importeren van data}
-Bekijk het volgende voorbeeld-bestand: 
-\href{http://nspracticum.science.uu.nl/DATA2020/DATA-Py/Databestanden/vb1.txt}{Voorbeeld-0}.
+Bekijk het volgende bestand: 
+\href{http://nspracticum.science.uu.nl/DATA2020/DATA-Py/Databestanden/vb1.txt}{data-h4}.
 
 Sla een kopie van dit bestand op in dezelfde map waar ook het Python-script staat dat dit bestand moet gaan lezen en bewerken.
-Gebruik \pythoninline{np.genfromtxt} met altijd de tab als \verb,delimiter,, zodat je de meetgegevens in het bestand kunt inlezen en die in een \verb,numpy,-array om kunt zetten.
+Gebruik \pythoninline{np.genfromtxt} met de komma als \verb,delimiter,, zodat je de meetgegevens in het bestand kunt inlezen en die in een \verb,numpy,-array om kunt zetten.
 
 \subsubsection*{2: Testen op dikte}
 We zullen de offici\"ele criteria van de Europese Commissie aanhouden zoals vastgesteld in \emph{Commission Regulation (EC) No 2257/94}. Deze richtlijnen stellen dat de minimale lengte van een banaan $L_\textrm{min} = 14\,\textrm{cm}$ en de minimale dikte is $d_\textrm{min} = 27\,\textrm{mm}$. We passen nu nog geen criteria toe op de kromtestraal $R$ of de smetten op het oppervlak $A$.
