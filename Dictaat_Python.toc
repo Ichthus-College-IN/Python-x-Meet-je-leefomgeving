@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {2.3}Indexing en slicing}{14}{subsection.2.3}% 
 \contentsline {subsection}{\numberline {2.4}Allerlei functies}{15}{subsection.2.4}% 
 \contentsline {subsection}{\numberline {2.5}Maskers}{16}{subsection.2.5}% 
-\contentsline {subsection}{\numberline {2.6}For-loops}{17}{subsection.2.6}% 
+\contentsline {subsection}{\numberline {2.6}For-loops}{16}{subsection.2.6}% 
 \contentsline {subsection}{\numberline {2.7}Slotopdracht: Voortschrijdend gemiddelde}{17}{subsection.2.7}% 
 \contentsline {section}{\numberline {3}Modules (2): MATPlotLib}{19}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Grafiek maken}{19}{subsection.3.1}% 

@@ -11,11 +11,6 @@ deel_array2  = test_array[2:-2]   # Selecteer van 2e t/m 2 na laatste
 deel_array3  = test_array[:-2]    # Vanaf begin t/m twee na laatste
 deel_array4  = test_array[2:]     # Vanaf tweede
 
-# Het is mogelijk om elk tweede of derde element te selecteren
-oneven_arr  = test_array[::2]     # Selecteer elk 2e element, vanaf begin
-even_arr    = test_array[1::2]    # Selecteer elk 2e element, vanaf 2e
-# Let op de naamgeving: de getallen in even_arr zijn even
-
 # Een kopie maken is speciaal:
 kopie_arr = test_array.copy()     # Twee verschillende arrays
 same_arr  = test_array            # Twee namen voor hetzelfde array

@@ -412,10 +412,7 @@ Merk op dat \pythoninline{np.arange()} het eindgetal (\pythoninline{5.}) niet me
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
-	\item[a)] Schrijf een script waarmee een array wordt gemaakt met daarin de getallen 1.5 tot en met en 3.0 met stappen van 0.3. Doe dit met zowel \pythoninline{np.arange} als \pythoninline{np.linspace}. Controleer je resultaten met \pythoninline{print()}.
-	
-	{\bf Tip}: Begin met \pythoninline{xmin = 1.5}, \pythoninline{xmax = 3.0} en \pythoninline{dx = 0.3}. Werk daarna alleen met deze variabelen, of andere hulpvariabelen die volgen uit deze 3 variablen.
-	
+	\item[a)] Schrijf een script waarmee een array wordt gemaakt met daarin de getallen 1.5 tot en met en 3.0 met stappen van 0.3. Doe dit met zowel \pythoninline{np.arange} als \pythoninline{np.linspace}. Controleer je resultaten door beide arrays te printen.
 \end{itemize}
 
 \subsection{Rekenen met arrays}
@@ -433,7 +430,7 @@ print("d: ", d)
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
-	\item[b)] Schrijf een script dat een array maakt met de gehele getallen tot en met 10, beginnend bij 1. Natuurlijk geef je dat array een naam. Print en controleer de resultaten. Valt je iets op?\footnote{Als er iets niet klopt, geef het aan bij de docent! Die legt het wel uit :)}
+	\item[b)] Maak een array met de naam $k$ met daarin de gehele getallen van 1 tot en met 10. Bereken vervolgens $k^k$. Print en controleer de resultaten daarvan. Valt je iets op?\footnote{Als er iets niet klopt, geef het aan bij de docent! Die legt het wel uit :)}
 \end{itemize}
 
 \subsection{Indexing en slicing}
@@ -453,22 +450,23 @@ Let dus goed op het verschil tussen de laatste twee handelingen: \pythoninline{k
 \end{itemize}
 
 \subsection{Allerlei functies}
-Numpy arrays hebben een aantal ingebouwde functies, om bijvoorbeeld het gemiddelde of de som uit te rekenen. Ook de lengte of de vorm en datatype worden verkregen door \pythoninline{.functie} aan de naam van zo'n array vast te plakken.
+Numpy arrays hebben een aantal ingebouwde functies, om bijvoorbeeld het gemiddelde of de som uit te rekenen. Dat kan door \pythoninline{np.functie(array)} te gebruiken. Daarnaast kun je de lengte en het datatype van een array weergeven.
 
 \pythonexternal{code-inc/w2/np_vb3.py}
 
-Let op de laatste regel: dit is eigenlijk iets meer werk, maar over het algemeen veel veiliger! Als je bijvoorbeeld de mediaan van een array uit wilt rekenen, kun je {\it niet} gebruik maken van \pythoninline{test_array.median()}, maar moet je de andere methode gebruiken: \pythoninline{np.median(test_array)}.
+\subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
+\begin{itemize}
+	\item[e)] Bereken het gemiddelde van het $k^k$-array van oefenopgave b).
+\end{itemize}
 
 \subsection{Maskers}
-In sommige gevallen wil je een lijst getallen ook filteren. Je bent bijvoorbeeld geïnteresseerd in alle leeftijden boven de 18 jaar, of alle leerlingen in de bovenbouw. Dit kan aan de hand van een {\it masker}. De werking van zo'n masker wordt uitgelegd aan de hand van het onderstaande voorbeeld
-\footnote{In de .pdf zie je dat diverse Python woorden blauw gekleurd zijn; ook als er in een stukje tekst toevallig een Python woord staat, zoals in masker. Een klein foutje waar ik helaas niet veel aan kan doen.}.
+In sommige gevallen wil je een lijst getallen ook filteren. Je bent bijvoorbeeld geïnteresseerd in alle leeftijden boven de 18 jaar, of alle leerlingen in de bovenbouw. Dit kan aan de hand van een {\it masker}. De werking van zo'n masker wordt uitgelegd aan de hand van het onderstaande voorbeeld\footnote{In de .pdf zie je dat diverse Python woorden blauw gekleurd zijn; ook als er in een stukje tekst toevallig een Python woord staat, zoals in masker. Een klein foutje waar ik helaas niet veel aan kan doen.}.
 Een masker maak je door een voorwaarde op te geven bij een variabele. Alle plekken in de array die voldoen aan die voorwaarde, geven de waarde \pythoninline{True}, alle anderen geven \pythoninline{False}. Een masker pas je vervolgens toe met de blokhaken \pythoninline{[ ]}.
 
 \pythonexternal{code-inc/w2/np_vb4.py}
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
-	\item[e)] Bereken het gemiddelde van het $k^k$-array van oefenopgave b).
 	\item[f)] Selecteer met behulp van een masker alle oneven getallen uit \pythoninline{test_array} van bovenstaand voorbeeld.
 \end{itemize}
 
@@ -517,11 +515,11 @@ Tijdens de corona pandemie hebben we eindeloos veel grafiekjes gezien van het aa
 In deze slotopdracht maak je zelf een voortschrijdend gemiddelde.
 
 \begin{itemize}
-	\item Maak een array van 50 random getallen tussen de 0 en 1 (zoek hiervoor in het hoofdstuk).
+	\item Maak een array genaamd \pythoninline{random_array} van 50 random getallen tussen de 0 en 1 (zoek hiervoor in het hoofdstuk).
 	\item Maak een variabele genaamd \pythoninline{periode}, met de waarde 7. Dit is het aantal dagen waarover we het gemiddelde gaan berekenen.
-	\item Start vervolgens een \pythoninline{for}-loop toe. Deze gaat lopen van de dag n\'a de periode, tot en met de laatste waarde van je array.
-	\item Bereken per element in de \pythoninline{for}-loop het gemiddelde van de afgelopen 'periode' dagen. Voeg dit gemiddelde toe aan een array met de voortschrijdende gemiddeldes.
-	\item Print na afloop van de loop de array met voortschrijdende gemiddeldes. Wat valt je op als je de periode verhoogt (naar bijvoorbeeld 20)?
+	\item Maak vervolgens een \pythoninline{for}-loop. Deze start op de dag n\'a de periode, tot en met de laatste waarde van je array. (Hint: \pythoninline{range(periode,len(random_array))})
+	\item Bereken per element in de \pythoninline{for}-loop het gemiddelde van de afgelopen 'periode' dagen. Print elke keer het berekende gemiddelde van de afgelopen 7 dagen.
+	\item Wat valt je op als je de periode verhoogt (naar bijvoorbeeld 20)?
 \end{itemize}
 
 \clearpage
