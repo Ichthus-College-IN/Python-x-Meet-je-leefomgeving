@@ -13,10 +13,8 @@
 \contentsline {subsubsection}{\numberline {1.5.1}While}{10}{subsubsection.1.5.1}% 
 \contentsline {subsubsection}{\numberline {1.5.2}If}{10}{subsubsection.1.5.2}% 
 \contentsline {subsubsection}{\numberline {1.5.3}Boolean expressions}{11}{subsubsection.1.5.3}% 
-\contentsline {subsubsection}{\numberline {1.5.4}For}{12}{subsubsection.1.5.4}% 
-\contentsline {subsection}{\numberline {1.6}Slotopdrachten}{12}{subsection.1.6}% 
-\contentsline {subsubsection}{\numberline {1.6.1}Omrekenen van Fahrenheit naar Celsius}{12}{subsubsection.1.6.1}% 
-\contentsline {subsubsection}{\numberline {1.6.2}Priemgetallen}{12}{subsubsection.1.6.2}% 
+\contentsline {subsubsection}{\numberline {1.5.4}For}{11}{subsubsection.1.5.4}% 
+\contentsline {subsection}{\numberline {1.6}Slotopdracht: Omrekenen van Fahrenheit naar Celsius}{12}{subsection.1.6}% 
 \contentsline {section}{\numberline {2}Modules (1): NumPy}{13}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Arrays maken}{13}{subsection.2.1}% 
 \contentsline {subsection}{\numberline {2.2}Rekenen met arrays}{14}{subsection.2.2}% 

@@ -178,7 +178,7 @@ De oefenopdracht kan bijvoorbeeld op de volgende manier verduidelijkt worden:
 v0 = 25	   # beginsnelheid in m/s
 g  = 9.81  # zwaartekracht in m/s^2
 t  = 2	   # tijdstip berekening
-y = v0*t - g*t**2 # formule voor de hoogte
+y = v0*t - 0.5*g*t**2 # formule voor de hoogte
 print(y)
 \end{python}
 Als je in Spyder een nieuw Python script aanmaakt zie je direct nog een andere manier om commentaar te schrijven. Alle tekst tussen \verb,""", en de volgende \verb,""", is commentaar; deze manier van commentaar aangeven is handig voor grotere stukken tekst. 
@@ -320,9 +320,10 @@ else:                       # 80 kg en meer
 \subsubsection*{Oefenopdracht: Gebruik van \pythoninline{if} en/of \pythoninline{while}} 
 
 \begin{itemize}
-\item Schrijf een eenvoudig Python-script dat om input vraagt. Gebruik hiertoe: \footnote{De functie \pythoninline{input()} geeft als resultaat een \pythoninline{str} (datatype string). Je kunt met \pythoninline{float()} of \pythoninline{int()} een \pythoninline{float} of \pythoninline{int} van de input maken.}
+\item Schrijf een eenvoudig Python-script dat om input vraagt. Gebruik hiertoe: 
 \begin{python}
-invoer = input("Geef een positief getal: ")
+invoer = input("Geef een positief getal: ")  # input heeft datatype string
+getal = int(invoer)      # zet het om in een int, waar je mee kunt rekenen
 \end{python}
 Input moet je invoeren in de console. Als het opgegeven getal inderdaad positief is wordt de wortel\footnote{Weet je niet hoe je de wortel van een getal moet uitrekenen in Python? Zoek het dan op! Niet in deze reader, maar op internet.} van dat getal geprint en wordt er om nog een getal gevraagd. 
 Is het opgegeven getal negatief, dan wordt de wortel niet uitgerekend. Je print dan de tekst \verb."Dombo: Positief svp!". en vervolgens vraagt het script (heel beleefd) weer om een positief getal. Maak dus gebruik van een loop! Pas als je de waarde 0 invoert stopt de loop en dus het script.
@@ -340,18 +341,15 @@ a < b	# test of a kleiner is dan b
 a <= b	# test of a kleiner dan of gelijk is aan b
 \end{python}
 
-De uitkomst van een Boolean expression kan worden omgedraaid door \pythoninline{not} toe te voegen voor de geteste voorwaarde. Daarnaast kunnen Boolean expressions ook worden gecombineerd door het gebruik van \pythoninline{and} waarbij de formule alleen  \pythoninline{True} zal opleveren als aan beide voorwaarden wordt voldaan; of \pythoninline{or} waarbij de formule \pythoninline{True} zal opleveren als aan minstens \'e\'en van de twee condities wordt voldaan (beide mag dus ook).
+Daarnaast kunnen Boolean expressions ook worden gecombineerd door het gebruik van \pythoninline{and} waarbij de formule alleen  \pythoninline{True} zal opleveren als aan beide voorwaarden wordt voldaan; of \pythoninline{or} waarbij de formule \pythoninline{True} zal opleveren als aan minstens \'e\'en van de twee condities wordt voldaan (beide mag dus ook).
 
 \begin{python}
-not a == b
 a > b and c < d
 a > b or c < d
 \end{python}
 
 \subsubsection*{Oefenopdracht: Testen van combinaties van Boolean expressions} 
 \begin{itemize}
-\item Laat zien dat de tekst `abc' kleiner is dan de tekst `defg'.
-Met andere woorden: teksten kun je op een alfabetische manier ordenen.
 \item Neem het voorbeeld van de BMI over, een stukje terug. Voeg naast gewicht nog een voorwaarde toe: lengte. Je hebt alleen ondergewicht bij 40 kilo als je langer bent dan een bepaald aantal centimeter. Bedenk er zelf maar wat van, maar test je functie ook!
 \end{itemize}
 
@@ -371,23 +369,18 @@ for k in range(5):
 \end{python}
 
 \subsubsection*{Oefenopdracht: for i in range()}
-Voer het voorgaande stukje code uit. 
+\begin{itemize}
+	\item Voer het voorgaande stukje code uit. \\
+	\textbf{Vraag:} welke getallen zitten er verborgen in \pythoninline{range(5)}? En wat als je er \pythoninline{range(10)} van maakt?
+\end{itemize}
 
-\textbf{Vraag:} welke getallen zitten er verborgen in \pythoninline{range(5)}? En wat als je er \pythoninline{range(10)} van maakt?
+\subsection{Slotopdracht: Omrekenen van Fahrenheit naar Celsius}
+{\it Voor alle opdrachten geldt dat je wordt aangemoedigd om op het internet te zoeken in de enorme hoeveelheid voorbeelden, tutorials, vragen en antwoorden over het gebruik van Python. Maak daar vooral gebruik van! Voor alle opdrachten geldt ook: maak je eigen script, en sla dat op met het nodige commentaar zodat je het later misschien kunt hergebruiken of je medestudenten er blij mee kunt maken.}
 
-\subsection{Slotopdrachten}
-Voor alle opdrachten geldt dat je wordt aangemoedigd om op het internet te zoeken in de enorme hoeveelheid voorbeelden, tutorials, vragen en antwoorden over het gebruik van Python. Maak daar vooral gebruik van! Voor alle opdrachten geldt ook: maak je eigen script, sla dat op met het nodige commentaar zodat je het later misschien kunt hergebruiken of je medestudenten er blij mee kunt maken.
-
-\subsubsection{Omrekenen van Fahrenheit naar Celsius}
 Schrijf een script waarin een reeks van verschillende temperaturen in Fahrenheit gebruikt wordt als invoer om te bepalen of het vriest of niet. Laat voor elke stap de temperatuur in Celsius zien samen met de conclusie of het wel of niet vriest. Test waarden van -10 t/m 100 Fahrenheit in stappen van 5 Fahrenheit. De conversie tussen Celsius en Fahrenheit is
 \begin{equation}
 C = \frac{5}{9}F - 32
 \end{equation}
-
-\subsubsection{Priemgetallen}
-Schrijf een script dat de priemgetallen binnen een bepaald interval (bijv. alle gehele getallen van 1 tot en met 100) berekent en toont op het beeldscherm. Let op: het getal 1 is alleen deelbaar door 1 en zichzelf, maar is toch geen priemgetal. Dus 2 is het eerste priemgetal. \textit{Tip:} Gebruik de modulus (\pythoninline{\%})!
-
-Doe dit in eerste instantie echt helemaal zelf! Pas als het niet lukt, maar ook als het wel lukt, zoek je daarna op internet naar Python scripts die bruikbaar zijn in deze opdracht. 
 
 \clearpage
 \renewcommand{\ditwc}{Modules (1): NumPy}
