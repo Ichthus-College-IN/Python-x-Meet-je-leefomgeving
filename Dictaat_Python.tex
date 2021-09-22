@@ -106,29 +106,28 @@ We gebruiken op het Ichthus het programma Spyder om in te programmeren. De inter
 \label{fig-spyder}
 \end{figure*}
 
-Sla je bestanden met een duidelijke naam op in jouw GitHub map. Dit betekent dat de naam van de opgeslagen bestanden duidelijk maakt wat het script doet, of waar het onderdeel van is. Je kunt het beste alleen letters, cijfers en eventueel normale (-) of liggende (\_) streepjes (geen spaties!) te gebruiken. Een voorbeeld is de naam \verb,h1_1-helloworld.py,.
-
 \subsubsection*{Oefenopdracht: Hello World} 
 Typ de volgende regel tekst in de Editor: 
 \begin{python}
 print('Hello, world!')
 \end{python}
-Sla je bestand op met de naam \verb,h1_1-helloworld.py, en run het script.  Dat doe je door op de groene play-knop (of de F5-toets) in de balk bovenin te klikken.
-Wat is de functie van het commando print? Kijk hiervoor in de console rechtsonderin.
+
+Sla je bestanden met een duidelijke naam op in jouw GitHub map. Dit betekent dat de naam van de opgeslagen bestanden duidelijk maakt wat het script doet, of waar het onderdeel van is. Je kunt het beste alleen letters, cijfers en eventueel normale (-) of liggende (\_) streepjes (geen spaties!) te gebruiken. Sla je bestand op met de naam \verb,h1_1-helloworld.py, en run het script.  Dat doe je door op de groene play-knop (of de F5-toets) in de balk bovenin te klikken. Druk vervolgens eenmalig op Run.
+
+{\bf Vraag:} Wat is de functie van het commando print? Kijk hiervoor in de console rechtsonderin.
 
 Tijdens de periode zul je regelmatig (voorbeeld)scripts zien in deze bundel. Die kun je het beste openen via de hyperlink erboven. 
 Sla deze als je ze nodig hebt op in je eigen map met bestanden en open deze vanuit Spyder op dezelfde manier waarop je dat in \textit{Word} zou doen\footnote{Kopie\"{e}r \textbf{niet} stukjes tekst uit de .pdf file die je nu leest naar het Editor window van Spyder, want dan krijg je vaak verminkte bestanden waaraan je onnodig veel tijd moet besteden om ze te repareren. Typ het over als het kort is, of klik op de hyperlink of ga naar ItsLearning om het hele bestand te vinden.}.
 
 \subsection{Eenvoudige rekenkundige operaties}
-Met Python kun je makkelijk rekenen. Hiervoor gebruik je normale tekens: optellen (\pythoninline{+}), aftrekken (\pythoninline{-}), vermenigvuldigen (\pythoninline{*}), delen (\pythoninline{/}) en (let op!) machtsverheffen (\pythoninline{**}). Een andere rekentruc die vaak voorkomt bij programmeren is de \textit{modulus} (\pythoninline{\%}). Dit is eigenlijk de 'rest'-berekening.
+Met Python kun je makkelijk rekenen. Hiervoor gebruik je normale tekens: optellen (\pythoninline{+}), aftrekken (\pythoninline{-}), vermenigvuldigen (\pythoninline{*}), delen (\pythoninline{/}) en (let op!) machtsverheffen (\pythoninline{**}).
 
 \begin{python}
-1 + 1 # = 2
-2 - 2 # = 0
-3*3   # = 9
-4/4   # = 1
-5**5  # = 3125
-5 % 2 # = 1
+1 + 1
+2 - 2
+3*3
+4/4
+5**5
 \end{python}
 
 Tip: Het is onder Python programmeurs gebruikelijk om een spatie te typen voor en na een plus of min-teken, maar niet bij vermenigvuldigen, delen of machtsverheffen. Dit legt nadruk op de rekenregels. Bijvoorbeeld: 
@@ -142,12 +141,10 @@ print(1 + 2 - 3*4**5) # wat komt hieruit?
 \subsubsection*{Oefenopdracht: Python als rekenmachine} Bereken de hoogte $y$ van een softbal die vanaf de grond omhoog wordt geslagen met een beginsnelheid van $v_0 = 25 \, {\rm m/s}$ op $t = 2 \, {\rm s}$ aan de hand van de formule:
 \begin{equation}
 y = v_0 t - \frac{1}{2}g t^2
-\label{eq-ball}
 \end{equation}
-De zwaartekracht $g = 9.81 \, {\rm m/s}^2$. Maak gebruik van het voorbeeld hiervoor.
+De zwaartekracht $g = 9.81 \, {\rm m/s}^2$. Maak gebruik van bovenstaande formule en vul de getallen in. Let op: komma-getallen noteer je in het Engels met een punt (dus het is echt 9 punt 81).
 
 \subsection{Variabelen}
-\label{sec-vars}
 
 \subsubsection{Implementatie}
 Net als wiskunde `op papier' is het handig om van variabelen als letters gebruik te maken in plaats van de getallen gelijk in te vullen. Dit is ook zo bij programmeren en zorgt voor overzicht als je scripts langer en moeilijker worden.
@@ -163,7 +160,7 @@ y = a*x**2 + b*x + c
 print(y)
 \end{python}
 
-Tip: Namen voor variabelen kun je zelf kiezen. De enige voorwaarden zijn dat de namen moeten beginnen met een letter, en geen spatie of wiskundig teken mogen bevatten.\footnote{Dus namen van variabelen (en later ook van functies) beginnen met een letter, bevatten alleen A-Z, a-z, 0-9 en \_ en zijn hoofdlettergevoelig.} Kies voor een variabele altijd een naam die past bij de betekenis ervan in jouw script. Noem een lijst van temperaturen bijvoorbeeld \pythoninline{temp} of \pythoninline{temperatuur}.
+Tip: Namen voor variabelen kun je zelf kiezen. De enige voorwaarden zijn dat de namen moeten beginnen met een letter, en geen spatie of wiskundig teken mogen bevatten. Kies voor een variabele altijd een naam die past bij de betekenis ervan in jouw script. Noem een lijst van temperaturen bijvoorbeeld \pythoninline{temp} of \pythoninline{temperatuur}.
 
 \subsubsection*{Oefenopdracht: Gebruik van variabelen} Bereken opnieuw de hoogte van de bal uit de vorige opdracht. Doe dit nu voor $t = 0,1,2,3, ... $ en geef een grove schatting hoe lang het duurt voordat de bal weer op de grond is. Nu maak je uiteraard gebruik van variabelen zoals hiervoor beschreven.
 
@@ -172,15 +169,15 @@ Vaak is het voor een buitenstaander een raadsel wat een variabele betekent als h
 Dit is \'e\'en van de redenen om in een script \textit{commentaar} toe te voegen. 
 Het meest eenvoudig is het om hiervoor de hashtag te gebruiken, want alle tekst op een regel na \pythoninline{#} wordt genegeerd bij het runnen van een script. 
 
-De oefenopdracht kan bijvoorbeeld op de volgende manier verduidelijkt worden:
+De formule voor het vermogen van een apparaat kan bijvoorbeeld op de volgende manier verduidelijkt worden:
 \begin{python}
-# hoogte softbal
-v0 = 25	   # beginsnelheid in m/s
-g  = 9.81  # zwaartekracht in m/s^2
-t  = 2	   # tijdstip berekening
-y = v0*t - 0.5*g*t**2 # formule voor de hoogte
-print(y)
+# vermogen van de wasmachine
+U = 230	   # spanning van het lichtnet in V
+I  = 2     # stroomsterkte over het apparaat in A
+P = U*I    # formule voor het vermogen
+print(P)
 \end{python}
+
 Als je in Spyder een nieuw Python script aanmaakt zie je direct nog een andere manier om commentaar te schrijven. Alle tekst tussen \verb,""", en de volgende \verb,""", is commentaar; deze manier van commentaar aangeven is handig voor grotere stukken tekst. 
 
 \subsubsection{Datatypen}
@@ -197,15 +194,11 @@ Het datatype voor decimale getallen is {\bf float}. Floats maak je door een geta
 
 \item[\textbf{bool}] Logische waarde: \pythoninline{True} of \pythoninline{False}
 
-Een {\bf boolean} type, dat we later in het hoofdstuk zullen tegenkomen, is een binair datatype dat twee waarden kan hebben: \pythoninline{True} of \pythoninline{False}. \pythoninline{True} is gelijk aan 1, en \pythoninline{False} is gelijk aan 0. \pythoninline{bool(1)} is dus gelijk aan \pythoninline{True}.
+Een {\bf boolean} type, dat we later in het hoofdstuk zullen tegenkomen, is een binair datatype dat twee waarden kan hebben: \pythoninline{True} of \pythoninline{False}.
 
 \item[\textbf{str}] Geordende reeks karakters (tekst): \pythoninline{'hello'  'Sam'  "2019"}
 
-Een {\bf string} is het datatype voor tekst. Deze heb je ongemerkt gebruikt in de \pythoninline{'Hello world!'}, met \pythoninline{print()}. Om in Python een \pythoninline{string} te maken gebruik je aanhalingstekens. \pythoninline{a = 'tekst'} en \pythoninline{a = "tekst"} zijn allebei toegestaan.
-
-\item[\textbf{list}] Geordende reeks objecten: \pythoninline{[10, "hello",200.3]}
-
-Een \pythoninline{list} kan alle soorten datatypen bevatten, en die kun je ook los bekijken met behulp van een index. In hoofdstuk 2 komt hier meer van.
+Een {\bf string} is het datatype voor tekst. Deze heb je ongemerkt gebruikt in \pythoninline{'Hello world!'}, met \pythoninline{print()}. Om in Python een \pythoninline{string} te maken gebruik je aanhalingstekens. \pythoninline{a = 'tekst'} en \pythoninline{a = "tekst"} zijn allebei toegestaan.
 
 \end{description}
 
@@ -248,12 +241,14 @@ Kijk na het overtypen (!) en runnen van bovenstaand script in de \textbf{Variabl
 Een andere manier om waarden toe te kennen aan de variabelen binnen een functie is door de goede namen mee te geven. Dan maakt het niet meer uit in welke volgorde de variabelen een waarde krijgen toegekend. Bijvoorbeeld:
 
 \begin{python}
-# we geven de variabelen mee op een andere volgorde
+# we geven de variabelen mee op een specifieke volgorde
 waarde = formule(x=1, a=3, b=2, c=5) 
 print('waarde = ', waarde)
 \end{python}
 
-Je moet in dit geval niet alleen weten dat de functie \verb,formule, vier argumenten verwacht, maar ook wat de naam van die argumenten binnen de functiedefinitie is. Samenvattend:
+Op deze manier kun je de volgorde van de getallen dus omdraaien, maar dan moet je wel specifiek de naam van de variabele gebruiken
+
+Samenvattend:
 \begin{itemize}
 \item Je geeft de argumenten op als een getal: de waarde van $a$ als eerste, etc.
 \item Of: je geeft specifiek de waarden van $a$, $b$, $c$ en $x$ aan en dan mag je elke volgorde aanhouden.
@@ -275,8 +270,26 @@ Waarden van globale variabelen kun je wel gebruiken binnen een functie. Maar je 
 Bij het gebruik van veel functies binnen een uitgebreid script is het al snel lastig om unieke korte namen voor variabelen binnen een functie te bedenken en kun je per ongeluk (of expres) meerdere keren dezelfde naam gebruiken. Dit zou er voor kunnen zorgen dat je script verkeerde resultaten oplevert. {\bf Noem je variabelen dus niet altijd zomaar \textit{a, b} en \textit{c}, maar geef ze een nuttigere naam waar mogelijk.}
 
 \subsection{Loops}
-%% While, if
 Binnen Python bestaan manieren om functies of handelingen automatisch en/of heel vaak uit te voeren. We behandelen hier de constructies \pythoninline{while} en \pythoninline{if}.
+
+\subsubsection{Boolean expressions}
+In de voorbeelden van loops hieronder gaan we gebruik maken van voorwaarden om delen van scripts wel of niet uit te voeren. De algemene term voor deze voorwaarde is \textit{Boolean expression}. De uitkomst van zo'n conditie heeft twee mogelijkheden, namelijk \pythoninline{True} of \pythoninline{False}. Vaak wordt zo'n voorwaarde ook wel een test genoemd.
+
+\begin{python}
+a == b	# test of a gelijk is aan b (let op dubbel = teken!)
+a != b	# test of a niet gelijk is aan b
+a > b	# test of a groter is dan b
+a >= b	# test of a groter dan of gelijk is aan b
+a < b	# test of a kleiner is dan b
+a <= b	# test of a kleiner dan of gelijk is aan b
+\end{python}
+
+Daarnaast kunnen Boolean expressions ook worden gecombineerd door het gebruik van \pythoninline{and} waarbij de formule alleen  \pythoninline{True} zal opleveren als aan beide voorwaarden wordt voldaan; of \pythoninline{or} waarbij de formule \pythoninline{True} zal opleveren als aan minstens \'e\'en van de twee condities wordt voldaan (beide mag dus ook).
+
+\begin{python}
+a > b and c < d
+a > b or c < d
+\end{python}
 
 \subsubsection{While}
 Een zogenaamde \pythoninline{while} loop gebruik je om een bepaald stuk code te herhalen zolang er aan een voorwaarde voldaan wordt. Voor het voorbeeld van de omhoog geslagen bal dat we eerder gebruikt hebben kunnen we de hoogte van de bal berekenen voor de eerste $T$ seconden. Hoe zo'n loop kan worden ge\"implementeerd is te zien in onderstaand voorbeeld.
@@ -303,7 +316,7 @@ Net als bij het gebruik van \pythoninline{def} moeten de regels code binnen de \
 Een veelvoorkomende fout bij een \pythoninline{while} is dat de voorwaarde altijd \pythoninline{True} blijft, waardoor het script oneindig doorgaat. Dit gebeurt bijv. als je de regel \pythoninline{t = t + dt} vergeet of verkeerd invoert, of als je de regel wel goed overtypt maar de indent vergeet! Je kunt een script stoppen in Spyder door op de rode knop rechts boven in de Console te drukken.
 
 \subsubsection{If}
-Een tweede soort constructie is de zogenaamde \textit{if - else} constructie. Aan de hand van een voorwaarde (\textit{conditie}) wordt een bepaald deel code wel of niet uitgevoerd. Een variant hierop is de \textit{if - else if - else} constructie, waarbij er meer dan 2 mogelijkheden voorkomen. 
+Een tweede soort constructie is de zogenaamde \textit{if - else} constructie. Aan de hand van een voorwaarde (\textit{conditie}) wordt een bepaald deel code wel of niet uitgevoerd. Een variant hierop is de \textit{if - else if - else} constructie, waarbij er meer dan 2 mogelijkheden voorkomen. Je kunt zoveel {\it elif}'s toevoegen als je wilt.
 
 Let op: ook hier gebruik je \textit{indents}. In Python wordt \textit{else if} afgekort tot \pythoninline{elif}. 
 
@@ -316,41 +329,12 @@ else:                       # 80 kg en meer
     print("Overgewicht!")
 \end{python}
 
+\pythoninline{else} heeft {\it nooit} een voorwaarde! 'Anders' zijn alle overige opties, zonder een voorwaarde. Wil je een voorwaarde gebruiken, dan moet je \pythoninline{elif} gebruiken.
 
-\subsubsection*{Oefenopdracht: Gebruik van \pythoninline{if} en/of \pythoninline{while}} 
-
-\begin{itemize}
-\item Schrijf een eenvoudig Python-script dat om input vraagt. Gebruik hiertoe: 
-\begin{python}
-invoer = input("Geef een positief getal: ")  # input heeft datatype string
-getal = int(invoer)      # zet het om in een int, waar je mee kunt rekenen
-\end{python}
-Input moet je invoeren in de console. Als het opgegeven getal inderdaad positief is wordt de wortel\footnote{Weet je niet hoe je de wortel van een getal moet uitrekenen in Python? Zoek het dan op! Niet in deze reader, maar op internet.} van dat getal geprint en wordt er om nog een getal gevraagd. 
-Is het opgegeven getal negatief, dan wordt de wortel niet uitgerekend. Je print dan de tekst \verb."Dombo: Positief svp!". en vervolgens vraagt het script (heel beleefd) weer om een positief getal. Maak dus gebruik van een loop! Pas als je de waarde 0 invoert stopt de loop en dus het script.
-\end{itemize}
-
-\subsubsection{Boolean expressions}
-In de voorbeelden van loops hierboven hebben we voorwaarden gebruikt om delen van scripts wel of niet uit te voeren. De algemene term voor deze voorwaarde is \textit{Boolean expression}. De uitkomst van zo'n conditie heeft twee mogelijkheden, namelijk \pythoninline{True} of \pythoninline{False}. Vaak wordt zo'n voorwaarde ook wel een test genoemd.
-
-\begin{python}
-a == b	# test of a gelijk is aan b
-a != b	# test of a niet gelijk is aan b
-a > b	# test of a groter is dan b
-a >= b	# test of a groter dan of gelijk is aan b
-a < b	# test of a kleiner is dan b
-a <= b	# test of a kleiner dan of gelijk is aan b
-\end{python}
-
-Daarnaast kunnen Boolean expressions ook worden gecombineerd door het gebruik van \pythoninline{and} waarbij de formule alleen  \pythoninline{True} zal opleveren als aan beide voorwaarden wordt voldaan; of \pythoninline{or} waarbij de formule \pythoninline{True} zal opleveren als aan minstens \'e\'en van de twee condities wordt voldaan (beide mag dus ook).
-
-\begin{python}
-a > b and c < d
-a > b or c < d
-\end{python}
 
 \subsubsection*{Oefenopdracht: Testen van combinaties van Boolean expressions} 
 \begin{itemize}
-\item Neem het voorbeeld van de BMI over, een stukje terug. Voeg naast gewicht nog een voorwaarde toe: lengte. Je hebt alleen ondergewicht bij 40 kilo als je langer bent dan een bepaald aantal centimeter. Bedenk er zelf maar wat van, maar test je functie ook!
+	\item Neem het voorbeeld van de BMI over. Voeg naast gewicht nog een voorwaarde toe: lengte. Je hebt alleen ondergewicht bij 40 kilo als je langer bent dan een bepaald aantal centimeter. Bedenk er zelf maar wat van, maar test je functie ook!
 \end{itemize}
 
 \subsubsection{For}
@@ -374,12 +358,41 @@ for k in range(5):
 	\textbf{Vraag:} welke getallen zitten er verborgen in \pythoninline{range(5)}? En wat als je er \pythoninline{range(10)} van maakt?
 \end{itemize}
 
-\subsection{Slotopdracht: Omrekenen van Fahrenheit naar Celsius}
-{\it Voor alle opdrachten geldt dat je wordt aangemoedigd om op het internet te zoeken in de enorme hoeveelheid voorbeelden, tutorials, vragen en antwoorden over het gebruik van Python. Maak daar vooral gebruik van! Voor alle opdrachten geldt ook: maak je eigen script, en sla dat op met het nodige commentaar zodat je het later misschien kunt hergebruiken of je medestudenten er blij mee kunt maken.}
+Je kunt in de \pythoninline{range}-functie \'e\'en, twee of drie getallen invullen. Zie onderstaande opties:
+\begin{python}
+range(5)        # ziet eruit als [ 0, 1, 2, 3, 4 ] 
+                # oftewel: van 0 TOT 5 (begint standaard bij 0)
+range(2,8)      # ziet eruit als [ 2, 3, 4, 5, 6, 7 ] 
+                # oftewel: van 2 TOT 8
+range(10,40,5)  # ziet eruit als [ 10, 15, 20, 25, 30, 35 ]
+                # oftewel: van 10 TOT 40 met stappen van 5
+\end{python}
 
-Schrijf een script waarin een reeks van verschillende temperaturen in Fahrenheit gebruikt wordt als invoer om te bepalen of het vriest of niet. Laat voor elke stap de temperatuur in Celsius zien samen met de conclusie of het wel of niet vriest. Test waarden van -10 t/m 100 Fahrenheit in stappen van 5 Fahrenheit. De conversie tussen Celsius en Fahrenheit is
+\subsection{Slotopdrachten}
+{\it Voor alle opdrachten geldt dat je wordt aangemoedigd om op het internet te zoeken in de enorme hoeveelheid voorbeelden, tutorials, vragen en antwoorden over het gebruik van Python. Maak daar vooral gebruik van! Voor alle opdrachten geldt ook: maak je eigen script, en sla dat op met het nodige commentaar zodat je het later misschien kunt hergebruiken of je medeleerlingen er blij mee kunt maken.}
+
+\subsubsection{Slotopdracht 1: Wortels trekken} 
+
+Schrijf een Python-script dat aan jou als gebruiker om input vraagt en vervolgens wel of niet een wortel trekt, om daarna weer een nieuw getal te vragen etc.
+
+\begin{itemize}
+	\item Allereerst vragen we de gebruiker om input. Zie daarvoor onderstaande regel. Als je het script uitvoert met deze regel, kun je rechtsonder in de console klikken en achter de tekst een getal invullen. Als je op Enter drukt wordt je getal opgeslagen in de variabele \pythoninline{invoer}.
+	\item Deze input is van het datatype \pythoninline{str} (string, ofwel tekst). Van tekst kun je geen wortel trekken, dus moet \pythoninline{invoer} eerst omgezet worden in een getal (\pythoninline{int}). Kijk in 1.3.3 of zoek op internet een methode om van de input een \pythoninline{int} te maken, en sla dit getal op in een nieuwe variabele.
+	\item Maak vervolgens een \pythoninline{while}-loop. Deze loop moet stoppen als het ingevoerde getal gelijk is aan 0.
+	\item Check vervolgens of het getal groter is dan nul of kleiner. Als het opgegeven getal inderdaad positief is wordt de wortel\footnote{Weet je niet hoe je de wortel van een getal moet uitrekenen in Python? Zoek het dan op! Niet in deze reader, maar op internet.} van dat getal geprint. Is het opgegeven getal negatief, dan wordt de wortel niet uitgerekend. Je print dan de tekst \verb."Dombo: Positief svp!"..
+	\item Vraag vervolgens (heel beleefd) weer om een positief getal. Gebruik de regels waarmee je voor het eerst om input vraagt hier gewoon opnieuw!
+\end{itemize}
+
+\begin{python}
+invoer = input("Geef een positief getal: ")  # input heeft datatype string
+\end{python}
+
+\subsubsection{Slotopdracht 2: Omrekenen van Fahrenheit naar Celsius}
+Schrijf een script dat voor de temperaturen van -10 tot en met 100 Fahrenheit met stappen van 5 Fahrenheit de temperatuur in graden Celsius berekent. Print voor elke 5 Fahrenheit de temperatuur in Fahrenheit, de berekende temperatuur in Celsius, en de conclusie of het wel of niet vriest. (Hint: controleer dus of de temperatuur in graden Celsius kleiner of groter dan 0 is!)
+
+De conversie tussen Celsius en Fahrenheit is
 \begin{equation}
-C = \frac{5}{9}F - 32
+C = \frac{5}{9}(F - 32)
 \end{equation}
 
 \clearpage
@@ -396,7 +409,7 @@ Vanaf dit punt wordt naar \pythoninline{numpy} verwezen als \pythoninline{np}. O
 Bijvoorbeeld: \pythoninline{np.sin(X) # berekent de sinus van X}.
 
 \subsection{Arrays maken}
-Een {\it array} (Nederlands: reeks) is een verzameling van getallen. In Python kun je die maken als een lijst (zie hoofdstuk 1.3.3), maar een lijst is in de praktijk heel erg onhandig. In plaats van een lijst gebruiken we veel liever een numpy array. Hier kan maar \'e\'en datatype tegelijkertijd in voorkomen: \pythoninline{ints} of \pythoninline{floats}.
+Een {\it array} (Nederlands: reeks) is een verzameling van getallen. In Python kun je die maken als een offici\"ele Python lijst, maar zo'n lijst is erg onhandig. In plaats daarvan gebruiken we veel liever een numpy array.
 
 De duidelijkste manier om een array te maken is met de functie \pythoninline{np.array()}. Als je de getallen van de dobbelsteen in een array wilt zetten, doe je dat bijvoorbeeld zo:
 \begin{python}
@@ -438,15 +451,11 @@ Soms is het fijn om delen van een array een aparte naam te geven. Of je wilt een
 
 \pythonexternal{code-inc/w2/np_vb2.py}
 
-Let dus goed op het verschil tussen de laatste twee handelingen: \pythoninline{kopie_arr} is een kopie van de waarden, terwijl \pythoninline{same_arr} alleen een andere naam is voor \pythoninline{test_array}!
-
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
 	\item[c)] Vraag: wat is de waarde van \pythoninline{test_array[1]}? Let goed op!
 	
 	Een computer begint bij nul te tellen. Dat betekent dat het eerste getal, wat bij ons altijd plek 1 krijgt (bijvoorbeeld vers 1 van een hoofdstuk in de Bijbel), voor de computer op plek 0 staat. En het vijfde getal in een reeks staat voor de computer op plek 4.
-	
-	\item[d)] Neem de laatste regel (en het bijbehorende \pythoninline{test_array}) over van bovenstaand voorbeeld. Print eerst de laatste getallen van beide arrays (\pythoninline{test_array} en \pythoninline{same_arr}). Voeg vervolgens daaronder deze regel toe: \pythoninline{test_array *= 10}. Daarmee vermenigvuldig je het \pythoninline{test_array} met 10. Print weer beide getallen. Zet daaronder deze regel: \pythoninline{test_array = test_array / 5}, en print weer beide getallen. Wat is het verschil? Vraag het als je het niet snapt!
 \end{itemize}
 
 \subsection{Allerlei functies}
@@ -456,7 +465,7 @@ Numpy arrays hebben een aantal ingebouwde functies, om bijvoorbeeld het gemiddel
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
-	\item[e)] Bereken het gemiddelde van het $k^k$-array van oefenopgave b).
+	\item[d)] Bereken het gemiddelde van het $k^k$-array van oefenopgave b).
 \end{itemize}
 
 \subsection{Maskers}
@@ -467,47 +476,38 @@ Een masker maak je door een voorwaarde op te geven bij een variabele. Alle plekk
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
-	\item[f)] Selecteer met behulp van een masker alle oneven getallen uit \pythoninline{test_array} van bovenstaand voorbeeld.
+	\item[e)] Selecteer met behulp van een masker alle oneven getallen uit \pythoninline{test_array} van bovenstaand voorbeeld. Hiervoor kun je goed gebruik maken van de rest-berekening, die je jaren geleden wel eens gezien hebt. Zie dit voorbeeld:
+	\begin{python}
+# rest(4/2) is 0 (2 past precies 2 keer in 4)
+print(4 % 2) # dit print rest(4/2) oftewel 0
+
+# rest(5/2) is 1 (2 past 2 keer in 5, en er blijft 1 over)
+print(5 % 2) # dit print rest(5/2), oftewel 1
+	\end{python}
+	In plaats van een test of de getallen groter zijn dan 5 (zoals in het bestand boven de opdracht), kun je hier dus testen of de rest gelijk is aan 1! Want elk oneven getal gedeeld door 2 levert een rest van 1 op.\\
+	Print als laatste ter controle het array met dit masker, zodat je alleen de oneven getallen ziet.
 \end{itemize}
-
-\iffalse
-\subsection{Reshaping}
-Tot nu toe hebben we alleen met \'e\'endimensionale arrays gewerkt - een lijst van alleen getallen achter elkaar. Je kunt echter ook meerdimensionale arrays maken: 2D, 3D of in theorie zelfs veel meer dimensies. Wanneer je werkt met meerdimensionale lijsten kan het handig zijn om de vorm van de array aan te passen. De meest gebruikte bewerking is \pythoninline{np.ravel()}, die elke meerdimensionale array verandert in een \'e\'endimensionale array door alle elementen achter elkaar te zetten.
-
-Het commando \pythoninline{np.reshape()} maakt juist van een \'e\'endimensionaal array een meerdimensionale array met afmetingen afhankelijk van de opgegeven parameters.\footnote{Deze commando's werken alleen op \pythoninline{numpy array}'s, niet op objecten van bijvoorbeeld type \pythoninline{list}.}
-
-\pythonexternal{code-inc/w2/ravel_vb1.py}
-
-\subsubsection*{Oefenopdracht: sorteren en reshapen}
-\begin{itemize}
-	\item[f)] Laat \pythoninline{y = np.arange(30); np.random.shuffle(y)}. Wat is de werking van \pythoninline{np.random.shuffle()}? Schrijf een script dat \pythoninline{y} verandert in een gesorteerd array van 2 bij 15, waar de bovenste rij de 15 oneven getallen gesorteerd bevat en de onderste rij de 15 even getallen. Gebruik \pythoninline{np.sort()} om de lijst weer te sorteren, en maak slim gebruik van \pythoninline{np.reshape()} en de commando's uit bovenstaand voorbeeld om de even en oneven getallen te scheiden.
-\end{itemize}
-
-\subsection{Samenvoegen}
-E\'en of meerdere elementen toevoegen aan het einde van een \'e\'endimensionaal array gaat het beste met de functie \pythoninline{np.append()}. Zie het voorbeeld:
-
-\begin{python}
-array1 = np.array([1,2,3,4,5])	   # array ziet eruit als [ 1 2 3 4 5]
-array2 = np.append(array1, 6)	   # array ziet eruit als [ 1 2 3 4 5 6]
-array3 = np.append(array2, [7, 8]) # array ziet eruit als [ 1 2 3 4 5 6 7 8]
-\end{python}
-
-Het achter elkaar plakken van twee numpy arrays kan met de functie \pythoninline{np.concatenate()}. Deze functie is ook goed bruikbaar voor meerdimensionale arrays. Standaard gaat dit langs de x-as, maar de as waarlangs het samengevoegd wordt kun je aanpassen met \pythoninline{axis=..}. De x-as is as 0, de y-as is as 1, en als een array driedimensionaal is, is de derde as de z-as, met waarde 2.
-
-\pythonexternal{code-inc/w2/conc_vb1.py}
-
-Neem dit script over en kijk goed naar de dimensies. Print de arrays, of bekijk ze in de Variable explorer. Verander een paar getallen en zoek uit wat wel en niet werkt!
-\fi
 
 \subsection{For-loops}
-De structuur van een \pythoninline{for}-loop is altijd:
-\begin{python}
-for element in data:
-	voer_functie_uit_voor_element
-\end{python}
-Het Python key-woord \pythoninline{in} komt hierin dus altijd voor evenals de \pythoninline{:} aan het eind. Cruciaal is dat \pythoninline{data} elementen bevat. E\'en zo'n element kun je noemen zoals je wilt, dus kies een nuttige naam. Kun je geen nuttige naam bedenken, dan is \pythoninline{i} eigenlijk de standaard. Vervolgens voer je berekeningen uit voor elk element. De volgende voorbeeld-code maakt dat duidelijk.
+In paragraaf 1.5 is de \pythoninline{for}-loop aan de orde gekomen. Hier komt nu geen nieuwe stof bij, maar in het licht van numpy-array's is het goed om nog een oefenopdracht te maken. Deze helpt ook bij de slotopdracht. Bekijk en run eerst dit voorbeeld:
 
-\pythonexternal{code-inc/w2/for_vb1.py}
+\begin{python}
+data = np.array([1,2,3,4,5,6]) # een test array
+
+# De volgende for-loop print een voor een alle getallen in 'data'
+# 'i' is hierbij het getal dat loopt van 0 tot len(data) = 6
+for i in range(len(data)):
+    print(data[i])
+\end{python}
+
+\subsubsection*{Oefenopdracht: for-loops en numpy-arrays}
+\begin{itemize}
+	\item Maak een array \pythoninline{np.linspace(0,10,num=20)}. Dit zijn dus 20 getallen, oplopend van 0 naar 10.
+	\item Maak vervolgens, net als in het voorbeeld, een \pythoninline{for}-loop met dezelfde print-regel.
+	\item Pas dit vervolgens zo aan, dat je niet elke keer \pythoninline{data[i]} print, maar alle getallen vanaf de eerste plek tot de huidige plek (plek i). De eerste keer print dat alleen lege haken (\pythoninline{[]}), de tweede keer \'e\'en getal, de derde keer twee, etc.
+	\item Print vervolgens het gemiddelde van die getallen. (De eerste keer is dat dus het gemiddelde van nul getallen: dit levert een waarschuwing op maar geen error. De tweede keer is dat het gemiddelde van \'e\'en getal, de derde keer van twee getallen, etc.)
+	\item Controleer je loop: het laatste gemiddelde is het gemiddelde van alle getallen behalve de laatste. Dat is dus 4.75.
+\end{itemize}
 
 \subsection{Slotopdracht: Voortschrijdend gemiddelde}
 Tijdens de corona pandemie hebben we eindeloos veel grafiekjes gezien van het aantal besmettingen per dag. In het weekend is dat altijd lager, en door de weeks juist weer hoger. Het is daarom nuttiger om naar het gemiddelde van de afgelopen zeven dagen te kijken: dan compenseer je de uitschieters een beetje. Dit gemiddelde noemen we het {\it voortschrijdend gemiddelde}: voor elke dag bereken je het gemiddelde van de zeven dagen daarvoor. Je kunt over de eerste 7 dagen geen voortschrijdend gemiddelde berekenen: er zijn immers nog geen volledige zeven dagen geweest.
@@ -519,7 +519,7 @@ In deze slotopdracht maak je zelf een voortschrijdend gemiddelde.
 	\item Maak een variabele genaamd \pythoninline{periode}, met de waarde 7. Dit is het aantal dagen waarover we het gemiddelde gaan berekenen.
 	\item Maak vervolgens een \pythoninline{for}-loop. Deze start op de dag n\'a de periode, tot en met de laatste waarde van je array. (Hint: \pythoninline{range(periode,len(random_array))})
 	\item Bereken per element in de \pythoninline{for}-loop het gemiddelde van de afgelopen 'periode' dagen. Print elke keer het berekende gemiddelde van de afgelopen 7 dagen.
-	\item Wat valt je op als je de periode verhoogt (naar bijvoorbeeld 20)?
+	\item Wat valt je op als je de periode verhoogt (naar bijvoorbeeld 30)?
 \end{itemize}
 
 \clearpage

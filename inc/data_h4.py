@@ -11,6 +11,7 @@ for i in range(samples):
         A[i] = 0
         
 file = open("data_h4.txt", "w")
+file.write("L,     d,     R,     A,     \n")
 
 for i in range(samples):
     string = "{:.3f},{:.3f},{:.3f},{:.3f}\n".format(L[i], d[i], R[i], A[i])
