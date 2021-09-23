@@ -1,13 +1,16 @@
-jaren = np.arange(1981, 2022)                         # bereik x-as
-temp = np.sqrt(jaren) - 2*np.random.rand(len(jaren))  # meetpunten maken
-trend = np.sqrt(jaren) - 1                            # trendlijn maken
+# Begin met een subplots.
+# sharex='col' zorgt dat de x-coordinaat gedeeld wordt over de kolommen
+# sharey='row' idem voor rijen en de y-coordinaat
+fig, axarr = plt.subplots(2, 2, sharex='col', sharey='row')
 
-plt.figure()                                          # figuur maken
-plt.plot(jaren, temp,'k.', label='Meting')            # meetpunten plotten
-plt.plot(jaren, trend, 'r-', label='Trend')           # trendlijn plotten
-plt.xlabel('Jaren')                                   # x-as label
-plt.ylabel('$T$ ($^\circ$C)')                         # y-as label
-plt.suptitle("Hoogst gemeten temperatuur in Madrid")  # titel
-plt.legend()                                          # legenda
-plt.grid()                                            # lijnen
-plt.show()                                            # figuur weergeven
+x = np.linspace(0,2*np.pi)                      # startwaarden
+
+axarr[0,0].plot(x,np.cos(x)**2)                 # linksboven
+axarr[0,1].plot(x,np.sin(x)**2)                 # rechtsboven
+axarr[1,0].plot(x,np.cos(x)*np.sin(x))          # linksonder
+axarr[1,1].plot(x,np.cos(x)**2*np.sin(x)**2)    # rechtsonder
+
+# suptitle verwijst naar de titel van de gehele figuur. Dit is dus een 
+# eigenschap van de totale figuur fig.
+fig.suptitle("Vier plotjes tegelijk")
+plt.show()

@@ -532,16 +532,17 @@ import matplotlib.pyplot as plt
 \end{python}
 
 \subsection{Grafiek maken}
-Hieronder een voorbeeld om een sinus in beeld te brengen.
+Hieronder een voorbeeld om een sinus in beeld te brengen (te plotten):
 \pythonexternal{code-inc/w3/plt_vb1.py}
 
 \subsubsection*{Oefenopdracht}
 \begin{itemize}
-	\item[a)] Imiteer het bovenstaande voorbeeld. Verander het aantal elementen in \pythoninline{x}. Wat gebeurt er als het aantal elementen in de lijst klein is? (bijvoorbeeld 10)
+	\item[a)] Kopieer via de hyperlink het bovenstaande voorbeeld. Verander het aantal elementen in \pythoninline{x}. Wat gebeurt er als het aantal elementen in de lijst klein is? (bijvoorbeeld 10)
 
-	\item[b)] Voeg een cosinus toe door een \pythoninline{y2} te defini\"eren en een extra \pythoninline{plt.plot()} toe te voegen. 
+	\item[b)] Voeg een cosinus toe door een \pythoninline{y2} te defini\"eren en een extra \pythoninline{plt.plot()} toe te voegen onder de tweede \pythoninline{plt.figure()}. \\
+	{\bf Hint:} \pythoninline{np.cos(x)}
 
-	\item[c)] Maak een extra plaatje (door in hetzelfde script een nieuwe \pythoninline{plt.figure()} toe te voegen) waar \pythoninline{y} en \pythoninline{y2} tegen elkaar uitgezet worden. In plaats van \textit{x} en \textit{y} in \pythoninline{plt.plot(x,y)} moet je dus wat anders invoeren.
+	\item[c)] Maak een extra plaatje (door in hetzelfde script een nieuwe \pythoninline{plt.figure()} toe te voegen) waar \pythoninline{y} en \pythoninline{y2} tegen elkaar geplot worden. In plaats van \textit{x} en \textit{y} in \pythoninline{plt.plot(x,y)} moet je dus wat anders invoeren.
 \end{itemize}
 
 \subsection{Lijnen opmaken}
@@ -553,44 +554,62 @@ Wanneer twee grafieken in \'e\'en figuur getekend worden, zoals hiervoor, geeft 
 \begin{itemize}
 	\item[d)] Pas het script van b) aan zodat de sinus als rode lijn en cosinus als magenta punten geplot worden.
 
-	\item[e)] Bij het aanroepen van de \pythoninline{plt.plot()}, voeg de optie \pythoninline{label = "Label van grafiek"} toe binnen de haakjes van \pythoninline{plt.plot()}. Label de sinus ``Sinus'' en de cosinus ``Cosinus''. Gebruik vervolgens het commando \pythoninline{plt.legend()} onder de plot-functies om een legenda weer te geven.
+	\item[e)] Bij het aanroepen van de \pythoninline{plt.plot()}, voeg de optie \pythoninline{label = "..tekst.."} toe binnen de haakjes van \pythoninline{plt.plot()}. Label de sinus ``Sinus'' en de cosinus ``Cosinus''. Gebruik vervolgens het commando \pythoninline{plt.legend()} onder de laatste plot-regel om een legenda weer te geven.
 	
-	\item[f)] De waarden op een bepaalde plek op de lijn zijn niet altijd zo makkelijk af te lezen bovenin of rechts in de figuur. Hier komt \pythoninline{plt.grid()} goed van pas. Hoe zit je figuur er uit als je dit toevoegt?
+	\item[f)] De waarden op een bepaalde plek op de lijn zijn niet altijd zo makkelijk af te lezen bovenin of rechts in de figuur. Hier komt \pythoninline{plt.grid()} goed van pas. Hoe zit je figuur er uit als je deze regel toevoegt?
 \end{itemize}
 
 \subsection{Assen opmaken}
 Een grafiek zonder tekst is (bijna) helemaal nutteloos. Zien we de windsnelheid, of de temperatuur, en dan in graden Celsius of Farenheit? En gaat het over de uren op een dag of over de maandnummers? Cruciale info, die aanwezig moet zijn in een grafiek. Uiteraard helpt \pythoninline{pyplot} ons hier ook weer een handje met een aantal nuttige functies. Zie onderstaand voorbeeld:
 
-\pythonexternal{code-inc/w3/plt_vb5.py}
+\pythonexternal{code-inc/w3/plt_vb3.py}
 
 \subsubsection*{Oefenopdracht (vervolg)}
 \begin{itemize}
-	\item[g)] De lijn in het plaatje van het voorbeeld toont gaten aan de linker- en rechterkant. Pas met \pythoninline{plt.xlim(x_min,x_max)}  het bereik van de $x$-as aan. Maak het bereik van de $x$-as $1981$ tot $2021$. Je kunt het bereik op de $y$-as ook op dezelfde manier aanpassen. Zet het bereik van de $y$-as van $30$ tot en met $50$.
+	\item[g)] De lijn in het plaatje van het voorbeeld toont gaten aan de linker- en rechterkant. Pas met de regel \pythoninline{plt.xlim(x_min,x_max)} het bereik van de $x$-as aan. Maak het bereik van de $x$-as $1981$ tot $2021$. Je kunt het bereik op de $y$-as ook op dezelfde manier aanpassen. Zet het bereik van de $y$-as van $30$ tot en met $50$. (Vul dus voor \pythoninline{x_min, x_max} de goede getallen in.)
 	
-	\item[h)] In het plaatje van c) (wat een cirkel zou moeten tonen) is de verhouding van $x$- en $y$-as niet ingesteld. Zet de aspectratio (verhouding) op 1 met \pythoninline{plt.axes().set_aspect('equal')}. In plaats van \pythoninline{'equal'} kun je ook \pythoninline{1} invullen (verhouding 1:1).
+	\item[h)] In het plaatje van c) (wat een cirkel zou moeten tonen) is de verhouding van $x$- en $y$-as niet ingesteld. Zet de aspectratio (verhouding) op 1 met de regel \pythoninline{plt.axes().set_aspect('equal')}. In plaats van \pythoninline{'equal'} kun je ook \pythoninline{1} invullen (verhouding 1:1).
 	
-	\item[i)] Maak de volgende plot: kies $t$ van $0$ tot $2\pi$. Laat $x = 16 \sin^3(t)$ en $y = 13 \cos(t) - 5 \cos(2t) - 2 \cos(3t) - \cos(4t)$. Zorg voor een goede verhouding tussen de assen.
+	\item[i)] Maak de volgende plot: kies $t$ van $0$ tot $2\pi$. Gebruik
+	\pythoninline{x = 16*np.sin(t)**3}\\
+	\pythoninline{y = 13*np.cos(t) - 5*np.cos(2*t) - 2*np.cos(3*t) - np.cos(4*t)}\\
+	 Zorg voor een goede verhouding tussen de assen.
 \end{itemize}
 
 \subsection{Meer grafieken in \'e\'en figuur}
-Soms is het fijn om twee plots boven elkaar of naast elkaar te laten zien, eventueel zodat ze de x- of y-as delen voor het overzicht (ze hebben dan hetzelfde bereik). Om meerdere plots tegelijk te laten zien kan de functie \pythoninline{plt.subplots()} gebruikt worden. \pythoninline{plt.subplots()} maakt van elk figuur (subplot) een apart object, waarop je met \pythoninline{axN.plot()} en gelijke functies figuren kunt plotten. Hier is de naam \pythoninline{ax} niet verplicht, maar heel veel voorbeelden op internet werken met deze naam, dus doen we dat hier ook.
+Soms is het fijn om twee of meer plots boven elkaar of naast elkaar te laten zien, eventueel zodat ze de x- of y-as delen voor het overzicht (ze hebben dan hetzelfde bereik). Om meerdere plots tegelijk te laten zien kan de functie \pythoninline{plt.subplots()} gebruikt worden. \pythoninline{plt.subplots()} maakt van elk figuur (subplot) een apart object, waarop je met \pythoninline{ax1.plot()} en gelijke functies lijnen kunt plotten.
 
-\pythonexternal{code-inc/w3/plt_vb3.py}
-
-Een tweede voorbeeld waar plotjes in een 2-bij-2 vorm worden getoond.
+In onderstaand voorbeeld worden er 3 grafieken naast elkaar gemaakt in hetzelfde figuur. Die figuur noemen we \pythoninline{fig}, en de grafieken noemen we \pythoninline{ax1, ax2} en \pythoninline{ax3}. De 1 betekent \'e\'en plot in de hoogte, 3 in de breedte. Je kunt de 1 en 3 ook omdraaien om de plots onder elkaar te zetten in plaats van naast elkaar.
 
 \pythonexternal{code-inc/w3/plt_vb4.py}
 
-Merk op dat gebruik wordt gemaakt van een 2-bij-2 array om de informatie voor de individuele plots op te slaan. De eerste index (het eerste getal) tussen de blokhaken staat daarbij voor de x-as, het tweede getal voor de y-as. Let op: Python begint linksbovenin met \pythoninline{[0,0]}, en heeft \pythoninline{[0,1]} linksonderin staan. De y-as loopt dus naar beneden in plaats van naar boven. De x-as `klopt' wel.
+Voor bovenstaand script ook uit en kijk hoe het eruit ziet. Wissel de 1 en 3 ook eens om om te kijken wat er dan gebeurt!
+
+Het is uiteraard ook mogelijk om plots onder \'en naast elkaar te zetten. In het volgende voorbeeld worden 2 bij 2 plots gemaakt. Let op! De plots zitten nu niet meer in de losse namen \pythoninline{ax1, ax2} en \pythoninline{ax3}, maar ze zitten alle vier in de algemene naam \pythoninline{axarr}. Net zoals bij een array een plek opgegeven wordt met bijvoorbeeld \pythoninline{[1]}, kun je een specifiek plot ophalen met de blokhaken. Zie het voorbeeld.
+
+\pythonexternal{code-inc/w3/plt_vb5.py}
+
+Merk op dat gebruik wordt gemaakt van een 2-bij-2 array om de informatie voor de individuele plots op te slaan. Het eerste getal tussen de blokhaken staat daarbij voor de rijen, het tweede getal voor de kolommen.
 
 \subsubsection*{Oefenopdracht (vervolg)}
 \begin{itemize}
-	\item[j)] Maak een figuur met twee subplots: plot in de ene een sinus, en in de andere een cosinus. Kies de x-as tussen 0 en $2\pi$ met behulp van \pythoninline{axN.xlim(x_min, x_max)}. Voeg in allebei de plots de legenda toe. HINT: vervang \pythoninline{plt} nu door \pythoninline{ax1} en \pythoninline{ax2}.
+	\item[j)] Maak een figuur met twee subplots: plot in de ene een sinus, en in de andere een cosinus. Kies de x-as tussen 0 en $2\pi$ met behulp van \pythoninline{axN.xlim(x_min, x_max)}. Voeg in allebei de plots de legenda toe. \\
+	{\bf Hint:} vervang \pythoninline{plt} nu door \pythoninline{ax1} en \pythoninline{ax2}.
 \end{itemize}
 
 \subsection{Slotopdracht: Heel veel plotjes}
-Maak een figuur van 2-bij-2 plots waarin net als in het voorbeeld met de drie plotjes de $x$-markering weggelaten is voor figuren die niet onderaan staan. Laat ook de $y$-markering weg voor figuren die niet helemaal links staan. 
-De plots moeten er als volgt uit zien: voor elke plot is het bereik voor $x$ gelijk aan $[0,1]$. In elke plot moet $x^\alpha$ komen staan. In linksboven voor $\alpha = 0.125,0.25,0.5,1$, in rechtsboven $\alpha = 1,1.5,2$, in linksonder $\alpha = 1,2,3,4$ en rechtsonder $\alpha = 0.1,1,10$. Je kunt dit met de hand, regel voor regel doen, maar de uitdaging van deze opdracht zit hem vooral in het zo compact en efficiënt mogelijk maken van je script. Voeg achteraf ook labels en legenda toe en maak de figuur met behulp van de geleerde dingen in dit hoofdstuk zo netjes mogelijk.
+\begin{itemize}
+	\item Maak een figuur van 2-bij-2 plots waarin net als in de voorbeelden de $x$-markering weggelaten is voor figuren die niet onderaan staan. Laat ook de $y$-markering weg voor figuren die niet helemaal links staan. 
+	\item Zorg ervoor dat het bereik op de x-as (het domein) loopt van 0 tot 1 voor alle plots.
+	\item Maak een array \pythoninline{x} met een ruim aantal getallen, oplopend van 0 tot 1.
+	\item Plot vervolgens per plot meerdere lijnen, allemaal met dezelfde formule $x^\alpha$. Voor de vier verschillende plots heeft $\alpha$ de volgende waarden:\\
+	1. $\alpha = 0.125,0.25,0.5,1$\\
+	2. $\alpha = 1,1.5,2$\\
+	3. $\alpha = 1,2,3,4$\\
+	4. $\alpha = 0.1,1,10$\\
+	Je kunt dit met de hand, regel voor regel doen, en als dat lukt mag je gewoon doorgaan. Maar als je de uitdaging aan wilt gaan, is het uiteraard de bedoeling alles zo compact en efficiënt mogelijk te maken.
+	\item Voeg uiteindelijk ook labels en legenda's toe, en maak hem zo netjes mogelijk met de dingen die je in dit hoofdstuk geleerd hebt.
+\end{itemize}
 
 
 \clearpage
@@ -698,20 +717,23 @@ In de accolades kun je met een code aangeven hoe je tekst er uit komt te zien. D
 \label{default}
 \end{table}%
 
-\subsubsection*{Oefenopdracht: Oefenen met het precies formatteren van tekst}
-\begin{itemize}
-\item
-Verander de manier waarop de getallen $t$ en $y$ worden geformatteerd. 
-Hoeveel correcte decimalen van \pythoninline{np.pi} kun je zo op je scherm te zien krijgen? 
-(Antwoord: 15). 
-Probeer behalve het aantal decimalen te vari\"eren ook te spelen met het type door $t$ en $y$ af te drukken als string of integer! 
-Let op wat er dan gebeurt. Je kunt gebruik maken van onderstaand voorbeeld:
+Voorbeeld:
 \begin{python}
 t = np.pi
 y = 22/7
 print('Na {} seconden is de bal {} meter hoog'.format(t,y))
 print('Na {:.2f} seconden is de bal {:.2f} meter hoog'.format(t,y))
 \end{python}
+
+\subsubsection*{Oefenopdracht: Oefenen met het precies formatteren van tekst}
+\begin{itemize}
+\item
+Verander de manier waarop de getallen $t$ en $y$ worden geformatteerd in het voorbeeld. 
+Hoeveel correcte decimalen van \pythoninline{np.pi} kun je zo op je scherm te zien krijgen? 
+(Antwoord: 15). 
+Probeer behalve het aantal decimalen te vari\"eren ook te spelen met het type door $t$ en $y$ af te drukken als string of integer! 
+Let op wat er dan gebeurt. Je kunt gebruik maken van onderstaand voorbeeld:
+
 \end{itemize}
 
 \iffalse
@@ -753,42 +775,8 @@ Het inlezen van bestanden die numerieke data bevatten in de vorm van een array (
  
 \pythonexternal{code-inc/w4/genfromtxt_vb1.py}
 
-\subsection{Slotopdracht: De Europese bananeninspectie}
-We slaan dit keer de oefenopdracht over en gaan direct door naar de eindopdracht. We passen de stof van de afgelopen weken toe op de strenge Europese regelgeving voor bananen.
-
-\subsubsection*{1: Importeren van data}
-Bekijk het volgende bestand: 
-\href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/tree/main/inc/data_h4.txt}{data-h4}.
-
-Sla een kopie van dit bestand op in dezelfde map waar ook het Python-script staat dat dit bestand moet gaan lezen en bewerken.
-Gebruik \pythoninline{np.genfromtxt} met de komma als \verb,delimiter,, zodat je de meetgegevens in het bestand kunt inlezen en die in een \verb,numpy,-array om kunt zetten.
-
-\subsubsection*{2: Testen op dikte}
-We zullen de offici\"ele criteria van de Europese Commissie aanhouden zoals vastgesteld in \emph{Commission Regulation (EC) No 2257/94}. Deze richtlijnen stellen dat de minimale lengte van een banaan $L_\textrm{min} = 14\,\textrm{cm}$ en de minimale dikte is $d_\textrm{min} = 27\,\textrm{mm}$. We passen nu nog geen criteria toe op de kromtestraal $R$ of de smetten op het oppervlak $A$.
-
-Voor bananen uit bepaalde Europese grondgebieden (Madeira, de Azoren, de Algarve, Kreta en Laconi\"e) geldt vanwege klimaatfactoren het criterium op de lengte niet, maar mogen deze toch op de Europese markt verkocht worden. Ervan uitgaande dat de dataset gegenereerd bij Opdracht 1 betrekking heeft op bananen uit \'e\'en van deze regio's, bereken het percentage bananen wat zou worden afgekeurd.
-
-\subsubsection*{3: Lengte en dikte}
-Na onderzoek blijkt dat een slimme bananenhandelaar uit Portugal heeft geprobeerd om een partij bananen uit India als bananen afkomstig uit de Algarve te verkopen om zo de Europese regelgeving omtrent de lengte van een banaan te omzeilen. Toets de partij bananen nu niet enkel op dikte, maar ook op lengte. Hoeveel procent van de bananen wordt nu afgekeurd?
-
-\subsubsection*{4: Klasseindeling}
-Binnen de Europese richtlijnen worden bananen in Klassen ingedeeld. De ``Extra'' klasse bevat bananen van ``superieure kwaliteit''. Klasse I bananen is de standaardklasse en Klasse II bevat bananen met lelijke vorm. De bijbehorende criteria staan in de tabel hieronder.
-
-Deel de bananen aan de hand van de criteria in bovenstaande tabel in in de verschillende klassen. Rapporteer voor de gegenereerde dataset hoeveel procent van de bananen in de Extra klasse, hoeveel in klasse I en hoeveel in klasse II worden ingedeeld, rapporteer ook hoeveel procent van de bananen afgekeurd is.\footnote{Het correcte antwoord ligt rond: 1.52$\pm$0.04\% Extra, 12.84$\pm$0.10\% Klasse I, 66.50$\pm$0.15\% Klass II en 19.13$\pm$0.13\% afgekeurd.} Controleer of de bepaalde percentages optellen tot 100\%.
-
-\begin{table}[!ht]
-	\centering
-	\caption{Criteria gesteld aan Bananen in de Europese Unie, per Klasse.}
-	\begin{tabular}{c c c c}
-		&\textbf{Extra} & \textbf{I} & \textbf{II}\\
-		\hline
-		$d$ & $\geq 27\,\textrm{mm}$     &$\geq 27\,\textrm{mm}$    &$\geq 27\,\textrm{mm}$\\
-		$L$ & $\geq 14\,\textrm{cm}$     &$\geq 14\,\textrm{cm}$    &$\geq 14\,\textrm{cm}$\\
-		$R$ & $1.25 L \leq R \leq 1.3 L$ &$1.2 L \leq R \leq 1.4 L$ & geen\\
-		$A$ & $\leq 1\,\textrm{cm}^2$    &$\leq 2\,\textrm{cm}^2$   & $\leq 4\,\textrm{cm}^2$\\
-		\hline
-	\end{tabular}
-\end{table}
+\subsection{Slotopdracht}
+Work in progress.. check back later!
 
 
 \clearpage
@@ -904,164 +892,8 @@ Hier staat \pythoninline{x} voor het bereik op de x-as, \pythoninline{functie} v
 
 Als {\it proof-of-concept} moet je vervolgens het volgende data-bestand downloaden en importeren, om vervolgens elke kolom te plotten met behulp van jouw plot-functie. Plot ook in elke figuur het bijbehorend voortschrijdend gemiddelde over de afgelopen 10 waarden. Hiervoor kun je je functie van de slotopdracht van hoofdstuk 2 hergebruiken. (Hoe goed was je commentaar destijds? Begrijp je jouw script van toen nu nog steeds?)
 
-\clearpage
-
-\iffalse
-\renewcommand{\ditwc}{PLUS: Gebruiksvriendelijke code}
-\section[PLUS: Gebruiksvriendelijke code]{\ditwc}
-% week 6
-
-Tot nu toe heb je gewerkt met kant-en-klare scripts, en heb je ook soms eigen code helemaal zelf geschreven. Je hebt waarschijnlijk gemerkt dat je veel van die code (soms met enige aanpassingen) kunt hergebruiken in volgende opdrachten. In dit hoofdstuk leer je hoe je dit nog makkelijker en effici\"enter kunt doen; programmeren is tenslotte bedoeld om je leven\footnote{Data analyse binnen deze cursus, maar ook alles wat je in de toekomst met programmeren zult doen} makkelijker en sneller te maken.
-
-\subsection{Commentaar schrijven}
-Meestal ben je zelf de gebruiker van de code die je schrijft, maar je moet dit toch leesbaar maken voor anderen. Niet alleen de docent moet het kunnen volgen om een cijfer te kunnen geven, maar als je code leert schrijven zonder commentaar dan is jouw code meteen compleet onbruikbaar voor anderen. Vuistregel bij het schrijven van commentaar is dat je wilt dat wanneer je over 2 jaar de code weer opent weinig moeite hebt om te achterhalen wat er waar gebeurt, en hoe je de code opnieuw kunt gebruiken.
-
-De hoeveelheid commentaar is een persoonlijke keuze, maar met te weinig commentaar maak je je code onleesbaar en daarmee compleet onbruikbaar in de toekomst. Goed commentaar schrijven kost tijd, dus houd daar rekening mee tijdens het programmeren - het schrijven van goed commentaar is onderdeel van het schrijven van code, en een script is niet af voordat er goed commentaar bij staat. Het is handig om commentaar gaandeweg te schrijven, en niet pas op het eind. Dit maakt het oplossen van problemen makkelijker en is ook handig voor jezelf, want je weet juist op het moment dat je de code voor het eerst schrijft het best wat het doel van dat stukje is.
-Veel commentaar is niet per se goed commentaar. Zorg dat je commentaar ook echt iets zegt en helpt te begrijpen waarom een stuk of regel code gebruikt wordt:
-\begin{python}
-# slecht commentaar:
-x = x + 1         # verhoog x
-# nuttig commentaar:
-x = x + 1         # compenseer voor index 0
-\end{python}
-
-\textbf{Richtlijnen voor het schrijven van goed commentaar:}
-\begin{itemize}
-\item Gebruik \textit{natuurlijke taal}, d.w.z. gebruik zinnen en schrijf voluit. Gebruik geen Python code in comments,\footnote{Tenzij het een stukje code is wat tijdelijk niet gebruikt wordt.} en definieer (\'o\'ok voor de hand liggende) symbolen als $F$, $g$ en $T$.
-\item Zet commentaar bij het toekennen van numerieke waardes; zeg bij welke grootheid (evt. met symbool tussen haakjes) ze horen en welke eenheid ze hebben.
-\end{itemize}
-
-	\begin{python}
-	g = 9.81      # gravitatie constante (g) in m/s^2
-	v0 = 25       # snelheid (v) bij t=0 in m/s
-	n = 100       # aantal punten voor berekening
-	\end{python}
-
-\begin{itemize}
-\item Wanneer je \pythoninline{print()} of \pythoninline{input()} gebruikt, print dan niet alleen de waarde of variabele waarin je ge\"interesseerd bent, maar print ook een beschrijving met context over die waarde of een specifieke instructie voor wat de input betekent.
-\item Elke functie heeft minimaal een beschrijving van wat die doet, wat de input en output is en wat de eventuele \pythoninline{*args} zijn.
-\item Bovenaan het script staat een algemene beschrijving van het script en voor welke toepassingen deze geschikt is.
-\item Blokken commentaar (met \pythoninline{'''text'''}) worden gebruikt om lange stukken commentaar te geven, bijvoorbeeld bij de uitleg van een functie, of bovenaan het script.
-\item In-line commentaar (met \pythoninline{# text}) staat precies op de plek waar het relevant is, en staat bij voorkeur uitgelijnd rechts van de code om de leesbaarheid te verbeteren.
-\end{itemize}
-
-Dan een aantal richtlijnen die niet per se met commentaar te maken hebben, maar die wel de leesbaarheid van je script sterk kunnen vergroten:
-\begin{itemize}
-\item Maak de regels niet te lang. In Spyder (en de meeste andere editors) kun je een verticale lijn laten weergeven na een specifiek aantal karakters.\footnote{Het is je vast al opgevallen dat bij programmeren standaard een font gekozen wordt waarbij alle letters even breed zijn, zoals \texttt{Courier New}.} Zorg dat regels code en commentaar niet (veel) langer worden dan tot die lijn. Bij Python is de conventie om deze na 79 karakters te zetten. Let op dat je door syntax niet zomaar een nieuwe regel kunt beginnen; dit heeft namelijk een betekenis binnen Python. Door gebruik van de juiste \textit{indentatie} kun je toch aan de 79-karakter-limiet voldoen.
-\item Gebruik \pythoninline{#\%\%} om \textit{cells} te maken die los te runnen zijn. Let op: bij goede modulaire code (waarbij de acties in functies staan) is dit juist niet altijd handig. Tijdens het ontwikkelen van de code kunnen cells wel uitermate handig zijn, zodat je bijvoorbeeld een tijdrovend deel van je code kunt overslaan (bijvoorbeeld het genereren of analyseren van data) terwijl je door werkt aan een ander stuk (bijvoorbeeld het plotten van data).
-\item Schrijf bovenaan elke cell wat er in die cell gebeurd (welke `titel' je de cell zou geven).
-\item Gebruik scheidingsmarkeringen tussen lange stukken code. Een lege regel tussen het importeren van packages en de start van de code, en een lege regel tussen het einde van een loop en het vervolg van de (niet ge\"indenteerde) code, of een stuk code gescheiden door een regel \pythoninline{#---------} geven het script een overzichtelijkere uitstraling en maken het daarmee beter leesbaar.
-\item Verkies leesbaarheid over snelheid.
-\end{itemize}
-\begin{python}
-# dit is goed leesbaar en makkelijk aan te passen:
-q=1
-w=2
-e=3
-r=4
-
-q,w,e,r = 1,2,3,4 # kan ook, maar is erg onoverzichtelijk en foutgevoelig
-\end{python}
-
-
-\subsection{Effici\"entie verbeteren}
-De meest gebruiksvriendelijke code is natuurlijk ook snel, je wilt liever een paar seconden wachten op je resultaten dan een paar minuten. Binnen de programmeerwereld staat Python bekend als een langzame taal. De snelheid van code hangt af van (a) de effici\"entie van de code zelf, (b) de snelheid waarmee het script wordt omgezet in machine code, en (c) de snelheid van computer processing unit (CPU).\footnote{Hier gebruiken we `script' en `code' als synoniemen met de betekenis: de text die jij schrijft of gebruikt om een geprogrammeerde taak uit te (laten) voeren. In werkelijkheid is een script maar een deel van de code, want er zitten veel (basis) instructies achter de schermen, die wel deel zijn van de code, maar die je niet terug ziet in je script.} Python is een langzame taal omdat de vertaling tussen het script en de instructies die naar de CPU gaan (in \'e\'enen en nullen) gebeurt tijdens het runnen van het script; dit maakt Python een \textit{interpreting language}. Bij een \textit{compiling language} zoals C of C++ moet je een script eerst \textit{compilen} voordat het naar de CPU gestuurd kan worden. Dit compilen kost tijd, maar het daadwerkelijke runnen van de code gaat dan veel vlotter.
-
-Het voordeel van een \textit{scripting language} zoals Python is dat het makkelijker te leren is. Daarnaast kun je door de directe interpretatie snel en makkelijk kleine dingen veranderen in de code en meteen het effect daarvan zien. \textit{"Python was not made to be fast, but to make developers fast."} - Sebastian Witowski (Software Engineer bij CERN)
-
-Er zijn manieren om je Python code om te zetten in C-gecompileerde code, en zelfs om je Python code op meerdere processors tegelijk (parallel) te laten uitvoeren.\footnote{Normaal gebruikt Python maar 1 CPU-core tegelijk; ook als jouw computer dus 4 cores heeft gebruikt Python er maar 1, en voert dus alle instructies in serie uit.} Meer over deze methodes zul je vanzelf tegen komen als je meer complexe simulaties of berekeningen gaat doen tijdens je studie of onderzoek. Deze manier van optimalisatie is echter geen onderdeel van deze beginnerscursus.
-
-Over de snelheid van je CPU heb je ook niet direct invloed; behalve door het kopen van een nieuwe computer, snellere CPU, of gebruik maken van een externe CPU op een computercluster. Om je code sneller te laten uitvoeren kijken we in deze sectie dus alleen naar hoe we het script z\'elf effici\"enter kunnen maken.
-
-\subsubsection{Effici\"entie meten}
-De makkelijkste manier om de snelheid van je code te meten is door de tijd te noteren aan het begin van je code, en nadat je code klaar is, en dan het verschil te nemen. Dit kan intern met het \pythoninline{time}.
-
-\pythonexternal{code-inc/w6/time_vb1.py}
-
-Deze methode werkt prima als je de totale run-tijd van je script wilt bepalen. Het is altijd handig als de gebruiker weet hoe lang een script ongeveer runt; als je dit gemeten hebt, zet dit dan ook in de beschrijving bovenaan het script.
-
-\subsubsection*{Oefenopdracht}
-\begin{enumerate}[label=(\alph*)]
-\item Run bovenstaande code. Welke methode is het snelst?
-\item Kijk in de Variable explorer, of typ \pythoninline{type(naam_variabele)} rechtstreeks in de console (rechtsonder, na de input promt \pythoninline{In [getal]:}) om de types van de output van beide methodes te vergelijken; deze zijn verschillend.
-
-Zet nu het resultaat van de snelste methode om in hetzelfde type als het langzaamste resultaat. (Hint: gebruik \pythoninline{a = list(a)} of \pythoninline{b = np.array(b)}.) Als je specifiek dit type (\pythoninline{list} of \pythoninline{np.array}) resultaat wilt, is dezelfde methode dan nog steeds het snelst?
-\item Run het script nu een aantal keer (je kunt dit automatiseren door er een loop omheen te zetten!). De runtime van beide methodes is elke keer een beetje anders. Bereken de gemiddelde runtime voor beide methodes.
-\end{enumerate}
-
-\subsubsection{Wanneer optimaliseren?}
-Optimaliseren door gebruik te maken van het soort testen die hierboven beschreven worden kost vrijwel altijd meer tijd dan dat het oplevert. Het optimaliseren als doel op zich kan een leuke puzzel zijn, maar is meestal bijzaak.
-
-Wanneer is optimaliseren dan een goed idee? Vuistregel is:
-
-\qquad \textit{``First make it work. Then make it right. Then make it fast''} - Kent Beck
-
-Het belangrijkste is dat je code werkt; dat je code doet wat je wilt dat die doet (niet alleen geen errors geeft, maar ook dat het fysisch correct ge\"implementeerd is) en dat de aannames en input correct zijn. Daarna kun je je code robuuster maken; bijvoorbeeld opvangen wat er gebeurd als er verkeerde input gegeven wordt, of als ergens onverhoopt een negatief getal uit komt terwijl dat fysisch niet kan. Hier valt ook onder dat je zorgt dat je code toekomst-bestendig is, dus dat er goed commentaar bij staat. Pas daarna, als allerlaatst, kun je de snelheid van je code proberen te verbeteren.
-
-Voor een goede optimalisatie moet er eerst onderzocht worden waar de meeste tijd verloren gaat. De meeste tijdswinst kan vaak gewonnen worden op de knelpunten (\textit{bottle neck}) die nu het meest tijd kosten. Binnen programmeren wordt het zoeken naar optimalisatie-knelpunten \textit{profileren} genoemd. Er zijn verschillende functies en packages beschikbaar die helpen met het profileren van code; veel gebruikt zijn \pythoninline{cProfile} (vaak in combinatie met \pythoninline{pstats}) en \pythoninline{line_profiler}. Het gebruik van deze packages ligt buiten de leerdoelen van deze cursus; we geven hier slechts vast een paar handvatten en vuistregels.
-
-Bij het zoeken naar \textit{bottlenecks} kan het zijn dat niet CPU, maar bijvoorbeeld het lezen/schrijven van/naar geheugen (\textit{disk I/O}) het meest tijd kost. Daarnaast is optimalisatie niet altijd gericht op de code het snelst uitvoeren, soms is het belangrijker dat er weinig werkgeheugen (RAM), hardeschijfruimte, netwerkverkeer, of zelfs energie gebruikt wordt. Optimalisatie in tijdseffici\"entie zijn dan niet altijd gewenst.
-
-In sommige gevallen is optimaal gebruik van CPU wel belangrijk, bijvoorbeeld wanneer een model of berekening zo groot is dat deze op een extern CPU cluster uitgevoerd moet worden. In dat geval wil je wel zorgen dat je zo optimaal mogelijk gebruik maakt van de CPU-tijd die je toegewezen krijgt.
-
-\subsubsection{Standaard snelle oplossingen}
-Met het idee dat optimaliseren onnodig veel tijd kost in het achterhoofd; hier toch een aantal vuistregels die je aan kunt houden om de code die je schrijft in Python meteen wat sneller te maken:
-\begin{itemize}
-\item Leesbaarheid gaat altijd boven snelheid.
-\item Gebruik ingebouwde functies (dit kan alleen als je weet dat ze bestaan, dus als je iets nieuws wilt doen, kijk altijd even of er al een functie voor bestaat)
-\begin{itemize}
-\item \pythoninline{len(x)} geeft de lengte van een variabele, dit is sneller dan zelf de lengte tellen in een loop
-\item \pythoninline{np.mean(x)} geeft een gemiddelde van alle waardes in x.
-\item \pythoninline{map(function,iterable)} voert de functie uit op elk element in de lijst (iterable). Dit is doorgaans sneller dan een loop.
-\item Voor een uitgebreide lijst aan standaard functies zie: \url{https://docs.python.org/3/library/functions.html}
-\end{itemize}
-\item Loops zijn langzaam; als je een loop kunt vervangen voor een bestaande functie of een direct statement is dit sneller.
-\item Gebruik numpy arrays voor berekeningen op het gehele array; hiermee kun je vaak loops ontwijken.
-\item Doe rekenkundige operaties binnen een functie i.p.v. een simpele versie van die functie meerdere malen aan te roepen. (\textit{Let op:} dit gaat soms ten koste van de modulariteit, omdat dit je functie minder veelzijdig maakt.)
-\item Als iets is in minder regels (actieve) code kan, is het vaak het snelst om dat te doen. (\textit{Let op:} dit gaat soms ten koste van de leesbaarheid, en dat is ongewenst; als je code slecht leesbaar is kost het je altijd meer tijd om die weer te ontcijferen, dan het je oplevert als die een paar milliseconden sneller runt.)
-\item Gebruik de nieuwste versie van python, en de nieuwste formats/technieken/functies.
-\item Tussentijds printen of wegschrijven naar file kost tijd. Tijdens de test-fase is het printen van tussentijdse resultaten erg nuttig; dit maakt het makkelijker om een mogelijke fout op te sporen. Als een stuk code eenmaal correct werkt is het een goed idee om die vele prints te deactiveren (door ze weg te halen of er tijdelijk een \pythoninline{#} voor te zetten). Bij lange scripts kan het t\'och handig zijn om af en toe een print te laten staan (of toe te voegen) zodat de gebruiker weet waar het script mee bezig is en niet is vastgelopen.
-\end{itemize}
-
-Voorbeelden van snellere en langzamere code:
-\begin{python}
-#%% check op True/False
-if variable == True: #35.8ns
-if variable is True: #28.7ns
-if variable:         #20.6ns
-
-if variable == False: #35.1ns
-if variable is False: #26.9ns
-if not variable:      #19.8ns
-# Is dit voor jou de tijdswinst waard?
-\end{python}
-
-\begin{python}
-# 1000 operaties en 1 functie
-def kwadraat(number):
-    return number**2
-kwadraten = [kwadraat(i) for i in range(1000)]
-# 1000x gemeten met time: 0.40 sec
-
-def compute_kwadraten():
-    return [i**2 for i in range(1000)]
-# 1000x gemeten met time: 0.31 sec
-\end{python}
-
-\subsubsection*{Oefenopdracht: effici\"entie}
-\begin{enumerate}[label=(\alph*)]
-\item Wat denk je dat sneller is: \pythoninline{a = np.arange(100)} of \pythoninline{b = [*range(100)]}? Test dit met \pythoninline{time}
-\end{enumerate}
-
-%\subsection{Debuggen en testen}
-%Handige manieren om te debuggen en testen.
-
-\subsection{Slotopdracht: Priemgetallen (reprise)}
-Zoek je script van de tweede slotopdracht van hoofdstuk 1. Hier berekende je priemgetallen. Zoek een bepaald bereik (van 1 tot ...) waar je script ongeveer 5 seconden duurt om alle priemgetallen te berekenen. Probeer nu om dit script sneller te maken. Denk hierbij niet alleen aan verbeteringen in programmeren, maar ook aan het {\it algoritme}. Bijvoorbeeld: een even getal is altijd deelbaar door 2 en dus geen priemgetal. Hoeveel keer sneller kun je je script maken dan het was?
 
 \clearpage
-\fi
-
 \renewcommand{\ditwc}{Meet je leefomgeving}
 \section[Meet je leefomgeving]{\ditwc}
 Dit hoofdstuk is de klapper op de vuurpijl. De afgelopen weken heb je een kastje vol met sensoren mee naar huis gehad (tenzij je te ver weg woont). Dit kastje heeft lange tijd data verzameld van jouw leefomgeving, en het is tijd dat we die data gaan verwerken. Niet toevallig dat we Python combineren met het Meet je leefomgeving-project. 
@@ -1163,4 +995,186 @@ De exacte puntenverdeling en de onderdelen die aanwezig moeten zijn staan vermel
 	Maak zelf een bewuste keuze: welke regio's geef je aan? Ga je door tot 9999? En geef je ook de namen weer, of alleen met kleuren de zones? En als lijnen, of als gekleurde vlakken? Maak hierbij gebruik van internet om het mooi te maken!
 	\item De CJMCU-811-sensor is eigenlijk een beetje nep. Hij meet inderdaad correct het VOC-gehalte in de lucht, maar eigenlijk helemaal geen CO$_2$. De sensor neemt aan dat alle VOC's van mensen afkomstig zijn, en berekent dus hoeveel mensen er aanwezig zouden zijn volgens de VOC-waarde. Vervolgens neemt hij de gemiddelde CO$_2$-productie van een mens, om te berekenen hoeveel CO$_2$ er misschien dan in de lucht zit. Maak het inzichtelijk dat de sensor je hier voor de nep houdt door beide lijnen in dezelfde plot (in een nieuw figuur) te zetten. Helemaal mooi is het als je een tweede y-as (aan de rechterkant) weet toe te voegen waardoor je de lijnen kunt schalen.
 \end{itemize}
+
+
+\clearpage
+\renewcommand{\ditwc}{BONUS}
+\section{BONUS}
+\subsection{Voormalige slotopdracht H4: De Europese bananeninspectie}
+We passen de stof van de hoofdstukken 1 tot en met 4 toe op de strenge Europese regelgeving voor bananen.
+
+\subsubsection*{1: Importeren van data}
+Bekijk het volgende bestand: 
+\href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/tree/main/inc/data_h4.txt}{data-h4}.
+
+Sla een kopie van dit bestand op in dezelfde map waar ook het Python-script staat dat dit bestand moet gaan lezen en bewerken.
+Gebruik \pythoninline{np.genfromtxt} met de komma als \verb,delimiter,, zodat je de meetgegevens in het bestand kunt inlezen en die in een \verb,numpy,-array om kunt zetten.
+
+\subsubsection*{2: Testen op dikte}
+We zullen de offici\"ele criteria van de Europese Commissie aanhouden zoals vastgesteld in \emph{Commission Regulation (EC) No 2257/94}. Deze richtlijnen stellen dat de minimale lengte van een banaan $L_\textrm{min} = 14\,\textrm{cm}$ en de minimale dikte is $d_\textrm{min} = 27\,\textrm{mm}$. We passen nu nog geen criteria toe op de kromtestraal $R$ of de smetten op het oppervlak $A$.
+
+Voor bananen uit bepaalde Europese grondgebieden (Madeira, de Azoren, de Algarve, Kreta en Laconi\"e) geldt vanwege klimaatfactoren het criterium op de lengte niet, maar mogen deze toch op de Europese markt verkocht worden. Ervan uitgaande dat de dataset gegenereerd bij Opdracht 1 betrekking heeft op bananen uit \'e\'en van deze regio's, bereken het percentage bananen wat zou worden afgekeurd.
+
+\subsubsection*{3: Lengte en dikte}
+Na onderzoek blijkt dat een slimme bananenhandelaar uit Portugal heeft geprobeerd om een partij bananen uit India als bananen afkomstig uit de Algarve te verkopen om zo de Europese regelgeving omtrent de lengte van een banaan te omzeilen. Toets de partij bananen nu niet enkel op dikte, maar ook op lengte. Hoeveel procent van de bananen wordt nu afgekeurd?
+
+\subsubsection*{4: Klasseindeling}
+Binnen de Europese richtlijnen worden bananen in Klassen ingedeeld. De ``Extra'' klasse bevat bananen van ``superieure kwaliteit''. Klasse I bananen is de standaardklasse en Klasse II bevat bananen met lelijke vorm. De bijbehorende criteria staan in de tabel hieronder.
+
+Deel de bananen aan de hand van de criteria in bovenstaande tabel in in de verschillende klassen. Rapporteer voor de gegenereerde dataset hoeveel procent van de bananen in de Extra klasse, hoeveel in klasse I en hoeveel in klasse II worden ingedeeld, rapporteer ook hoeveel procent van de bananen afgekeurd is.\footnote{Het correcte antwoord ligt rond: 1.52$\pm$0.04\% Extra, 12.84$\pm$0.10\% Klasse I, 66.50$\pm$0.15\% Klass II en 19.13$\pm$0.13\% afgekeurd.} Controleer of de bepaalde percentages optellen tot 100\%.
+
+\begin{table}[!ht]
+	\centering
+	\caption{Criteria gesteld aan Bananen in de Europese Unie, per Klasse.}
+	\begin{tabular}{c c c c}
+		&\textbf{Extra} & \textbf{I} & \textbf{II}\\
+		\hline
+		$d$ & $\geq 27\,\textrm{mm}$     &$\geq 27\,\textrm{mm}$    &$\geq 27\,\textrm{mm}$\\
+		$L$ & $\geq 14\,\textrm{cm}$     &$\geq 14\,\textrm{cm}$    &$\geq 14\,\textrm{cm}$\\
+		$R$ & $1.25 L \leq R \leq 1.3 L$ &$1.2 L \leq R \leq 1.4 L$ & geen\\
+		$A$ & $\leq 1\,\textrm{cm}^2$    &$\leq 2\,\textrm{cm}^2$   & $\leq 4\,\textrm{cm}^2$\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Commentaar schrijven}
+Meestal ben je zelf de gebruiker van de code die je schrijft, maar je moet dit toch leesbaar maken voor anderen. Niet alleen de docent moet het kunnen volgen om een cijfer te kunnen geven, maar als je code leert schrijven zonder commentaar dan is jouw code meteen compleet onbruikbaar voor anderen. Vuistregel bij het schrijven van commentaar is dat je wilt dat wanneer je over 2 jaar de code weer opent weinig moeite hebt om te achterhalen wat er waar gebeurt, en hoe je de code opnieuw kunt gebruiken.
+
+De hoeveelheid commentaar is een persoonlijke keuze, maar met te weinig commentaar maak je je code onleesbaar en daarmee compleet onbruikbaar in de toekomst. Goed commentaar schrijven kost tijd, dus houd daar rekening mee tijdens het programmeren - het schrijven van goed commentaar is onderdeel van het schrijven van code, en een script is niet af voordat er goed commentaar bij staat. Het is handig om commentaar gaandeweg te schrijven, en niet pas op het eind. Dit maakt het oplossen van problemen makkelijker en is ook handig voor jezelf, want je weet juist op het moment dat je de code voor het eerst schrijft het best wat het doel van dat stukje is.
+Veel commentaar is niet per se goed commentaar. Zorg dat je commentaar ook echt iets zegt en helpt te begrijpen waarom een stuk of regel code gebruikt wordt:
+\begin{python}
+	# slecht commentaar:
+	x = x + 1         # verhoog x
+	# nuttig commentaar:
+	x = x + 1         # compenseer voor index 0
+\end{python}
+
+\textbf{Richtlijnen voor het schrijven van goed commentaar:}
+\begin{itemize}
+	\item Gebruik \textit{natuurlijke taal}, d.w.z. gebruik zinnen en schrijf voluit. Gebruik geen Python code in comments,\footnote{Tenzij het een stukje code is wat tijdelijk niet gebruikt wordt.} en definieer (\'o\'ok voor de hand liggende) symbolen als $F$, $g$ en $T$.
+	\item Zet commentaar bij het toekennen van numerieke waardes; zeg bij welke grootheid (evt. met symbool tussen haakjes) ze horen en welke eenheid ze hebben.
+\end{itemize}
+
+\begin{python}
+	g = 9.81      # gravitatie constante (g) in m/s^2
+	v0 = 25       # snelheid (v) bij t=0 in m/s
+	n = 100       # aantal punten voor berekening
+\end{python}
+
+\begin{itemize}
+	\item Wanneer je \pythoninline{print()} of \pythoninline{input()} gebruikt, print dan niet alleen de waarde of variabele waarin je ge\"interesseerd bent, maar print ook een beschrijving met context over die waarde of een specifieke instructie voor wat de input betekent.
+	\item Elke functie heeft minimaal een beschrijving van wat die doet, wat de input en output is en wat de eventuele \pythoninline{*args} zijn.
+	\item Bovenaan het script staat een algemene beschrijving van het script en voor welke toepassingen deze geschikt is.
+	\item Blokken commentaar (met \pythoninline{'''text'''}) worden gebruikt om lange stukken commentaar te geven, bijvoorbeeld bij de uitleg van een functie, of bovenaan het script.
+	\item In-line commentaar (met \pythoninline{# text}) staat precies op de plek waar het relevant is, en staat bij voorkeur uitgelijnd rechts van de code om de leesbaarheid te verbeteren.
+\end{itemize}
+
+Dan een aantal richtlijnen die niet per se met commentaar te maken hebben, maar die wel de leesbaarheid van je script sterk kunnen vergroten:
+\begin{itemize}
+	\item Maak de regels niet te lang. In Spyder (en de meeste andere editors) kun je een verticale lijn laten weergeven na een specifiek aantal karakters.\footnote{Het is je vast al opgevallen dat bij programmeren standaard een font gekozen wordt waarbij alle letters even breed zijn, zoals \texttt{Courier New}.} Zorg dat regels code en commentaar niet (veel) langer worden dan tot die lijn. Bij Python is de conventie om deze na 79 karakters te zetten. Let op dat je door syntax niet zomaar een nieuwe regel kunt beginnen; dit heeft namelijk een betekenis binnen Python. Door gebruik van de juiste \textit{indentatie} kun je toch aan de 79-karakter-limiet voldoen.
+	\item Gebruik \pythoninline{#\%\%} om \textit{cells} te maken die los te runnen zijn. Let op: bij goede modulaire code (waarbij de acties in functies staan) is dit juist niet altijd handig. Tijdens het ontwikkelen van de code kunnen cells wel uitermate handig zijn, zodat je bijvoorbeeld een tijdrovend deel van je code kunt overslaan (bijvoorbeeld het genereren of analyseren van data) terwijl je door werkt aan een ander stuk (bijvoorbeeld het plotten van data).
+	\item Schrijf bovenaan elke cell wat er in die cell gebeurd (welke `titel' je de cell zou geven).
+	\item Gebruik scheidingsmarkeringen tussen lange stukken code. Een lege regel tussen het importeren van packages en de start van de code, en een lege regel tussen het einde van een loop en het vervolg van de (niet ge\"indenteerde) code, of een stuk code gescheiden door een regel \pythoninline{#---------} geven het script een overzichtelijkere uitstraling en maken het daarmee beter leesbaar.
+	\item Verkies leesbaarheid over snelheid.
+\end{itemize}
+\begin{python}
+	# dit is goed leesbaar en makkelijk aan te passen:
+	q=1
+	w=2
+	e=3
+	r=4
+	
+	q,w,e,r = 1,2,3,4 # kan ook, maar is erg onoverzichtelijk en foutgevoelig
+\end{python}
+
+
+\subsection{Effici\"entie verbeteren}
+De meest gebruiksvriendelijke code is natuurlijk ook snel, je wilt liever een paar seconden wachten op je resultaten dan een paar minuten. Binnen de programmeerwereld staat Python bekend als een langzame taal. De snelheid van code hangt af van (a) de effici\"entie van de code zelf, (b) de snelheid waarmee het script wordt omgezet in machine code, en (c) de snelheid van computer processing unit (CPU).\footnote{Hier gebruiken we `script' en `code' als synoniemen met de betekenis: de text die jij schrijft of gebruikt om een geprogrammeerde taak uit te (laten) voeren. In werkelijkheid is een script maar een deel van de code, want er zitten veel (basis) instructies achter de schermen, die wel deel zijn van de code, maar die je niet terug ziet in je script.} Python is een langzame taal omdat de vertaling tussen het script en de instructies die naar de CPU gaan (in \'e\'enen en nullen) gebeurt tijdens het runnen van het script; dit maakt Python een \textit{interpreting language}. Bij een \textit{compiling language} zoals C of C++ moet je een script eerst \textit{compilen} voordat het naar de CPU gestuurd kan worden. Dit compilen kost tijd, maar het daadwerkelijke runnen van de code gaat dan veel vlotter.
+
+Het voordeel van een \textit{scripting language} zoals Python is dat het makkelijker te leren is. Daarnaast kun je door de directe interpretatie snel en makkelijk kleine dingen veranderen in de code en meteen het effect daarvan zien. \textit{"Python was not made to be fast, but to make developers fast."} - Sebastian Witowski (Software Engineer bij CERN)
+
+Er zijn manieren om je Python code om te zetten in C-gecompileerde code, en zelfs om je Python code op meerdere processors tegelijk (parallel) te laten uitvoeren.\footnote{Normaal gebruikt Python maar 1 CPU-core tegelijk; ook als jouw computer dus 4 cores heeft gebruikt Python er maar 1, en voert dus alle instructies in serie uit.} Meer over deze methodes zul je vanzelf tegen komen als je meer complexe simulaties of berekeningen gaat doen tijdens je studie of onderzoek. Deze manier van optimalisatie is echter geen onderdeel van deze beginnerscursus.
+
+Over de snelheid van je CPU heb je ook niet direct invloed; behalve door het kopen van een nieuwe computer, snellere CPU, of gebruik maken van een externe CPU op een computercluster. Om je code sneller te laten uitvoeren kijken we in deze sectie dus alleen naar hoe we het script z\'elf effici\"enter kunnen maken.
+
+\subsubsection{Effici\"entie meten}
+De makkelijkste manier om de snelheid van je code te meten is door de tijd te noteren aan het begin van je code, en nadat je code klaar is, en dan het verschil te nemen. Dit kan intern met het \pythoninline{time}.
+
+\pythonexternal{code-inc/w6/time_vb1.py}
+
+Deze methode werkt prima als je de totale run-tijd van je script wilt bepalen. Het is altijd handig als de gebruiker weet hoe lang een script ongeveer runt; als je dit gemeten hebt, zet dit dan ook in de beschrijving bovenaan het script.
+
+\subsubsection*{Oefenopdracht}
+\begin{enumerate}[label=(\alph*)]
+	\item Run bovenstaande code. Welke methode is het snelst?
+	\item Kijk in de Variable explorer, of typ \pythoninline{type(naam_variabele)} rechtstreeks in de console (rechtsonder, na de input promt \pythoninline{In [getal]:}) om de types van de output van beide methodes te vergelijken; deze zijn verschillend.
+	
+	Zet nu het resultaat van de snelste methode om in hetzelfde type als het langzaamste resultaat. (Hint: gebruik \pythoninline{a = list(a)} of \pythoninline{b = np.array(b)}.) Als je specifiek dit type (\pythoninline{list} of \pythoninline{np.array}) resultaat wilt, is dezelfde methode dan nog steeds het snelst?
+	\item Run het script nu een aantal keer (je kunt dit automatiseren door er een loop omheen te zetten!). De runtime van beide methodes is elke keer een beetje anders. Bereken de gemiddelde runtime voor beide methodes.
+\end{enumerate}
+
+\subsubsection{Wanneer optimaliseren?}
+Optimaliseren door gebruik te maken van het soort testen die hierboven beschreven worden kost vrijwel altijd meer tijd dan dat het oplevert. Het optimaliseren als doel op zich kan een leuke puzzel zijn, maar is meestal bijzaak.
+
+Wanneer is optimaliseren dan een goed idee? Vuistregel is:
+
+\qquad \textit{``First make it work. Then make it right. Then make it fast''} - Kent Beck
+
+Het belangrijkste is dat je code werkt; dat je code doet wat je wilt dat die doet (niet alleen geen errors geeft, maar ook dat het fysisch correct ge\"implementeerd is) en dat de aannames en input correct zijn. Daarna kun je je code robuuster maken; bijvoorbeeld opvangen wat er gebeurd als er verkeerde input gegeven wordt, of als ergens onverhoopt een negatief getal uit komt terwijl dat fysisch niet kan. Hier valt ook onder dat je zorgt dat je code toekomst-bestendig is, dus dat er goed commentaar bij staat. Pas daarna, als allerlaatst, kun je de snelheid van je code proberen te verbeteren.
+
+Voor een goede optimalisatie moet er eerst onderzocht worden waar de meeste tijd verloren gaat. De meeste tijdswinst kan vaak gewonnen worden op de knelpunten (\textit{bottle neck}) die nu het meest tijd kosten. Binnen programmeren wordt het zoeken naar optimalisatie-knelpunten \textit{profileren} genoemd. Er zijn verschillende functies en packages beschikbaar die helpen met het profileren van code; veel gebruikt zijn \pythoninline{cProfile} (vaak in combinatie met \pythoninline{pstats}) en \pythoninline{line_profiler}. Het gebruik van deze packages ligt buiten de leerdoelen van deze cursus; we geven hier slechts vast een paar handvatten en vuistregels.
+
+Bij het zoeken naar \textit{bottlenecks} kan het zijn dat niet CPU, maar bijvoorbeeld het lezen/schrijven van/naar geheugen (\textit{disk I/O}) het meest tijd kost. Daarnaast is optimalisatie niet altijd gericht op de code het snelst uitvoeren, soms is het belangrijker dat er weinig werkgeheugen (RAM), hardeschijfruimte, netwerkverkeer, of zelfs energie gebruikt wordt. Optimalisatie in tijdseffici\"entie zijn dan niet altijd gewenst.
+
+In sommige gevallen is optimaal gebruik van CPU wel belangrijk, bijvoorbeeld wanneer een model of berekening zo groot is dat deze op een extern CPU cluster uitgevoerd moet worden. In dat geval wil je wel zorgen dat je zo optimaal mogelijk gebruik maakt van de CPU-tijd die je toegewezen krijgt.
+
+\subsubsection{Standaard snelle oplossingen}
+Met het idee dat optimaliseren onnodig veel tijd kost in het achterhoofd; hier toch een aantal vuistregels die je aan kunt houden om de code die je schrijft in Python meteen wat sneller te maken:
+\begin{itemize}
+	\item Leesbaarheid gaat altijd boven snelheid.
+	\item Gebruik ingebouwde functies (dit kan alleen als je weet dat ze bestaan, dus als je iets nieuws wilt doen, kijk altijd even of er al een functie voor bestaat)
+	\begin{itemize}
+		\item \pythoninline{len(x)} geeft de lengte van een variabele, dit is sneller dan zelf de lengte tellen in een loop
+		\item \pythoninline{np.mean(x)} geeft een gemiddelde van alle waardes in x.
+		\item \pythoninline{map(function,iterable)} voert de functie uit op elk element in de lijst (iterable). Dit is doorgaans sneller dan een loop.
+		\item Voor een uitgebreide lijst aan standaard functies zie: \url{https://docs.python.org/3/library/functions.html}
+	\end{itemize}
+	\item Loops zijn langzaam; als je een loop kunt vervangen voor een bestaande functie of een direct statement is dit sneller.
+	\item Gebruik numpy arrays voor berekeningen op het gehele array; hiermee kun je vaak loops ontwijken.
+	\item Doe rekenkundige operaties binnen een functie i.p.v. een simpele versie van die functie meerdere malen aan te roepen. (\textit{Let op:} dit gaat soms ten koste van de modulariteit, omdat dit je functie minder veelzijdig maakt.)
+	\item Als iets is in minder regels (actieve) code kan, is het vaak het snelst om dat te doen. (\textit{Let op:} dit gaat soms ten koste van de leesbaarheid, en dat is ongewenst; als je code slecht leesbaar is kost het je altijd meer tijd om die weer te ontcijferen, dan het je oplevert als die een paar milliseconden sneller runt.)
+	\item Gebruik de nieuwste versie van python, en de nieuwste formats/technieken/functies.
+	\item Tussentijds printen of wegschrijven naar file kost tijd. Tijdens de test-fase is het printen van tussentijdse resultaten erg nuttig; dit maakt het makkelijker om een mogelijke fout op te sporen. Als een stuk code eenmaal correct werkt is het een goed idee om die vele prints te deactiveren (door ze weg te halen of er tijdelijk een \pythoninline{#} voor te zetten). Bij lange scripts kan het t\'och handig zijn om af en toe een print te laten staan (of toe te voegen) zodat de gebruiker weet waar het script mee bezig is en niet is vastgelopen.
+\end{itemize}
+
+Voorbeelden van snellere en langzamere code:
+\begin{python}
+	#%% check op True/False
+	if variable == True: #35.8ns
+	if variable is True: #28.7ns
+	if variable:         #20.6ns
+	
+	if variable == False: #35.1ns
+	if variable is False: #26.9ns
+	if not variable:      #19.8ns
+	# Is dit voor jou de tijdswinst waard?
+\end{python}
+
+\begin{python}
+	# 1000 operaties en 1 functie
+	def kwadraat(number):
+	return number**2
+	kwadraten = [kwadraat(i) for i in range(1000)]
+	# 1000x gemeten met time: 0.40 sec
+	
+	def compute_kwadraten():
+	return [i**2 for i in range(1000)]
+	# 1000x gemeten met time: 0.31 sec
+\end{python}
+
+\subsubsection*{Oefenopdracht: effici\"entie}
+\begin{enumerate}[label=(\alph*)]
+	\item Wat denk je dat sneller is: \pythoninline{a = np.arange(100)} of \pythoninline{b = [*range(100)]}? Test dit met \pythoninline{time}
+\end{enumerate}
+
 \end{document}

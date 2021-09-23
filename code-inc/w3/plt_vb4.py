@@ -1,16 +1,16 @@
 # Begin met een subplots.
-# sharex='col' zorgt dat de x-coordinaat gedeeld wordt over de kolommen
-# sharey='row' idem voor rijen en de y-coordinaat
-fig, axarr = plt.subplots(2, 2, sharex='col', sharey='row')
+# fig bevat de informatie van de gehele figuur.
+# ax1 t/m ax3 bevatten informatie over de individuele plots.
+# sharex en sharey zorgen ervoor dat zowel x- als y-as dezelfde verdeling hebben.
+fig, (ax1, ax2, ax3) = plt.subplots(1, 3, sharex=True, sharey=True)
 
-x = np.linspace(0,2*np.pi)                      # startwaarden
+x = np.linspace(0,2*np.pi)      # startwaarden
 
-axarr[0,0].plot(x,np.cos(x)**2)                 # linksboven
-axarr[0,1].plot(x,np.sin(x)**2)                 # rechtsboven
-axarr[1,0].plot(x,np.cos(x)*np.sin(x))          # linksonder
-axarr[1,1].plot(x,np.cos(x)**2*np.sin(x)**2)    # rechtsonder
+ax1.plot(x,np.cos(x)**2)        # plot sin(x)^2 in het eerste figuur
+ax2.plot(x,np.sin(x)**2)        # plot cos(x)^2 in het tweede figuur
+ax3.plot(x,np.cos(x)*np.sin(x)) # plot sin(x)*cos(x) in het derde figuur
+ax1.grid()                      # lijnen toevoegen in het eerste plaatje
 
-# suptitle verwijst naar de titel van de gehele figuur. Dit is dus een 
-# eigenschap van de totale figuur fig.
-fig.suptitle("Vier plotjes tegelijk")
+# fig.suptitle() is de titel van de hele figuur.
+fig.suptitle("Drie plotjes tegelijk")
 plt.show()
