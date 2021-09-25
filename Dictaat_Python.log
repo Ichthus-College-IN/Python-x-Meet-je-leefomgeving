@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  23 SEP 2021 21:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  25 SEP 2021 13:05
 entering extended mode
 **./Dictaat_Python.tex
 (Dictaat_Python.tex
@@ -698,7 +698,7 @@ e re-gel [][][][][][][][][][][][][][][][][][][][][][].
  []
 
 (code-inc/w3/plt_vb4.py
-Overfull \hbox (30.76086pt too wide) in paragraph at lines 4--5
+Overfull \hbox (6.76062pt too wide) in paragraph at lines 4--5
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][] 
@@ -724,56 +724,44 @@ Overfull \hbox (126.76184pt too wide) in paragraph at lines 2--3
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [26] [27
+) [26] [27] [28
 
-] (code-inc/w5/voorbeeld5_2.py [28]) (code-inc/w5/voorbeeld5_3.py)
-[29] [30] [31
+] (code-inc/w5/voorbeeld5_2.py [29])
+(code-inc/w5/voorbeeld5_3.py) [30] [31] [32
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 942.
+(hyperref)                removing `math shift' on input line 978.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 942.
+(hyperref)                removing `subscript' on input line 978.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 942.
+(hyperref)                removing `math shift' on input line 978.
 
-[32] [33] [34] [35
+[33] [34] [35] [36
 
-] [36]
-Overfull \hbox (30.76086pt too wide) in paragraph at lines 1087--1088
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+] [37] [38] (code-inc/w6/time_vb1.py [39]) [40] [41]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1210.
+ [42]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1210.
 
-[37] (code-inc/w6/time_vb1.py [38]) [39] [40]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1180.
- [41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1180.
- (Dictaat_Python.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1180.
+(Dictaat_Python.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1210.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1210.
 
-
-
-Package rerunfilecheck Warning: File `Dictaat_Python.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Dictaat_Python.out':
-(rerunfilecheck)             Before: F7BA235E4A6B7DE87868D7B578DDCF1D;4409
-(rerunfilecheck)             After:  A909D683F683BCAE634F378DB8F72128;4423.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1180.
+Package rerunfilecheck Info: File `Dictaat_Python.out' has not changed.
+(rerunfilecheck)             Checksum: 0F301DBD2A3FE440B544CAAFA3E7E63D;4452.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1210.
  ) 
 Here is how much of TeX's memory you used:
- 10448 strings out of 492975
- 154896 string characters out of 3125199
+ 10473 strings out of 492975
+ 155241 string characters out of 3125199
  450912 words of memory out of 3000000
- 13434 multiletter control sequences out of 15000+600000
+ 13450 multiletter control sequences out of 15000+600000
  14789 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,16n,41p,1258b,2047s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -803,9 +791,9 @@ fonts/cm/cmtt10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/Steven/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dictaat_Python.pdf (42 pages, 750174 bytes).
+Output written on Dictaat_Python.pdf (43 pages, 756680 bytes).
 PDF statistics:
- 1249 PDF objects out of 1440 (max. 8388607)
- 609 named destinations out of 1000 (max. 500000)
+ 1267 PDF objects out of 1440 (max. 8388607)
+ 618 named destinations out of 1000 (max. 500000)
  499 words of extra memory for PDF output out of 10000 (max. 10000000)
 

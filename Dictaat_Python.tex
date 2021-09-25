@@ -775,9 +775,45 @@ Het inlezen van bestanden die numerieke data bevatten in de vorm van een array (
  
 \pythonexternal{code-inc/w4/genfromtxt_vb1.py}
 
-\subsection{Slotopdracht}
-Work in progress.. check back later!
+\subsection{Slotopdracht: De weerstations van de KNMI}
+In deze slotopdracht gaan we aan de slag met (gesimuleerde) meetdata van de KNMI. Het KNMI heeft in totaal 48 meetstations verspreid over Nederland. Elke paar seconden doet zo'n meetstation een meting en rapporteert de waarden naar de servers van de KNMI\footnote{Bron: \href{https://www.knmi.nl/kennis-en-datacentrum/uitleg/automatische-weerstations}{KNMI}}. Op basis hiervan worden allerlei voorspellingen gedaan, zoals het mooie overzicht dat Buienradar altijd maakt. De voorspellingen zijn niet altijd zo accuraat, maar daar kijken we hier niet naar: we zijn ge\"interesseerd in de gemeten data.
 
+Elk meetstation rapporteert in deze opdracht gemiddeld elke minuut de temperatuur, maar soms duurt het wat langer, soms wat korter, en soms is het internet wat trager dan anders. Dit heeft tot gevolg dat de gemeten waarden elke keer in een andere volgorde binnenkomen op de servers van de KNMI.
+
+Aan jou de taak om de gemeten temperaturen te importeren, te sorteren, te visualiseren en als laatste te exporteren. Zo combineren we alle voorgaande kennis, en bereid je je al goed voor op de eindopdracht die hier erg op lijkt.
+
+\subsubsection*{1: Importeren van data}
+Bekijk het volgende bestand:
+\href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/tree/main/inc/data_h4.txt}{data-h4}.
+
+Sla een kopie van dit bestand op in dezelfde map waar ook het Python-script staat dat dit bestand moet gaan lezen en bewerken.
+Gebruik \pythoninline{np.genfromtxt} met de komma als \verb,delimiter,, zodat je de meetgegevens in het bestand kunt inlezen en die in een \verb,numpy,-array om kunt zetten.
+
+\subsubsection*{2: Sorteren op meetstation}
+De data bestaat uit twee kolommen: de eerste bevat het nummer van het meetstation, de tweede de gemeten temperatuur. Elke vier opeenvolgende metingen zijn altijd van de vier verschillende weerstations: het kan niet voorkomen dat er eentje ontbreekt. Alleen de volgorde verschilt. Je wordt aangeraden om gebruik te maken van \pythoninline{np.argsort()}:
+
+\begin{python}
+stat_unsort = np.array([1,4,2,3])                # nummers van meetstations
+temp_unsort = np.array([20.0, 20.5, 22.6, 21.2]) # temperaturen per station
+volgorde = np.argsort(stat_unsort)               # [0 3 1 2] is de volgorde
+temp_sort = temp_unsorted[volgorde]              # sorteer de temperaturen
+\end{python}
+
+Je zult dus elke vier opeenvolgende waarden moeten sorteren: selecteer elke keer vier elementen (denk terug aan de slotopdracht van hoofdstuk 2!) en pas \pythoninline{np.argsort()} toe. Sorteer vervolgens de vier temperaturen met deze sortering.
+
+\subsubsection*{3: Reshapen van data}
+Je data is nu gesorteerd, maar alles staat op \'e\'en rij achter elkaar. Om de data te kunnen plotten, moeten we nu de data zo aanpassen, dat je \'e\'en hele rij of kolom kunt selecteren waar alle temperaturen van \'e\'en weerstation staan. Daarvoor kun je goed gebruik maken van \pythoninline{np.reshape(rijen, kolommen)}:
+
+\begin{python}
+temp_reshape = temp_sorted.reshape(int(len(temp_sorted)/4), 4)
+\end{python}
+
+Dit is een best complexe regel: we zeggen dat de vorm van \pythoninline{temp_sorted} z\'o moet zijn dat er 4 kolommen naast elkaar staan, en het aantal rijen is het totaal aantal meetpunten gedeeld door 4, omdat er over 4 meetstations gemeten wordt. Per weerstation zijn er dus \pythoninline{len(temp_sorted) / 4} meetpunten. En omdat het een heel getal moet zijn, zeggen we specifiek dat het een \pythoninline{int} moet zijn.
+
+\subsubsection*{4: Plotten per weerstation}
+Maak nu per weerstation een plot van de temperatuur. Gebruik als $x$ een array van 0 tot 24 (uur), met het aantal meetpunten van \'e\'en weerstation als het aantal getallen in dat array (hint: maak dus gebruik van \pythoninline{np.linspace()}!). Gebruik als $y$ uiteraard een kolom uit \pythoninline{temp_reshape}.
+
+Sla uiteindelijk alle vier de afbeeldingen per stuk op.
 
 \clearpage
 \renewcommand{\ditwc}{Functies}
@@ -963,15 +999,9 @@ Niet altijd is duidelijk waar precies je sensorkastje zich bevindt, of soms wil 
 Lees eerst de volgende paragraaf over de eindopdracht, en kom vervolgens hier terug voor hints over het opzetten van je script.
 
 \subsubsection*{np.argsort()}
-De data van het sensorkastje is ongesorteerd. De meetwaarden worden allemaal in \'e\'en keer verzonden en afhankelijk van het bereik, de kracht van de antenne en andere factoren komen de data allemaal net niet tegelijkertijd aan, en telkens in een andere volgorde. Om te sorteren kun je handig gebruik maken van \pythoninline{np.argsort()}; zie het voorbeeld:
+De data van het sensorkastje is ongesorteerd. De meetwaarden worden allemaal in \'e\'en keer verzonden en afhankelijk van het bereik, de kracht van de antenne en andere factoren komen de data allemaal net niet tegelijkertijd aan, en telkens in een andere volgorde. Om te sorteren kun je handig gebruik maken van \pythoninline{np.argsort()}; zie de slotopdracht van hoofdstuk 4.
 
-\begin{python}
-data = np.array([0,20,30,40,10,60,50])
-volgorde = np.argsort(data)		# [0 4 1 2 3 6 5] is de volgorde
-sortering = data[volgorde]		# [0 10 20 30 40 50 60] gesorteerd
-\end{python}
-
-\pythoninline{volgorde} is hier het array dat aangeeft welke index op welke plek moet staan: \pythoninline{data[0]} hoort op plek 0, \pythoninline{data[1]} hoort op plek 4, \pythoninline{data[2]} op plek 1 enzovoorts. Aangezien elke meetwaarde bij een bepaald {\it channel}nummer hoort, kun je deze nummers gebruiken om de data te sorteren. Er zijn elf channels: 0 tot en met 10. Elke elf waarden kun je sorteren met behulp van deze nummers. {\it Hint: je kunt ook een deel van de data sorteren door bijvoorbeeld het volgende in te vullen: \pythoninline{np.argsort(data[1:4])}.}
+Er zijn elf channels: 0 tot en met 10. Elke elf waarden kun je sorteren met behulp van deze nummers. {\it Hint: je kunt ook een deel van de data sorteren door bijvoorbeeld het volgende in te vullen: \pythoninline{np.argsort(data[1:4])}.}
 
 \subsection{De eindopdracht}
 Na het harde(?) werken om 5 hoofdstukken onder de knie te krijgen, ben je eindelijk klaar om de eindopdracht te maken. Deze opdracht luidt als volgt: 
@@ -1005,7 +1035,7 @@ We passen de stof van de hoofdstukken 1 tot en met 4 toe op de strenge Europese 
 
 \subsubsection*{1: Importeren van data}
 Bekijk het volgende bestand: 
-\href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/tree/main/inc/data_h4.txt}{data-h4}.
+\href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/tree/main/inc/data_h7.txt}{data-h7}.
 
 Sla een kopie van dit bestand op in dezelfde map waar ook het Python-script staat dat dit bestand moet gaan lezen en bewerken.
 Gebruik \pythoninline{np.genfromtxt} met de komma als \verb,delimiter,, zodat je de meetgegevens in het bestand kunt inlezen en die in een \verb,numpy,-array om kunt zetten.
@@ -1084,7 +1114,7 @@ Dan een aantal richtlijnen die niet per se met commentaar te maken hebben, maar 
 	e=3
 	r=4
 	
-	q,w,e,r = 1,2,3,4 # kan ook, maar is erg onoverzichtelijk en foutgevoelig
+	q,w,e,r = 1,2,3,4 # kan ook, maar is erg onoverzichtelijk
 \end{python}
 
 

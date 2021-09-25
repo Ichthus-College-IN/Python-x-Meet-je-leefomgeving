@@ -1,7 +1,7 @@
 # Begin met een subplots.
 # fig bevat de informatie van de gehele figuur.
 # ax1 t/m ax3 bevatten informatie over de individuele plots.
-# sharex en sharey zorgen ervoor dat zowel x- als y-as dezelfde verdeling hebben.
+# sharex en sharey zorgen ervoor dat de x- en y-as dezelfde verdeling hebben.
 fig, (ax1, ax2, ax3) = plt.subplots(1, 3, sharex=True, sharey=True)
 
 x = np.linspace(0,2*np.pi)      # startwaarden
