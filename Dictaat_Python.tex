@@ -870,43 +870,24 @@ print( mijn_som() )          #  0
 \end{python}
 Dit is natuurlijk een erg droog voorbeeld. Let erop dat je op deze functie niet kunt gebruiken om bijv. de elementen in een lijst op te tellen. Dus 
 \begin{python}
-mijn_lijst= [1,2,3]
-print( mijn_som(mijn_lijst) )     # geeft foutmelding
+array = np.array([1,2,3,4])
+print( mijn_som(array) )     # geeft foutmelding
 \end{python}
 
 \subsubsection*{Oefenopdracht: Extra argumenten}
-\begin{enumerate}[label=(\alph*)]
+\begin{enumerate}
 \item Test de functie \pythoninline{mijn_som}. Krijg je de voorspelde uitkomsten?
-\item Probeer ook het voorbeeld met \pythoninline{mijn_lijst}. Hoe kun je t\'och de lijst gebruiken? (\textit{Hint:} maak gebruik van een \pythoninline{for}-loop om losse argumenten te maken.)
-\end{enumerate}
-
-Een handige toepassing is wanneer een functie een andere functie moet aanroepen. Ter verduidelijking hieronder een voorbeeld, waarin de functie \pythoninline{my_plot} met soms 4 en anders 5 argumenten moet worden aangeroepen om de gewenste plaatjes te krijgen.
-
-\pythonexternal{code-inc/w5/voorbeeld5_2.py}
-
-Het runnen van dit script `doet' niks (geeft geen output). Na het runnen zijn de functies en variabelen in het script wel actief in de \textit{console}.
-
-\subsubsection*{Oefenopdracht: Extra argumenten (vervolg)}
-\begin{enumerate}[label=(\alph*), resume]
-\item Laad en run de voorbeeldcode met de functie \pythoninline{my_plot}. Test nu \'e\'en voor \'e\'en de volgende vier regels code: (\textit{Hint:} type deze regels in de \textit{command line} van de Console in Spyder; waar normaal je geprinte text verschijnt.)
-\begin{python}
-my_plot(x_arr,f,1,2)
-my_plot(x_arr,g,1,2)
-my_plot(x_arr,f,1,2,3)
-my_plot(x_arr,g,1,2,3)
-\end{python}
-Welke werken er wel en welke niet? Begrijp je waarom?
-\item Maak ook een eigen functie met 4 argumenten (wees creatief, gebruik bijvoorbeeld machten, wortels en sinussen) en plot deze functie met de \pythoninline{my_plot} functie van hierboven.
+\item Probeer ook het voorbeeld met \pythoninline{array}. Hoe kun je t\'och de lijst gebruiken? (\textit{Hint:} maak gebruik van een \pythoninline{for}-loop om losse getallen te maken.)
 \end{enumerate}
 
 \subsection{Defaultwaarde}
 Sommige argumenten worden maar zelden gebruikt of juist altijd op dezelfde manier. Een plot van temperatuurverloop bijvoorbeeld is eigenlijk altijd prettiger te lezen m\'et gridlijnen. Maar het is wel fijn als je dit soms kunt aanpassen (in dit geval het grid onderdrukken). Daarvoor zijn defaultwaarden erg praktisch: je kunt een argument standaard een waarde toekennen in een functie, tenzij je het anders opgeeft. Kijk maar eens naar het volgende voorbeeld:
 
-\pythonexternal{code-inc/w5/voorbeeld5_3.py}
+\pythonexternal{code-inc/w5/voorbeeld5_1.py}
 
 \subsubsection*{Oefenopdracht: Defaultwaarde}
 \begin{enumerate}
-	\item Herhaal de opdracht van de vorige paragraaf, maar nu met de volgende regels:
+	\item Test bovenstaand script met de volgende regels:
 	\begin{python}
 my_plot(x_arr,1,2)
 my_plot(x_arr,1,2,True)
@@ -926,7 +907,7 @@ def my_plot(x,functie,*args,style='k-',label=None,
 \end{python}
 Hier staat \pythoninline{x} voor het bereik op de x-as, \pythoninline{functie} voor de functie die op de y-as geplot wordt, \pythoninline{*args} voor de argumenten die die functie nodig heeft. Vervolgens komen de keyword-arguments: \pythoninline{style} staat voor de kleur en vorm van de lijn, \pythoninline{label} staat voor het label van je lijn. \pythoninline{xmin, xmax, ymin} en \pythoninline{ymax} staan voor het bereik op de x- en y-as. \pythoninline{xlabel, ylabel} en \pythoninline{titel} spreken voor zich; \pythoninline{legenda} voor \pythoninline{plt.legend()}, \pythoninline{grid} voor \pythoninline{plt.grid()} en \pythoninline{show} betekent \pythoninline{plt.show()}.
 
-Als {\it proof-of-concept} moet je vervolgens het volgende data-bestand downloaden en importeren, om vervolgens elke kolom te plotten met behulp van jouw plot-functie. Plot ook in elke figuur het bijbehorend voortschrijdend gemiddelde over de afgelopen 10 waarden. Hiervoor kun je je functie van de slotopdracht van hoofdstuk 2 hergebruiken. (Hoe goed was je commentaar destijds? Begrijp je jouw script van toen nu nog steeds?)
+Als {\it proof-of-concept} pak je je slotopdracht van hoofdstuk 4. Maak vervolgens gebruik van jouw functie in deze slotopdracht om de data van elk weerstation te plotten. Plot ook in elke figuur het bijbehorend voortschrijdend gemiddelde over de afgelopen 10 waarden. Hiervoor kun je je functie van de slotopdracht van hoofdstuk 2 hergebruiken. (Hoe goed was je commentaar destijds? Begrijp je jouw script van toen nu nog steeds?)
 
 
 \clearpage

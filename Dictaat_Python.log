@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  25 SEP 2021 13:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  1 OCT 2021 08:33
 entering extended mode
 **./Dictaat_Python.tex
 (Dictaat_Python.tex
@@ -726,45 +726,44 @@ Overfull \hbox (126.76184pt too wide) in paragraph at lines 2--3
 
 ) [26] [27] [28
 
-] (code-inc/w5/voorbeeld5_2.py [29])
-(code-inc/w5/voorbeeld5_3.py) [30] [31] [32
+] (code-inc/w5/voorbeeld5_1.py) [29] [30] [31
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 978.
+(hyperref)                removing `math shift' on input line 959.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 978.
+(hyperref)                removing `subscript' on input line 959.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 978.
+(hyperref)                removing `math shift' on input line 959.
 
-[33] [34] [35] [36
+[32] [33] [34] [35
 
-] [37] [38] (code-inc/w6/time_vb1.py [39]) [40] [41]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1210.
- [42]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1210.
+] [36] [37] (code-inc/w6/time_vb1.py [38]) [39] [40]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1191.
+ [41]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1191.
 
 (Dictaat_Python.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1210.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1210.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1191.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1191.
 
 Package rerunfilecheck Info: File `Dictaat_Python.out' has not changed.
 (rerunfilecheck)             Checksum: 0F301DBD2A3FE440B544CAAFA3E7E63D;4452.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1210.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1191.
  ) 
 Here is how much of TeX's memory you used:
- 10473 strings out of 492975
- 155241 string characters out of 3125199
+ 10440 strings out of 492975
+ 154668 string characters out of 3125199
  450912 words of memory out of 3000000
- 13450 multiletter control sequences out of 15000+600000
+ 13447 multiletter control sequences out of 15000+600000
  14789 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,16n,41p,1258b,2047s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,16n,41p,1258b,1980s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Steven\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600
 \tcrm1095.pk><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/f
@@ -791,9 +790,9 @@ fonts/cm/cmtt10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/Steven/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dictaat_Python.pdf (43 pages, 756680 bytes).
+Output written on Dictaat_Python.pdf (42 pages, 749941 bytes).
 PDF statistics:
- 1267 PDF objects out of 1440 (max. 8388607)
- 618 named destinations out of 1000 (max. 500000)
+ 1230 PDF objects out of 1440 (max. 8388607)
+ 591 named destinations out of 1000 (max. 500000)
  499 words of extra memory for PDF output out of 10000 (max. 10000000)
 
