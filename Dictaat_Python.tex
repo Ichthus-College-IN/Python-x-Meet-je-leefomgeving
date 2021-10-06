@@ -593,8 +593,8 @@ Merk op dat gebruik wordt gemaakt van een 2-bij-2 array om de informatie voor de
 
 \subsubsection*{Oefenopdracht (vervolg)}
 \begin{itemize}
-	\item[j)] Maak een figuur met twee subplots: plot in de ene een sinus, en in de andere een cosinus. Kies de x-as tussen 0 en $2\pi$ met behulp van \pythoninline{axN.xlim(x_min, x_max)}. Voeg in allebei de plots de legenda toe. \\
-	{\bf Hint:} vervang \pythoninline{plt} nu door \pythoninline{ax1} en \pythoninline{ax2}.
+	\item[j)] Maak een figuur met twee subplots: plot in de ene een sinus, en in de andere een cosinus. Kies de x-as tussen 0 en $2\pi$ met behulp van \pythoninline{axN.set_xlim(x_min, x_max)}. Voeg in allebei de plots de legenda toe. \\
+	{\bf Hint:} vervang \pythoninline{plt} nu door \pythoninline{ax1} en \pythoninline{ax2}. Let op dat de functie \pythoninline{xlim} bij het gebruik van subplots opeens \pythoninline{set_xlim} heet! (Niet mijn keuze...)
 \end{itemize}
 
 \subsection{Slotopdracht: Heel veel plotjes}
@@ -634,54 +634,19 @@ Met behulp van \pythoninline{plt.figure(figsize=[breedte, lengte])} kun je inste
 
 \subsubsection*{Oefenopdracht} 
 \begin{itemize}
-\item Open het onderstaande voorbeeld-script \verb,export_vb2.py,. Je kunt met dit voorbeeld ook makkelijk meerdere figuren in \'e\'en script aanmaken.
-\item Verander het script zodat het een aantal plaatjes van alleen de sinus-functie maakt. 
-Om niet steeds hetzelfde plaatje te krijgen varieer je met de volgende instellingen:
+	\item Open het bovenstaande voorbeeld-script \verb,export_vb1.py,.
+	\item Maak verschillende plaatjes door de volgende instellingen te veranderen:
 
-\begin{enumerate}
-\item De extensie van het weggeschreven bestand. Kies: \verb,png, of \verb,pdf,. Hierin is al voorzien in het voorbeeld door tweemaal een \verb,plt.savefig, te doen.
-\item De grootte van het plaatje. Kies bijv. \verb=[2,1]= of \verb=[20,10]=.
-\item Het aantal dots-per-inch. Kies bijv. 300 of 1200. (Zie het vorige voorbeeld!)
-\end{enumerate}
+	\begin{enumerate}
+		\item De extensie van het weggeschreven bestand. Kies: \verb,png, of \verb,pdf,. Hierin is al voorzien in het voorbeeld door tweemaal een \verb,plt.savefig, te doen.
+		\item De grootte van het plaatje. Kies bijv. \verb=[2,1]= of \verb=[20,10]=.
+		\item Het aantal dots-per-inch. Kies bijv. 300 of 1200.
+	\end{enumerate}
 
-\item Open de plaatjes en kijk naar de kwaliteit. Gebruik de zoom-functie! Kijk ook naar de bestandsgrootte (in kilobytes) van de aangemaakte bestanden. Trek je conclusie!
-
-\pythonexternal{code-inc/w4/export_vb2.py}
-
+	\item Open de plaatjes en kijk naar de kwaliteit. Gebruik de zoom-functie! Kijk ook naar de bestandsgrootte (in kilobytes) van de aangemaakte bestanden. Trek je conclusie!
 \end{itemize}
-
-\iffalse
-\subsection{For-loops}
-\label{Ch_forloop}
-
-Eerder zijn we uitgebreid ingegaan op een speciaal soort lijsten, \pythoninline{numpy}-arrays, omdat deze heel erg geschikt zijn voor data-analyse. 
-Het rekenen met \pythoninline{numpy}-arrays is heel erg efficiënt (er is weinig code nodig) en snel (er is weinig computertijd nodig). Je kunt over het algemeen veel beter een array gebruiken dan een Python list. Run het volgende voorbeeld maar eens:  
-
-\pythonexternal{code-inc/w4/forloop_vb1.py}
-
-Omdat een Python lijst uit allemaal verschillende datatypen kan bestaan, werkt dat in een \pythoninline{for}-loop totaal niet goed. Daar heb je het liefst dat alles op dezelfde manier werkt, zodat je op elk element dezelfde berekening of handeling kunt doen.
-Zo kun je de gehele lijst, van begin tot eind, op dezelfde manier bewerken.
-
-\subsubsection*{Oefenopdracht: Spelen met lijsten en printen binnen for-loop} 
-
-\begin{itemize}
-\item Maak een \pythoninline{numpy} lijst $l_1$ met 100 elementen: de gehele getallen 0 tot en met 99.
-Vermenigvuldig elk getal in die lijst met 100; noem deze lijst $l_2$.
-\item Maak een nieuwe lijst $ l_3 = l_2 - l_1^2$.
-Sorteer de elementen in $l_3$. 
-\item Zorg ervoor dat de 9 grootste elementen van $l_3$ in aflopende volgorde in een lijst $l_4$ terechtkomen (die dus 9 elementen bevat).
-\item Maak nu een nieuwe lijst $l_5$ die deze 9 waarden bevat, alleen nu geordend als een 3 bij 3 array. Dit is dus een twee-dimensionaal array. Het eerste element bevat de 3 grootste getallen, etc.
- \begin{itemize}
-  \item Druk nu de gehele lijst $l_5$ met \'e\'en print af. 
-  \item Druk ook elk element van de lijst $l_5$ af in een \pythoninline{for}-loop over alle elementen van $l_5$. Let er hierbij op dat $l_5$ stiekem maar 3 elementen heeft (met elk weer 3 elementen)! 
- \end{itemize}
- Noteer de verschillen in de afgedrukte output. 
-\end{itemize}
-\fi
 
 \subsection{Formatteren van tekst}
-\label{sec:format}
-
 In het begin hebben we losse waarden op het beeldscherm getoond: vaak dus \'e\'en getal per regel, maar er kunnen ook meerdere berekende waarden in een keer op het scherm worden getoond met \'e\'en \pythoninline{print} statement. Dit kan door meerdere variabelen op te geven gescheiden door komma's.
 
 \begin{python}
@@ -727,37 +692,12 @@ print('Na {:.2f} seconden is de bal {:.2f} meter hoog'.format(t,y))
 
 \subsubsection*{Oefenopdracht: Oefenen met het precies formatteren van tekst}
 \begin{itemize}
-\item
-Verander de manier waarop de getallen $t$ en $y$ worden geformatteerd in het voorbeeld. 
-Hoeveel correcte decimalen van \pythoninline{np.pi} kun je zo op je scherm te zien krijgen? 
-(Antwoord: 15). 
-Probeer behalve het aantal decimalen te vari\"eren ook te spelen met het type door $t$ en $y$ af te drukken als string of integer! 
-Let op wat er dan gebeurt. Je kunt gebruik maken van onderstaand voorbeeld:
+	\item Verander de manier waarop de getallen $t$ en $y$ worden geformatteerd in het voorbeeld. 
+	Hoeveel correcte decimalen van \pythoninline{np.pi} kun je zo op je scherm te zien krijgen? 
+	(Antwoord: 15). 
+	Probeer behalve het aantal decimalen te vari\"eren ook te spelen met het type door $t$ en $y$ af te drukken als string of integer! 
 
 \end{itemize}
-
-\iffalse
-\subsection{Exporteren}
-
-Naast afbeeldingen is het noodzakelijk om de achterliggende gegevens te bewaren voor later gebruik. Hiervoor zijn talloze types bestanden beschikbaar, elk toegespitst op een bepaald soort gegevens. Hoewel er erg geavanceerde bestandstypes bestaan die weinig ruimte in beslag nemen of erg snel werken met bepaalde programma's, zullen we ons in deze cursus beperken tot tekstbestanden (.txt of .csv). Deze bestanden zijn leesbaar voor de mens, wat uiteraard fijn is.
-
-Structuur aanbrengen in een bestand is noodzakelijk. Dit begint bij het ordenen van je data. Daarnaast is het ook belangrijk om extra informatie (ook wel \textit{metadata}) aan het bestand toe te voegen. Denk aan namen van variabelen, maar ook meetomstandigheden, de datum en andere informatie die een gebruiker van het bestand nodig heeft om de gegevens te verwerken.
-
-Voor het aanmaken van bestanden kan goed gebruik worden gemaakt van de ingebouwde \textit{functies} \pythoninline{open()} en \pythoninline{write()}, net zoals jij een Word document opent en gaat typen. De functie \pythoninline{open()} cre\"eert een \textit{object} dat aangeeft in welk bestand de gegevens moeten worden opgeslagen, terwijl met de \textit{functie} \pythoninline{write()} het schrijven van de gegevens gebeurt. Net zoals de fysieke tegenhanger, pen en papier, gebeurt dit woord voor woord, van boven naar beneden en van links naar rechts. Deze functie \pythoninline{write()} werkt overigens (nagenoeg) hetzelfde als \pythoninline{print()}.
-
-In onderstaand voorbeeld staat: \pythoninline{file.write('blabla'.format(x,y,z))}. 
-Hierin is `\pythoninline{file}' de (willekeurige) naam van het object en `\pythoninline{write()}' de functie die aangeroepen wordt. Tussen de ronde haakje van de \pythoninline{write} zien we eigenlijk hetzelfde als in hoofdstuk 4.3 bij \pythoninline{print()}.
-
-\pythonexternal{code-inc/w4/write_vb1.py}
-
-{\bf Opmerking 1:} Om een nieuwe regel te beginnen wordt het regeleinde \verb,\n, symbool opgegeven.
-
-{\bf Opmerking 2:} Tussen de verschillende items die worden weggeschreven, schrijven we altijd een komma. Dit is een conventie die we in deze cursus aanhouden\footnote{Een tab als scheidingssymbool tussen de items zou ook kunnen, en wordt in de praktijk ook vaak gebruikt. Het symbool daarvoor is `\textbackslash t'.}.
-Het maakt het makkelijker om elkaars databestanden zo weer in te lezen {\bf en} de inhoud ervan correct te verwerken. 
-
-\subsubsection*{Oefenopdracht: Wegschrijven van data naar file}
-Maak 4 arrays van 100 elementen. Het eerste array is van het datatype \pythoninline{int} (hiervoor kun je bij het maken van de array de tekst \pythoninline{dtype=int} invoegen tussen de haakjes), en bestaat uit de gehele getallen 0 t/m 99. Het tweede array bestaat uit honderd random getallen tussen de 0 en 1. Het derde array is het eerste array gedeeld door het tweede array. Het vierde array is 10 tot de macht van het eerste array. Hierin komen dus hele grote getallen te staan. Je kunt gebruik maken van bovenstaand voorbeeld, maar je moet daarin wel redelijk wat aanpassen. Let vooral erg goed op de formattering van de tekst!
-\fi
 
 \subsection{Bestanden importeren}
 \label{Ch_Importeren}
@@ -774,6 +714,11 @@ Het doel is om bestanden die aan deze eisen voldoen te kunnen importeren en voor
 Het inlezen van bestanden die numerieke data bevatten in de vorm van een array (rijen en kolommen) kan heel makkelijk gebeuren met de \pythoninline{numpy} functie \pythoninline{genfromtxt()}. Deze functie negeert regels die beginnen met een \verb,#, en dat komt goed uit, want dat is meestal toch vooral commentaar. Het weergeven van bijvoorbeeld twee kolommen uit de ingelezen data in een $xy$-plot stelt dan echt weinig meer voor. Zie volgend voorbeeld.
  
 \pythonexternal{code-inc/w4/genfromtxt_vb1.py}
+
+\subsubsection*{Oefenopdracht: Plotten van geïmporteerde data}
+\begin{itemize}
+	\item Open bovenstaand script en bekijk de werking en check in de Variable Explorer hoe de data eruitziet. Plot vervolgens de x- en y-as.
+\end{itemize}
 
 \subsection{Slotopdracht: De weerstations van de KNMI}
 In deze slotopdracht gaan we aan de slag met (gesimuleerde) meetdata van de KNMI. Het KNMI heeft in totaal 48 meetstations verspreid over Nederland. Elke paar seconden doet zo'n meetstation een meting en rapporteert de waarden naar de servers van de KNMI\footnote{Bron: \href{https://www.knmi.nl/kennis-en-datacentrum/uitleg/automatische-weerstations}{KNMI}}. Op basis hiervan worden allerlei voorspellingen gedaan, zoals het mooie overzicht dat Buienradar altijd maakt. De voorspellingen zijn niet altijd zo accuraat, maar daar kijken we hier niet naar: we zijn ge\"interesseerd in de gemeten data.
@@ -877,7 +822,7 @@ print( mijn_som(array) )     # geeft foutmelding
 \subsubsection*{Oefenopdracht: Extra argumenten}
 \begin{enumerate}
 \item Test de functie \pythoninline{mijn_som}. Krijg je de voorspelde uitkomsten?
-\item Probeer ook het voorbeeld met \pythoninline{array}. Hoe kun je t\'och de lijst gebruiken? (\textit{Hint:} maak gebruik van een \pythoninline{for}-loop om losse getallen te maken.)
+\item Probeer ook het voorbeeld met \pythoninline{array}. Hoe kun je t\'och een array gebruiken? (\textit{Hint:} maak gebruik van een \pythoninline{for}-loop om losse getallen te maken.)
 \end{enumerate}
 
 \subsection{Defaultwaarde}
