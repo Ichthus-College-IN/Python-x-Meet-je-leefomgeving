@@ -1,17 +1,16 @@
-## Hieronder een verzameling van kleuren
-# b: blauw         # m: magenta      # c: cyaan
-# g: groen         # y: geel         # w: wit
-# r: rood          # k: zwart
+import numpy as np
+import matplotlib.pyplot as plt
 
-## Het is ook mogelijk om de stijl te varieren. Enkele voorbeelden zijn:
-#--: gestreepte lijn                 # .: punten
-# o:  grote punten                   # -:  lijn
+jaren = np.arange(1981, 2022)                         # bereik x-as
+temp = np.sqrt(jaren) - 2*np.random.rand(len(jaren))  # meetpunten maken
+trend = np.sqrt(jaren) - 1                            # trendlijn maken
 
-## Alle opties kunnen aan plt.plot() worden toegevoegd.
-## Het voorbeeld hieronder produceert een plaatje met lijn en punten.
-x = np.linspace(0,2*np.pi)
-
-plt.figure()                # nieuwe figuur
-plt.plot(x,np.cos(x),'r-')  # cosinus plotten
-plt.plot(x,np.cos(x),'k.')  # nog een cosinus eroverheen plotten
-plt.show()                  # forceer om weer te geven
+plt.figure()                                          # figuur maken
+plt.plot(jaren, temp,'k.', label='Meting')            # meetpunten plotten
+plt.plot(jaren, trend, 'r-', label='Trend')           # trendlijn plotten
+plt.xlabel('Jaren')                                   # x-as label
+plt.ylabel('$T$ (graden Celsius)')                    # y-as label
+plt.suptitle("Hoogst gemeten temperatuur in Madrid")  # titel
+plt.legend()                                          # legenda
+plt.grid()                                            # lijnen
+plt.show()                                            # figuur weergeven

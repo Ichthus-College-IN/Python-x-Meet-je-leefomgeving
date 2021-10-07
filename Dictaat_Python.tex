@@ -532,82 +532,86 @@ import matplotlib.pyplot as plt
 \end{python}
 
 \subsection{Grafiek maken}
-Hieronder een voorbeeld om een sinus in beeld te brengen (te plotten):
+Een grafiek maken in Python hoeft maar twee regeltjes te kosten. In het onderstaande voorbeeld maken we een array aan voor de x-as: dit is het domein van de grafiek. We kiezen deze van $0$ tot $2\pi$. Vervolgens gaan we daar een lijn bij maken: een sinus. In formulevorm: $y = sin(x)$. Python kent zelf geen sinus, dus moeten we gebruik maken van NumPy om de sinus te kunnen berekenen.
+
+Vervolgens maken we een figuur aan. Dat gebeurt in de regel \pythoninline{fig, ax = plt.subplots()}. \pythoninline{fig} is hierbij de `omschrijving' van de `buitenrand' van het plaatje, terwijl \pythoninline{ax} over de `binnenkant' van het plaatje gaat, oftewel je grafiek. Daarna gaan we de sinus tekenen ofwel {\it plotten}. Zie het voorbeeld:
+
 \pythonexternal{code-inc/w3/plt_vb1.py}
 
-\subsubsection*{Oefenopdracht}
+\subsubsection*{Oefenopdracht: lijnen plotten}
 \begin{itemize}
-	\item[a)] Kopieer via de hyperlink het bovenstaande voorbeeld. Verander het aantal elementen in \pythoninline{x}. Wat gebeurt er als het aantal elementen in de lijst klein is? (bijvoorbeeld 10)
+	\item[a)] Kopieer via de hyperlink het bovenstaande voorbeeld en voer het script uit. Let op: er verschijnt rechtsonderin een waarschuwing; deze mag je negeren. Rechtsbovenin zie je twee plaatjes verschijnen.
+	
+	\item[b)] Verander het aantal elementen in \pythoninline{x}. Wat gebeurt er als het aantal elementen in de lijst klein is (bijvoorbeeld 5)?
 
-	\item[b)] Voeg een cosinus toe door een \pythoninline{y2} te defini\"eren en een extra \pythoninline{plt.plot()} toe te voegen onder de tweede \pythoninline{plt.figure()}. \\
-	{\bf Hint:} \pythoninline{np.cos(x)}
+	\item[c)] Verander het tweede plaatje zo dat er geen $y^2$ wordt geplot, maar dat er een cosinus wordt geplot. \\
+	{\bf Hint:} \pythoninline{y2 = np.cos(x)}
 
-	\item[c)] Maak een extra plaatje (door in hetzelfde script een nieuwe \pythoninline{plt.figure()} toe te voegen) waar \pythoninline{y} en \pythoninline{y2} tegen elkaar geplot worden. In plaats van \textit{x} en \textit{y} in \pythoninline{plt.plot(x,y)} moet je dus wat anders invoeren.
+	\item[d)] Maak een extra plaatje door in hetzelfde script nog een keer \pythoninline{fig, ax = plt.subplots()} toe te voegen. Plot in dit plaatje \pythoninline{y} en \pythoninline{y2} tegen elkaar. Dit betekent dat je in plaats van \pythoninline{ax.plot(x,y)} invult: \pythoninline{ax.plot(y,y2)}.
 \end{itemize}
 
-\subsection{Lijnen opmaken}
-Wanneer twee grafieken in \'e\'en figuur getekend worden, zoals hiervoor, geeft \pythoninline{plt} automatisch de tweede lijn een andere kleur. Om zelf kleur en stijl in te stellen is het mogelijk om een aantal commando's toe te voegen aan \pythoninline{plt.plot()}.
+\subsection{Grafiek opmaken}
 
-\pythonexternal{code-inc/w3/plt_vb2.py}
+Een kale grafiek is niet zo nuttig. Daarom is er ook heel veel opmaak mogelijk in matplotlib. Hieronder zijn een flink aantal opties:
 
-\subsubsection*{Oefenopdracht (vervolg)}
 \begin{itemize}
-	\item[d)] Pas het script van b) aan zodat de sinus als rode lijn en cosinus als magenta punten geplot worden.
-
-	\item[e)] Bij het aanroepen van de \pythoninline{plt.plot()}, voeg de optie \pythoninline{label = "..tekst.."} toe binnen de haakjes van \pythoninline{plt.plot()}. Label de sinus ``Sinus'' en de cosinus ``Cosinus''. Gebruik vervolgens het commando \pythoninline{plt.legend()} onder de laatste plot-regel om een legenda weer te geven.
-	
-	\item[f)] De waarden op een bepaalde plek op de lijn zijn niet altijd zo makkelijk af te lezen bovenin of rechts in de figuur. Hier komt \pythoninline{plt.grid()} goed van pas. Hoe zit je figuur er uit als je deze regel toevoegt?
+	\item \pythoninline{ax.set_title("titel")}: voeg een titel toe aan de grafiek.
+	\item \pythoninline{ax.set_xlabel("x-label")}: voeg een titel toe aan de x-as.
+	\item \pythoninline{ax.set_ylabel("y-label")}: voeg een titel toe aan de y-as.
+	\item \pythoninline{ax.set_xlim(x_min, x_max)}: pas het domein van de x-as aan van {\it min} tot {\it max}.
+	\item \pythoninline{ax.set_ylim(y_min, y_max)}: pas het bereik van de y-as aan van {\it min} tot {\it max}.
+	\item \pythoninline{ax.grid()}: voeg een raster toe aan de grafiek om beter af te kunnen lezen.
+	\item \pythoninline{ax.plot(x,y,label="label")}: voeg een label toe aan de lijn.
+	\item \pythoninline{ax.legend()}: voeg een legenda toe die alle labels toont.
+	\item \pythoninline{ax.set_aspect(1)}: stel de verhouding van de assen in. Als beide assen lopen van 0 tot 1 (of andere dezelfde getallen) krijg je bijvoorbeeld een vierkant plaatje.
 \end{itemize}
 
-\subsection{Assen opmaken}
-Een grafiek zonder tekst is (bijna) helemaal nutteloos. Zien we de windsnelheid, of de temperatuur, en dan in graden Celsius of Farenheit? En gaat het over de uren op een dag of over de maandnummers? Cruciale info, die aanwezig moet zijn in een grafiek. Uiteraard helpt \pythoninline{pyplot} ons hier ook weer een handje met een aantal nuttige functies. Zie onderstaand voorbeeld:
-
-\pythonexternal{code-inc/w3/plt_vb3.py}
-
-\subsubsection*{Oefenopdracht (vervolg)}
+\subsubsection*{Oefenopdracht: grafieken opmaken}
 \begin{itemize}
-	\item[g)] De lijn in het plaatje van het voorbeeld toont gaten aan de linker- en rechterkant. Pas met de regel \pythoninline{plt.xlim(x_min,x_max)} het bereik van de $x$-as aan. Maak het bereik van de $x$-as $1981$ tot $2021$. Je kunt het bereik op de $y$-as ook op dezelfde manier aanpassen. Zet het bereik van de $y$-as van $30$ tot en met $50$. (Vul dus voor \pythoninline{x_min, x_max} de goede getallen in.)
+	\item[e)] We bekijken de volgende simulatie: de Spaanse KNMI heeft sinds 1981 de warmste temperatuur per jaar bijgehouden in Madrid. Een medewerker van het instituut heeft een plotje gemaakt van die data; zie het bestand onder de volgende oefenopgave. \\
+	Zijn leidinggevende heeft de volgende eisen gesteld: de figuur moet een algemene titel en twee astitels krijgen. Het domein moet vallen van 1981 tot 2021; het bereik van 40 tot 45 graden Celsius. Daarnaast moeten de meetpunten en de trendlijn aangegeven worden in een legenda, en moet de grafiek goed uit te lezen zijn. Vul het script aan zodat aan de voorwaarden wordt voldaan.
 	
-	\item[h)] In het plaatje van c) (wat een cirkel zou moeten tonen) is de verhouding van $x$- en $y$-as niet ingesteld. Zet de aspectratio (verhouding) op 1 met de regel \pythoninline{plt.axes().set_aspect('equal')}. In plaats van \pythoninline{'equal'} kun je ook \pythoninline{1} invullen (verhouding 1:1).
-	
-	\item[i)] Maak de volgende plot: kies $t$ van $0$ tot $2\pi$. Gebruik
+	\item[f)] Maak de volgende plot: kies $t$ van $0$ tot $2\pi$. Gebruik
 	\pythoninline{x = 16*np.sin(t)**3}\\
 	\pythoninline{y = 13*np.cos(t) - 5*np.cos(2*t) - 2*np.cos(3*t) - np.cos(4*t)}\\
 	 Zorg voor een goede verhouding tussen de assen.
+	 {\bf Hint:} maak gebruik van het eerste voorbeeld en pas deze aan.
 \end{itemize}
 
+\pythonexternal{code-inc/w3/plt_vb2.py}
+
 \subsection{Meer grafieken in \'e\'en figuur}
-Soms is het fijn om twee of meer plots boven elkaar of naast elkaar te laten zien, eventueel zodat ze de x- of y-as delen voor het overzicht (ze hebben dan hetzelfde bereik). Om meerdere plots tegelijk te laten zien kan de functie \pythoninline{plt.subplots()} gebruikt worden. \pythoninline{plt.subplots()} maakt van elk figuur (subplot) een apart object, waarop je met \pythoninline{ax1.plot()} en gelijke functies lijnen kunt plotten.
+Soms is het fijn om twee of meer plots boven elkaar of naast elkaar te laten zien. In onderstaand voorbeeld worden er 3 grafieken naast elkaar gemaakt in hetzelfde figuur. Zoals hiervoor wordt de hele figuur beschreven met \pythoninline{fig}. De losse grafieken noemen we \pythoninline{ax1, ax2} en \pythoninline{ax3}. 
 
-In onderstaand voorbeeld worden er 3 grafieken naast elkaar gemaakt in hetzelfde figuur. Die figuur noemen we \pythoninline{fig}, en de grafieken noemen we \pythoninline{ax1, ax2} en \pythoninline{ax3}. De 1 betekent \'e\'en plot in de hoogte, 3 in de breedte. Je kunt de 1 en 3 ook omdraaien om de plots onder elkaar te zetten in plaats van naast elkaar.
+In plaats van \pythoninline{plt.subplots()} nu leeg te laten, voegen we in hoeveel grafiek we willen maken. De 1 betekent \'e\'en plot in de hoogte, 3 in de breedte.
+\pythonexternal{code-inc/w3/plt_vb3.py}
 
-\pythonexternal{code-inc/w3/plt_vb4.py}
-
-Voor bovenstaand script ook uit en kijk hoe het eruit ziet. Wissel de 1 en 3 ook eens om om te kijken wat er dan gebeurt!
+\subsubsection*{Oefenopdracht: meer plotjes in een figuur}
+\begin{itemize}
+	\item[g)] Voer bovenstaand script ook uit en kijk hoe het eruit ziet. Wissel de 1 en 3 eens om en kijk wat er dan gebeurt!
+	\item[h)] Het staat best lelijk dat de getallen op de y-as van het tweede en derde grafiekje overlappen met de vorige. Los dit op door de volgende aanpassing in de eerste regel:\\
+	\pythoninline{fig, (ax1, ax2, ax3) = plt.subplots(1, 3, sharex=True, sharey=True)}\\
+	Hiermee forceer je dat de x- en y-as van alle grafiekjes automatisch hetzelfde zijn en de getallen dus verdwijnen omdat ze overbodig zijn.
+	\item[i)] Voeg ook aan het tweede en derde grafiekje een grid toe. Geef daarnaast elke plot een label en ook elk figuur een legenda. Let op: je moet elke handeling voor elke grafiek los doen.
+\end{itemize}
 
 Het is uiteraard ook mogelijk om plots onder \'en naast elkaar te zetten. In het volgende voorbeeld worden 2 bij 2 plots gemaakt. Let op! De plots zitten nu niet meer in de losse namen \pythoninline{ax1, ax2} en \pythoninline{ax3}, maar ze zitten alle vier in de algemene naam \pythoninline{axarr}. Net zoals bij een array een plek opgegeven wordt met bijvoorbeeld \pythoninline{[1]}, kun je een specifiek plot ophalen met de blokhaken. Zie het voorbeeld.
 
-\pythonexternal{code-inc/w3/plt_vb5.py}
+\pythonexternal{code-inc/w3/plt_vb4.py}
 
-Merk op dat gebruik wordt gemaakt van een 2-bij-2 array om de informatie voor de individuele plots op te slaan. Het eerste getal tussen de blokhaken staat daarbij voor de rijen, het tweede getal voor de kolommen.
-
-\subsubsection*{Oefenopdracht (vervolg)}
-\begin{itemize}
-	\item[j)] Maak een figuur met twee subplots: plot in de ene een sinus, en in de andere een cosinus. Kies de x-as tussen 0 en $2\pi$ met behulp van \pythoninline{axN.set_xlim(x_min, x_max)}. Voeg in allebei de plots de legenda toe. \\
-	{\bf Hint:} vervang \pythoninline{plt} nu door \pythoninline{ax1} en \pythoninline{ax2}. Let op dat de functie \pythoninline{xlim} bij het gebruik van subplots opeens \pythoninline{set_xlim} heet! (Niet mijn keuze...)
-\end{itemize}
+Merk op dat gebruik wordt gemaakt van een 2-bij-2 array om de informatie voor de individuele plots op te slaan. Het eerste getal tussen de blokhaken staat daarbij voor de rij, het tweede getal voor de kolom.
 
 \subsection{Slotopdracht: Heel veel plotjes}
 \begin{itemize}
-	\item Maak een figuur van 2-bij-2 plots waarin net als in de voorbeelden de $x$-markering weggelaten is voor figuren die niet onderaan staan. Laat ook de $y$-markering weg voor figuren die niet helemaal links staan. 
-	\item Zorg ervoor dat het bereik op de x-as (het domein) loopt van 0 tot 1 voor alle plots.
-	\item Maak een array \pythoninline{x} met een ruim aantal getallen, oplopend van 0 tot 1.
-	\item Plot vervolgens per plot meerdere lijnen, allemaal met dezelfde formule $x^\alpha$. Voor de vier verschillende plots heeft $\alpha$ de volgende waarden:\\
-	1. $\alpha = 0.125,0.25,0.5,1$\\
-	2. $\alpha = 1,1.5,2$\\
-	3. $\alpha = 1,2,3,4$\\
-	4. $\alpha = 0.1,1,10$\\
-	Je kunt dit met de hand, regel voor regel doen, en als dat lukt mag je gewoon doorgaan. Maar als je de uitdaging aan wilt gaan, is het uiteraard de bedoeling alles zo compact en efficiënt mogelijk te maken.
+	\item Maak een figuur van 2-bij-2 plots waarin net als in bovenstaand voorbeeld \pythoninline{sharex} en \pythoninline{sharey} gebruikt worden.
+	\item Zorg ervoor dat het bereik op de x-as (het domein) loopt van 0 tot $\pi$ voor alle plots.
+	\item Maak een array \pythoninline{x} met een ruim aantal getallen, oplopend van 0 tot en met $\pi$.
+	\item Plot vervolgens per plot de volgende lijnen:\\
+	1. $sin(x)$ en $cos(x)$\\
+	2. $sin(x)^2$ en $cos(x)^2$\\
+	3. $x^{0.5}$ en $x^2$\\
+	4. $1/x$ en $log(x)$\\
+	De logaritme kun je plotten met behulp van \pythoninline{np.log(x)}.
 	\item Voeg uiteindelijk ook labels en legenda's toe, en maak hem zo netjes mogelijk met de dingen die je in dit hoofdstuk geleerd hebt.
 \end{itemize}
 
@@ -619,33 +623,33 @@ Merk op dat gebruik wordt gemaakt van een 2-bij-2 array om de informatie voor de
 Voor het verwerken van data ben je eigenlijk altijd afhankelijk van losse bestanden die alle gegevens bevatten. Niemand gaat voor de lol duizenden getalletjes met de hand invoeren: dan kun je net zo goed Excel gebruiken. Ook wil je graag je gemaakte figuren en resultaten opslaan om ergens in te voegen: anders kun je net zo goed maar wat met de hand tekenen of berekenen. Maar daar doen we het niet voor: we gaan handelingen automatiseren door bestanden te \textit{importeren}, en vervolgens resultaten te \textit{exporteren}. Dat gaan we dit hoofdstuk behandelen.
 
 \subsection{Afbeeldingen exporteren}
-In het vorige hoofdstuk heb je al geleerd om plaatjes te maken. Figuren staan normaal gesproken alleen in Spyder, en kunnen niet direct gebruikt worden in een verslag, artikel of rapport. Daarvoor moet je de afbeelding eerst opslaan. Hiervoor kan je gebruik maken van \pythoninline{plt.savefig()}.
+In het vorige hoofdstuk heb je al geleerd om plaatjes te maken. Figuren staan normaal gesproken alleen in Spyder, en kunnen niet direct gebruikt worden in een verslag, artikel of rapport. Daarvoor moet je de afbeelding eerst opslaan. Hiervoor kan je gebruik maken van \pythoninline{savefig()}.
 
-De belangrijkste opties die je aan deze functie kunt meegegeven zijn de naam van de afbeelding en de resolutie. De standaard locatie waar de afbeelding wordt opgeslagen is de map waar het script is opgeslagen. 
+{\it De standaard locatie waar de afbeelding wordt opgeslagen is de map waar het script is opgeslagen!}
 
-Als bestandstype kan er worden gekozen voor \verb.jpg., \verb.png. en  \verb.pdf.. 
+De belangrijkste opties die je aan deze functie kunt meegegeven zijn de naam van de afbeelding en de resolutie. Als bestandstype kan er worden gekozen voor \verb.jpg., \verb.png. en  \verb.pdf.. 
 De resolutie van deze afbeeldingen wordt gespecificeerd in \textit{dots-per-inch}  (\verb,dpi,).
 Afbeeldingen van het type .jpg en .png kun je niet zo ver inzoomen, omdat op een gegeven moment de pixels zichtbaar worden. 
-Afbeeldingen van het type .pdf zijn opgebouwd uit formules zoals punten, lijnen en/of krommen. Ook gewone letters hebben zo'n structuur. Daardoor kun je zo ver inzoomen als je zou willen zonder dat het onscherp wordt.
+Afbeeldingen van het type .pdf zijn opgebouwd uit formules zoals punten, lijnen en/of krommen. Daardoor kun je zo ver inzoomen als je zou willen zonder dat het onscherp wordt.
 
-Met behulp van \pythoninline{plt.figure(figsize=[breedte, lengte])} kun je instellen hoe groot je plaatje is, en welke verhoudingen hij heeft. Hoe groter de breedte en lengte, hoe groter het bestand.
+Met behulp van \pythoninline{figsize=[breedte, hoogte]} kun je instellen hoe groot je plaatje is, en welke verhoudingen hij heeft. Hoe groter de breedte en hoogte, hoe groter het bestand.
 
 \pythonexternal{code-inc/w4/export_vb1.py}
 
 \subsubsection*{Oefenopdracht} 
 \begin{itemize}
-	\item Open het bovenstaande voorbeeld-script \verb,export_vb1.py,.
-	\item Maak verschillende plaatjes door de volgende instellingen te veranderen:
+	\item Open het bovenstaande voorbeeld-script \verb,export_vb1.py,. Maak verschillende plaatjes door de volgende instellingen te gebruiken:
 
 	\begin{enumerate}
-		\item De extensie van het weggeschreven bestand. Kies: \verb,png, of \verb,pdf,. Hierin is al voorzien in het voorbeeld door tweemaal een \verb,plt.savefig, te doen.
-		\item De grootte van het plaatje. Kies bijv. \verb=[2,1]= of \verb=[20,10]=.
 		\item Het aantal dots-per-inch. Kies bijv. 300 of 1200.
+		\item De extensie van het weggeschreven bestand. Kies: \verb,png, of \verb,pdf,. Hierin is al voorzien in het voorbeeld door tweemaal een \verb,fig.savefig, te doen.
+		\item De grootte van het plaatje. Kies bijv. \verb=[2,1]= of \verb=[20,10]=.
 	\end{enumerate}
 
 	\item Open de plaatjes en kijk naar de kwaliteit. Gebruik de zoom-functie! Kijk ook naar de bestandsgrootte (in kilobytes) van de aangemaakte bestanden. Trek je conclusie!
 \end{itemize}
 
+\iffalse
 \subsection{Formatteren van tekst}
 In het begin hebben we losse waarden op het beeldscherm getoond: vaak dus \'e\'en getal per regel, maar er kunnen ook meerdere berekende waarden in een keer op het scherm worden getoond met \'e\'en \pythoninline{print} statement. Dit kan door meerdere variabelen op te geven gescheiden door komma's.
 
@@ -698,6 +702,7 @@ print('Na {:.2f} seconden is de bal {:.2f} meter hoog'.format(t,y))
 	Probeer behalve het aantal decimalen te vari\"eren ook te spelen met het type door $t$ en $y$ af te drukken als string of integer! 
 
 \end{itemize}
+\fi
 
 \subsection{Bestanden importeren}
 \label{Ch_Importeren}
@@ -705,19 +710,17 @@ Net als bij het exporteren van gegevens voor later gebruik, moet er bij importer
 
 \begin{enumerate}
 \item Het bestand bestaat uit regels (lines). Elke regel bevat of numerieke data of het is een commentaarregel. Zoals in elk tekst bestand zijn regels van elkaar gescheiden door een enter, of in programmeertaal: `\verb,\n,'.
-\item Elke regel bestaat uit \'e\'en of meerdere getallen die van elkaar gescheiden door komma's. Het scheidingsteken heet de \textit{delimiter}. Met \pythoninline{np.genfromtxt} (de functie die we willen gebruiken) kun je de delimiter specificeren. 
+\item Elke regel bestaat uit \'e\'en of meerdere getallen die van elkaar gescheiden door komma's. Het scheidingsteken heet de \textit{delimiter}.
 \item Een commentaarregel is herkenbaar aan het \verb,#, teken op de eerste positie. Precies zoals in een Python script. Commentaarregels aan het begin van een bestand heten ook wel de {\it header}.
 \end{enumerate}
 
-Het doel is om bestanden die aan deze eisen voldoen te kunnen importeren en vooral correct te kunnen verwerken in Python. Concreet betekent dit dat na het inlezen van het bestand een \pythoninline{np.array} wordt aangemaakt van de data. 
-
-Het inlezen van bestanden die numerieke data bevatten in de vorm van een array (rijen en kolommen) kan heel makkelijk gebeuren met de \pythoninline{numpy} functie \pythoninline{genfromtxt()}. Deze functie negeert regels die beginnen met een \verb,#, en dat komt goed uit, want dat is meestal toch vooral commentaar. Het weergeven van bijvoorbeeld twee kolommen uit de ingelezen data in een $xy$-plot stelt dan echt weinig meer voor. Zie volgend voorbeeld.
+Het inlezen van bestanden die numerieke data bevatten in de vorm van een array (rijen en kolommen) kan heel makkelijk gebeuren met de \pythoninline{numpy} functie \pythoninline{genfromtxt()}. Deze functie negeert regels die beginnen met een \verb,#, en dat komt goed uit, want dat is meestal toch vooral commentaar. Daarnaast kun je de {\it delimiter} specificeren, hier de komma dus. Het weergeven van bijvoorbeeld twee kolommen uit de ingelezen data in een $xy$-plot stelt dan weinig meer voor. Zie volgend voorbeeld.
  
 \pythonexternal{code-inc/w4/genfromtxt_vb1.py}
 
-\subsubsection*{Oefenopdracht: Plotten van geïmporteerde data}
+\subsubsection*{Oefenopdracht: plotten van geïmporteerde data}
 \begin{itemize}
-	\item Open bovenstaand script en bekijk de werking en check in de Variable Explorer hoe de data eruitziet. Plot vervolgens de x- en y-as.
+	\item Open bovenstaand script. Open ook \href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/blob/main/code-inc/w4/vb1.txt}{deze} link. Kopieer de inhoud ervan naar het programma Notepad, en sla het bestand op onder de naam \verb,vb1.txt,, {\it in dezelfde map als je script}! Run daarna het script, bekijk de werking en check in de Variable Explorer hoe de data eruitziet. Plot vervolgens $x$ en $y$ zoals je in het vorige hoofdstuk hebt gedaan.
 \end{itemize}
 
 \subsection{Slotopdracht: De weerstations van de KNMI}
@@ -729,36 +732,49 @@ Aan jou de taak om de gemeten temperaturen te importeren, te sorteren, te visual
 
 \subsubsection*{1: Importeren van data}
 Bekijk het volgende bestand:
-\href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/tree/main/inc/data_h4.txt}{data-h4}.
+\href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/tree/main/inc/data_h4.txt}{data-h4}. Kopieer net zoals in de oefenopdracht de inhoud (je kunt een van de knoppen rechtsbovenin gebruiken om alles te kopi\"eren) en sla het (via Notepad weer) op onder de naam \verb,data-h4.txt, (wederom in dezelfde map als je script).
 
-Sla een kopie van dit bestand op in dezelfde map waar ook het Python-script staat dat dit bestand moet gaan lezen en bewerken.
-Gebruik \pythoninline{np.genfromtxt} met de komma als \verb,delimiter,, zodat je de meetgegevens in het bestand kunt inlezen en die in een \verb,numpy,-array om kunt zetten.
+Gebruik \pythoninline{np.genfromtxt} met de komma als delimiter, zodat je de meetgegevens in het bestand kunt inlezen.
 
 \subsubsection*{2: Sorteren op meetstation}
-De data bestaat uit twee kolommen: de eerste bevat het nummer van het meetstation, de tweede de gemeten temperatuur. Elke vier opeenvolgende metingen zijn altijd van de vier verschillende weerstations: het kan niet voorkomen dat er eentje ontbreekt. Alleen de volgorde verschilt. Je wordt aangeraden om gebruik te maken van \pythoninline{np.argsort()}:
+De data bestaat uit twee kolommen: de eerste bevat het nummer van het meetstation, de tweede de gemeten temperatuur. Elke vier opeenvolgende metingen zijn altijd van de vier verschillende weerstations: het kan niet voorkomen dat er eentje ontbreekt. Alleen de volgorde verschilt. Je wordt aangeraden om gebruik te maken van \pythoninline{np.argsort()}. Hieronder een voorbeeld:
 
 \begin{python}
-stat_unsort = np.array([1,4,2,3])                # nummers van meetstations
-temp_unsort = np.array([20.0, 20.5, 22.6, 21.2]) # temperaturen per station
-volgorde = np.argsort(stat_unsort)               # [0 3 1 2] is de volgorde
-temp_sort = temp_unsorted[volgorde]              # sorteer de temperaturen
+# nummers van de meetstations
+stations = np.array([1,4,3,2])
+
+# de temperaturen die bij de stations horen, op dezelfde volgorde
+temperaturen = np.array([20.0, 20.5, 22.6, 21.2])
+
+# [0 3 2 1] is de goede volgorde: het eerste getal staat goed,
+# het tweede getal staat achteraan, etc.
+volgorde = np.argsort(stations)
+
+# sorteer de temperaturen met behulp van de volgorde
+temperaturen = temperaturen[volgorde]
 \end{python}
 
-Je zult dus elke vier opeenvolgende waarden moeten sorteren: selecteer elke keer vier elementen (denk terug aan de slotopdracht van hoofdstuk 2!) en pas \pythoninline{np.argsort()} toe. Sorteer vervolgens de vier temperaturen met deze sortering.
+Dit stukje code sorteert vier waarden op basis van de nummers van de weerstations. In het bestand staan er echter bijna 2000 keer 4 metingen onder elkaar. Je zult dus elke keer de temperaturen moeten sorteren in blokjes van vier, en dan doorgaan naar de volgende vier. Denk hiervoor terug aan de slotopdracht van hoofdstuk 2: hoe selecteer je elke keer vier elementen? 
+
+Let op: nu schuif je niet telkens één plekje op, maar vier plekken. Maak daarom gebruik van de volgende regel:
+
+\pythoninline{for i in range(0, len(data), 4)}
+
+Zo maak je elke keer een stap van 4!
 
 \subsubsection*{3: Reshapen van data}
 Je data is nu gesorteerd, maar alles staat op \'e\'en rij achter elkaar. Om de data te kunnen plotten, moeten we nu de data zo aanpassen, dat je \'e\'en hele rij of kolom kunt selecteren waar alle temperaturen van \'e\'en weerstation staan. Daarvoor kun je goed gebruik maken van \pythoninline{np.reshape(rijen, kolommen)}:
 
 \begin{python}
-temp_reshape = temp_sorted.reshape(int(len(temp_sorted)/4), 4)
+temperaturen = temperaturen.reshape(int(len(temperaturen)/4), 4)
 \end{python}
 
-Dit is een best complexe regel: we zeggen dat de vorm van \pythoninline{temp_sorted} z\'o moet zijn dat er 4 kolommen naast elkaar staan, en het aantal rijen is het totaal aantal meetpunten gedeeld door 4, omdat er over 4 meetstations gemeten wordt. Per weerstation zijn er dus \pythoninline{len(temp_sorted) / 4} meetpunten. En omdat het een heel getal moet zijn, zeggen we specifiek dat het een \pythoninline{int} moet zijn.
+Dit is een best complexe regel: we zeggen dat de vorm van \pythoninline{temperaturen} z\'o moet zijn dat er 4 kolommen naast elkaar staan, en het aantal rijen is het totaal aantal meetpunten gedeeld door 4, omdat er over 4 meetstations gemeten wordt. Per weerstation zijn er dus \pythoninline{len(temperaturen) / 4} meetpunten. En omdat het aantal rijen een heel getal moet zijn, zeggen we specifiek dat het een \pythoninline{int} moet zijn.
 
 \subsubsection*{4: Plotten per weerstation}
-Maak nu per weerstation een plot van de temperatuur. Gebruik als $x$ een array van 0 tot 24 (uur), met het aantal meetpunten van \'e\'en weerstation als het aantal getallen in dat array (hint: maak dus gebruik van \pythoninline{np.linspace()}!). Gebruik als $y$ uiteraard een kolom uit \pythoninline{temp_reshape}.
+Maak nu per weerstation een plot van de temperatuur. Gebruik als $x$ een array van 0 tot 24 (uur), met het aantal meetpunten van \'e\'en weerstation als het aantal getallen in dat array (hint: maak dus gebruik van \pythoninline{np.linspace()}!). Gebruik als $y$ uiteraard een kolom uit \pythoninline{temperaturen}.
 
-Sla uiteindelijk alle vier de afbeeldingen per stuk op.
+Je mag zelf kiezen of je vier losse figuren maakt, of een 2-bij-2 subplot pakt van het vorige hoofdstuk. Zorg in ieder geval dat je al je figuren opslaat!
 
 \clearpage
 \renewcommand{\ditwc}{Functies}
@@ -773,57 +789,27 @@ In hoofdstuk \ref{Ch_basisvaardigheden} hebben we al kort gekeken naar functies.
 \item Soms kom je functies tegen die een wisselend aantal argumenten gebruiken.
 \end{itemize}
 
-Je hebt  hier bijvoorbeeld al kennis mee gemaakt met \pythoninline{plt.plot(x,y,'k+',label='sinus')}. Hierin is \pythoninline{y} een argument, \pythoninline{x} en \pythoninline{'k+'} een optioneel argument en \pythoninline{label='sinus'} een keyword argument (omdat je \pythoninline{label=...} gebruikt).
+Je hebt  hier bijvoorbeeld al kennis mee gemaakt met \pythoninline{plt.plot(x,y,label='sinus')}. Hierin is \pythoninline{y} een argument, \pythoninline{x} een optioneel argument en \pythoninline{label='sinus'} een keyword argument (omdat je \pythoninline{label=} gebruikt).
 
-In dit hoofdstuk leer je hoe je zelf functies kunt schrijven en gebruiken. Dit is ook nuttig als je op internet informatie over functies opzoekt (documentatie).\footnote{Kijk bijvoorbeeld op \url{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html} voor de documentatie over de functie \pythoninline{plt.plot()}.}
-
-Let op: een functie met nul argumenten zal altijd hetzelfde doen. Denk bijvoorbeeld aan \pythoninline{plt.show()}: er staat nooit iets tussen de haakjes en deze functie zal dan ook altijd precies hetzelfde doen.
+Let op: een functie met nul argumenten zal altijd hetzelfde doen. Denk bijvoorbeeld aan \pythoninline{ax.grid()}: er staat nooit iets tussen de haakjes en deze functie zal dan ook altijd precies hetzelfde doen.
 
 \subsection{Constructie van functies}
-% Het eerste stuk van dit hoofdstuk is gebaseerd op materiaal uit
-% https://www.saltycrane.com/blog/2008/01/how-to-use-args-and-kwargs-in-python/
 Informatie wordt naar een functie gestuurd in de vorm van argumenten. Een serie argumenten wordt opgegeven en de volgorde van de argumenten bepaalt welk argument welk is.
 \begin{python}
 def f(a,b):
     return a + 2*b
     
-print(f(1,2)) # 5
-print(f(2,1)) # 4
+print(f(1,2)) # uitkomst 5
+print(f(2,1)) # uitkomst 4
 \end{python}
 
 Het is ook mogelijk om argumenten te labelen, dan maakt de volgorde niet uit:
 \begin{python}  
-print(f(a=1,b=2)) # 5
-print(f(b=1,a=2)) # 4
-print(f(b=2,a=1)) # 5
+print(f(a=1,b=2)) # uitkomst 5
+print(f(b=2,a=1)) # uitkomst 5
+print(f(b=1,a=2)) # uitkomst 4
 \end{python}
 Als sommige argumenten wel, en andere niet gelabeld zijn, dan moeten de {\bf niet} gelabelde argumenten eerst komen, en er mag geen conflict optreden. De volgende twee functie aanroepen geven dan ook een foutmelding: \pythoninline{f(a=1, 2)} en \pythoninline{f(1, a=2)}, terwijl \pythoninline{f(1,b=2)} wel correct is.
-
-\subsection{Extra argumenten}
-Een functie kan een {\it wisselend} aantal argumenten mee krijgen. Die voer je in door bijvoorbeeld \pythoninline{f(a,b,*args)}, waar \pythoninline{*args} (van {\it arguments}) een willekeurig aantal argumenten kan zijn. Dat maakt het sterretje ervoor duidelijk.
-Bijvoorbeeld het optellen van een willekeurig aantal elementen:
-\begin{python}
-def mijn_som(*args):
-    som = 0
-    for arg in args:
-        som += arg
-    return som
-
-print( mijn_som(1,2,3) )     #  6    
-print( mijn_som(2,1,3,4,5) ) # 15
-print( mijn_som() )          #  0    
-\end{python}
-Dit is natuurlijk een erg droog voorbeeld. Let erop dat je op deze functie niet kunt gebruiken om bijv. de elementen in een lijst op te tellen. Dus 
-\begin{python}
-array = np.array([1,2,3,4])
-print( mijn_som(array) )     # geeft foutmelding
-\end{python}
-
-\subsubsection*{Oefenopdracht: Extra argumenten}
-\begin{enumerate}
-\item Test de functie \pythoninline{mijn_som}. Krijg je de voorspelde uitkomsten?
-\item Probeer ook het voorbeeld met \pythoninline{array}. Hoe kun je t\'och een array gebruiken? (\textit{Hint:} maak gebruik van een \pythoninline{for}-loop om losse getallen te maken.)
-\end{enumerate}
 
 \subsection{Defaultwaarde}
 Sommige argumenten worden maar zelden gebruikt of juist altijd op dezelfde manier. Een plot van temperatuurverloop bijvoorbeeld is eigenlijk altijd prettiger te lezen m\'et gridlijnen. Maar het is wel fijn als je dit soms kunt aanpassen (in dit geval het grid onderdrukken). Daarvoor zijn defaultwaarden erg praktisch: je kunt een argument standaard een waarde toekennen in een functie, tenzij je het anders opgeeft. Kijk maar eens naar het volgende voorbeeld:
@@ -834,26 +820,24 @@ Sommige argumenten worden maar zelden gebruikt of juist altijd op dezelfde manie
 \begin{enumerate}
 	\item Test bovenstaand script met de volgende regels:
 	\begin{python}
-my_plot(x_arr,1,2)
-my_plot(x_arr,1,2,True)
-my_plot(x_arr,1,2,False)
+mijn_plot(x_arr,1,2)
+mijn_plot(x_arr,1,2,True)
+mijn_plot(x_arr,1,2,False)
 	\end{python}
-	Wat gebeurt er?
+	Wat gebeurt er? Wat is de invloed van \pythoninline{True} en \pythoninline{False}?
 \end{enumerate}
 
 \subsection{Slotopdracht: Eigen plotfunctie}
-Als je met een bak data aan het werk bent, maak je vaak plots die (bijna) helemaal hetzelfde zijn, op de lijnen na. Daarom is het best fijn om een standaardfunctie te hebben die je in elke opdracht opnieuw kunt gebruiken, en met behulp van argumenten aan te passen is naar hoe de specifieke opdracht. In deze opdracht heb je alle vrijheid, op \'e\'en regel na: je \pythoninline{my_plot}-functie begint met deze regel:
+Als je met een bak data aan het werk bent, maak je vaak plots die (bijna) helemaal hetzelfde zijn, op de lijnen na. Daarom is het fijn om een standaardfunctie te hebben die je in elke opdracht opnieuw kunt gebruiken, en met behulp van argumenten aan te passen is naar hoe de specifieke opdracht. In deze opdracht heb je alle vrijheid, op \'e\'en regel na: je \pythoninline{mijn_plot}-functie begint met deze regel:
 
 \begin{python}
-def my_plot(x,functie,*args,style='k-',label=None,
+def mijn_plot(x,y,label=None,xlabel=None,ylabel=None,titel=None,
 	    xmin=min(x),xmax=max(x),ymin=None,ymax=None,
-	    xlabel=None,ylabel=None,titel=None,
-	    legenda=False,grid=True,show=True):
+	    legenda=False,grid=True):
 \end{python}
-Hier staat \pythoninline{x} voor het bereik op de x-as, \pythoninline{functie} voor de functie die op de y-as geplot wordt, \pythoninline{*args} voor de argumenten die die functie nodig heeft. Vervolgens komen de keyword-arguments: \pythoninline{style} staat voor de kleur en vorm van de lijn, \pythoninline{label} staat voor het label van je lijn. \pythoninline{xmin, xmax, ymin} en \pythoninline{ymax} staan voor het bereik op de x- en y-as. \pythoninline{xlabel, ylabel} en \pythoninline{titel} spreken voor zich; \pythoninline{legenda} voor \pythoninline{plt.legend()}, \pythoninline{grid} voor \pythoninline{plt.grid()} en \pythoninline{show} betekent \pythoninline{plt.show()}.
+Hier staat \pythoninline{x} voor het array voor de x-as, en \pythoninline{y} voor de lijn die je wilt plotten. Vervolgens komen de keyword-arguments:\pythoninline{label} staat voor het label van je lijn,  \pythoninline{xlabel, ylabel} en \pythoninline{titel} spreken voor zich. \pythoninline{xmin, xmax, ymin} en \pythoninline{ymax} staan voor het bereik op de x- en y-as.; \pythoninline{legenda} voor \pythoninline{ax.legend()} en \pythoninline{grid} voor \pythoninline{ax.grid()}.
 
 Als {\it proof-of-concept} pak je je slotopdracht van hoofdstuk 4. Maak vervolgens gebruik van jouw functie in deze slotopdracht om de data van elk weerstation te plotten. Plot ook in elke figuur het bijbehorend voortschrijdend gemiddelde over de afgelopen 10 waarden. Hiervoor kun je je functie van de slotopdracht van hoofdstuk 2 hergebruiken. (Hoe goed was je commentaar destijds? Begrijp je jouw script van toen nu nog steeds?)
-
 
 \clearpage
 \renewcommand{\ditwc}{Meet je leefomgeving}

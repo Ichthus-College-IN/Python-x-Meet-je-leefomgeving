@@ -26,36 +26,33 @@
 \BOOKMARK [2][-]{subsection.2.7}{Slotopdracht: Voortschrijdend gemiddelde}{section.2}% 26
 \BOOKMARK [1][-]{section.3}{Modules \(2\): MATPlotLib}{}% 27
 \BOOKMARK [2][-]{subsection.3.1}{Grafiek maken}{section.3}% 28
-\BOOKMARK [2][-]{subsection.3.2}{Lijnen opmaken}{section.3}% 29
-\BOOKMARK [2][-]{subsection.3.3}{Assen opmaken}{section.3}% 30
-\BOOKMARK [2][-]{subsection.3.4}{Meer grafieken in \351\351n figuur}{section.3}% 31
-\BOOKMARK [2][-]{subsection.3.5}{Slotopdracht: Heel veel plotjes}{section.3}% 32
-\BOOKMARK [1][-]{section.4}{Importeren en exporteren}{}% 33
-\BOOKMARK [2][-]{subsection.4.1}{Afbeeldingen exporteren}{section.4}% 34
-\BOOKMARK [2][-]{subsection.4.2}{Formatteren van tekst}{section.4}% 35
-\BOOKMARK [2][-]{subsection.4.3}{Bestanden importeren}{section.4}% 36
-\BOOKMARK [2][-]{subsection.4.4}{Slotopdracht: De weerstations van de KNMI}{section.4}% 37
-\BOOKMARK [1][-]{section.5}{Functies}{}% 38
-\BOOKMARK [2][-]{subsection.5.1}{Constructie van functies}{section.5}% 39
-\BOOKMARK [2][-]{subsection.5.2}{Extra argumenten}{section.5}% 40
-\BOOKMARK [2][-]{subsection.5.3}{Defaultwaarde}{section.5}% 41
-\BOOKMARK [2][-]{subsection.5.4}{Slotopdracht: Eigen plotfunctie}{section.5}% 42
-\BOOKMARK [1][-]{section.6}{Meet je leefomgeving}{}% 43
-\BOOKMARK [2][-]{subsection.6.1}{De sensoren}{section.6}% 44
-\BOOKMARK [3][-]{subsubsection.6.1.1}{ADC: accuspanning}{subsection.6.1}% 45
-\BOOKMARK [3][-]{subsubsection.6.1.2}{BME280: temperatuur, luchtdruk en relatieve luchtvochtigheid}{subsection.6.1}% 46
-\BOOKMARK [3][-]{subsubsection.6.1.3}{MAX4466: geluidssterkte}{subsection.6.1}% 47
-\BOOKMARK [3][-]{subsubsection.6.1.4}{TSL2591: lichtintensiteit}{subsection.6.1}% 48
-\BOOKMARK [3][-]{subsubsection.6.1.5}{VEML6070: UV-intensiteit}{subsection.6.1}% 49
-\BOOKMARK [3][-]{subsubsection.6.1.6}{CJMCU-811: VOC en CO2-gehalte}{subsection.6.1}% 50
-\BOOKMARK [3][-]{subsubsection.6.1.7}{SDS011: fijnstof}{subsection.6.1}% 51
-\BOOKMARK [3][-]{subsubsection.6.1.8}{Ublox NEO-6M GPS6MU2: GPS}{subsection.6.1}% 52
-\BOOKMARK [2][-]{subsection.6.2}{Handige informatie}{section.6}% 53
-\BOOKMARK [2][-]{subsection.6.3}{De eindopdracht}{section.6}% 54
-\BOOKMARK [1][-]{section.7}{BONUS}{}% 55
-\BOOKMARK [2][-]{subsection.7.1}{Voormalige slotopdracht H4: De Europese bananeninspectie}{section.7}% 56
-\BOOKMARK [2][-]{subsection.7.2}{Commentaar schrijven}{section.7}% 57
-\BOOKMARK [2][-]{subsection.7.3}{Effici\353ntie verbeteren}{section.7}% 58
-\BOOKMARK [3][-]{subsubsection.7.3.1}{Effici\353ntie meten}{subsection.7.3}% 59
-\BOOKMARK [3][-]{subsubsection.7.3.2}{Wanneer optimaliseren?}{subsection.7.3}% 60
-\BOOKMARK [3][-]{subsubsection.7.3.3}{Standaard snelle oplossingen}{subsection.7.3}% 61
+\BOOKMARK [2][-]{subsection.3.2}{Grafiek opmaken}{section.3}% 29
+\BOOKMARK [2][-]{subsection.3.3}{Meer grafieken in \351\351n figuur}{section.3}% 30
+\BOOKMARK [2][-]{subsection.3.4}{Slotopdracht: Heel veel plotjes}{section.3}% 31
+\BOOKMARK [1][-]{section.4}{Importeren en exporteren}{}% 32
+\BOOKMARK [2][-]{subsection.4.1}{Afbeeldingen exporteren}{section.4}% 33
+\BOOKMARK [2][-]{subsection.4.2}{Bestanden importeren}{section.4}% 34
+\BOOKMARK [2][-]{subsection.4.3}{Slotopdracht: De weerstations van de KNMI}{section.4}% 35
+\BOOKMARK [1][-]{section.5}{Functies}{}% 36
+\BOOKMARK [2][-]{subsection.5.1}{Constructie van functies}{section.5}% 37
+\BOOKMARK [2][-]{subsection.5.2}{Defaultwaarde}{section.5}% 38
+\BOOKMARK [2][-]{subsection.5.3}{Slotopdracht: Eigen plotfunctie}{section.5}% 39
+\BOOKMARK [1][-]{section.6}{Meet je leefomgeving}{}% 40
+\BOOKMARK [2][-]{subsection.6.1}{De sensoren}{section.6}% 41
+\BOOKMARK [3][-]{subsubsection.6.1.1}{ADC: accuspanning}{subsection.6.1}% 42
+\BOOKMARK [3][-]{subsubsection.6.1.2}{BME280: temperatuur, luchtdruk en relatieve luchtvochtigheid}{subsection.6.1}% 43
+\BOOKMARK [3][-]{subsubsection.6.1.3}{MAX4466: geluidssterkte}{subsection.6.1}% 44
+\BOOKMARK [3][-]{subsubsection.6.1.4}{TSL2591: lichtintensiteit}{subsection.6.1}% 45
+\BOOKMARK [3][-]{subsubsection.6.1.5}{VEML6070: UV-intensiteit}{subsection.6.1}% 46
+\BOOKMARK [3][-]{subsubsection.6.1.6}{CJMCU-811: VOC en CO2-gehalte}{subsection.6.1}% 47
+\BOOKMARK [3][-]{subsubsection.6.1.7}{SDS011: fijnstof}{subsection.6.1}% 48
+\BOOKMARK [3][-]{subsubsection.6.1.8}{Ublox NEO-6M GPS6MU2: GPS}{subsection.6.1}% 49
+\BOOKMARK [2][-]{subsection.6.2}{Handige informatie}{section.6}% 50
+\BOOKMARK [2][-]{subsection.6.3}{De eindopdracht}{section.6}% 51
+\BOOKMARK [1][-]{section.7}{BONUS}{}% 52
+\BOOKMARK [2][-]{subsection.7.1}{Voormalige slotopdracht H4: De Europese bananeninspectie}{section.7}% 53
+\BOOKMARK [2][-]{subsection.7.2}{Commentaar schrijven}{section.7}% 54
+\BOOKMARK [2][-]{subsection.7.3}{Effici\353ntie verbeteren}{section.7}% 55
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Effici\353ntie meten}{subsection.7.3}% 56
+\BOOKMARK [3][-]{subsubsection.7.3.2}{Wanneer optimaliseren?}{subsection.7.3}% 57
+\BOOKMARK [3][-]{subsubsection.7.3.3}{Standaard snelle oplossingen}{subsection.7.3}% 58
