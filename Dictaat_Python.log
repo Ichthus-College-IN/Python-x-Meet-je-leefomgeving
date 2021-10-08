@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  7 OCT 2021 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  8 OCT 2021 12:34
 entering extended mode
 **./Dictaat_Python.tex
 (Dictaat_Python.tex
@@ -736,10 +736,10 @@ Package rerunfilecheck Info: File `Dictaat_Python.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1120.
  ) 
 Here is how much of TeX's memory you used:
- 10344 strings out of 492975
- 153161 string characters out of 3125199
- 449742 words of memory out of 3000000
- 13429 multiletter control sequences out of 15000+600000
+ 10332 strings out of 492975
+ 152993 string characters out of 3125199
+ 448742 words of memory out of 3000000
+ 13425 multiletter control sequences out of 15000+600000
  14789 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,41p,1258b,1980s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -769,9 +769,9 @@ fonts/cm/cmtt10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/Steven/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dictaat_Python.pdf (40 pages, 726687 bytes).
+Output written on Dictaat_Python.pdf (40 pages, 724578 bytes).
 PDF statistics:
- 1122 PDF objects out of 1200 (max. 8388607)
- 519 named destinations out of 1000 (max. 500000)
+ 1112 PDF objects out of 1200 (max. 8388607)
+ 511 named destinations out of 1000 (max. 500000)
  475 words of extra memory for PDF output out of 10000 (max. 10000000)
 

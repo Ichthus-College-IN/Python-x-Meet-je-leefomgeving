@@ -12,4 +12,3 @@ ax1.grid()                      # lijnen toevoegen in het eerste plaatje
 
 # fig.suptitle() is de titel van de hele figuur.
 fig.suptitle("Drie plotjes tegelijk")
-plt.show()

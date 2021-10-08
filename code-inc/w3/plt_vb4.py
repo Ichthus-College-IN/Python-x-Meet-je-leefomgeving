@@ -11,4 +11,3 @@ axarr[1,0].plot(x,np.cos(x)*np.sin(x))          # linksonder
 axarr[1,1].plot(x,np.cos(x)**2*np.sin(x)**2)    # rechtsonder
 
 fig.suptitle("Vier plotjes tegelijk")
-plt.show()
