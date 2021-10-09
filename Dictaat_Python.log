@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  8 OCT 2021 12:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.14)  9 OCT 2021 13:28
 entering extended mode
 **./Dictaat_Python.tex
 (Dictaat_Python.tex
@@ -644,7 +644,7 @@ ython.tocpdfTeX warning (ext4): destination with the same identifier (name{page
 .1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37 ...n}{\numberline {5}Functies}{26}{section.5}
+l.36 ...structie van functies}{25}{subsection.5.1}
                                                   % [1])
 \tf@toc=\write4
 \openout4 = `Dictaat_Python.toc'.
@@ -671,50 +671,50 @@ Package pdftex.def Info: fig/spyder_screenshot.png  used on input line 104.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] [5 <./fig/spyder_screenshot.png (PNG copy)>] [6] [7] [8]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 281.
+[4] [5 <./fig/spyder_screenshot.png (PNG copy)>] [6]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 216.
 
 
 (C:\Users\Steven\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 281.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 216.
 
-[9] [10] [11] [12]
+[7] [8] [9] [10] [11]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 422.
- (code-inc/w2/np_vb1.py) [13
+nput line 357.
+ (code-inc/w2/np_vb1.py) [12
 
-] (code-inc/w2/np_vb2.py [14])
-(code-inc/w2/np_vb3.py) [15] (code-inc/w2/np_vb4.py) [16] [17]
-(code-inc/w3/plt_vb1.py) [18
+] (code-inc/w2/np_vb2.py
+[13]) (code-inc/w2/np_vb3.py) [14] (code-inc/w2/np_vb4.py) [15] [16]
+(code-inc/w3/plt_vb1.py) [17
 
-] (code-inc/w3/plt_vb2.py [19])
-(code-inc/w3/plt_vb3.py) [20] (code-inc/w3/plt_vb4.py) [21]
-(code-inc/w4/export_vb1.py) [22
+] (code-inc/w3/plt_vb2.py [18])
+(code-inc/w3/plt_vb3.py) [19] (code-inc/w3/plt_vb4.py) [20]
+(code-inc/w4/export_vb1.py) [21
 
-] (code-inc/w4/genfromtxt_vb1.py) [23] [24]
-[25] [26
+] (code-inc/w4/genfromtxt_vb1.py) [22] [23]
+[24] [25
 
-] (code-inc/w5/voorbeeld5_1.py) [27] [28] [29
+] (code-inc/w5/voorbeeld5_1.py [26]) [27] [28
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 888.
+(hyperref)                removing `math shift' on input line 802.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 888.
+(hyperref)                removing `subscript' on input line 802.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 888.
+(hyperref)                removing `math shift' on input line 802.
 
-[30] [31] [32] [33
+[29] [30] [31] [32
 
-] [34] [35] (code-inc/w6/time_vb1.py [36]
+] [33] [34] (code-inc/w6/time_vb1.py [35]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 15.
 
 (C:\Users\Steven\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd
@@ -723,24 +723,24 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
 )
-[37] [38]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1120.
- [39]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1120.
+[36] [37]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1034.
+ [38]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1034.
  (Dictaat_Python.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1120.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1120.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1034.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1034.
 
 Package rerunfilecheck Info: File `Dictaat_Python.out' has not changed.
-(rerunfilecheck)             Checksum: B00ABA9127A939404BEE68D39498B841;4253.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1120.
+(rerunfilecheck)             Checksum: E541F6452422D06D81D4748D0235D436;4266.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1034.
  ) 
 Here is how much of TeX's memory you used:
- 10332 strings out of 492975
- 152993 string characters out of 3125199
- 448742 words of memory out of 3000000
- 13425 multiletter control sequences out of 15000+600000
- 14789 words of font info for 52 fonts, out of 8000000 for 9000
+ 10309 strings out of 492975
+ 152655 string characters out of 3125199
+ 448688 words of memory out of 3000000
+ 13421 multiletter control sequences out of 15000+600000
+ 14430 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,41p,1258b,1980s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Steven\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600
@@ -748,30 +748,29 @@ Here is how much of TeX's memory you used:
 lic/amsfonts/cm/cmbx10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Steven/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Steven/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users
-/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc1
-0.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Steven/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Steven/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/User
-s/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/
+Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.
 pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsl10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Steven/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Steven/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/User
-s/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
-2.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmtt10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/Steven/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on Dictaat_Python.pdf (40 pages, 724578 bytes).
+nts/cm/cmmi8.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Steven/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Steven/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/St
+even/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+<C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsl10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Steven/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Steven/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/
+Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.
+pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmtt9.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/txfonts/t1xbtt.pfb><C:/Users/Steven/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/txfonts/t1xtt.pfb>
+Output written on Dictaat_Python.pdf (39 pages, 710371 bytes).
 PDF statistics:
- 1112 PDF objects out of 1200 (max. 8388607)
- 511 named destinations out of 1000 (max. 500000)
+ 1082 PDF objects out of 1200 (max. 8388607)
+ 493 named destinations out of 1000 (max. 500000)
  475 words of extra memory for PDF output out of 10000 (max. 10000000)
 

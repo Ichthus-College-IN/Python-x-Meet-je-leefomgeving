@@ -1,7 +1,7 @@
 # Begin met een subplots.
-# sharex='col' zorgt dat de x-coordinaat gedeeld wordt over de kolommen
-# sharey='row' idem voor rijen en de y-coordinaat
-fig, axarr = plt.subplots(2, 2, sharex='col', sharey='row')
+# sharex=True zorgt dat de x-as gedeeld wordt voor alle grafieken
+# sharey=True idem voor de y-as
+fig, axarr = plt.subplots(2, 2, sharex=True, sharey=True)
 
 x = np.linspace(0,2*np.pi)                      # startwaarden
 

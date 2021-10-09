@@ -63,7 +63,6 @@
 \clearpage
 \renewcommand{\ditwc}{Basisvaardigheden Python}
 \section[Basisvaardigheden Python]{\ditwc}
-\label{Ch_basisvaardigheden}
 % Week 1
 Ons leven bestaat bij de gratie van programmeertalen. Het versimpelt de systemen die we gebruiken, de technieken waarmee we vertrouwd zijn en het feit dat je deze tekst leest bewijst al het nut van programmeertalen.
  
@@ -203,71 +202,6 @@ Een {\bf string} is het datatype voor tekst. Deze heb je ongemerkt gebruikt in \
 \end{description}
 
 Je kunt het datatype van een variabele altijd bekijken in de Variable Explorer, als dat nodig is.
-
-\subsection{Functies}
-Je script kun je automatiseren door variabelen en de handelingen die je vaak herhaalt, in een \textit{functie} te zetten (een functie te defini\"eren).
-
-\subsubsection{Eigengemaakte functies}
-Een functie is een stukje tekst dat aan de hand van input \'e\'en of meerdere handelingen kan doen.
-
-Functies worden vaak gebruikt om te voorkomen dat blokken code meerdere keren in een script herhaald worden. 
-Hiermee zorg je ervoor dat, wanneer er een aanpassing gedaan moet worden, dit maar op \'e\'en plek hoeft te gebeuren. 
-Ook blijft je script overzichtelijk, ook al maak je hem steeds langer of complexer. 
-
-We gebruiken de formule $y = a x^2+b x + c$ om de werking van \textit{functies} uit te leggen. In het script hieronder zie je een voorbeeld van een functie die de waarde van de formule berekent en de uitkomst print op het scherm met behulp van de functie \pythoninline{print()}.
-
-\begin{python}
-def formule(a, b, c, x):
-    y = a*x**2 + b*x + c   # bereken de formule
-    return y               # geef de waarde terug
-
-i = 1
-j = 2
-k = 3
-z = 1
-waarde = formule(i, j, k, z) # geef de variabelen mee op volgorde
-print(waarde)
-\end{python} 
-
-Een Python functie begin je met het woord \pythoninline{def} ('definition'), gevolgd door de naam van de \textit{functie}. Daarna volgen tussen ronde haakjes de variabelen die door de functie moeten worden gebruikt als input. De regel wordt afgesloten met een dubbele punt om aan te geven dat wat er op de volgende regels staat de echte inhoud is. 
-
-Daarna komt de code van de \textit{functie} zelf. Let op dat de regels code na het begin van de \pythoninline{def} niet helemaal links beginnen. Dit is belangrijk! De inspringing of \textit{indent} is onderdeel van de syntax van Python. Dit laat Python weten dat de tekst op die regel onderdeel is van de \textit{functie}. Spyder helpt je hierbij, want als je op Enter drukt komt deze indent er automatisch. Al moet je altijd even opletten. Wanneer de functie klaar is en je verder wilt gaan met de rest van een script, laat je de indent weg. Zo weet Python dat die regel niet bij de functie hoort.
-
-Om een functie te gebruiken typ je de naam van de functie, met de waarden die je als input wilt gebruiken. De \textit{volgorde} van de variabelen vertelt welke waarde waar moet worden gebruikt. 
-In bovenstaand voorbeeld krijgt parameter $a$ de waarde 1, want \pythoninline{i = 1}. Parameter $b$ krijgt de waarde 2, want \pythoninline{j = 2}.
-
-Kijk na het overtypen (!) en runnen van bovenstaand script in de \textbf{Variable explorer} in Spyder. Hier kun je zien welke variabelen er bestaan, wat het type is en welke waarde ze hebben. De variabele \verb, waarde, heeft als het goed is de waarde 6. Dit getal moet ook afgedrukt zijn in de console door \verb,print,.
-
-Een andere manier om waarden toe te kennen aan de variabelen binnen een functie is door de goede namen mee te geven. Dan maakt het niet meer uit in welke volgorde de variabelen een waarde krijgen toegekend. Bijvoorbeeld:
-
-\begin{python}
-# we geven de variabelen mee op een specifieke volgorde
-waarde = formule(x=1, a=3, b=2, c=5) 
-print('waarde = ', waarde)
-\end{python}
-
-Op deze manier kun je de volgorde van de getallen dus omdraaien, maar dan moet je wel specifiek de naam van de variabele gebruiken
-
-Samenvattend:
-\begin{itemize}
-\item Je geeft de argumenten op als een getal: de waarde van $a$ als eerste, etc.
-\item Of: je geeft specifiek de waarden van $a$, $b$, $c$ en $x$ aan en dan mag je elke volgorde aanhouden.
-\end{itemize}
-
-\subsubsection*{Oefenopdracht: Controleren van bovenstaande functie}
-Controleer dat \pythoninline{formule(3, 2, 5, 1)} en  \pythoninline{formule(x=1, a=3, b=2, c=5)} dezelfde waarde opleveren. Welke? En dat een \pythoninline{formule(1, 3, 2, 5)} een andere waarde oplevert. Controleer altijd je eigen functies met een simpele manier om fouten te voorkomen.
-
-\subsubsection{Lokale vs. globale variabelen}
-Het bovenstaande voorbeeld toont \'e\'en waarde op het scherm. Kijk je in het scherm van de \textbf{Variable explorer}, dan zie je dat alleen de variabelen \verb.i., \verb.j., \verb.k., \verb.z. en \verb.waarde. een waarde hebben, maar de \verb.a., \verb.b., \verb.c., \verb.x. en \verb.y. komen daarin niet voor.
-De eerste variabelen zijn globaal (in het hele script) bekend en hebben de getoonde waarde. De andere variabelen zijn alleen bekend binnen de functie \verb.formule. en heten lokale variabelen. 
-
-Waarden van lokale variabelen kun je hooguit weergeven door ze te printen binnen een functie, maar dat wordt al snel irritant als zo'n functie duizend keer wordt aangeroepen. 
-
-Wat er binnen een functie gebeurt heeft normaal gesproken dus geen invloed op de rest van je script. Dit is een reden om onderdelen van een groter project op te bouwen uit functies.
-
-Waarden van globale variabelen kun je wel gebruiken binnen een functie. Maar je kunt niet binnen een functie de waarde van een globale variabele veranderen.
-
-Bij het gebruik van veel functies binnen een uitgebreid script is het al snel lastig om unieke korte namen voor variabelen binnen een functie te bedenken en kun je per ongeluk (of expres) meerdere keren dezelfde naam gebruiken. Dit zou er voor kunnen zorgen dat je script verkeerde resultaten oplevert. {\bf Noem je variabelen dus niet altijd zomaar \textit{a, b} en \textit{c}, maar geef ze een nuttigere naam waar mogelijk.}
 
 \subsection{Loops}
 Binnen Python bestaan manieren om functies of handelingen automatisch en/of heel vaak uit te voeren. We behandelen hier de constructies \pythoninline{while} en \pythoninline{if}.
@@ -531,10 +465,12 @@ In dit deel bekijken we hoe we data kunnen visualiseren: zichtbaar maken in graf
 import matplotlib.pyplot as plt
 \end{python}
 
-\subsection{Grafiek maken}
-Een grafiek maken in Python hoeft maar twee regeltjes te kosten. In het onderstaande voorbeeld maken we een array aan voor de x-as: dit is het domein van de grafiek. We kiezen deze van $0$ tot $2\pi$. Vervolgens gaan we daar een lijn bij maken: een sinus. In formulevorm: $y = sin(x)$. Python kent zelf geen sinus, dus moeten we gebruik maken van NumPy om de sinus te kunnen berekenen.
+In dit hoofdstuk staan voor de verschillende mogelijke varianten voorbeelden. Van de variant in paragraaf 3.1 wordt verwacht dat je ze zelf uit je hoofd kunt maken later, maar de varianten in 3.3 en 3.4 kun je uiteraard gewoon elke keer kopi\"eren bij latere opdrachten.
 
-Vervolgens maken we een figuur aan. Dat gebeurt in de regel \pythoninline{fig, ax = plt.subplots()}. \pythoninline{fig} is hierbij de `omschrijving' van de `buitenrand' van het plaatje, terwijl \pythoninline{ax} over de `binnenkant' van het plaatje gaat, oftewel je grafiek. Daarna gaan we de sinus tekenen ofwel {\it plotten}. Zie het voorbeeld:
+\subsection{E\'en grafiek maken}
+Een grafiek maken in Python hoeft maar een paar regeltjes te kosten. We hebben nodig: een x-as, een formule voor $y$, en een plaatje om het in te maken. In het onderstaande voorbeeld maken we een array aan voor de x-as: dit is het domein van de grafiek. We kiezen deze van $0$ tot $2\pi$. Vervolgens gaan we daar een lijn bij maken, in formulevorm: $y = sin(x)$. Python kent zelf geen sinus, dus moeten we gebruik maken van NumPy om de sinus te kunnen berekenen.
+
+Vervolgens maken we een figuur aan. Dat gebeurt in de regel \pythoninline{fig, ax = plt.subplots()}. \pythoninline{fig} is hierbij de `omschrijving' van de `buitenkant' van het plaatje, terwijl \pythoninline{ax} over de `binnenkant' van het plaatje gaat, oftewel je grafiek. Daarna gaan we de sinus tekenen ofwel {\it plotten}:
 
 \pythonexternal{code-inc/w3/plt_vb1.py}
 
@@ -542,7 +478,7 @@ Vervolgens maken we een figuur aan. Dat gebeurt in de regel \pythoninline{fig, a
 \begin{itemize}
 	\item[a)] Kopieer via de hyperlink het bovenstaande voorbeeld en voer het script uit. Let op: er verschijnt rechtsonderin een waarschuwing; deze mag je negeren. Rechtsbovenin zie je twee plaatjes verschijnen.
 	
-	\item[b)] Verander het aantal elementen in \pythoninline{x}. Wat gebeurt er als het aantal elementen in de lijst klein is (bijvoorbeeld 5)?
+	\item[b)] Verander het aantal elementen in \pythoninline{x}. Wat gebeurt er als het aantal elementen in de lijst klein is (bijvoorbeeld 10)?
 
 	\item[c)] Verander het tweede plaatje zo dat er geen $y^2$ wordt geplot, maar dat er een cosinus wordt geplot. \\
 	{\bf Hint:} \pythoninline{y2 = np.cos(x)}
@@ -550,68 +486,73 @@ Vervolgens maken we een figuur aan. Dat gebeurt in de regel \pythoninline{fig, a
 	\item[d)] Maak een extra plaatje door in hetzelfde script nog een keer \pythoninline{fig, ax = plt.subplots()} toe te voegen. Plot in dit plaatje \pythoninline{y} en \pythoninline{y2} tegen elkaar. Dit betekent dat je in plaats van \pythoninline{ax.plot(x,y)} invult: \pythoninline{ax.plot(y,y2)}.
 \end{itemize}
 
-\subsection{Grafiek opmaken}
+\subsection{Grafieken opmaken}
 
 Een kale grafiek is niet zo nuttig. Daarom is er ook heel veel opmaak mogelijk in matplotlib. Hieronder zijn een flink aantal opties:
 
 \begin{itemize}
+	\setlength\itemsep{0em}
 	\item \pythoninline{ax.set_title("titel")}: voeg een titel toe aan de grafiek.
 	\item \pythoninline{ax.set_xlabel("x-label")}: voeg een titel toe aan de x-as.
 	\item \pythoninline{ax.set_ylabel("y-label")}: voeg een titel toe aan de y-as.
-	\item \pythoninline{ax.set_xlim(x_min, x_max)}: pas het domein van de x-as aan van {\it min} tot {\it max}.
-	\item \pythoninline{ax.set_ylim(y_min, y_max)}: pas het bereik van de y-as aan van {\it min} tot {\it max}.
+	\item \pythoninline{ax.set_xlim(x_min, x_max)}: pas het domein van de x-as aan van {\it x\_min} tot {\it x\_max}.
+	\item \pythoninline{ax.set_ylim(y_min, y_max)}: pas het bereik van de y-as aan van {\it y\_min} tot {\it y\_max}.
 	\item \pythoninline{ax.grid()}: voeg een raster toe aan de grafiek om beter af te kunnen lezen.
 	\item \pythoninline{ax.plot(x,y,label="label")}: voeg een label toe aan de lijn.
 	\item \pythoninline{ax.legend()}: voeg een legenda toe die alle labels toont.
-	\item \pythoninline{ax.set_aspect(1)}: stel de verhouding van de assen in. Als beide assen lopen van 0 tot 1 (of andere dezelfde getallen) krijg je bijvoorbeeld een vierkant plaatje.
+	\item \pythoninline{ax.set_aspect(1)}: stel de verhouding van de assen in. Als beide assen lopen van 0 tot 1 (of andere dezelfde getallen) krijg je bijvoorbeeld een vierkant plaatje (verhouding 1:1 = 1).
 \end{itemize}
 
 \subsubsection*{Oefenopdracht: grafieken opmaken}
 \begin{itemize}
 	\item[e)] We bekijken de volgende simulatie: de Spaanse KNMI heeft sinds 1981 de warmste temperatuur per jaar bijgehouden in Madrid. Een medewerker van het instituut heeft een plotje gemaakt van die data; zie het bestand onder de volgende oefenopgave. \\
-	Zijn leidinggevende heeft de volgende eisen gesteld: de figuur moet een algemene titel en twee astitels krijgen. Het domein moet vallen van 1981 tot 2021; het bereik van 40 tot 45 graden Celsius. Daarnaast moeten de meetpunten en de trendlijn aangegeven worden in een legenda, en moet de grafiek goed uit te lezen zijn. Vul het script aan zodat aan de voorwaarden wordt voldaan.
+	Zijn leidinggevende heeft de volgende eisen gesteld: de figuur moet een algemene titel en twee astitels krijgen. Het domein moet vallen van 1981 tot 2021; het bereik van 40 tot 45 graden Celsius. Daarnaast moeten de meetpunten en de trendlijn aangegeven worden in een legenda, en moet de grafiek goed uit te lezen zijn. Vul het script aan met bovenstaande opties zodat aan de voorwaarden wordt voldaan.
 	
-	\item[f)] Maak de volgende plot: kies $t$ van $0$ tot $2\pi$. Gebruik
+	\item[f)] Maak de volgende plot: kies $t$ van $0$ tot $2\pi$. Gebruik: \\
 	\pythoninline{x = 16*np.sin(t)**3}\\
 	\pythoninline{y = 13*np.cos(t) - 5*np.cos(2*t) - 2*np.cos(3*t) - np.cos(4*t)}\\
-	 Zorg voor een goede verhouding tussen de assen.
-	 {\bf Hint:} maak gebruik van het eerste voorbeeld en pas deze aan.
+	 Zorg voor een goede verhouding tussen de assen.\\
+	 {\bf Tip:} maak gebruik van het eerste voorbeeld en pas deze aan.
 \end{itemize}
 
 \pythonexternal{code-inc/w3/plt_vb2.py}
 
-\subsection{Meer grafieken in \'e\'en figuur}
-Soms is het fijn om twee of meer plots boven elkaar of naast elkaar te laten zien. In onderstaand voorbeeld worden er 3 grafieken naast elkaar gemaakt in hetzelfde figuur. Zoals hiervoor wordt de hele figuur beschreven met \pythoninline{fig}. De losse grafieken noemen we \pythoninline{ax1, ax2} en \pythoninline{ax3}. 
+\subsection{Grafieken naast \'of onder elkaar}
+Soms is het fijn om twee of meer plots onder elkaar of naast elkaar te laten zien. In onderstaand voorbeeld worden er 3 grafieken naast elkaar gemaakt in hetzelfde figuur. 
 
-In plaats van \pythoninline{plt.subplots()} nu leeg te laten, voegen we in hoeveel grafiek we willen maken. De 1 betekent \'e\'en plot in de hoogte, 3 in de breedte.
+In plaats van \pythoninline{plt.subplots()} nu leeg te laten, voegen we in hoeveel grafieken we willen maken. De 1 betekent \'e\'en plot in de hoogte, 3 in de breedte. Zoals hiervoor wordt de hele figuur beschreven met \pythoninline{fig}. De losse grafieken noemen we \pythoninline{ax1, ax2} en \pythoninline{ax3}. Als je twee grafieken zou willen verander je de 3 in een 2, en moet je \pythoninline{ax3} verwijderen. Als je er vier zou willen, maak je van de 3 een 4 en voeg je een \pythoninline{ax4} toe.
 \pythonexternal{code-inc/w3/plt_vb3.py}
 
-\subsubsection*{Oefenopdracht: meer plotjes in een figuur}
+\subsubsection*{Oefenopdracht: meer grafieken in een figuur}
 \begin{itemize}
 	\item[g)] Voer bovenstaand script ook uit en kijk hoe het eruit ziet. Wissel de 1 en 3 eens om en kijk wat er dan gebeurt!
 	\item[h)] Het staat best lelijk dat de getallen op de y-as van het tweede en derde grafiekje overlappen met de vorige. Los dit op door de volgende aanpassing in de eerste regel:\\
 	\pythoninline{fig, (ax1, ax2, ax3) = plt.subplots(1, 3, sharex=True, sharey=True)}\\
 	Hiermee forceer je dat de x- en y-as van alle grafiekjes automatisch hetzelfde zijn en de getallen dus verdwijnen omdat ze overbodig zijn.
-	\item[i)] Voeg ook aan het tweede en derde grafiekje een grid toe. Geef daarnaast elke plot een label en ook elk figuur een legenda. Let op: je moet elke handeling voor elke grafiek los doen.
+	\item[i)] Voeg ook aan het tweede en derde grafiekje een grid toe. Geef daarnaast elke plot een label en ook elk figuur een legenda. Let op: je moet elke handeling voor elke grafiek los doen, dus voor \pythoninline{ax1, ax2} en \pythoninline{ax3}.
 \end{itemize}
 
-Het is uiteraard ook mogelijk om plots onder \'en naast elkaar te zetten. In het volgende voorbeeld worden 2 bij 2 plots gemaakt. Let op! De plots zitten nu niet meer in de losse namen \pythoninline{ax1, ax2} en \pythoninline{ax3}, maar ze zitten alle vier in de algemene naam \pythoninline{axarr}. Net zoals bij een array een plek opgegeven wordt met bijvoorbeeld \pythoninline{[1]}, kun je een specifiek plot ophalen met de blokhaken. Zie het voorbeeld.
+\subsection{Grafieken naast \'en onder elkaar}
+Het is uiteraard ook mogelijk om plots onder \'en naast elkaar te zetten. In het volgende voorbeeld worden 2 bij 2 plots gemaakt. Let op! De plots zitten nu niet meer in de losse namen \pythoninline{ax1, ax2} en \pythoninline{ax3}, maar ze zitten alle vier in de algemene naam \pythoninline{axarr}. Net zoals bij een array een plek opgegeven wordt met bijvoorbeeld \pythoninline{[1]}, kun je een specifiek plot ophalen met de blokhaken. Het eerste getal tussen de blokhaken staat daarbij voor de rij, het tweede getal voor de kolom. Zie het voorbeeld.
 
 \pythonexternal{code-inc/w3/plt_vb4.py}
 
-Merk op dat gebruik wordt gemaakt van een 2-bij-2 array om de informatie voor de individuele plots op te slaan. Het eerste getal tussen de blokhaken staat daarbij voor de rij, het tweede getal voor de kolom.
+\subsubsection*{Oefenopdracht: opmaak van meer grafieken}
+\begin{itemize}
+	\item[j)] Voeg aan elke grafiek een grid toe. Let op dat je hier niet gebruik maakt van \pythoninline{ax1} etc., maar dat nu vervangt door \pythoninline{axarr[0,0]} etc.
+\end{itemize}
 
 \subsection{Slotopdracht: Heel veel plotjes}
 \begin{itemize}
 	\item Maak een figuur van 2-bij-2 plots waarin net als in bovenstaand voorbeeld \pythoninline{sharex} en \pythoninline{sharey} gebruikt worden.
-	\item Zorg ervoor dat het bereik op de x-as (het domein) loopt van 0 tot $\pi$ voor alle plots.
-	\item Maak een array \pythoninline{x} met een ruim aantal getallen, oplopend van 0 tot en met $\pi$.
+	\item Maak een array \pythoninline{x} met een ruim aantal getallen, oplopend van 0 tot en met $\pi$ (niet random dus!). Hoeveel is genoeg? Denk terug aan de sinus met 10 of 100 getallen.
 	\item Plot vervolgens per plot de volgende lijnen:\\
 	1. $sin(x)$ en $cos(x)$\\
 	2. $sin(x)^2$ en $cos(x)^2$\\
 	3. $x^{0.5}$ en $x^2$\\
 	4. $1/x$ en $log(x)$\\
 	De logaritme kun je plotten met behulp van \pythoninline{np.log(x)}.
+	\item Zorg ervoor dat het bereik op de x-as (het domein) loopt van 0 tot $\pi$ voor alle plots.
 	\item Voeg uiteindelijk ook labels en legenda's toe, en maak hem zo netjes mogelijk met de dingen die je in dit hoofdstuk geleerd hebt.
 \end{itemize}
 
@@ -627,85 +568,28 @@ In het vorige hoofdstuk heb je al geleerd om plaatjes te maken. Figuren staan no
 
 {\it De standaard locatie waar de afbeelding wordt opgeslagen is de map waar het script is opgeslagen!}
 
-De belangrijkste opties die je aan deze functie kunt meegegeven zijn de naam van de afbeelding en de resolutie. Als bestandstype kan er worden gekozen voor \verb.jpg., \verb.png. en  \verb.pdf.. 
-De resolutie van deze afbeeldingen wordt gespecificeerd in \textit{dots-per-inch}  (\verb,dpi,).
-Afbeeldingen van het type .jpg en .png kun je niet zo ver inzoomen, omdat op een gegeven moment de pixels zichtbaar worden. 
-Afbeeldingen van het type .pdf zijn opgebouwd uit formules zoals punten, lijnen en/of krommen. Daardoor kun je zo ver inzoomen als je zou willen zonder dat het onscherp wordt.
+De belangrijkste opties die je aan deze functie kunt meegegeven zijn de naam + bestandstype van de afbeelding, en de resolutie. De naam kun je uiteraard vrij kiezen; als bestandstype kan er worden gekozen voor \verb.jpg., \verb.png. en  \verb.pdf. (wij gebruiken hier alleen .png). 
+De resolutie van deze afbeeldingen wordt gespecificeerd in \textit{dots-per-inch}  (\verb,dpi,). Een gemiddeld beeldscherm heeft zo'n 140 dpi, maar voor een plaatje is meer dpi zeker fijn.
 
-Met behulp van \pythoninline{figsize=[breedte, hoogte]} kun je instellen hoe groot je plaatje is, en welke verhoudingen hij heeft. Hoe groter de breedte en hoogte, hoe groter het bestand.
+Met behulp van \pythoninline{figsize=[breedte, hoogte]} kun je instellen hoe groot je plaatje is, en welke verhoudingen hij heeft. Hoe groter de breedte en hoogte, hoe groter het bestand. Deze functie kun je invoegen in \pythoninline{plt.subplots()}.
 
 \pythonexternal{code-inc/w4/export_vb1.py}
 
-\subsubsection*{Oefenopdracht} 
+\subsubsection*{Oefenopdracht: plots opslaan} 
 \begin{itemize}
 	\item Open het bovenstaande voorbeeld-script \verb,export_vb1.py,. Maak verschillende plaatjes door de volgende instellingen te gebruiken:
 
 	\begin{enumerate}
 		\item Het aantal dots-per-inch. Kies bijv. 300 of 1200.
-		\item De extensie van het weggeschreven bestand. Kies: \verb,png, of \verb,pdf,. Hierin is al voorzien in het voorbeeld door tweemaal een \verb,fig.savefig, te doen.
 		\item De grootte van het plaatje. Kies bijv. \verb=[2,1]= of \verb=[20,10]=.
 	\end{enumerate}
 
 	\item Open de plaatjes en kijk naar de kwaliteit. Gebruik de zoom-functie! Kijk ook naar de bestandsgrootte (in kilobytes) van de aangemaakte bestanden. Trek je conclusie!
+	
+	\item Sla de figuur van slotopdracht hoofdstuk 3 ook op.
 \end{itemize}
-
-\iffalse
-\subsection{Formatteren van tekst}
-In het begin hebben we losse waarden op het beeldscherm getoond: vaak dus \'e\'en getal per regel, maar er kunnen ook meerdere berekende waarden in een keer op het scherm worden getoond met \'e\'en \pythoninline{print} statement. Dit kan door meerdere variabelen op te geven gescheiden door komma's.
-
-\begin{python}
-a = 1
-b = 2
-c = 3
-print('a =', a, 'b=', b, 'c=', c)
-\end{python}
-
-Het kan handig zijn tekst toe te voegen, zodat berekende waarden meer voor zichzelf spreken, zoals in onderstaand voorbeeld.
-
-\begin{python}
-print('Na ', t, 'seconden, is de bal', y, 'meter hoog.')
-\end{python}
-
-Een andere manier om tekst te tonen op je beeldscherm kan met behulp van \pythoninline{format}. Je hoeft dan veel minder komma's en quotes te gebruiken en hebt er meer controle over. Het is dan niet langer nodig verschillende stukken te scheiden met komma's, maar je gebruikt een enkele \pythoninline{string}. Hierin geef je met accolades (\pythoninline{\{\}}) aan waar de waarden van variabelen kunnen worden ingevuld en sluit je af met de functie format, waarin je de namen van de variabelen aangeeft.
-
-In de accolades kun je met een code aangeven hoe je tekst er uit komt te zien. Deze {\it codes} beginnen met een dubbele punt gevolgd door een aantal letters. Zie tabel \ref{tab:format} voor een aantal mogelijkheden.
-
-\begin{table}[ht]
-\caption{Codes voor het weergeven van gegevens.}
-\label{tab:format}
-\begin{center}
-\begin{tabular}{ r l l }
-\hline
-:d    & integer & \pythoninline{500}\\
-:.xf  & decimale notatie met $x$ decimalen & \pythoninline{500.00} ($x=2$)\\
-:.xe  & wetenschap. notatie met $x$ decimalen & \pythoninline{5.0e+02} ($x=1$)\\
-:s    & string & \pythoninline{'5'}\\
-\hline
-\end{tabular}
-\end{center}
-\label{default}
-\end{table}%
-
-Voorbeeld:
-\begin{python}
-t = np.pi
-y = 22/7
-print('Na {} seconden is de bal {} meter hoog'.format(t,y))
-print('Na {:.2f} seconden is de bal {:.2f} meter hoog'.format(t,y))
-\end{python}
-
-\subsubsection*{Oefenopdracht: Oefenen met het precies formatteren van tekst}
-\begin{itemize}
-	\item Verander de manier waarop de getallen $t$ en $y$ worden geformatteerd in het voorbeeld. 
-	Hoeveel correcte decimalen van \pythoninline{np.pi} kun je zo op je scherm te zien krijgen? 
-	(Antwoord: 15). 
-	Probeer behalve het aantal decimalen te vari\"eren ook te spelen met het type door $t$ en $y$ af te drukken als string of integer! 
-
-\end{itemize}
-\fi
 
 \subsection{Bestanden importeren}
-\label{Ch_Importeren}
 Net als bij het exporteren van gegevens voor later gebruik, moet er bij importeren een vertaalslag worden gemaakt om de gegevens uit een bestand om te zetten zodat deze bruikbaar zijn binnen Python. Daarvoor zijn allerlei instellingen, maar deze periode zien de bestanden er allemaal hetzelfde uit:
 
 \begin{enumerate}
@@ -780,44 +664,70 @@ Je mag zelf kiezen of je vier losse figuren maakt, of een 2-bij-2 subplot pakt v
 \renewcommand{\ditwc}{Functies}
 \section[Functies]{\ditwc}
 % week 5
-In hoofdstuk \ref{Ch_basisvaardigheden} hebben we al kort gekeken naar functies. In dit hoofdstuk gaan we hier dieper op in, want het is heel erg fijn om functies te gebruiken. Een functie is een stuk code dat eerder gemaakt is en een bepaalde taak uitvoert. Het resultaat van een functie, bijv. de sinus-functie, wordt bepaald door de waarden die je meegeeft als argument(en). In Python kun je met \pythoninline{def} heel makkelijk zelf allerlei functies maken en gebruiken. Er zijn meerdere mogelijkheden:
+Je script kun je automatiseren door variabelen en de handelingen die je vaak herhaalt, in een \textit{functie} te zetten (een functie te defini\"eren). Een functie is een stukje tekst dat aan de hand van input \'e\'en of meerdere handelingen kan doen.
 
-\begin{itemize}
-\item Functies kunnen nul of meer argumenten hebben. 
-\item Soms hoef je argumenten niet op te geven en wordt een standaardwaarde (\textit{defaultwaarde}) gebruikt.
-\item Soms kom je functies tegen met argumenten die een naam/label hebben: de \textit{keyword} argumenten. 
-\item Soms kom je functies tegen die een wisselend aantal argumenten gebruiken.
-\end{itemize}
-
-Je hebt  hier bijvoorbeeld al kennis mee gemaakt met \pythoninline{plt.plot(x,y,label='sinus')}. Hierin is \pythoninline{y} een argument, \pythoninline{x} een optioneel argument en \pythoninline{label='sinus'} een keyword argument (omdat je \pythoninline{label=} gebruikt).
-
-Let op: een functie met nul argumenten zal altijd hetzelfde doen. Denk bijvoorbeeld aan \pythoninline{ax.grid()}: er staat nooit iets tussen de haakjes en deze functie zal dan ook altijd precies hetzelfde doen.
+Functies worden vaak gebruikt om te voorkomen dat blokken code meerdere keren in een script herhaald worden. 
+Hiermee zorg je ervoor dat, wanneer er een aanpassing gedaan moet worden, dit maar op \'e\'en plek hoeft te gebeuren. 
+Ook blijft je script overzichtelijk, ook al maak je hem steeds langer of complexer. 
 
 \subsection{Constructie van functies}
-Informatie wordt naar een functie gestuurd in de vorm van argumenten. Een serie argumenten wordt opgegeven en de volgorde van de argumenten bepaalt welk argument welk is.
+We gebruiken de formule $y = a x^2+b x + c$ om de werking van \textit{functies} uit te leggen. In het script hieronder zie je een voorbeeld van een functie die de waarde van de formule bereken.
+
 \begin{python}
-def f(a,b):
-    return a + 2*b
-    
-print(f(1,2)) # uitkomst 5
-print(f(2,1)) # uitkomst 4
+def formule(a, b, c, x):
+	y = a*x**2 + b*x + c   # bereken de formule
+	return y               # geef de waarde terug
+\end{python} 
+
+Een Python functie begin je met het woord \pythoninline{def} ('definition'), gevolgd door de naam van de \textit{functie}. Daarna volgen tussen ronde haakjes de variabelen die door de functie moeten worden gebruikt als input en waar je in de formule mee rekent (bijvoorbeeld $a, b, c$ en $x$ in bovenstaand voorbeeld). De regel wordt afgesloten met een dubbele punt om aan te geven dat wat er op de volgende regels staat de echte inhoud is. 
+
+Daarna komt de code van de \textit{functie} zelf. Let op dat de regels binnen een definitie een indent nodig hebben, net als bij de loops en if/else-statements.
+
+Als laatste {\it kun} je de definitie afsluiten met een \pythoninline{return}, maar dat kan verschillen. \pythoninline{return} geeft de waarde terug die je erachter zet, in bovenstaand voorbeeld is dat de waarde van $y$. Als je wilt weten wat de uitkomst is, willen we de waarde van $y$ graag `terugkrijgen' en gebruik je \pythoninline{return}. Maar als je in een functie alleen zet dat er een lijn geplot moet worden in een grafiek, hoef je geen getal terug te krijgen o.i.d., en sla je deze regel over.
+
+\subsection{Gebruik van functies}
+Om een functie te gebruiken typ je de naam van de functie, met de waarden die je als input wilt gebruiken. Daarbij zijn er twee smaken:
+
+\begin{itemize}
+	\item[1.] Je geeft de argumenten op volgorde mee: de waarde van $a$ als eerste, etc.
+	\item[2.] Of: je geeft specifiek de labels $a$, $b$, $c$ en $x$ aan en dan mag je elke volgorde aanhouden. Dit heet het gebruik maken van {\it keyword} argumenten (sleutelwoord).
+\end{itemize}
+
+Je kunt beide opties ook mengen tot een derde smaak:
+
+\begin{itemize}
+	\item[3.] Eerst komen de argumenten op volgorde, daarna {\it keyword} argumenten.
+\end{itemize}
+
+\begin{python}
+	# we geven de variabelen mee op de normale volgorde:
+	waarde = formule(3, 2, 5, 1)
+	
+	# we maken gebruik van keyword argumenten (specifieke volgorde):
+	waarde = formule(x=1, a=3, b=2, c=5)
+	
+	# we mengen:
+	waarde = formule(3, 2, x=1, c=5)
 \end{python}
 
-Het is ook mogelijk om argumenten te labelen, dan maakt de volgorde niet uit:
-\begin{python}  
-print(f(a=1,b=2)) # uitkomst 5
-print(f(b=2,a=1)) # uitkomst 5
-print(f(b=1,a=2)) # uitkomst 4
-\end{python}
-Als sommige argumenten wel, en andere niet gelabeld zijn, dan moeten de {\bf niet} gelabelde argumenten eerst komen, en er mag geen conflict optreden. De volgende twee functie aanroepen geven dan ook een foutmelding: \pythoninline{f(a=1, 2)} en \pythoninline{f(1, a=2)}, terwijl \pythoninline{f(1,b=2)} wel correct is.
+\subsubsection*{Oefenopdracht: Controleren van bovenstaande functie}
+\begin{itemize}
+	\item Controleer dat \pythoninline{formule(3, 2, 5, 1)} en  \pythoninline{formule(x=1, a=3, b=2, c=5)} dezelfde waarde opleveren. Welke? En dat een \pythoninline{formule(1, 3, 2, 5)} een andere waarde oplevert. (Maak gebruik van \pythoninline{print(waarde)} uiteraard.)
+	\item Test ook \pythoninline{formule(x=5, 1, 3, 2)} en \pythoninline{formule(3, 2, x=1, c=5)}. Welke optie werkt er wel en welke niet?
+\end{itemize}
+
+\subsection{Lokale vs. globale variabelen}
+Het bovenstaande voorbeeld toont \'e\'en waarde op het scherm. Kijk je in het scherm van de \textbf{Variable explorer}, dan zie je dat \verb.a., \verb.b., \verb.c. en \verb.x. daar niet voorkomen. Deze variabelen zijn alleen bekend binnen de functie \verb.formule. en heten lokale variabelen. 
+
+Waarden van lokale variabelen kun je hooguit weergeven door ze te printen binnen een functie, maar dat wordt al snel irritant als zo'n functie duizend keer wordt aangeroepen. Je kunt ze verder niet gebruiken {\it buiten} de functie. Waarden van globale variabelen kun je wel gebruiken binnen een functie. Maar je kunt niet binnen een functie de waarde van een globale variabele veranderen. {\bf Tip:} zorg ervoor dat de namen van variabelen in een functie andere namen hebben dan de globale variabelen. Zo voorkom je verwarring.
 
 \subsection{Defaultwaarde}
-Sommige argumenten worden maar zelden gebruikt of juist altijd op dezelfde manier. Een plot van temperatuurverloop bijvoorbeeld is eigenlijk altijd prettiger te lezen m\'et gridlijnen. Maar het is wel fijn als je dit soms kunt aanpassen (in dit geval het grid onderdrukken). Daarvoor zijn defaultwaarden erg praktisch: je kunt een argument standaard een waarde toekennen in een functie, tenzij je het anders opgeeft. Kijk maar eens naar het volgende voorbeeld:
+Sommige argumenten worden maar zelden gebruikt of juist altijd op dezelfde manier. Een plot van temperatuurverloop bijvoorbeeld is eigenlijk altijd prettiger te lezen m\'et gridlijnen. Maar het is wel fijn als je dit soms kunt aanpassen (in dit geval het grid onderdrukken). Daarvoor zijn defaultwaarden erg praktisch: je kunt een argument standaard een waarde toekennen in een functie, tenzij je het anders opgeeft. Zie volgend voorbeeld en oefenopdracht:
 
 \pythonexternal{code-inc/w5/voorbeeld5_1.py}
 
 \subsubsection*{Oefenopdracht: Defaultwaarde}
-\begin{enumerate}
+\begin{itemize}
 	\item Test bovenstaand script met de volgende regels:
 	\begin{python}
 mijn_plot(x_arr,1,2)
@@ -825,38 +735,41 @@ mijn_plot(x_arr,1,2,True)
 mijn_plot(x_arr,1,2,False)
 	\end{python}
 	Wat gebeurt er? Wat is de invloed van \pythoninline{True} en \pythoninline{False}?
-\end{enumerate}
+\end{itemize}
 
 \subsection{Slotopdracht: Eigen plotfunctie}
 Als je met een bak data aan het werk bent, maak je vaak plots die (bijna) helemaal hetzelfde zijn, op de lijnen na. Daarom is het fijn om een standaardfunctie te hebben die je in elke opdracht opnieuw kunt gebruiken, en met behulp van argumenten aan te passen is naar hoe de specifieke opdracht. In deze opdracht heb je alle vrijheid, op \'e\'en regel na: je \pythoninline{mijn_plot}-functie begint met deze regel:
 
 \begin{python}
-def mijn_plot(x,y,label=None,xlabel=None,ylabel=None,titel=None,
-	    xmin=min(x),xmax=max(x),ymin=None,ymax=None,
-	    legenda=False,grid=True):
+def mijn_plot(x,y,i,j,label=None,xlabel=None,ylabel=None,
+	      xmin=min(x),xmax=max(x),ymin=None,ymax=None,
+	      legenda=False,grid=True):
 \end{python}
-Hier staat \pythoninline{x} voor het array voor de x-as, en \pythoninline{y} voor de lijn die je wilt plotten. Vervolgens komen de keyword-arguments:\pythoninline{label} staat voor het label van je lijn,  \pythoninline{xlabel, ylabel} en \pythoninline{titel} spreken voor zich. \pythoninline{xmin, xmax, ymin} en \pythoninline{ymax} staan voor het bereik op de x- en y-as.; \pythoninline{legenda} voor \pythoninline{ax.legend()} en \pythoninline{grid} voor \pythoninline{ax.grid()}.
+Hier staat \pythoninline{x} voor het array voor de x-as, en \pythoninline{y} voor de lijn die je wilt plotten. \pythoninline{i} en \pythoninline{j} staan hier voor de subplot waarin je wilt plotten (denk bijvoorbeeld aan \pythoninline{axarr[i,j]}). Vervolgens komen de keyword-arguments: \pythoninline{label} staat voor het label van je lijn, \pythoninline{xlabel, ylabel} spreken voor zich. \pythoninline{xmin, xmax, ymin} en \pythoninline{ymax} staan voor het bereik op de x- en y-as.; \pythoninline{legenda} voor \pythoninline{ax.legend()} en \pythoninline{grid} voor \pythoninline{ax.grid()}.\\
+{\bf Tip:} maak gebruik van het voorbeeld in paragraaf 5.4 en breid deze uit voor alle opties in de \pythoninline{mijn_plot}-regel. Kijk terug naar paragraaf 3.2 als je niet alle opties meer helder hebt.
 
-Als {\it proof-of-concept} pak je je slotopdracht van hoofdstuk 4. Maak vervolgens gebruik van jouw functie in deze slotopdracht om de data van elk weerstation te plotten. Plot ook in elke figuur het bijbehorend voortschrijdend gemiddelde over de afgelopen 10 waarden. Hiervoor kun je je functie van de slotopdracht van hoofdstuk 2 hergebruiken. (Hoe goed was je commentaar destijds? Begrijp je jouw script van toen nu nog steeds?)
+\bigbreak
+Als {\it proof-of-concept} pak je je slotopdracht van hoofdstuk 4. Maak gebruik van jouw functie in deze slotopdracht om de data van elk weerstation te plotten.
+
 
 \clearpage
 \renewcommand{\ditwc}{Meet je leefomgeving}
 \section[Meet je leefomgeving]{\ditwc}
-Dit hoofdstuk is de klapper op de vuurpijl. De afgelopen weken heb je een kastje vol met sensoren mee naar huis gehad (tenzij je te ver weg woont). Dit kastje heeft lange tijd data verzameld van jouw leefomgeving, en het is tijd dat we die data gaan verwerken. Niet toevallig dat we Python combineren met het Meet je leefomgeving-project. 
+Dit hoofdstuk is de klapper op de vuurpijl. De afgelopen weken heb je (helaas nog niet :( ) een kastje vol met sensoren mee naar huis gehad. Dit kastje heeft lange tijd data verzameld van jouw leefomgeving, en het is tijd dat we die data gaan verwerken. Niet toevallig dat we Python combineren met het Meet je leefomgeving-project. 
 
 De sensorkastjes zijn op zichzelf best `dom': het enige wat ze doen is de sensoren uitlezen en de data versturen. Aan jou nu de taak om van deze data chocola te gaan maken: hoe was de temperatuur de afgelopen weken, hoeveel fijnstof is er rond jouw huis, en hoeveel lawaai maken jouw buren nou werkelijk?
 
-De eerste vijf hoofdstukken hebben we geleerd hoe Python werkt, hoe je \pythoninline{numpy} en \pythoninline{matplotlib} kan gebruiken, data kan importeren, bewerken en opslaan. Dat gaat nu allemaal samenkomen in de eindopdracht. Tot en met de vrijdag voor de toetsweek gaan we hiermee aan de slag.
+De eerste vijf hoofdstukken hebben we geleerd hoe Python werkt, hoe je \pythoninline{numpy} en \pythoninline{matplotlib} kan gebruiken, data kan importeren en figuren kunt opslaan. Dat gaat nu allemaal samenkomen in de eindopdracht.
 
-Dit hoofdstuk bevat nauwelijks nieuwe stof: in principe kun je alles wat je tot nu toe geleerd hebt combineren om de eindopdracht te maken. De informatie in dit hoofdstuk geeft jou vooral de nodige kennis om te weten wat voor data je nou werkelijk bekijkt en wat voor plaatjes je moet maken, en een enkele truc die specifiek voor dit project fijn is om te weten.
+Dit hoofdstuk bevat geen nieuwe stof: in principe kun je alles wat je tot nu toe geleerd hebt combineren om de eindopdracht te maken. De informatie in dit hoofdstuk geeft jou vooral de nodige kennis om te weten wat voor data je nou werkelijk bekijkt en wat voor plaatjes je moet maken, en een enkele truc die specifiek voor dit project fijn is om te weten.
 
 \subsection{De sensoren}
-Het kastje meet een flink aantal dingen. We behandelen de sensoren hier \'e\'en voor \'e\'en met de bijbehorende informatie zoals eenheden.
+Het kastje meet een flink aantal dingen. We behandelen de sensoren hier \'e\'en voor \'e\'en met de bijbehorende informatie zoals eenheden (nuttig voor bijvoorbeeld de y-as!).
 
 \subsubsection{ADC: accuspanning}
 Het meest cruciale onderdeel is de accu. Hiervoor maken we geen gebruik van een fysieke sensor, maar van de ingebouwde
 \begin{itemize}
-	\item[0)] ADC: een Analog to Digital Converter. Een analoog signaal (de stroom) komt binnen bij de microcontroller, die een digitaal signaal berekent in Volt, die de spanning van de batterij aangeeft. Deze ligt typisch tussen de 4.7 en 3.4 V. Een vol opgeladen batterij levert 4.7 \`a 4.8V en naarmate die leegloopt gaat de spanning terug naar 3.4V waarna de batterij `afslaat'.
+	\item[0)] ADC: een Analog to Digital Converter. Een analoog signaal (de stroom) komt binnen bij de microcontroller, die een digitaal signaal berekent in Volt, die de spanning van de batterij aangeeft. Deze ligt typisch tussen de 4.7 en 3.4 V. Een vol opgeladen batterij levert 4.7 \`a 4.8V en naarmate die leegloopt gaat de spanning terug naar 3.4V waarna de batterij leeg is.
 \end{itemize}
 
 \subsubsection{BME280: temperatuur, luchtdruk en relatieve luchtvochtigheid}
@@ -889,7 +802,7 @@ Gebroederlijk naast de lichtsensor zit een kleine paarse chip. Deze meet:
 Dit is de rechtse van de sensoren onder aan de voorkant met zijn eigen opening, en meet de luchtkwaliteit met betrekking tot:
 \begin{itemize}
 	\item[7)] VOC-gehalte in de lucht. VOC's zijn Vluchtige Organische Stoffen ({\it Volatile Organic Compounds}), gemeten in `parts per billion' (ppb). Ze zijn verantwoordelijk voor smog, verzuring en hebben een (kleine) invloed op klimaatverandering. Ze worden geproduceerd door sommige planten en bomen, maar ook door mensen bij het gebruik van bijvoorbeeld verf en spuitbussen. Tot 250 ppb is een gezond gehalte; bij een aanhoudend niveau van 250-2000 ppb gedurende een aantal dagen is het opletten, en een gehalte van meer dan 2000 ppb is erg schadelijk voor de gezondheid.\footnote{Bron: \href{https://www.airthings.com/what-is-voc}{https://www.airthings.com/what-is-voc}}
-	\item[8)] CO$_2$-gehalte in de lucht. Dit wordt gemeten in `parts per million' (ppm): het aantal deeltjes dat per miljoen deeltjes in de lucht voorkomt. Gemiddeld lag dit in 2019 volgens Buienradar op 417 ppm. Uiteraard de grootste veroorzaker van het versterkte broeikaseffect. Hierover later ook nog een kanttekening.
+	\item[8)] CO$_2$-gehalte in de lucht. Dit wordt gemeten in `parts per million' (ppm): het aantal deeltjes dat per miljoen deeltjes in de lucht voorkomt. Gemiddeld lag dit in 2019 volgens Buienradar op 417 ppm. Uiteraard de grootste veroorzaker van het versterkte broeikaseffect. Hierover later nog een kanttekening.
 \end{itemize}
 
 \subsubsection{SDS011: fijnstof}
