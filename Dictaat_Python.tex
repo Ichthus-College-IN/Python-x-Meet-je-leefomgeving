@@ -610,55 +610,62 @@ Het inlezen van bestanden die numerieke data bevatten in de vorm van een array (
 \subsection{Slotopdracht: De weerstations van de KNMI}
 In deze slotopdracht gaan we aan de slag met (gesimuleerde) meetdata van de KNMI. Het KNMI heeft in totaal 48 meetstations verspreid over Nederland. Elke paar seconden doet zo'n meetstation een meting en rapporteert de waarden naar de servers van de KNMI\footnote{Bron: \href{https://www.knmi.nl/kennis-en-datacentrum/uitleg/automatische-weerstations}{KNMI}}. Op basis hiervan worden allerlei voorspellingen gedaan, zoals het mooie overzicht dat Buienradar altijd maakt. De voorspellingen zijn niet altijd zo accuraat, maar daar kijken we hier niet naar: we zijn ge\"interesseerd in de gemeten data.
 
-Elk meetstation rapporteert in deze opdracht gemiddeld elke minuut de temperatuur, maar soms duurt het wat langer, soms wat korter, en soms is het internet wat trager dan anders. Dit heeft tot gevolg dat de gemeten waarden elke keer in een andere volgorde binnenkomen op de servers van de KNMI.
+Elk meetstation rapporteert in deze opdracht gedurende vier dagen lang gemiddeld elke vier minuten de temperatuur, maar soms duurt het wat langer, soms wat korter, en soms is het internet wat trager dan anders. Dit heeft tot gevolg dat de gemeten waarden elke keer in een andere volgorde binnenkomen op de servers van de KNMI.
 
-Aan jou de taak om de gemeten temperaturen te importeren, te sorteren, te visualiseren en als laatste te exporteren. Zo combineren we alle voorgaande kennis, en bereid je je al goed voor op de eindopdracht die hier erg op lijkt.
+Aan jou de taak om de gemeten temperaturen te importeren, te sorteren, te visualiseren en als laatste te exporteren. Zo bereid je je al goed voor op de eindopdracht die hier erg op lijkt.
 
 \subsubsection*{1: Importeren van data}
 Bekijk het volgende bestand:
 \href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/tree/main/inc/data_h4.txt}{data-h4}. Kopieer net zoals in de oefenopdracht de inhoud (je kunt een van de knoppen rechtsbovenin gebruiken om alles te kopi\"eren) en sla het (via Notepad weer) op onder de naam \verb,data-h4.txt, (wederom in dezelfde map als je script).
 
-Gebruik \pythoninline{np.genfromtxt} met de komma als delimiter, zodat je de meetgegevens in het bestand kunt inlezen.
+Gebruik \pythoninline{np.genfromtxt} met de komma als delimiter, zodat je de meetgegevens in het bestand kunt inlezen. ({\bf Tip:} gebruik het vorige voorbeeld.)
 
 \subsubsection*{2: Sorteren op meetstation}
-De data bestaat uit twee kolommen: de eerste bevat het nummer van het meetstation, de tweede de gemeten temperatuur. Elke vier opeenvolgende metingen zijn altijd van de vier verschillende weerstations: het kan niet voorkomen dat er eentje ontbreekt. Alleen de volgorde verschilt. Je wordt aangeraden om gebruik te maken van \pythoninline{np.argsort()}. Hieronder een voorbeeld:
+De data bestaat uit twee kolommen: de eerste bevat het nummer van het meetstation, de tweede de gemeten temperatuur. Elke vier opeenvolgende metingen zijn altijd van de vier verschillende weerstations: het kan niet voorkomen dat er eentje ontbreekt. Alleen de volgorde verschilt. Je wordt aangeraden om bij het sorteren gebruik te maken van \pythoninline{np.argsort()}. Hieronder een voorbeeld om een deel van de getallen te sorteren:
 
 \begin{python}
 # nummers van de meetstations
-stations = np.array([1,4,3,2])
+stat = np.array([1,4,3,2, 4,2,1,3])
 
 # de temperaturen die bij de stations horen, op dezelfde volgorde
-temperaturen = np.array([20.0, 20.5, 22.6, 21.2])
+temp = np.array([20.0,20.5,22.6,21.2, 20.1,20.4,22.4,21.3])
 
-# [0 3 2 1] is de goede volgorde: het eerste getal staat goed,
-# het tweede getal staat achteraan, etc.
-volgorde = np.argsort(stations)
+volgorde = np.argsort(stat[0:4])
+# [0 3 2 1] is de goede volgorde: het eerste getal staat in stat[0],
+# het tweede getal in stat[3], het derde in stat[2] en vierde in stat[1]
 
-# sorteer de temperaturen met behulp van de volgorde
-temperaturen = temperaturen[volgorde]
+# selecteer de 4 temperaturen die we gaan sorteren
+selectie = temp[0:4]
+
+# plaats op de originele plek de gesorteerde getallen terug
+temp[0:4] = selectie[volgorde]
 \end{python}
 
-Dit stukje code sorteert vier waarden op basis van de nummers van de weerstations. In het bestand staan er echter bijna 2000 keer 4 metingen onder elkaar. Je zult dus elke keer de temperaturen moeten sorteren in blokjes van vier, en dan doorgaan naar de volgende vier. Denk hiervoor terug aan de slotopdracht van hoofdstuk 2: hoe selecteer je elke keer vier elementen? 
+Dit stukje code sorteert vier waarden op basis van de nummers van de weerstations. In het bestand staan er echter bijna 1500 keer 4 metingen onder elkaar. Je zult dus elke keer de temperaturen moeten sorteren in blokjes van vier, en dan doorgaan naar de volgende vier. Denk hiervoor terug aan de slotopdracht van hoofdstuk 2: hoe selecteer je elke keer vier elementen?
 
 Let op: nu schuif je niet telkens één plekje op, maar vier plekken. Maak daarom gebruik van de volgende regel:
 
-\pythoninline{for i in range(0, len(data), 4)}
-
-Zo maak je elke keer een stap van 4!
+\begin{python}
+for i in range(4, 1 + len(data), 4):
+# we starten bij 4 en gaan door tot en met het einde met stappen van 4
+\end{python}
 
 \subsubsection*{3: Reshapen van data}
 Je data is nu gesorteerd, maar alles staat op \'e\'en rij achter elkaar. Om de data te kunnen plotten, moeten we nu de data zo aanpassen, dat je \'e\'en hele rij of kolom kunt selecteren waar alle temperaturen van \'e\'en weerstation staan. Daarvoor kun je goed gebruik maken van \pythoninline{np.reshape(rijen, kolommen)}:
 
 \begin{python}
-temperaturen = temperaturen.reshape(int(len(temperaturen)/4), 4)
+temp = temp.reshape(int(len(temp)/4), 4)
 \end{python}
 
-Dit is een best complexe regel: we zeggen dat de vorm van \pythoninline{temperaturen} z\'o moet zijn dat er 4 kolommen naast elkaar staan, en het aantal rijen is het totaal aantal meetpunten gedeeld door 4, omdat er over 4 meetstations gemeten wordt. Per weerstation zijn er dus \pythoninline{len(temperaturen) / 4} meetpunten. En omdat het aantal rijen een heel getal moet zijn, zeggen we specifiek dat het een \pythoninline{int} moet zijn.
+Dit is een best complexe regel: we zeggen dat de vorm van \pythoninline{temp} z\'o moet zijn dat er 4 kolommen naast elkaar staan, en het aantal rijen is het totaal aantal meetpunten gedeeld door 4, omdat er over 4 meetstations gemeten wordt. Per weerstation zijn er dus \pythoninline{len(temp) / 4} meetpunten. En omdat het aantal rijen een heel getal moet zijn, zeggen we specifiek dat het een \pythoninline{int} moet zijn.
 
 \subsubsection*{4: Plotten per weerstation}
-Maak nu per weerstation een plot van de temperatuur. Gebruik als $x$ een array van 0 tot 24 (uur), met het aantal meetpunten van \'e\'en weerstation als het aantal getallen in dat array (hint: maak dus gebruik van \pythoninline{np.linspace()}!). Gebruik als $y$ uiteraard een kolom uit \pythoninline{temperaturen}.
+Maak nu per weerstation een plot van de temperatuur. Gebruik als $x$ een array van 0 tot 96 (uur) voor de vier dagen, met het aantal meetpunten van \'e\'en weerstation als het aantal getallen in dat array (hint: maak dus gebruik van \pythoninline{np.linspace()}!). Gebruik als $y$ uiteraard een kolom uit \pythoninline{temp}.
 
-Je mag zelf kiezen of je vier losse figuren maakt, of een 2-bij-2 subplot pakt van het vorige hoofdstuk. Zorg in ieder geval dat je al je figuren opslaat!
+Plot vervolgens per meetstation de temperaturen van de vier dagen. Je hebt dus vier figuurtjes nodig! Je wordt aangeraden een 2-bij-2 subplot te pakken van het vorige hoofdstuk. Voeg als laatste wat opmaak toe en sla je figuur op!
+
+\subsubsection*{BONUS}
+Voor een bonuspunt plot je niet in de vier plotjes elk meetstation {\it afzonderlijk}, maar geef je per plotje de data weer van de weerstations voor \'e\'en dag. Linksboven dus de eerste dag van alle vier de weerstations, rechtsboven de tweede, enzovoorts. (Maximaal een 10 als cijfer voor deze opdracht.)
 
 \clearpage
 \renewcommand{\ditwc}{Functies}
