@@ -75,21 +75,12 @@ Een programmeertaal die binnen \'en buiten de exacte vakken steeds meer gebruikt
 \end{itemize}
 
 \begin{figure*}[h]
-	\includegraphics[width=16cm]{fig/github_languages.png}
+	\includegraphics[width=16cm]{inc/h1/github_languages.png}
 	\caption{\it De meest populaire programmeertalen in de periode 2014-2021. Python is de tweede meest populaire taal, goed voor een zesde van alle (openbare) scripts ter wereld. \textit{Bron: GitHub}}
 	\label{github-languages}
 \end{figure*}
 
 In deze periode komen de meest nuttige eigenschappen van Python aan de orde. Als je het begint te begrijpen, ga je de lol van programmeren vanzelf inzien. Maar zoals je eerst letters moet leren voordat je kunt lezen, moeten we beginnen met de wat taaiere kost waarvan het nut later duidelijk wordt: hoe maak en bewerk je een script, wat zijn datatypes, functies, variabelen, etc.
-
-Een goede programmeur programmeert gestructureerd en begrijpelijk. Wat moet je hiervoor concreet doen?
-\begin{itemize}
-\item[-] Volg conventies: gebruik variabelen namen die aansluiten bij de inhoud van je programma: een lijst met temperatuurwaarden noem je niet \pythoninline{meuk}.
-\item[-] Structureer je script: voeg scheidingen toe, definieer \textit{secties} met lege regels en kopjes (zoals je ook in normale tekst doet om hem leesbaar te houden).
-\item[-] Voeg uitleg toe, vooral wanneer een stuk code moeilijk is. Hoe dit kan worden gedaan wordt later in deze reader behandeld.
-\end{itemize}
-
-Een goede stelregel is: \textit{Hoe moet ik een script schrijven zodat ik het zelf snel weer begrijp als ik het over een jaar open om te gebruiken}? In de beoordeling van deze periode is een deel van de punten gereserveerd voor de kwaliteit van de scripts om zo goed programmeren aan te moedigen.
 
 \subsection{Python scripts schrijven en uitvoeren in Spyder}
 We gebruiken op het Ichthus het programma Spyder om in te programmeren. De interface van Spyder wordt weergegeven in Figuur \ref{fig-spyder}. Deze bestaat standaard uit \'e\'en window met drie schermen: de Editor, Variable explorer en Console. Elk van deze heeft zijn eigen functie:
@@ -100,23 +91,24 @@ We gebruiken op het Ichthus het programma Spyder om in te programmeren. De inter
 \end{itemize}
 
 \begin{figure*}[h]
-\includegraphics[width=16cm]{fig/spyder_screenshot.png}
+\includegraphics[width=16cm]{inc/h1/spyder_screenshot.png}
 \caption{\it De interface van Spyder direct na het opstarten van het programma.}
 \label{fig-spyder}
 \end{figure*}
 
 \subsubsection*{Oefenopdracht: Hello World} 
-Typ de volgende regel tekst in de Editor: 
-\begin{python}
+\begin{itemize}
+	\item Typ de volgende regel tekst in de Editor (niet kopi\"eren vanuit de pdf!): 
+	\begin{python}
 print('Hello, world!')
-\end{python}
+	\end{python}
+	Sla je bestanden met een duidelijke naam op in jouw GitHub map. Dit betekent dat de naam van de opgeslagen bestanden duidelijk maakt wat het script doet, of waar het onderdeel van is. Je kunt het beste alleen letters, cijfers en eventueel normale (-) of liggende (\_) streepjes (geen spaties!) te gebruiken. Sla je bestand op met bijvoorbeeld de naam \verb,h1_1-helloworld.py,.
+	\item Run het script.  Dat doe je door op de groene play-knop in de balk bovenin te klikken (of de F5-toets in te drukken). Klik vervolgens (eenmalig) op Run.\\
+	{\bf Vraag:} Wat is de functie van het commando \pythoninline{print()}? Kijk hiervoor in de console rechtsonderin.
+	\item Pas de tekst tussen de apostrofs aan naar je eigen naam en zorg dat je daardoor in de Console jouw naam tevoorschijn krijgt.
+\end{itemize}
 
-Sla je bestanden met een duidelijke naam op in jouw GitHub map. Dit betekent dat de naam van de opgeslagen bestanden duidelijk maakt wat het script doet, of waar het onderdeel van is. Je kunt het beste alleen letters, cijfers en eventueel normale (-) of liggende (\_) streepjes (geen spaties!) te gebruiken. Sla je bestand op met de naam \verb,h1_1-helloworld.py, en run het script.  Dat doe je door op de groene play-knop (of de F5-toets) in de balk bovenin te klikken. Druk vervolgens eenmalig op Run.
-
-{\bf Vraag:} Wat is de functie van het commando print? Kijk hiervoor in de console rechtsonderin.
-
-Tijdens de periode zul je regelmatig (voorbeeld)scripts zien in deze bundel. Die kun je het beste openen via de hyperlink erboven. 
-Sla deze als je ze nodig hebt op in je eigen map met bestanden en open deze vanuit Spyder op dezelfde manier waarop je dat in \textit{Word} zou doen\footnote{Kopie\"{e}r \textbf{niet} stukjes tekst uit de .pdf file die je nu leest naar het Editor window van Spyder, want dan krijg je vaak verminkte bestanden waaraan je onnodig veel tijd moet besteden om ze te repareren. Typ het over als het kort is, of klik op de hyperlink of ga naar ItsLearning om het hele bestand te vinden.}.
+Kopie\"{e}r \textbf{nooit} stukjes tekst uit de .pdf file die je nu leest, want dan krijg je vaak verminkte bestanden waaraan je onnodig veel tijd moet besteden om ze te repareren. Typ het over als het kort is, of klik op de hyperlink als die boven een stuk code staat en kopieer vanaf het GitHub bestand.
 
 \subsection{Eenvoudige rekenkundige operaties}
 Met Python kun je makkelijk rekenen. Hiervoor gebruik je normale tekens: optellen (\pythoninline{+}), aftrekken (\pythoninline{-}), vermenigvuldigen (\pythoninline{*}), delen (\pythoninline{/}) en (let op!) machtsverheffen (\pythoninline{**}).
@@ -132,20 +124,21 @@ Met Python kun je makkelijk rekenen. Hiervoor gebruik je normale tekens: optelle
 Tip: Het is onder Python programmeurs gebruikelijk om een spatie te typen voor en na een plus of min-teken, maar niet bij vermenigvuldigen, delen of machtsverheffen. Dit legt nadruk op de rekenregels. Bijvoorbeeld: 
 
 \begin{python}
-print(1 + 2 - 3*4**5) # wat komt hieruit?
+print(1 + 2 - 3*4**5)
 \end{python}
-\textbf{Vraag:} Wat is de betekenis van het \verb,#,-teken? Voer het script uit en je zult er dan wel achter komen. 
+\textbf{Vraag:} wat gebeurt er als je alleen de som berekent zonder \pythoninline{print()}?
 
-\textbf{Vraag:} Wat is het nut van \pythoninline{print()}?. Wat gebeurt er als je alleen de som berekent zonder \pythoninline{print()}?
-\subsubsection*{Oefenopdracht: Python als rekenmachine} Bereken de hoogte $y$ van een softbal die vanaf de grond omhoog wordt geslagen met een beginsnelheid van $v_0 = 25 \, {\rm m/s}$ op $t = 2 \, {\rm s}$ aan de hand van de formule:
-\begin{equation}
-y = v_0 t - \frac{1}{2}g t^2
-\end{equation}
-De zwaartekracht $g = 9.81 \, {\rm m/s}^2$. Maak gebruik van bovenstaande formule en vul de getallen in. Let op: komma-getallen noteer je in het Engels met een punt (dus het is echt 9 punt 81).
+\subsubsection*{Oefenopdracht: Python als rekenmachine} 
+\begin{itemize}
+	\item Bereken de hoogte $y$ van een softbal die vanaf de grond omhoog wordt geslagen met een beginsnelheid van $v_0 = 25 \, {\rm m/s}$ op $t = 2 \, {\rm s}$ aan de hand van de formule:
+	\begin{equation}
+	y = v_0 t - \frac{1}{2}g t^2
+	\end{equation}
+	De zwaartekracht $g = 9.81 \, {\rm m/s}^2$. Maak gebruik van bovenstaande formule en vul de getallen in. Let op: komma-getallen noteer je in het Engels met een punt (dus het is echt 9 punt 81). Het goede antwoord is 30.38 meter.
+\end{itemize}
+
 
 \subsection{Variabelen}
-
-\subsubsection{Implementatie}
 Net als wiskunde `op papier' is het handig om van variabelen als letters gebruik te maken in plaats van de getallen gelijk in te vullen. Dit is ook zo bij programmeren en zorgt voor overzicht als je scripts langer en moeilijker worden.
 
 Bij de vorige oefenopdracht moet je meerdere getallen aanpassen als je het tijdstip verandert. Maar veel handiger en sneller is het gebruik van {\it variabelen} in Python. Let op de volgorde waarin je de variabelen en de formule in je code opschrijft. Een script wordt (best logisch) van boven naar beneden uitgevoerd. Om berekeningen te kunnen doen met variabelen, moeten deze eerst gedefini\"eerd worden. Anders krijg je errors.
@@ -159,37 +152,47 @@ y = a*x**2 + b*x + c
 print(y)
 \end{python}
 
-Tip: Namen voor variabelen kun je zelf kiezen. De enige voorwaarden zijn dat de namen moeten beginnen met een letter, en geen spatie of wiskundig teken mogen bevatten. Kies voor een variabele altijd een naam die past bij de betekenis ervan in jouw script. Noem een lijst van temperaturen bijvoorbeeld \pythoninline{temp} of \pythoninline{temperatuur}.
+Namen voor variabelen kun je zelf kiezen. De enige voorwaarden zijn dat de namen moeten beginnen met een letter, en geen spatie of wiskundig teken mogen bevatten. Kies voor een variabele altijd een naam die past bij de betekenis ervan in jouw script. Noem een lijst van temperaturen bijvoorbeeld \pythoninline{temp} of \pythoninline{temperatuur}.
 
-\subsubsection*{Oefenopdracht: Gebruik van variabelen} Bereken opnieuw de hoogte van de bal uit de vorige opdracht. Doe dit nu voor $t = 0,1,2,3, ... $ en geef een grove schatting hoe lang het duurt voordat de bal weer op de grond is. Nu maak je uiteraard gebruik van variabelen zoals hiervoor beschreven.
+\subsubsection*{Oefenopdracht: Gebruik van variabelen} 
+\begin{itemize}
+	\item Bereken opnieuw de hoogte van de bal uit de vorige opdracht. Doe dit nu voor $t = 0,1,2,3, ... $ en geef een grove schatting hoe lang het duurt voordat de bal weer op de grond is. Nu maak je uiteraard gebruik van variabelen zoals hiervoor beschreven!
+\end{itemize}
 
-\subsubsection{Commentaar}
+\subsection{Commentaar}
 Vaak is het voor een buitenstaander een raadsel wat een variabele betekent als hij het script niet kent. 
-Dit is \'e\'en van de redenen om in een script \textit{commentaar} toe te voegen. 
+Dit is \'e\'en van de redenen om in een script \textit{commentaar} toe te voegen. (Kies daarnaast dus ook nuttige namen voor je variabelen!)
 Het meest eenvoudig is het om hiervoor de hashtag te gebruiken, want alle tekst op een regel na \pythoninline{#} wordt genegeerd bij het runnen van een script. 
 
 De formule voor het vermogen van een apparaat kan bijvoorbeeld op de volgende manier verduidelijkt worden:
 \begin{python}
 # vermogen van de wasmachine
 U = 230	   # spanning van het lichtnet in V
-I  = 2     # stroomsterkte over het apparaat in A
+I = 2      # stroomsterkte over het apparaat in A
 P = U*I    # formule voor het vermogen
 print(P)
 \end{python}
 
+Het werkt erg fijn om bij een aantal regels onder elkaar het commentaar altijd op dezelfde 'lijn' te zetten: wel zo overzichtelijk. Dat zul je in alle komende voorbeelden ook tegenkomen.
+
 Als je in Spyder een nieuw Python script aanmaakt zie je direct nog een andere manier om commentaar te schrijven. Alle tekst tussen \verb,""", en de volgende \verb,""", is commentaar; deze manier van commentaar aangeven is handig voor grotere stukken tekst. 
 
-\subsubsection{Datatypen}
-In alle bovenstaande opdrachten zijn de variabelen hele getallen. Daarnaast kun je gebruik maken van stukken tekst, kommagetallen of \pythoninline{True/False}. Dat zijn allemaal {\it datatypen}. Hieronder de meest gebruikte, met hun offici\"ele naam:
+\subsubsection*{Oefenopdracht: Commentaar schrijven}
+\begin{itemize}
+	\item Voeg bij de oefenopdracht van de vorige paragraaf commentaar toe aan je script. Geef bijvoorbeeld de eenheden weer van de getallen.
+\end{itemize}
+
+\subsection{Datatypen}
+In alle bovenstaande opdrachten zijn de variabelen hele getallen. Daarnaast kun je gebruik maken van stukken tekst, kommagetallen of \pythoninline{True/False}. Dat zijn allemaal {\it datatypen}. Ter informatie zijn hieronder de meest gebruikte, met hun offici\"ele naam:
 
 \begin{description}
 \item[\textbf{int}] Gehele getallen: \pythoninline{3  300  20}
 
-In Python (en andere programmeertalen) is {\bf int} het datatype dat gebruikt wordt voor gehele getallen. Zie bovenstaand voorbeeld (\pythoninline{a = 1} etc). Je kunt ook een kommagetal gebruiken, maar let op: dit is niet hetzelfde als afronden op gehele getallen! \pythoninline{int(3.9) = 3} en niet een afgeronde 4.
+In Python (en andere programmeertalen) is {\bf int} het datatype dat gebruikt wordt voor gehele getallen. Zie bovenstaand voorbeeld (\pythoninline{a = 1} etc). Je kunt ook een kommagetal gebruiken, maar let op: dit is niet hetzelfde als afronden op gehele getallen! \pythoninline{int(3.9) = 3} en niet een afgeronde 4. Alle getallen achter de punt worden 'weggegooid'.
 
 \item[\textbf{float}] Getallen met decimalen: \pythoninline{2.3  4.62  100.00}
 
-Het datatype voor decimale getallen is {\bf float}. Floats maak je door een getal met een decimale punt te maken, zoals: \pythoninline{a = 1.5}.
+Het datatype voor decimale getallen is {\bf float}. Floats maak je door een getal met een decimale punt te maken, zoals: \pythoninline{a = 1.5}. Het getal \pythoninline{1.} is hetzelfde als \pythoninline{1.00000000}
 
 \item[\textbf{bool}] Logische waarde: \pythoninline{True} of \pythoninline{False}
 
@@ -226,31 +229,24 @@ a > b or c < d
 \end{python}
 
 \subsubsection{While}
-Een zogenaamde \pythoninline{while} loop gebruik je om een bepaald stuk code te herhalen zolang er aan een voorwaarde voldaan wordt. Voor het voorbeeld van de omhoog geslagen bal dat we eerder gebruikt hebben kunnen we de hoogte van de bal berekenen voor de eerste $T$ seconden. Hoe zo'n loop kan worden ge\"implementeerd is te zien in onderstaand voorbeeld.
+Een zogenaamde \pythoninline{while} loop gebruik je om een bepaald stuk code te herhalen zolang er aan een voorwaarde voldaan wordt. Voor het voorbeeld van de omhoog geslagen bal dat we eerder gebruikt hebben kunnen we de hoogte van de bal berekenen zolang die in de lucht is. Hoe zo'n loop kan worden ge\"implementeerd is te zien in onderstaand voorbeeld.
 
-\begin{python}
-v0 = 25   # beginsnelheid
-g = 9.81  # zwaartekracht
-t = 0.    # begintijd
-dt = 0.25 # tijdstap
+\pythonexternal{inc/h1/while_vb1.py}
 
-while t <= 5:
-    y = v0*t - 0.5*g*t**2
-    print(t, y)
-    
-    t = t + dt
-\end{python}
+Net als eerder defini\"eren we de benodigde variabelen $v_0$ en $g$. Daarnaast maken we een variabele aan voor de tijd $t$ en kiezen we de grootte van de tijdstappen $dt$ die we willen maken voor $t$. Zolang (\textit{while}) $y \geq 0$ printen we $t$ en $y$, wordt de nieuwe hoogte $y$ berekend en gaan we een tijdstap verder.
 
-Net als eerder defini\"eren we de benodigde variabelen $v_0$ en $g$. Daarnaast maken we een variabele aan voor de tijd $t$ en kiezen we de grootte van de tijdstappen $dt$ die we willen maken voor $t$. Zolang (\textit{while}) $t \leq 5$ wordt de hoogte $y$ berekend en worden $t$ en $y$ geprint.
+Zolang $y \geq 0$ wordt aan de voorwaarde voldaan en wordt de code in de functie van de \pythoninline{while} uitgevoerd. Alle regels die horen bij de \pythoninline{while}-loop worden dan uitgevoerd. Welke regels er binnen de loop horen is te zien aan de {\it tab} voor de regels: elke regel begint met zo'n \textit{indent} om aan te geven dat die regels onderdeel zijn van deze loop.
 
-Zolang $t\le5$ wordt aan de conditie voldaan en wordt de code in de functie van de \pythoninline{while} uitgevoerd. Om door te gaan naar de volgende tijdstap tellen we een stukje tijd $dt$ op bij $t$. 
+Een veelvoorkomende fout bij een \pythoninline{while}-loop is dat de voorwaarde altijd \pythoninline{True} blijft, waardoor het script oneindig doorgaat. Dit gebeurt bijvoorbeeld als $y$ nooit kleiner wordt dan 0, of als je de regel \pythoninline{t = t + dt} vergeet of verkeerd invoert zoals de indent vergeten. Je kunt een script stoppen in Spyder door op de rode knop rechts boven in de Console te drukken.
 
-Net als bij het gebruik van \pythoninline{def} moeten de regels code binnen de \pythoninline{while} \textit{loop} beginnen met een \textit{indent} om aan te geven dat die regels onderdeel zijn van deze \textit{loop}.
-
-Een veelvoorkomende fout bij een \pythoninline{while} is dat de voorwaarde altijd \pythoninline{True} blijft, waardoor het script oneindig doorgaat. Dit gebeurt bijv. als je de regel \pythoninline{t = t + dt} vergeet of verkeerd invoert, of als je de regel wel goed overtypt maar de indent vergeet! Je kunt een script stoppen in Spyder door op de rode knop rechts boven in de Console te drukken.
+\subsubsection*{Oefenopdracht: Gebruik van een while-loop}
+\begin{itemize}
+	\item Klik op de hyperlink boven bovenstaand voorbeeld, kopieer het script vanuit de webpagina en voer het uit in Spyder. Op welk tijdstip komt de bal weer op de grond? Verklein ook de tijdstap $dt$ om zo een nauwkeuriger antwoord te vinden.
+	\item Maak een script waarin de getallen 1 t/m 100 worden geprint met behulp van een \pythoninline{while}-loop.
+\end{itemize}
 
 \subsubsection{If}
-Een tweede soort constructie is de zogenaamde \textit{if - else} constructie. Aan de hand van een voorwaarde (\textit{conditie}) wordt een bepaald deel code wel of niet uitgevoerd. Een variant hierop is de \textit{if - else if - else} constructie, waarbij er meer dan 2 mogelijkheden voorkomen. Je kunt zoveel {\it elif}'s toevoegen als je wilt.
+Een tweede soort constructie is de zogenaamde \textit{if - else} constructie. Aan de hand van een voorwaarde wordt een bepaald deel code wel of niet uitgevoerd. Een variant hierop is de \textit{if - else if - else} constructie, waarbij er meer dan 2 mogelijkheden voorkomen. Je kunt zoveel \pythoninline{elif}'s toevoegen als je wilt.
 
 Let op: ook hier gebruik je \textit{indents}. In Python wordt \textit{else if} afgekort tot \pythoninline{elif}. 
 
@@ -268,7 +264,8 @@ else:                       # 80 kg en meer
 
 \subsubsection*{Oefenopdracht: Testen van combinaties van Boolean expressions} 
 \begin{itemize}
-	\item Neem het voorbeeld van de BMI over. Voeg naast gewicht nog een voorwaarde toe: lengte. Je hebt alleen ondergewicht bij 40 kilo als je langer bent dan een bepaald aantal centimeter. Bedenk er zelf maar wat van, maar test je functie ook!
+	\item Typ het voorbeeld hierboven over en test het uit door het script compleet te maken. 
+	\item Voeg naast gewicht nog een voorwaarde toe: lengte. Je hebt alleen ondergewicht bij 40 kilo als je langer bent dan een bepaald aantal centimeter. Bedenk er zelf maar wat van, maar test je functie ook! Maak gebruik van paragraaf 1.6.1.
 \end{itemize}
 
 \subsubsection{For}
@@ -282,8 +279,8 @@ while i < 5:
 Een handigere manier om dit te doen is met een \pythoninline{for}-loop. Hierbij zit de `teller' automatisch ingebouwd: de loop wordt herhaald voor elk element in de voorwaarde. Elke \pythoninline{while}-loop is om te schrijven in een \pythoninline{for}-loop, maar soms \textit{voelt} de \'e\'en logischer, en is die ook makkelijker. Maar gebruik waar mogelijk een \pythoninline{for}-loop. Dit voorbeeld is toch best wat korter en simpeler:
 
 \begin{python}
-for k in range(5):
-    print(k)
+for i in range(5):
+    print(i)
 \end{python}
 
 \subsubsection*{Oefenopdracht: for i in range()}
@@ -298,9 +295,14 @@ range(5)        # ziet eruit als [ 0, 1, 2, 3, 4 ]
                 # oftewel: van 0 TOT 5 (begint standaard bij 0)
 range(2,8)      # ziet eruit als [ 2, 3, 4, 5, 6, 7 ] 
                 # oftewel: van 2 TOT 8
-range(10,40,5)  # ziet eruit als [ 10, 15, 20, 25, 30, 35 ]
-                # oftewel: van 10 TOT 40 met stappen van 5
+range(10,42,5)  # ziet eruit als [ 10, 15, 20, 25, 30, 35, 40 ]
+                # oftewel: van 10 TOT 42 met stappen van 5
 \end{python}
+
+\subsubsection*{Oefenopdracht: for i in range()}
+\begin{itemize}
+	\item Print voor elk derde getal tussen 10 en 100 het getal, en de wortel van dat getal. Tip: $\sqrt{x} = x^{0.5}$.
+\end{itemize}
 
 \subsection{Slotopdrachten}
 {\it Voor alle opdrachten geldt dat je wordt aangemoedigd om op het internet te zoeken in de enorme hoeveelheid voorbeelden, tutorials, vragen en antwoorden over het gebruik van Python. Maak daar vooral gebruik van! Voor alle opdrachten geldt ook: maak je eigen script, en sla dat op met het nodige commentaar zodat je het later misschien kunt hergebruiken of je medeleerlingen er blij mee kunt maken.}
@@ -311,10 +313,10 @@ Schrijf een Python-script dat aan jou als gebruiker om input vraagt en vervolgen
 
 \begin{itemize}
 	\item Allereerst vragen we de gebruiker om input. Zie daarvoor onderstaande regel. Als je het script uitvoert met deze regel, kun je rechtsonder in de console klikken en achter de tekst een getal invullen. Als je op Enter drukt wordt je getal opgeslagen in de variabele \pythoninline{invoer}.
-	\item Deze input is van het datatype \pythoninline{str} (string, ofwel tekst). Van tekst kun je geen wortel trekken, dus moet \pythoninline{invoer} eerst omgezet worden in een getal (\pythoninline{int}). Kijk in 1.3.3 of zoek op internet een methode om van de input een \pythoninline{int} te maken, en sla dit getal op in een nieuwe variabele.
+	\item Deze input is van het datatype \pythoninline{str} (string, ofwel tekst). Van tekst kun je geen wortel trekken, dus moet \pythoninline{invoer} eerst omgezet worden in een getal (\pythoninline{int}). Kijk in paragraaf 1.5 of zoek op internet een methode om van de input een \pythoninline{int} te maken, en sla dit getal op in een nieuwe variabele.
 	\item Maak vervolgens een \pythoninline{while}-loop. Deze loop moet stoppen als het ingevoerde getal gelijk is aan 0.
-	\item Check vervolgens of het getal groter is dan nul of kleiner. Als het opgegeven getal inderdaad positief is wordt de wortel\footnote{Weet je niet hoe je de wortel van een getal moet uitrekenen in Python? Zoek het dan op! Niet in deze reader, maar op internet.} van dat getal geprint. Is het opgegeven getal negatief, dan wordt de wortel niet uitgerekend. Je print dan de tekst \verb."Dombo: Positief svp!"..
-	\item Vraag vervolgens (heel beleefd) weer om een positief getal. Gebruik de regels waarmee je voor het eerst om input vraagt hier gewoon opnieuw!
+	\item Check vervolgens in de loop of het getal groter is dan nul of kleiner. Als het opgegeven getal inderdaad positief is wordt de wortel van dat getal geprint. Is het opgegeven getal negatief, dan wordt de wortel niet uitgerekend. Je print dan de tekst \verb."Dombo: Positief svp!"..
+	\item Vraag vervolgens nog steeds in de loop (heel beleefd) weer om een positief getal. Gebruik de regels waarmee je voor het eerst om input vraagt hier gewoon opnieuw!
 \end{itemize}
 
 \begin{python}
@@ -343,7 +345,7 @@ Vanaf dit punt wordt naar \pythoninline{numpy} verwezen als \pythoninline{np}. O
 Bijvoorbeeld: \pythoninline{np.sin(X) # berekent de sinus van X}.
 
 \subsection{Arrays maken}
-Een {\it array} (Nederlands: reeks) is een verzameling van getallen. In Python kun je die maken als een offici\"ele Python lijst, maar zo'n lijst is erg onhandig. In plaats daarvan gebruiken we veel liever een numpy array.
+Een {\it array} (Nederlands: reeks) is een verzameling van getallen. In Python kun je die maken als een offici\"ele Python lijst, maar zo'n lijst is erg onhandig. In plaats daarvan gebruiken we veel liever een numpy array, zodat we met alle standaard numpy functies kunnen werken.
 
 De duidelijkste manier om een array te maken is met de functie \pythoninline{np.array()}. Als je de getallen van de dobbelsteen in een array wilt zetten, doe je dat bijvoorbeeld zo:
 \begin{python}
@@ -351,9 +353,9 @@ getallen_array = np.array([1,2,3,4,5,6])
 # let op de extra blokhaken [] tussen de ronde haken ()
 \end{python}
 
-Handmatig alle getallen invullen is iets waar je als programmeur niet op zit te wachten. Als het ook maar een klein beetje kan, doen we dat het liefst automatisch. In het codeblok hieronder staan een aantal manieren om automatisch arrays aan te maken.
+Hieronder een kort overzichtje van nuttige manieren om een (automatisch) array te maken.
 
-\pythonexternal{code-inc/w2/np_vb1.py}
+\pythonexternal{inc/h2/np_vb1.py}
 
 Merk op dat \pythoninline{np.arange()} het eindgetal (\pythoninline{5.}) niet meeneemt, \pythoninline{np.linspace()} doet dit wel, dus \pythoninline{grid1} en \pythoninline{grid2} zijn verschillend. 
 
@@ -377,40 +379,40 @@ print("d: ", d)
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
-	\item[b)] Maak een array met de naam $k$ met daarin de gehele getallen van 1 tot en met 10. Bereken vervolgens $k^k$. Print en controleer de resultaten daarvan. Valt je iets op?\footnote{Als er iets niet klopt, geef het aan bij de docent! Die legt het wel uit :)}
+	\item[b)] Maak een array met behulp van \pythoninline{np.linspace()} met de naam $k$ met daarin de gehele getallen van 1 tot en met 10. Bereken vervolgens $k^k$. Print en controleer de resultaten daarvan. Valt je iets op?\footnote{Als er iets niet klopt, geef het aan bij de docent! Die legt het wel uit :)}
 \end{itemize}
 
 \subsection{Indexing en slicing}
-Soms is het fijn om delen van een array een aparte naam te geven. Of je wilt een specifiek getal uit een getallenreeks halen. In het codeblok hieronder is te zien hoe je een enkel element uit een array kunt selecteren {(\it indexing} of een groter deel van de array {\it slicing}). Door gebruik te maken van {\it slicing} bekijk je de {\it oorspronkelijke} data van de array. Wijzig je de data in de slice, dan wijzig je dus ook de data in het oorspronkelijke array!
+Soms is het fijn om losse getallen of delen van een array te selecteren. In het codeblok hieronder is te zien hoe je een enkel element uit een array kunt selecteren {(\it indexing} of een groter deel van de array {\it slicing}). 
 
-\pythonexternal{code-inc/w2/np_vb2.py}
+\pythonexternal{inc/h2/np_vb2.py}
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
 	\item[c)] Vraag: wat is de waarde van \pythoninline{test_array[1]}? Let goed op!
-	
-	Een computer begint bij nul te tellen. Dat betekent dat het eerste getal, wat bij ons altijd plek 1 krijgt (bijvoorbeeld vers 1 van een hoofdstuk in de Bijbel), voor de computer op plek 0 staat. En het vijfde getal in een reeks staat voor de computer op plek 4.
+	\item[d)] Print met behulp van een for-loop elk getal in \pythoninline{test_array}. Kijk eventueel terug naar hoofdstuk 1.
+	\item[e)] Pas bovenstaande loop zodanig aan dat je niet elke keer \'e\'en getal print, maar het `huidige' \'en vorige getal. Zorg dat je dit goed kunt, want dat helpt bij de slotopdracht straks!
 \end{itemize}
 
 \subsection{Allerlei functies}
-Numpy arrays hebben een aantal ingebouwde functies, om bijvoorbeeld het gemiddelde of de som uit te rekenen. Dat kan door \pythoninline{np.functie(array)} te gebruiken. Daarnaast kun je de lengte en het datatype van een array weergeven.
+Numpy arrays hebben een aantal ingebouwde functies, om bijvoorbeeld het gemiddelde of de som uit te rekenen. Dat kan door \pythoninline{np.functie(array)} te gebruiken. Daarnaast nog een standaard Python functie om het aantal elementen in een array weer te geven.
 
-\pythonexternal{code-inc/w2/np_vb3.py}
+\pythonexternal{inc/h2/np_vb3.py}
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
-	\item[d)] Bereken het gemiddelde van het $k^k$-array van oefenopgave b).
+	\item[f)] Bereken het gemiddelde van het $k^k$-array van oefenopgave b).
 \end{itemize}
 
 \subsection{Maskers}
-In sommige gevallen wil je een lijst getallen ook filteren. Je bent bijvoorbeeld geïnteresseerd in alle leeftijden boven de 18 jaar, of alle leerlingen in de bovenbouw. Dit kan aan de hand van een {\it masker}. De werking van zo'n masker wordt uitgelegd aan de hand van het onderstaande voorbeeld\footnote{In de .pdf zie je dat diverse Python woorden blauw gekleurd zijn; ook als er in een stukje tekst toevallig een Python woord staat, zoals in masker. Een klein foutje waar ik helaas niet veel aan kan doen.}.
+In sommige gevallen wil je een lijst getallen filteren. Je bent bijvoorbeeld ge\"interesseerd in alle leeftijden boven de 18 jaar, of alle leerlingen in de bovenbouw. Dit kan aan de hand van een {\it masker}. De werking van zo'n masker wordt uitgelegd aan de hand van het onderstaande voorbeeld\footnote{In de .pdf zie je dat diverse Python woorden blauw gekleurd zijn; ook als er in een stukje tekst toevallig een Python woord staat, zoals in masker. Een klein foutje waar ik helaas niet veel aan kan doen.}.
 Een masker maak je door een voorwaarde op te geven bij een variabele. Alle plekken in de array die voldoen aan die voorwaarde, geven de waarde \pythoninline{True}, alle anderen geven \pythoninline{False}. Een masker pas je vervolgens toe met de blokhaken \pythoninline{[ ]}.
 
-\pythonexternal{code-inc/w2/np_vb4.py}
+\pythonexternal{inc/h2/np_vb4.py}
 
 \subsubsection*{Oefenopdracht: Maken en bewerken van numpy arrays}
 \begin{itemize}
-	\item[e)] Selecteer met behulp van een masker alle oneven getallen uit \pythoninline{test_array} van bovenstaand voorbeeld. Hiervoor kun je goed gebruik maken van de rest-berekening, die je jaren geleden wel eens gezien hebt. Zie dit voorbeeld:
+	\item[g)] Selecteer met behulp van een masker alle oneven getallen uit \pythoninline{test_array} van bovenstaand voorbeeld. Hiervoor kun je goed gebruik maken van de rest-berekening, die je jaren geleden wel eens gezien hebt. Zie dit voorbeeld:
 	\begin{python}
 # rest(4/2) is 0 (2 past precies 2 keer in 4)
 print(4 % 2) # dit print rest(4/2) oftewel 0
@@ -418,10 +420,11 @@ print(4 % 2) # dit print rest(4/2) oftewel 0
 # rest(5/2) is 1 (2 past 2 keer in 5, en er blijft 1 over)
 print(5 % 2) # dit print rest(5/2), oftewel 1
 	\end{python}
-	In plaats van een test of de getallen groter zijn dan 5 (zoals in het bestand boven de opdracht), kun je hier dus testen of de rest gelijk is aan 1! Want elk oneven getal gedeeld door 2 levert een rest van 1 op.\\
+	In plaats van een test of de getallen groter zijn dan 5 (zoals in het bestand boven de opdracht), test je hier dus of de rest gelijk is aan 1! Want elk oneven getal gedeeld door 2 levert een rest van 1 op.\\
 	Print als laatste ter controle het array met dit masker, zodat je alleen de oneven getallen ziet.
 \end{itemize}
 
+\iffalse
 \subsection{For-loops}
 In paragraaf 1.5 is de \pythoninline{for}-loop aan de orde gekomen. Hier komt nu geen nieuwe stof bij, maar in het licht van numpy-array's is het goed om nog een oefenopdracht te maken. Deze helpt ook bij de slotopdracht. Bekijk en run eerst dit voorbeeld:
 
@@ -442,6 +445,7 @@ for i in range(len(data)):
 	\item Print vervolgens het gemiddelde van die getallen. (De eerste keer is dat dus het gemiddelde van nul getallen: dit levert een waarschuwing op maar geen error. De tweede keer is dat het gemiddelde van \'e\'en getal, de derde keer van twee getallen, etc.)
 	\item Controleer je loop: het laatste gemiddelde is het gemiddelde van alle getallen behalve de laatste. Dat is dus 4.75.
 \end{itemize}
+\fi
 
 \subsection{Slotopdracht: Voortschrijdend gemiddelde}
 Tijdens de corona pandemie hebben we eindeloos veel grafiekjes gezien van het aantal besmettingen per dag. In het weekend is dat altijd lager, en door de weeks juist weer hoger. Het is daarom nuttiger om naar het gemiddelde van de afgelopen zeven dagen te kijken: dan compenseer je de uitschieters een beetje. Dit gemiddelde noemen we het {\it voortschrijdend gemiddelde}: voor elke dag bereken je het gemiddelde van de zeven dagen daarvoor. Je kunt over de eerste 7 dagen geen voortschrijdend gemiddelde berekenen: er zijn immers nog geen volledige zeven dagen geweest.
@@ -472,7 +476,7 @@ Een grafiek maken in Python hoeft maar een paar regeltjes te kosten. We hebben n
 
 Vervolgens maken we een figuur aan. Dat gebeurt in de regel \pythoninline{fig, ax = plt.subplots()}. \pythoninline{fig} is hierbij de `omschrijving' van de `buitenkant' van het plaatje, terwijl \pythoninline{ax} over de `binnenkant' van het plaatje gaat, oftewel je grafiek. Daarna gaan we de sinus tekenen ofwel {\it plotten}:
 
-\pythonexternal{code-inc/w3/plt_vb1.py}
+\pythonexternal{inc/h3/plt_vb1.py}
 
 \subsubsection*{Oefenopdracht: lijnen plotten}
 \begin{itemize}
@@ -487,7 +491,6 @@ Vervolgens maken we een figuur aan. Dat gebeurt in de regel \pythoninline{fig, a
 \end{itemize}
 
 \subsection{Grafieken opmaken}
-
 Een kale grafiek is niet zo nuttig. Daarom is er ook heel veel opmaak mogelijk in matplotlib. Hieronder zijn een flink aantal opties:
 
 \begin{itemize}
@@ -503,6 +506,24 @@ Een kale grafiek is niet zo nuttig. Daarom is er ook heel veel opmaak mogelijk i
 	\item \pythoninline{ax.set_aspect(1)}: stel de verhouding van de assen in. Als beide assen lopen van 0 tot 1 (of andere dezelfde getallen) krijg je bijvoorbeeld een vierkant plaatje (verhouding 1:1 = 1).
 \end{itemize}
 
+Daarnaast kun je ook de punten of lijnen in je grafiek opmaken. Je kunt de kleur kiezen door tijdens het plotten een letter in te vullen; als je dat niet doet maakt matplotlib automatisch een ander kleurtje. Je kunt de stijl kiezen door \'e\'en of twee tekens toe te voegen; als je dat niet doet maakt matplotlib automatisch een lijn tussen de punten.
+
+De standaardkleuren zijn:
+\begin{python}
+# b: blauw         # m: magenta      # c: cyaan
+# g: groen         # y: geel         # w: wit
+# r: rood          # k: zwart
+\end{python}
+
+De standaardstijlen zijn:
+\begin{python}
+#--: gestreepte lijn                 # .: punten
+# o:  grote punten                   # -:  lijn
+#-.: afwisselend lijn/punt
+\end{python}
+
+In onderstaande oefenopdracht zie je hoe je deze kleuren en stijlen kunt gebruiken.
+
 \subsubsection*{Oefenopdracht: grafieken opmaken}
 \begin{itemize}
 	\item[e)] We bekijken de volgende simulatie: de Spaanse KNMI heeft sinds 1981 de warmste temperatuur per jaar bijgehouden in Madrid. Een medewerker van het instituut heeft een plotje gemaakt van die data; zie het bestand onder de volgende oefenopgave. \\
@@ -511,17 +532,17 @@ Een kale grafiek is niet zo nuttig. Daarom is er ook heel veel opmaak mogelijk i
 	\item[f)] Maak de volgende plot: kies $t$ van $0$ tot $2\pi$. Gebruik: \\
 	\pythoninline{x = 16*np.sin(t)**3}\\
 	\pythoninline{y = 13*np.cos(t) - 5*np.cos(2*t) - 2*np.cos(3*t) - np.cos(4*t)}\\
-	 Zorg voor een goede verhouding tussen de assen.\\
-	 {\bf Tip:} maak gebruik van het eerste voorbeeld en pas deze aan.
+	 Zorg voor een goede verhouding tussen de assen (1:1).\\
+	 {\bf Tip:} maak gebruik van het voorbeeld of de oefenopdracht in paragraaf 1 en pas deze aan.
 \end{itemize}
 
-\pythonexternal{code-inc/w3/plt_vb2.py}
+\pythonexternal{inc/h3/plt_vb2.py}
 
 \subsection{Grafieken naast \'of onder elkaar}
 Soms is het fijn om twee of meer plots onder elkaar of naast elkaar te laten zien. In onderstaand voorbeeld worden er 3 grafieken naast elkaar gemaakt in hetzelfde figuur. 
 
 In plaats van \pythoninline{plt.subplots()} nu leeg te laten, voegen we in hoeveel grafieken we willen maken. De 1 betekent \'e\'en plot in de hoogte, 3 in de breedte. Zoals hiervoor wordt de hele figuur beschreven met \pythoninline{fig}. De losse grafieken noemen we \pythoninline{ax1, ax2} en \pythoninline{ax3}. Als je twee grafieken zou willen verander je de 3 in een 2, en moet je \pythoninline{ax3} verwijderen. Als je er vier zou willen, maak je van de 3 een 4 en voeg je een \pythoninline{ax4} toe.
-\pythonexternal{code-inc/w3/plt_vb3.py}
+\pythonexternal{inc/h3/plt_vb3.py}
 
 \subsubsection*{Oefenopdracht: meer grafieken in een figuur}
 \begin{itemize}
@@ -535,7 +556,7 @@ In plaats van \pythoninline{plt.subplots()} nu leeg te laten, voegen we in hoeve
 \subsection{Grafieken naast \'en onder elkaar}
 Het is uiteraard ook mogelijk om plots onder \'en naast elkaar te zetten. In het volgende voorbeeld worden 2 bij 2 plots gemaakt. Let op! De plots zitten nu niet meer in de losse namen \pythoninline{ax1, ax2} en \pythoninline{ax3}, maar ze zitten alle vier in de algemene naam \pythoninline{axarr}. Net zoals bij een array een plek opgegeven wordt met bijvoorbeeld \pythoninline{[1]}, kun je een specifiek plot ophalen met de blokhaken. Het eerste getal tussen de blokhaken staat daarbij voor de rij, het tweede getal voor de kolom. Zie het voorbeeld.
 
-\pythonexternal{code-inc/w3/plt_vb4.py}
+\pythonexternal{inc/h3/plt_vb4.py}
 
 \subsubsection*{Oefenopdracht: opmaak van meer grafieken}
 \begin{itemize}
@@ -550,7 +571,7 @@ Het is uiteraard ook mogelijk om plots onder \'en naast elkaar te zetten. In het
 	1. $sin(x)$ en $cos(x)$\\
 	2. $sin(x)^2$ en $cos(x)^2$\\
 	3. $x^{0.5}$ en $x^2$\\
-	4. $1/x$ en $log(x)$\\
+	4. $1/x$ en $log(x)$ (dit levert waarschuwingen op in de Console: die mag je negeren)\\
 	De logaritme kun je plotten met behulp van \pythoninline{np.log(x)}.
 	\item Zorg ervoor dat het bereik op de x-as (het domein) loopt van 0 tot $\pi$ voor alle plots.
 	\item Voeg uiteindelijk ook labels en legenda's toe, en maak hem zo netjes mogelijk met de dingen die je in dit hoofdstuk geleerd hebt.
@@ -573,38 +594,42 @@ De resolutie van deze afbeeldingen wordt gespecificeerd in \textit{dots-per-inch
 
 Met behulp van \pythoninline{figsize=[breedte, hoogte]} kun je instellen hoe groot je plaatje is, en welke verhoudingen hij heeft. Hoe groter de breedte en hoogte, hoe groter het bestand. Deze functie kun je invoegen in \pythoninline{plt.subplots()}.
 
-\pythonexternal{code-inc/w4/export_vb1.py}
+\pythonexternal{inc/h4/export_vb1.py}
 
 \subsubsection*{Oefenopdracht: plots opslaan} 
 \begin{itemize}
-	\item Open het bovenstaande voorbeeld-script \verb,export_vb1.py,. Maak verschillende plaatjes door de volgende instellingen te gebruiken:
+	\setlength\itemsep{0em}
+	\item[a)] Open het bovenstaande voorbeeld-script \verb,export_vb1.py,. Maak verschillende plaatjes door de volgende instellingen te gebruiken:
 
 	\begin{enumerate}
 		\item Het aantal dots-per-inch. Kies bijv. 300 of 1200.
 		\item De grootte van het plaatje. Kies bijv. \verb=[2,1]= of \verb=[20,10]=.
 	\end{enumerate}
 
-	\item Open de plaatjes en kijk naar de kwaliteit. Gebruik de zoom-functie! Kijk ook naar de bestandsgrootte (in kilobytes) van de aangemaakte bestanden. Trek je conclusie!
+	\item[b)] Open de plaatjes en kijk naar de kwaliteit. Gebruik de zoom-functie! Kijk ook naar de bestandsgrootte (in kilobytes) van de aangemaakte bestanden. Trek je conclusie! (De plaatjes kun je vinden in dezelfde map als je script.)
 	
-	\item Sla de figuur van slotopdracht hoofdstuk 3 ook op.
+	\item[c)] Sla de figuur van slotopdracht hoofdstuk 3 ook op.
 \end{itemize}
 
 \subsection{Bestanden importeren}
 Net als bij het exporteren van gegevens voor later gebruik, moet er bij importeren een vertaalslag worden gemaakt om de gegevens uit een bestand om te zetten zodat deze bruikbaar zijn binnen Python. Daarvoor zijn allerlei instellingen, maar deze periode zien de bestanden er allemaal hetzelfde uit:
 
 \begin{enumerate}
-\item Het bestand bestaat uit regels (lines). Elke regel bevat of numerieke data of het is een commentaarregel. Zoals in elk tekst bestand zijn regels van elkaar gescheiden door een enter, of in programmeertaal: `\verb,\n,'.
-\item Elke regel bestaat uit \'e\'en of meerdere getallen die van elkaar gescheiden door komma's. Het scheidingsteken heet de \textit{delimiter}.
-\item Een commentaarregel is herkenbaar aan het \verb,#, teken op de eerste positie. Precies zoals in een Python script. Commentaarregels aan het begin van een bestand heten ook wel de {\it header}.
+	\setlength\itemsep{0em}
+	\item Het bestand bestaat uit regels (lines). Elke regel bevat of numerieke data of het is een commentaarregel.
+	\item Elke regel bestaat uit \'e\'en of meerdere getallen die van elkaar gescheiden door komma's. Het scheidingsteken heet de \textit{delimiter}.
+	\item Een commentaarregel is herkenbaar aan het \verb,#, teken op de eerste positie. Precies zoals in een Python script. Commentaarregels aan het begin van een bestand heten ook wel de {\it header}.
 \end{enumerate}
 
-Het inlezen van bestanden die numerieke data bevatten in de vorm van een array (rijen en kolommen) kan heel makkelijk gebeuren met de \pythoninline{numpy} functie \pythoninline{genfromtxt()}. Deze functie negeert regels die beginnen met een \verb,#, en dat komt goed uit, want dat is meestal toch vooral commentaar. Daarnaast kun je de {\it delimiter} specificeren, hier de komma dus. Het weergeven van bijvoorbeeld twee kolommen uit de ingelezen data in een $xy$-plot stelt dan weinig meer voor. Zie volgend voorbeeld.
+Het inlezen van bestanden die numerieke data bevatten in de vorm van een array (rijen en kolommen) kan heel makkelijk gebeuren met de \pythoninline{numpy} functie \pythoninline{genfromtxt()}. Deze functie negeert regels die beginnen met een \verb,#, en dat komt goed uit, want dat is meestal toch vooral commentaar. Daarnaast kun je de {\it delimiter} specificeren, hier de komma dus. Het weergeven van bijvoorbeeld twee kolommen uit de ingelezen data in een $xy$-plot stelt dan weinig meer voor. Zie volgend voorbeeld:
  
-\pythonexternal{code-inc/w4/genfromtxt_vb1.py}
+\pythonexternal{inc/h4/genfromtxt_vb1.py}
 
 \subsubsection*{Oefenopdracht: plotten van geïmporteerde data}
 \begin{itemize}
-	\item Open bovenstaand script. Open ook \href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/blob/main/code-inc/w4/vb1.txt}{deze} link. Kopieer de inhoud ervan naar het programma Notepad, en sla het bestand op onder de naam \verb,vb1.txt,, {\it in dezelfde map als je script}! Run daarna het script, bekijk de werking en check in de Variable Explorer hoe de data eruitziet. Plot vervolgens $x$ en $y$ zoals je in het vorige hoofdstuk hebt gedaan.
+	\setlength\itemsep{0em}
+	\item[d)] Open bovenstaand script. Open ook \href{https://github.com/Ichthus-College-IN/Python-x-Meet-je-leefomgeving/blob/main/inc/h4/vb1.txt}{deze} link. Kopieer de inhoud ervan naar het programma Notepad, en sla het bestand op onder de naam \verb,vb1.txt,, {\it in dezelfde map als je script}! 
+	\item[e)] Run het script, bekijk de werking en check in de Variable Explorer hoe de data eruitziet. Plot vervolgens $x$ en $y$ zoals je in het vorige hoofdstuk hebt gedaan.
 \end{itemize}
 
 \subsection{Slotopdracht: De weerstations van de KNMI}
@@ -731,7 +756,7 @@ Waarden van lokale variabelen kun je hooguit weergeven door ze te printen binnen
 \subsection{Defaultwaarde}
 Sommige argumenten worden maar zelden gebruikt of juist altijd op dezelfde manier. Een plot van temperatuurverloop bijvoorbeeld is eigenlijk altijd prettiger te lezen m\'et gridlijnen. Maar het is wel fijn als je dit soms kunt aanpassen (in dit geval het grid onderdrukken). Daarvoor zijn defaultwaarden erg praktisch: je kunt een argument standaard een waarde toekennen in een functie, tenzij je het anders opgeeft. Zie volgend voorbeeld en oefenopdracht:
 
-\pythonexternal{code-inc/w5/voorbeeld5_1.py}
+\pythonexternal{inc/h5/voorbeeld5_1.py}
 
 \subsubsection*{Oefenopdracht: Defaultwaarde}
 \begin{itemize}
@@ -758,7 +783,7 @@ Hier staat \pythoninline{x} voor het array voor de x-as, en \pythoninline{y} voo
 {\bf Tip:} maak gebruik van het voorbeeld in paragraaf 5.4 en breid deze uit voor alle opties in de \pythoninline{mijn_plot}-regel. Kijk terug naar paragraaf 3.2 als je niet alle opties meer helder hebt.
 
 \bigbreak
-{\bf Truc:} Als je \pythoninline{ax.set_xlim(None, None)} invoert, gebeurt er niks. Dus roep je de functie aan zonder een waarde voor \pythoninline{xmin, xmax} op te geven en je gebruikt in je functie gewoon \pythoninline{ax_set.xlim(xmin,xmax)}, gebeurt er niets, terwilj als je wel waardes meegeeft, dat netjes ingevuld wordt. Hetzelfde geldt voor \pythoninline{label, set_xlabel, set_ylabel, set_ylim}.
+{\bf Truc:} Als je \pythoninline{ax.set_xlim(None, None)} invoert, gebeurt er niks. Dus roep je de functie aan zonder een waarde voor \pythoninline{xmin, xmax} op te geven en je gebruikt in je functie gewoon \pythoninline{ax_set.xlim(xmin,xmax)}, gebeurt er niets; als je wel waardes meegeeft, wordt dat netjes ingevuld. Hetzelfde geldt voor \pythoninline{label, set_xlabel, set_ylabel, set_ylim}.
 
 \bigbreak
 Als {\it proof-of-concept} pak je je slotopdracht van hoofdstuk 4. Maak gebruik van jouw functie in deze slotopdracht om de data van elk weerstation te plotten.
@@ -968,7 +993,7 @@ Over de snelheid van je CPU heb je ook niet direct invloed; behalve door het kop
 \subsubsection{Effici\"entie meten}
 De makkelijkste manier om de snelheid van je code te meten is door de tijd te noteren aan het begin van je code, en nadat je code klaar is, en dan het verschil te nemen. Dit kan intern met het \pythoninline{time}.
 
-\pythonexternal{code-inc/w6/time_vb1.py}
+\pythonexternal{inc/h7/time_vb1.py}
 
 Deze methode werkt prima als je de totale run-tijd van je script wilt bepalen. Het is altijd handig als de gebruiker weet hoe lang een script ongeveer runt; als je dit gemeten hebt, zet dit dan ook in de beschrijving bovenaan het script.
 

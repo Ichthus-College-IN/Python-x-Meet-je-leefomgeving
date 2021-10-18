@@ -2,57 +2,55 @@
 \BOOKMARK [2][-]{subsection.1.1}{Python scripts schrijven en uitvoeren in Spyder}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Eenvoudige rekenkundige operaties}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Variabelen}{section.1}% 4
-\BOOKMARK [3][-]{subsubsection.1.3.1}{Implementatie}{subsection.1.3}% 5
-\BOOKMARK [3][-]{subsubsection.1.3.2}{Commentaar}{subsection.1.3}% 6
-\BOOKMARK [3][-]{subsubsection.1.3.3}{Datatypen}{subsection.1.3}% 7
-\BOOKMARK [2][-]{subsection.1.4}{Loops}{section.1}% 8
-\BOOKMARK [3][-]{subsubsection.1.4.1}{Boolean expressions}{subsection.1.4}% 9
-\BOOKMARK [3][-]{subsubsection.1.4.2}{While}{subsection.1.4}% 10
-\BOOKMARK [3][-]{subsubsection.1.4.3}{If}{subsection.1.4}% 11
-\BOOKMARK [3][-]{subsubsection.1.4.4}{For}{subsection.1.4}% 12
-\BOOKMARK [2][-]{subsection.1.5}{Slotopdrachten}{section.1}% 13
-\BOOKMARK [3][-]{subsubsection.1.5.1}{Slotopdracht 1: Wortels trekken}{subsection.1.5}% 14
-\BOOKMARK [3][-]{subsubsection.1.5.2}{Slotopdracht 2: Omrekenen van Fahrenheit naar Celsius}{subsection.1.5}% 15
-\BOOKMARK [1][-]{section.2}{Modules \(1\): NumPy}{}% 16
-\BOOKMARK [2][-]{subsection.2.1}{Arrays maken}{section.2}% 17
-\BOOKMARK [2][-]{subsection.2.2}{Rekenen met arrays}{section.2}% 18
-\BOOKMARK [2][-]{subsection.2.3}{Indexing en slicing}{section.2}% 19
-\BOOKMARK [2][-]{subsection.2.4}{Allerlei functies}{section.2}% 20
-\BOOKMARK [2][-]{subsection.2.5}{Maskers}{section.2}% 21
-\BOOKMARK [2][-]{subsection.2.6}{For-loops}{section.2}% 22
-\BOOKMARK [2][-]{subsection.2.7}{Slotopdracht: Voortschrijdend gemiddelde}{section.2}% 23
-\BOOKMARK [1][-]{section.3}{Modules \(2\): MATPlotLib}{}% 24
-\BOOKMARK [2][-]{subsection.3.1}{E\351n grafiek maken}{section.3}% 25
-\BOOKMARK [2][-]{subsection.3.2}{Grafieken opmaken}{section.3}% 26
-\BOOKMARK [2][-]{subsection.3.3}{Grafieken naast \363f onder elkaar}{section.3}% 27
-\BOOKMARK [2][-]{subsection.3.4}{Grafieken naast \351n onder elkaar}{section.3}% 28
-\BOOKMARK [2][-]{subsection.3.5}{Slotopdracht: Heel veel plotjes}{section.3}% 29
-\BOOKMARK [1][-]{section.4}{Importeren en exporteren}{}% 30
-\BOOKMARK [2][-]{subsection.4.1}{Afbeeldingen exporteren}{section.4}% 31
-\BOOKMARK [2][-]{subsection.4.2}{Bestanden importeren}{section.4}% 32
-\BOOKMARK [2][-]{subsection.4.3}{Slotopdracht: De weerstations van de KNMI}{section.4}% 33
-\BOOKMARK [1][-]{section.5}{Functies}{}% 34
-\BOOKMARK [2][-]{subsection.5.1}{Constructie van functies}{section.5}% 35
-\BOOKMARK [2][-]{subsection.5.2}{Gebruik van functies}{section.5}% 36
-\BOOKMARK [2][-]{subsection.5.3}{Lokale vs. globale variabelen}{section.5}% 37
-\BOOKMARK [2][-]{subsection.5.4}{Defaultwaarde}{section.5}% 38
-\BOOKMARK [2][-]{subsection.5.5}{Slotopdracht: Eigen plotfunctie}{section.5}% 39
-\BOOKMARK [1][-]{section.6}{Meet je leefomgeving}{}% 40
-\BOOKMARK [2][-]{subsection.6.1}{De sensoren}{section.6}% 41
-\BOOKMARK [3][-]{subsubsection.6.1.1}{ADC: accuspanning}{subsection.6.1}% 42
-\BOOKMARK [3][-]{subsubsection.6.1.2}{BME280: temperatuur, luchtdruk en relatieve luchtvochtigheid}{subsection.6.1}% 43
-\BOOKMARK [3][-]{subsubsection.6.1.3}{MAX4466: geluidssterkte}{subsection.6.1}% 44
-\BOOKMARK [3][-]{subsubsection.6.1.4}{TSL2591: lichtintensiteit}{subsection.6.1}% 45
-\BOOKMARK [3][-]{subsubsection.6.1.5}{VEML6070: UV-intensiteit}{subsection.6.1}% 46
-\BOOKMARK [3][-]{subsubsection.6.1.6}{CJMCU-811: VOC en CO2-gehalte}{subsection.6.1}% 47
-\BOOKMARK [3][-]{subsubsection.6.1.7}{SDS011: fijnstof}{subsection.6.1}% 48
-\BOOKMARK [3][-]{subsubsection.6.1.8}{Ublox NEO-6M GPS6MU2: GPS}{subsection.6.1}% 49
-\BOOKMARK [2][-]{subsection.6.2}{Handige informatie}{section.6}% 50
-\BOOKMARK [2][-]{subsection.6.3}{De eindopdracht}{section.6}% 51
-\BOOKMARK [1][-]{section.7}{BONUS}{}% 52
-\BOOKMARK [2][-]{subsection.7.1}{Voormalige slotopdracht H4: De Europese bananeninspectie}{section.7}% 53
-\BOOKMARK [2][-]{subsection.7.2}{Commentaar schrijven}{section.7}% 54
-\BOOKMARK [2][-]{subsection.7.3}{Effici\353ntie verbeteren}{section.7}% 55
-\BOOKMARK [3][-]{subsubsection.7.3.1}{Effici\353ntie meten}{subsection.7.3}% 56
-\BOOKMARK [3][-]{subsubsection.7.3.2}{Wanneer optimaliseren?}{subsection.7.3}% 57
-\BOOKMARK [3][-]{subsubsection.7.3.3}{Standaard snelle oplossingen}{subsection.7.3}% 58
+\BOOKMARK [2][-]{subsection.1.4}{Commentaar}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Datatypen}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{Loops}{section.1}% 7
+\BOOKMARK [3][-]{subsubsection.1.6.1}{Boolean expressions}{subsection.1.6}% 8
+\BOOKMARK [3][-]{subsubsection.1.6.2}{While}{subsection.1.6}% 9
+\BOOKMARK [3][-]{subsubsection.1.6.3}{If}{subsection.1.6}% 10
+\BOOKMARK [3][-]{subsubsection.1.6.4}{For}{subsection.1.6}% 11
+\BOOKMARK [2][-]{subsection.1.7}{Slotopdrachten}{section.1}% 12
+\BOOKMARK [3][-]{subsubsection.1.7.1}{Slotopdracht 1: Wortels trekken}{subsection.1.7}% 13
+\BOOKMARK [3][-]{subsubsection.1.7.2}{Slotopdracht 2: Omrekenen van Fahrenheit naar Celsius}{subsection.1.7}% 14
+\BOOKMARK [1][-]{section.2}{Modules \(1\): NumPy}{}% 15
+\BOOKMARK [2][-]{subsection.2.1}{Arrays maken}{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.2}{Rekenen met arrays}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.3}{Indexing en slicing}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.4}{Allerlei functies}{section.2}% 19
+\BOOKMARK [2][-]{subsection.2.5}{Maskers}{section.2}% 20
+\BOOKMARK [2][-]{subsection.2.6}{Slotopdracht: Voortschrijdend gemiddelde}{section.2}% 21
+\BOOKMARK [1][-]{section.3}{Modules \(2\): MATPlotLib}{}% 22
+\BOOKMARK [2][-]{subsection.3.1}{E\351n grafiek maken}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.2}{Grafieken opmaken}{section.3}% 24
+\BOOKMARK [2][-]{subsection.3.3}{Grafieken naast \363f onder elkaar}{section.3}% 25
+\BOOKMARK [2][-]{subsection.3.4}{Grafieken naast \351n onder elkaar}{section.3}% 26
+\BOOKMARK [2][-]{subsection.3.5}{Slotopdracht: Heel veel plotjes}{section.3}% 27
+\BOOKMARK [1][-]{section.4}{Importeren en exporteren}{}% 28
+\BOOKMARK [2][-]{subsection.4.1}{Afbeeldingen exporteren}{section.4}% 29
+\BOOKMARK [2][-]{subsection.4.2}{Bestanden importeren}{section.4}% 30
+\BOOKMARK [2][-]{subsection.4.3}{Slotopdracht: De weerstations van de KNMI}{section.4}% 31
+\BOOKMARK [1][-]{section.5}{Functies}{}% 32
+\BOOKMARK [2][-]{subsection.5.1}{Constructie van functies}{section.5}% 33
+\BOOKMARK [2][-]{subsection.5.2}{Gebruik van functies}{section.5}% 34
+\BOOKMARK [2][-]{subsection.5.3}{Lokale vs. globale variabelen}{section.5}% 35
+\BOOKMARK [2][-]{subsection.5.4}{Defaultwaarde}{section.5}% 36
+\BOOKMARK [2][-]{subsection.5.5}{Slotopdracht: Eigen plotfunctie}{section.5}% 37
+\BOOKMARK [1][-]{section.6}{Meet je leefomgeving}{}% 38
+\BOOKMARK [2][-]{subsection.6.1}{De sensoren}{section.6}% 39
+\BOOKMARK [3][-]{subsubsection.6.1.1}{ADC: accuspanning}{subsection.6.1}% 40
+\BOOKMARK [3][-]{subsubsection.6.1.2}{BME280: temperatuur, luchtdruk en relatieve luchtvochtigheid}{subsection.6.1}% 41
+\BOOKMARK [3][-]{subsubsection.6.1.3}{MAX4466: geluidssterkte}{subsection.6.1}% 42
+\BOOKMARK [3][-]{subsubsection.6.1.4}{TSL2591: lichtintensiteit}{subsection.6.1}% 43
+\BOOKMARK [3][-]{subsubsection.6.1.5}{VEML6070: UV-intensiteit}{subsection.6.1}% 44
+\BOOKMARK [3][-]{subsubsection.6.1.6}{CJMCU-811: VOC en CO2-gehalte}{subsection.6.1}% 45
+\BOOKMARK [3][-]{subsubsection.6.1.7}{SDS011: fijnstof}{subsection.6.1}% 46
+\BOOKMARK [3][-]{subsubsection.6.1.8}{Ublox NEO-6M GPS6MU2: GPS}{subsection.6.1}% 47
+\BOOKMARK [2][-]{subsection.6.2}{Handige informatie}{section.6}% 48
+\BOOKMARK [2][-]{subsection.6.3}{De eindopdracht}{section.6}% 49
+\BOOKMARK [1][-]{section.7}{BONUS}{}% 50
+\BOOKMARK [2][-]{subsection.7.1}{Voormalige slotopdracht H4: De Europese bananeninspectie}{section.7}% 51
+\BOOKMARK [2][-]{subsection.7.2}{Commentaar schrijven}{section.7}% 52
+\BOOKMARK [2][-]{subsection.7.3}{Effici\353ntie verbeteren}{section.7}% 53
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Effici\353ntie meten}{subsection.7.3}% 54
+\BOOKMARK [3][-]{subsubsection.7.3.2}{Wanneer optimaliseren?}{subsection.7.3}% 55
+\BOOKMARK [3][-]{subsubsection.7.3.3}{Standaard snelle oplossingen}{subsection.7.3}% 56

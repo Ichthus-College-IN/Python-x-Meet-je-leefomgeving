@@ -9,4 +9,3 @@ avg_arr = np.mean(test_array)     # Geeft gemiddelde van array (5.5)
 
 # Eigenschappen van een array;
 ta_lengte = len(test_array)     # Geeft aantal getallen in array (10,)
-ta_dtype  = test_array.dtype    # Geeft datatype in array (int32)
