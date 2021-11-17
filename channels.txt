@@ -1,0 +1,11 @@
+0: UV-index
+1: luchtdruk
+2: temperatuur
+3: fijnstof 2.5 micrometer
+4: fijnstof 10 micrometer
+5: (relatieve) geluidsniveau
+6: CO2-gehalte
+7: VOC-gehalte
+8: lichtintensiteit
+9: batterijpercentage
+10: (relatieve) luchtvochtigheid
